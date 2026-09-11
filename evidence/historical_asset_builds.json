@@ -1,0 +1,77 @@
+{
+  "strong": {
+    "schema_version": 1,
+    "status": "NO_SEND",
+    "condition_name": "qwentest100_pns_cot_2shot_strong",
+    "source_manifest": "C:\\Users\\aklovey\\Documents\\Codex\\2026-08-17\\qwen36-fewshot-icl-pilot\\outputs\\plan\\qwentest100_2shot_request_manifest_100_NO_SEND.jsonl",
+    "artifact": "C:\\Users\\aklovey\\Documents\\Codex\\2026-08-17\\qwen36-fewshot-icl-pilot\\outputs\\pns56_checkpoints\\strong_reselect_fresh_20260817\\qwentest100_demo56_pns_cot_artifact_strong.jsonl",
+    "target_count": 100,
+    "unique_demo_qid_count": 56,
+    "demo_action_counts": {
+      "fallback_original_cot": 42,
+      "replace_with_pns_cot": 14
+    },
+    "fallback_reason_counts": {
+      "no_valid_strictly_shorter_candidate": 42
+    },
+    "built_manifest_rows": 100,
+    "prompt_tokens": {
+      "min": 2197,
+      "median": 6794.0,
+      "max": 9034
+    },
+    "effective_max_tokens": {
+      "min": 7222,
+      "median": 9462.0,
+      "max": 12000
+    },
+    "prompt_tokens_saved": {
+      "min": 0,
+      "median": 630.0,
+      "max": 2943
+    },
+    "artifact_summary": {
+      "n": 56,
+      "original_qwen_tokens": 128764,
+      "final_qwen_tokens": 115824,
+      "optimized": 14,
+      "fallback": 42
+    }
+  },
+  "exhaustive_original_audit": {
+    "schema_version": 1,
+    "status": "NO_SEND",
+    "condition_name": "qwentest100_pns_cot_2shot_exhaustive_original_audit",
+    "source_manifest": "C:\\Users\\aklovey\\Documents\\Codex\\2026-08-17\\qwen36-fewshot-icl-pilot\\outputs\\plan\\qwentest100_2shot_request_manifest_100_NO_SEND.jsonl",
+    "artifact": "C:\\Users\\aklovey\\Documents\\Codex\\2026-08-17\\qwen36-fewshot-icl-pilot\\outputs\\pns56_checkpoints\\exhaustive_original_audit_56_20260817\\qwentest100_demo56_pns_cot_artifact_exhaustive_original_audit.jsonl",
+    "target_count": 100,
+    "unique_demo_qid_count": 56,
+    "demo_action_counts": {
+      "replace_with_pns_cot": 56
+    },
+    "fallback_reason_counts": {},
+    "built_manifest_rows": 100,
+    "prompt_tokens": {
+      "min": 1740,
+      "median": 4279.5,
+      "max": 6285
+    },
+    "effective_max_tokens": {
+      "min": 9971,
+      "median": 11976.5,
+      "max": 12000
+    },
+    "prompt_tokens_saved": {
+      "min": 284,
+      "median": 1861.0,
+      "max": 3470
+    },
+    "artifact_summary": {
+      "n": 56,
+      "original_qwen_tokens": 128764,
+      "final_qwen_tokens": 79021,
+      "optimized": 56,
+      "fallback": 0
+    }
+  }
+}

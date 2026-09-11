@@ -1,0 +1,31 @@
+\chapter{Reproducibility and Evidence}\label{ch:A}
+\section{Minimal trace and request records}\label{sec:A.1}
+
+The archive retains immutable public-input and parent-trace identifiers, exact segment offsets, answer-exposure decisions, intervention and reconstruction lineage, raw responses, validation decisions, ranking keys and terminal request states. Public prompts and scoring-only material remain separate. Failed and unaccepted items stay in their original denominators; unknown usage is not recorded as zero.
+
+\begin{table}[htbp]
+\centering
+\begingroup
+\setlength{\tabcolsep}{2pt}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.17\linewidth}>{\raggedright\arraybackslash}p{0.48\linewidth}>{\raggedright\arraybackslash}p{0.29\linewidth}@{}}
+\toprule
+\textbf{Record} & \textbf{Essential fields} & \textbf{Check enabled} \\
+\midrule
+Source & Release, question ID, model ID, full-CPT group, public text hash & Data identity and overlap \\
+Parent & Exact trace, hash, model/configuration, answer & Answer-correct parent condition \\
+Segmentation & Span offsets, exact text, exposure boundary & Gap-free provenance \\
+Candidate & Operation, replacement, prefix, suffix, lineage & Intervention reconstruction \\
+Evaluation & Parser, reference, semantic decision, judge source & Acceptance review \\
+Selection & Token count, character count, tie-break ID & Deterministic choice \\
+Request ledger & Planned ID, attempt, state, usage, retry reason & Cost and completion audit \\
+\bottomrule
+\end{tabular}
+\endgroup
+\caption[Records required to reconstruct a selected demonstration]{Records required to reconstruct a selected demonstration.}\label{tab:A.1}
+\end{table}
+
+\section{Analysis and evidence records}\label{sec:A.2}
+
+Analysis checks manifest identity and one terminal response per frozen target-condition pair before scoring. It retains failures, joins conditions by target, and reports usage on explicit denominators. The main cohort's numerical-group mapping supports its CPT sensitivity analysis; the fresh cohort remains separate. Parser or demonstration changes require a new version, preserving original outputs.
+
+The electronic supplement is organised into historical experiments, detailed configuration and generation/statistical records, extended audits and cases, and all available construction-cost records. It retains the full Pro-reviewed source manuscript, the numerical comparison figure and editable source files. The original experiment and evidence archives preserve raw responses and records, including details shortened in this dissertation. The source\_manifest.json and electronic evidence ledger map E1--E9 to the underlying sources; publication references are listed in the Bibliography.

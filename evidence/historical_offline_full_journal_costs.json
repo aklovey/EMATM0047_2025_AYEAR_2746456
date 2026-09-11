@@ -1,0 +1,471 @@
+{
+  "source": "C:\\Users\\aklovey\\Documents\\Codex\\2026-08-17\\qwen36-fewshot-icl-pilot\\outputs\\pns56_checkpoints\\final_extracted_20260817\\final\\journal_snapshot.sqlite3",
+  "registered_requests": 6910,
+  "request_unique_ids": 6910,
+  "branch_counts": {
+    "keep": 3382,
+    "delete": 3382,
+    "replacement_generate": 52,
+    "replace": 94
+  },
+  "state_counts": {
+    "completed": 6876,
+    "scientific_invalid": 34
+  },
+  "http_status_counts": {
+    "200": 6910
+  },
+  "finish_reason_counts": {
+    "stop": 6883,
+    "length": 27
+  },
+  "invalid_reason_counts": {
+    "strict_answer_parse": 5,
+    "finish_reason_length": 23,
+    "replacement_finish_reason_length": 4,
+    "replacement_contains_final_answer": 1,
+    "empty_content": 1
+  },
+  "failure_class_counts": {
+    "scientific_invalid": 34
+  },
+  "parameters": {
+    "frozen_contract": {
+      "schema_version": 1,
+      "model": "Qwen/Qwen3.6-35B-A3B",
+      "max_model_len": 16384,
+      "suffix_max_tokens": 8000,
+      "replacement_max_tokens": 1024,
+      "safety_margin_tokens": 128,
+      "sampling": {
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "min_p": 0.0,
+        "repetition_penalty": 1.0,
+        "presence_penalty": 0.0,
+        "frequency_penalty": 0.0,
+        "n": 1,
+        "stream": false,
+        "ignore_eos": false,
+        "include_stop_str_in_output": false,
+        "return_token_ids": true
+      },
+      "keep_delete_trials": 2,
+      "replace_trials": 2,
+      "max_audited_candidates": 3,
+      "concurrency": {
+        "initial": 16,
+        "target": 32,
+        "ceiling": 48
+      },
+      "expected_safe_steps": 1691,
+      "min_generation_calls": 6764,
+      "absolute_generation_call_upper": 11837,
+      "path_auditor": "local_deterministic_v1",
+      "path_auditor_model_calls": 0
+    },
+    "chosen_concurrency": 48
+  },
+  "prompt_tokens": {
+    "reported_n": 6910,
+    "sum": 6141543,
+    "mean_per_request": 888.7905933429812,
+    "mean_per_demo56": 109670.41071428571
+  },
+  "completion_tokens": {
+    "reported_n": 6910,
+    "sum": 14468773,
+    "mean_per_request": 2093.889001447178,
+    "mean_per_demo56": 258370.94642857142
+  },
+  "total_tokens": {
+    "reported_n": 6910,
+    "sum": 20610316,
+    "mean_per_request": 2982.679594790159,
+    "mean_per_demo56": 368041.35714285716
+  },
+  "per_branch": {
+    "keep": {
+      "n": 3382,
+      "prompt_tokens": 3074304,
+      "completion_tokens": 7030738
+    },
+    "delete": {
+      "n": 3382,
+      "prompt_tokens": 2943234,
+      "completion_tokens": 7170074
+    },
+    "replacement_generate": {
+      "n": 52,
+      "prompt_tokens": 43783,
+      "completion_tokens": 11713
+    },
+    "replace": {
+      "n": 94,
+      "prompt_tokens": 80222,
+      "completion_tokens": 256248
+    }
+  },
+  "first_posting": "2026-08-17T06:20:33.926+00:00",
+  "last_response": "2026-08-17T12:01:14.013+00:00",
+  "observed_run_interval_hours": 5.677801944444444,
+  "wallclock_caveat": "Observed first-request to last-response span only; excludes setup and cannot be equated to billed GPU hours. Request latency sum is not GPU wallclock.",
+  "cost_scope": "This frozen 6910-call run, including replacement generation and invalid generations. Excludes earlier probes, parent baseline generation, later adaptation/repair and hardware billing.",
+  "per_item": [
+    {
+      "qid": 1428,
+      "calls": 132,
+      "prompt_tokens": 118124,
+      "completion_tokens": 199156
+    },
+    {
+      "qid": 4171,
+      "calls": 172,
+      "prompt_tokens": 191135,
+      "completion_tokens": 607170
+    },
+    {
+      "qid": 4255,
+      "calls": 283,
+      "prompt_tokens": 391252,
+      "completion_tokens": 872238
+    },
+    {
+      "qid": 4274,
+      "calls": 167,
+      "prompt_tokens": 167101,
+      "completion_tokens": 385958
+    },
+    {
+      "qid": 4284,
+      "calls": 192,
+      "prompt_tokens": 253529,
+      "completion_tokens": 798927
+    },
+    {
+      "qid": 8752,
+      "calls": 114,
+      "prompt_tokens": 120059,
+      "completion_tokens": 352472
+    },
+    {
+      "qid": 9577,
+      "calls": 96,
+      "prompt_tokens": 70684,
+      "completion_tokens": 122603
+    },
+    {
+      "qid": 9588,
+      "calls": 88,
+      "prompt_tokens": 53262,
+      "completion_tokens": 71986
+    },
+    {
+      "qid": 9590,
+      "calls": 68,
+      "prompt_tokens": 44498,
+      "completion_tokens": 51276
+    },
+    {
+      "qid": 9611,
+      "calls": 96,
+      "prompt_tokens": 60920,
+      "completion_tokens": 146157
+    },
+    {
+      "qid": 9686,
+      "calls": 56,
+      "prompt_tokens": 29856,
+      "completion_tokens": 82624
+    },
+    {
+      "qid": 9883,
+      "calls": 96,
+      "prompt_tokens": 57774,
+      "completion_tokens": 119491
+    },
+    {
+      "qid": 9957,
+      "calls": 56,
+      "prompt_tokens": 19700,
+      "completion_tokens": 49171
+    },
+    {
+      "qid": 10009,
+      "calls": 52,
+      "prompt_tokens": 20168,
+      "completion_tokens": 39341
+    },
+    {
+      "qid": 10242,
+      "calls": 99,
+      "prompt_tokens": 54786,
+      "completion_tokens": 168782
+    },
+    {
+      "qid": 11849,
+      "calls": 108,
+      "prompt_tokens": 93128,
+      "completion_tokens": 195367
+    },
+    {
+      "qid": 13224,
+      "calls": 140,
+      "prompt_tokens": 140920,
+      "completion_tokens": 328663
+    },
+    {
+      "qid": 14516,
+      "calls": 104,
+      "prompt_tokens": 80198,
+      "completion_tokens": 190605
+    },
+    {
+      "qid": 14591,
+      "calls": 235,
+      "prompt_tokens": 252546,
+      "completion_tokens": 847092
+    },
+    {
+      "qid": 17519,
+      "calls": 128,
+      "prompt_tokens": 122502,
+      "completion_tokens": 254145
+    },
+    {
+      "qid": 18188,
+      "calls": 171,
+      "prompt_tokens": 221127,
+      "completion_tokens": 738120
+    },
+    {
+      "qid": 19368,
+      "calls": 128,
+      "prompt_tokens": 123078,
+      "completion_tokens": 314085
+    },
+    {
+      "qid": 19407,
+      "calls": 167,
+      "prompt_tokens": 185493,
+      "completion_tokens": 611543
+    },
+    {
+      "qid": 19969,
+      "calls": 176,
+      "prompt_tokens": 166800,
+      "completion_tokens": 270160
+    },
+    {
+      "qid": 19978,
+      "calls": 103,
+      "prompt_tokens": 55399,
+      "completion_tokens": 151175
+    },
+    {
+      "qid": 20177,
+      "calls": 96,
+      "prompt_tokens": 69842,
+      "completion_tokens": 107634
+    },
+    {
+      "qid": 20214,
+      "calls": 142,
+      "prompt_tokens": 102019,
+      "completion_tokens": 262282
+    },
+    {
+      "qid": 20438,
+      "calls": 79,
+      "prompt_tokens": 38830,
+      "completion_tokens": 89520
+    },
+    {
+      "qid": 20959,
+      "calls": 108,
+      "prompt_tokens": 83160,
+      "completion_tokens": 153587
+    },
+    {
+      "qid": 23635,
+      "calls": 92,
+      "prompt_tokens": 58214,
+      "completion_tokens": 153989
+    },
+    {
+      "qid": 23999,
+      "calls": 179,
+      "prompt_tokens": 219746,
+      "completion_tokens": 325930
+    },
+    {
+      "qid": 24494,
+      "calls": 140,
+      "prompt_tokens": 137452,
+      "completion_tokens": 332003
+    },
+    {
+      "qid": 24894,
+      "calls": 190,
+      "prompt_tokens": 263535,
+      "completion_tokens": 665938
+    },
+    {
+      "qid": 28145,
+      "calls": 148,
+      "prompt_tokens": 140946,
+      "completion_tokens": 390316
+    },
+    {
+      "qid": 29590,
+      "calls": 40,
+      "prompt_tokens": 18820,
+      "completion_tokens": 53142
+    },
+    {
+      "qid": 29612,
+      "calls": 131,
+      "prompt_tokens": 96029,
+      "completion_tokens": 233269
+    },
+    {
+      "qid": 29642,
+      "calls": 104,
+      "prompt_tokens": 69016,
+      "completion_tokens": 158489
+    },
+    {
+      "qid": 29705,
+      "calls": 103,
+      "prompt_tokens": 74507,
+      "completion_tokens": 203346
+    },
+    {
+      "qid": 29833,
+      "calls": 144,
+      "prompt_tokens": 143600,
+      "completion_tokens": 251493
+    },
+    {
+      "qid": 29962,
+      "calls": 112,
+      "prompt_tokens": 81516,
+      "completion_tokens": 141470
+    },
+    {
+      "qid": 29980,
+      "calls": 44,
+      "prompt_tokens": 18008,
+      "completion_tokens": 46991
+    },
+    {
+      "qid": 29982,
+      "calls": 64,
+      "prompt_tokens": 38980,
+      "completion_tokens": 45616
+    },
+    {
+      "qid": 29990,
+      "calls": 84,
+      "prompt_tokens": 38712,
+      "completion_tokens": 103881
+    },
+    {
+      "qid": 30257,
+      "calls": 108,
+      "prompt_tokens": 86398,
+      "completion_tokens": 194831
+    },
+    {
+      "qid": 30344,
+      "calls": 91,
+      "prompt_tokens": 41439,
+      "completion_tokens": 88762
+    },
+    {
+      "qid": 30359,
+      "calls": 176,
+      "prompt_tokens": 128470,
+      "completion_tokens": 372858
+    },
+    {
+      "qid": 30363,
+      "calls": 132,
+      "prompt_tokens": 127744,
+      "completion_tokens": 253839
+    },
+    {
+      "qid": 30459,
+      "calls": 124,
+      "prompt_tokens": 80486,
+      "completion_tokens": 155819
+    },
+    {
+      "qid": 30491,
+      "calls": 79,
+      "prompt_tokens": 52376,
+      "completion_tokens": 114322
+    },
+    {
+      "qid": 30505,
+      "calls": 155,
+      "prompt_tokens": 140642,
+      "completion_tokens": 348693
+    },
+    {
+      "qid": 30650,
+      "calls": 151,
+      "prompt_tokens": 123041,
+      "completion_tokens": 315628
+    },
+    {
+      "qid": 30701,
+      "calls": 88,
+      "prompt_tokens": 60560,
+      "completion_tokens": 75309
+    },
+    {
+      "qid": 30749,
+      "calls": 64,
+      "prompt_tokens": 35630,
+      "completion_tokens": 98961
+    },
+    {
+      "qid": 30846,
+      "calls": 163,
+      "prompt_tokens": 141256,
+      "completion_tokens": 317436
+    },
+    {
+      "qid": 30894,
+      "calls": 160,
+      "prompt_tokens": 133232,
+      "completion_tokens": 159913
+    },
+    {
+      "qid": 30995,
+      "calls": 192,
+      "prompt_tokens": 203298,
+      "completion_tokens": 285199
+    }
+  ],
+  "per_item_calls_distribution": {
+    "min": 40,
+    "median": 113.0,
+    "max": 283,
+    "p95_linear": 192.0
+  },
+  "per_item_prompt_tokens_distribution": {
+    "min": 18008,
+    "median": 89763.0,
+    "max": 391252,
+    "p95_linear": 252791.75
+  },
+  "per_item_completion_tokens_distribution": {
+    "min": 39341,
+    "median": 195099.0,
+    "max": 872238,
+    "p95_linear": 753321.75
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "status": "TASK_SERVICES_STOPPED",
+  "stopped_at": 1788996384.82411,
+  "service_pids": [
+    1595,
+    1597
+  ]
+}

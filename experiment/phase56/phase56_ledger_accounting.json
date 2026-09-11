@@ -1,0 +1,135 @@
+{
+  "qwen_pns_phase56_20260826_v2\\deepseek_semantic_judge.sqlite3": {
+    "path": "E:\\wt\\cause-qwen-pns-adaptive-20260826\\artifacts\\experiments\\qwen_pns_phase56_20260826_v2\\deepseek_semantic_judge.sqlite3",
+    "rows": 2800,
+    "states": {
+      "completed": 2754,
+      "reserved": 46
+    },
+    "result_status": {
+      "parsed": 2680,
+      "not_called_invalid_generation": 7,
+      "provider_error": 67
+    },
+    "provider_call_count_sum": 2747,
+    "usage_sum": {
+      "input_tokens": 9238246,
+      "output_tokens": 12881167,
+      "total_tokens": 22119413
+    },
+    "provider_count_missing_completed": 0
+  },
+  "qwen_pns_phase56_20260826_v2\\gpt55_judge_recovery_113.sqlite3": {
+    "path": "E:\\wt\\cause-qwen-pns-adaptive-20260826\\artifacts\\experiments\\qwen_pns_phase56_20260826_v2\\gpt55_judge_recovery_113.sqlite3",
+    "rows": 113,
+    "states": {
+      "completed": 113
+    },
+    "result_status": {
+      "parsed": 113
+    },
+    "provider_call_count_sum": 113,
+    "usage_sum": {
+      "input_tokens": 468097,
+      "output_tokens": 64161,
+      "total_tokens": 532258
+    },
+    "provider_count_missing_completed": 0
+  },
+  "qwen_pns_phase56_20260826_v2\\gpt55_judge_recovery_113_xhigh_strict.sqlite3": {
+    "path": "E:\\wt\\cause-qwen-pns-adaptive-20260826\\artifacts\\experiments\\qwen_pns_phase56_20260826_v2\\gpt55_judge_recovery_113_xhigh_strict.sqlite3",
+    "rows": 113,
+    "states": {
+      "completed": 113
+    },
+    "result_status": {
+      "parsed": 113
+    },
+    "provider_call_count_sum": 113,
+    "usage_sum": {
+      "input_tokens": 476007,
+      "output_tokens": 275727,
+      "total_tokens": 751734
+    },
+    "provider_count_missing_completed": 0
+  },
+  "qwen_pns_phase56_20260826_v2\\cli_proxy_future_semantic_judge.sqlite3": {
+    "path": "E:\\wt\\cause-qwen-pns-adaptive-20260826\\artifacts\\experiments\\qwen_pns_phase56_20260826_v2\\cli_proxy_future_semantic_judge.sqlite3",
+    "rows": 11765,
+    "states": {
+      "completed": 11741,
+      "reserved": 24
+    },
+    "result_status": {
+      "parsed": 11703,
+      "not_called_invalid_generation": 38
+    },
+    "provider_call_count_sum": 11703,
+    "usage_sum": {
+      "input_tokens": 43176720,
+      "output_tokens": 21123976,
+      "total_tokens": 64300696
+    },
+    "provider_count_missing_completed": 0
+  },
+  "qwen_pns_phase56_20260826_v2_recovery_18plus3_v1\\cli_proxy_future_semantic_judge.sqlite3": {
+    "path": "E:\\wt\\cause-qwen-pns-adaptive-20260826\\artifacts\\experiments\\qwen_pns_phase56_20260826_v2_recovery_18plus3_v1\\cli_proxy_future_semantic_judge.sqlite3",
+    "rows": 11780,
+    "states": {
+      "completed": 11756,
+      "reserved": 24
+    },
+    "result_status": {
+      "parsed": 11718,
+      "not_called_invalid_generation": 38
+    },
+    "provider_call_count_sum": 11718,
+    "usage_sum": {
+      "input_tokens": 43222853,
+      "output_tokens": 21187196,
+      "total_tokens": 64410049
+    },
+    "provider_count_missing_completed": 0
+  },
+  "qwen_g1": {
+    "states": [
+      {
+        "state": "succeeded",
+        "n": 128
+      }
+    ],
+    "rows": 128
+  },
+  "qwen_original": {
+    "states": [
+      {
+        "state": "completed",
+        "n": 14338
+      },
+      {
+        "state": "posting",
+        "n": 128
+      },
+      {
+        "state": "scientific_invalid",
+        "n": 42
+      }
+    ],
+    "branches": [
+      {
+        "branch": "delete",
+        "n": 6561
+      },
+      {
+        "branch": "keep",
+        "n": 7947
+      }
+    ],
+    "rollout_ge6": 0,
+    "usage_sum": {
+      "prompt_tokens": 12491141,
+      "total_tokens": 41392323,
+      "completion_tokens": 28901182
+    }
+  }
+}

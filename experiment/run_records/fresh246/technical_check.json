@@ -1,0 +1,23 @@
+{
+  "n": 984,
+  "unique_qid_arm": 984,
+  "counts_by_arm": {
+    "FULL_COT": 246,
+    "HEURISTIC_SHORT": 246,
+    "PNS_COT": 246,
+    "ZERO": 246
+  },
+  "status_counts": {
+    "completed": 984
+  },
+  "prompt_mismatches": [],
+  "common_seed_and_output_budget": true,
+  "same_fewshot_demo_identity_order": true,
+  "truncated_by_arm": {
+    "ZERO": 3
+  },
+  "started_at": "2026-09-09T22:24:04.727652+00:00",
+  "last_finished_at": "2026-09-09T23:16:58.717604+00:00",
+  "run_wall_seconds": 3173.989952,
+  "concurrency_per_endpoint": 24
+}

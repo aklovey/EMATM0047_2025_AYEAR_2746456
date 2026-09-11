@@ -1,0 +1,33 @@
+{
+  "scope": "2026-09-10 Qwen experimental API usage only; tokenize requests and unmetered Codex analysis separate",
+  "phases": {
+    "development": {
+      "generation_requests": 40,
+      "prompt_tokens": 187032,
+      "completion_tokens": 62438
+    },
+    "main300": {
+      "generation_requests": 1200,
+      "prompt_tokens": 5501330,
+      "completion_tokens": 1686083
+    },
+    "fresh246": {
+      "generation_requests": 984,
+      "prompt_tokens": 5054429,
+      "completion_tokens": 2134832
+    },
+    "self_review56": {
+      "generation_requests": 56,
+      "prompt_tokens": 126818,
+      "completion_tokens": 196664
+    }
+  },
+  "total": {
+    "generation_requests": 2280,
+    "prompt_tokens": 10869609,
+    "completion_tokens": 4080017,
+    "total_tokens": 14949626
+  },
+  "non_generating_tokenize_requests": 2280,
+  "all_generation_http_completed": true
+}

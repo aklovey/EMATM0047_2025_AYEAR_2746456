@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" type="device" version="29.0.3">
+  <diagram id="two-cohort-design" name="Evaluation design">
+    <mxGraphModel dx="1200" dy="610" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="610" math="0" shadow="0" background="#FFFFFF">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="Two cohorts, one frozen comparison" style="rounded=1;arcSize=8;whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=22;fontColor=#253746;align=center;verticalAlign=middle;spacing=8;strokeWidth=1.4;fillColor=none;strokeColor=none;shape=text;rounded=0;spacing=0;fontSize=27;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="20" y="10" width="1160" height="34" />
+        </mxCell>
+        <mxCell id="shared-bank" value="Shared pool: 56 IDs | PNS version: 52 compressed traces + 4 parent fallbacks" style="rounded=1;arcSize=8;whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=22;fontColor=#253746;align=center;verticalAlign=middle;spacing=8;strokeWidth=1.4;fillColor=#EEF2F7;strokeColor=#CBD5DE;fontSize=23;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="80" y="58" width="1040" height="44" />
+        </mxCell>
+        <mxCell id="conditions" value="ZERO (no examples)  |  Three 2-shot conditions: FULL, HEURISTIC, PNS" style="rounded=1;arcSize=8;whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=22;fontColor=#253746;align=center;verticalAlign=middle;spacing=8;strokeWidth=1.4;fillColor=none;strokeColor=none;shape=text;rounded=0;spacing=0;fontSize=21;fontStyle=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="20" y="112" width="1160" height="28" />
+        </mxCell>
+        <mxCell id="control" value="Same example identities and order in the 2-shot conditions; same output cap per target in all four." style="rounded=1;arcSize=8;whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=22;fontColor=#253746;align=center;verticalAlign=middle;spacing=8;strokeWidth=1.4;fillColor=none;strokeColor=none;shape=text;rounded=0;spacing=0;fontSize=20;fontStyle=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="20" y="143" width="1160" height="26" />
+        </mxCell>
+        <mxCell id="main-title" value="a  Previously evaluated cohort" style="rounded=1;arcSize=8;whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=22;fontColor=#253746;align=center;verticalAlign=middle;spacing=8;strokeWidth=1.4;fillColor=none;strokeColor=none;shape=text;rounded=0;spacing=0;fontSize=24;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="20" y="180" width="600" height="30" />
+        </mxCell>
+        <mxCell id="main-source" value="Previously evaluated&#10;CLADDER inventory" style="rounded=1;arcSize=8;whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=22;fontColor=#253746;align=center;verticalAlign=middle;spacing=8;strokeWidth=1.4;fillColor=#F3F7FA;strokeColor=#8194A2;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="20" y="220" width="250" height="108" />
+        </mxCell>
+        <mxCell id="main-cohort" value="300 targets&#10;271 full-CPT groups&#10;59 share prior CPTs" style="rounded=1;arcSize=8;whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=22;fontColor=#253746;align=center;verticalAlign=middle;spacing=8;strokeWidth=1.4;fillColor=#F3F7FA;strokeColor=#8194A2;fontSize=21;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="310" y="220" width="230" height="108" />
+        </mxCell>
+        <mxCell id="main-eval" value="4 conditions&#10;1,200 requests" style="rounded=1;arcSize=8;whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=22;fontColor=#253746;align=center;verticalAlign=middle;spacing=8;strokeWidth=1.4;fillColor=#F3F7FA;strokeColor=#8194A2;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="580" y="220" width="245" height="108" />
+        </mxCell>
+        <mxCell id="main-analysis" value="271-group bootstrap&#10;Group sign-flip tests&#10;3 PNS comparisons" style="rounded=1;arcSize=8;whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=22;fontColor=#253746;align=center;verticalAlign=middle;spacing=8;strokeWidth=1.4;fillColor=#EDF2F8;strokeColor=#7089A4;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="865" y="220" width="300" height="108" />
+        </mxCell>
+        <mxCell id="main-select" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;endFill=1;strokeColor=#5A7182;strokeWidth=1.8;" edge="1" parent="1" source="main-source" target="main-cohort">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="main-requests" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;endFill=1;strokeColor=#5A7182;strokeWidth=1.8;" edge="1" parent="1" source="main-cohort" target="main-eval">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="main-stats" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;endFill=1;strokeColor=#5A7182;strokeWidth=1.8;" edge="1" parent="1" source="main-eval" target="main-analysis">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="fresh-title" value="b  New numerical instances" style="rounded=1;arcSize=8;whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=22;fontColor=#253746;align=center;verticalAlign=middle;spacing=8;strokeWidth=1.4;fillColor=none;strokeColor=none;shape=text;rounded=0;spacing=0;fontSize=24;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="20" y="357" width="600" height="30" />
+        </mxCell>
+        <mxCell id="fresh-source" value="Official generator&#10;Existing graph families&#10;and story templates" style="rounded=1;arcSize=8;whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=22;fontColor=#253746;align=center;verticalAlign=middle;spacing=8;strokeWidth=1.4;fillColor=#F3F7FA;strokeColor=#8194A2;fontSize=21;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="20" y="398" width="250" height="112" />
+        </mxCell>
+        <mxCell id="fresh-cohort" value="257 proposals&#10;11 excluded&#10;246 retained" style="rounded=1;arcSize=8;whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=22;fontColor=#253746;align=center;verticalAlign=middle;spacing=8;strokeWidth=1.4;fillColor=#F3F7FA;strokeColor=#8194A2;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="310" y="398" width="230" height="112" />
+        </mxCell>
+        <mxCell id="fresh-eval" value="4 conditions&#10;984 requests" style="rounded=1;arcSize=8;whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=22;fontColor=#253746;align=center;verticalAlign=middle;spacing=8;strokeWidth=1.4;fillColor=#F3F7FA;strokeColor=#8194A2;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="580" y="398" width="245" height="112" />
+        </mxCell>
+        <mxCell id="fresh-analysis" value="246-instance bootstrap&#10;Exact McNemar tests&#10;3 PNS comparisons" style="rounded=1;arcSize=8;whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=22;fontColor=#253746;align=center;verticalAlign=middle;spacing=8;strokeWidth=1.4;fillColor=#EDF2F8;strokeColor=#7089A4;fontSize=21;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="865" y="398" width="300" height="112" />
+        </mxCell>
+        <mxCell id="fresh-filter" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;endFill=1;strokeColor=#5A7182;strokeWidth=1.8;" edge="1" parent="1" source="fresh-source" target="fresh-cohort">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="fresh-requests" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;endFill=1;strokeColor=#5A7182;strokeWidth=1.8;" edge="1" parent="1" source="fresh-cohort" target="fresh-eval">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="fresh-stats" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;endFill=1;strokeColor=#5A7182;strokeWidth=1.8;" edge="1" parent="1" source="fresh-eval" target="fresh-analysis">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="filters" value="Fixed validity and novelty filters" style="rounded=1;arcSize=8;whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=22;fontColor=#253746;align=center;verticalAlign=middle;spacing=8;strokeWidth=1.4;fillColor=none;strokeColor=none;shape=text;rounded=0;spacing=0;fontSize=20;fontStyle=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="220" y="516" width="425" height="26" />
+        </mxCell>
+        <mxCell id="holm" value="Joint Holm adjustment of six p-values&#10;The target outcomes remain in separate cohorts" style="rounded=1;arcSize=8;whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=22;fontColor=#253746;align=center;verticalAlign=middle;spacing=8;strokeWidth=1.4;fillColor=#F1EDF3;strokeColor=#8F7C95;fontSize=21;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="530" y="559" width="635" height="66" />
+        </mxCell>
+        <mxCell id="main-pvalues" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;endFill=1;strokeColor=#5A7182;strokeWidth=1.8;exitX=1;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="main-analysis" target="holm">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="1188" y="274" />
+              <mxPoint x="1188" y="592" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fresh-pvalues" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;endFill=1;strokeColor=#5A7182;strokeWidth=1.8;exitX=0.5;exitY=1;entryX=0.8;entryY=0;" edge="1" parent="1" source="fresh-analysis" target="holm">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

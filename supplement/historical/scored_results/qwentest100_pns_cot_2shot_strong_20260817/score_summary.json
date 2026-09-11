@@ -1,0 +1,510 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-08-17T12:36:31.006661+00:00",
+  "dataset": "qwentest100",
+  "overall": {
+    "count": 100,
+    "completed_http_success": 100,
+    "strict_format_valid_count": 100,
+    "strict_format_valid_rate": 1.0,
+    "strict_correct_count": 77,
+    "strict_accuracy": 0.77,
+    "accuracy_among_valid": 0.77,
+    "finish_reason_length_count": 0,
+    "finish_reason_length_rate": 0.0,
+    "terminal_status_counts": {
+      "completed": 100
+    },
+    "completion_tokens_reported": {
+      "count": 100,
+      "min": 14.0,
+      "mean": 1462.34,
+      "median": 1250.5,
+      "p75": 1850.25,
+      "p95": 3050.5999999999995,
+      "max": 4387.0
+    },
+    "output_token_ids_count": {
+      "count": 100,
+      "min": 14.0,
+      "mean": 1462.34,
+      "median": 1250.5,
+      "p75": 1850.25,
+      "p95": 3050.5999999999995,
+      "max": 4387.0
+    },
+    "reasoning_tokens_usage": null,
+    "reasoning_tokens_offline": null,
+    "content_tokens_offline": null,
+    "reasoning_chars": {
+      "count": 100,
+      "min": 16.0,
+      "mean": 4548.21,
+      "median": 3873.0,
+      "p75": 5796.25,
+      "p95": 9162.849999999999,
+      "max": 16383.0
+    },
+    "content_chars": {
+      "count": 100,
+      "min": 17.0,
+      "mean": 17.49,
+      "median": 17.0,
+      "p75": 18.0,
+      "p95": 18.0,
+      "max": 19.0
+    },
+    "latency_seconds": {
+      "count": 100,
+      "min": 2.5354807935655117,
+      "mean": 77.8317585818097,
+      "median": 66.46562886424363,
+      "p75": 99.3359796507284,
+      "p95": 161.9332495268434,
+      "max": 229.97303230315447
+    }
+  },
+  "by_query_type": {
+    "ate": {
+      "count": 20,
+      "completed_http_success": 20,
+      "strict_format_valid_count": 20,
+      "strict_format_valid_rate": 1.0,
+      "strict_correct_count": 17,
+      "strict_accuracy": 0.85,
+      "accuracy_among_valid": 0.85,
+      "finish_reason_length_count": 0,
+      "finish_reason_length_rate": 0.0,
+      "terminal_status_counts": {
+        "completed": 20
+      },
+      "completion_tokens_reported": {
+        "count": 20,
+        "min": 14.0,
+        "mean": 1594.6,
+        "median": 1603.0,
+        "p75": 2179.75,
+        "p95": 3157.25,
+        "max": 3162.0
+      },
+      "output_token_ids_count": {
+        "count": 20,
+        "min": 14.0,
+        "mean": 1594.6,
+        "median": 1603.0,
+        "p75": 2179.75,
+        "p95": 3157.25,
+        "max": 3162.0
+      },
+      "reasoning_tokens_usage": null,
+      "reasoning_tokens_offline": null,
+      "content_tokens_offline": null,
+      "reasoning_chars": {
+        "count": 20,
+        "min": 16.0,
+        "mean": 4636.5,
+        "median": 4626.5,
+        "p75": 6377.0,
+        "p95": 9172.65,
+        "max": 9812.0
+      },
+      "content_chars": {
+        "count": 20,
+        "min": 17.0,
+        "mean": 17.35,
+        "median": 17.0,
+        "p75": 18.0,
+        "p95": 18.0,
+        "max": 18.0
+      },
+      "latency_seconds": {
+        "count": 20,
+        "min": 2.5354807935655117,
+        "mean": 86.46133772302419,
+        "median": 87.11118388921022,
+        "p75": 117.76257490739226,
+        "p95": 170.09905617572366,
+        "max": 170.36494160443544
+      }
+    },
+    "det-counterfactual": {
+      "count": 20,
+      "completed_http_success": 20,
+      "strict_format_valid_count": 20,
+      "strict_format_valid_rate": 1.0,
+      "strict_correct_count": 16,
+      "strict_accuracy": 0.8,
+      "accuracy_among_valid": 0.8,
+      "finish_reason_length_count": 0,
+      "finish_reason_length_rate": 0.0,
+      "terminal_status_counts": {
+        "completed": 20
+      },
+      "completion_tokens_reported": {
+        "count": 20,
+        "min": 357.0,
+        "mean": 1088.75,
+        "median": 973.0,
+        "p75": 1305.75,
+        "p95": 2051.8,
+        "max": 2124.0
+      },
+      "output_token_ids_count": {
+        "count": 20,
+        "min": 357.0,
+        "mean": 1088.75,
+        "median": 973.0,
+        "p75": 1305.75,
+        "p95": 2051.8,
+        "max": 2124.0
+      },
+      "reasoning_tokens_usage": null,
+      "reasoning_tokens_offline": null,
+      "content_tokens_offline": null,
+      "reasoning_chars": {
+        "count": 20,
+        "min": 1050.0,
+        "mean": 3747.85,
+        "median": 3184.5,
+        "p75": 4558.75,
+        "p95": 6591.750000000001,
+        "max": 8164.0
+      },
+      "content_chars": {
+        "count": 20,
+        "min": 17.0,
+        "mean": 17.45,
+        "median": 17.0,
+        "p75": 18.0,
+        "p95": 18.0,
+        "max": 18.0
+      },
+      "latency_seconds": {
+        "count": 20,
+        "min": 19.421769861131907,
+        "mean": 58.11680226661265,
+        "median": 51.98452611640096,
+        "p75": 69.41391286533326,
+        "p95": 109.3715708643198,
+        "max": 113.2861098907888
+      }
+    },
+    "ett": {
+      "count": 20,
+      "completed_http_success": 20,
+      "strict_format_valid_count": 20,
+      "strict_format_valid_rate": 1.0,
+      "strict_correct_count": 12,
+      "strict_accuracy": 0.6,
+      "accuracy_among_valid": 0.6,
+      "finish_reason_length_count": 0,
+      "finish_reason_length_rate": 0.0,
+      "terminal_status_counts": {
+        "completed": 20
+      },
+      "completion_tokens_reported": {
+        "count": 20,
+        "min": 466.0,
+        "mean": 1564.55,
+        "median": 1544.5,
+        "p75": 1904.5,
+        "p95": 3059.3500000000004,
+        "max": 3332.0
+      },
+      "output_token_ids_count": {
+        "count": 20,
+        "min": 466.0,
+        "mean": 1564.55,
+        "median": 1544.5,
+        "p75": 1904.5,
+        "p95": 3059.3500000000004,
+        "max": 3332.0
+      },
+      "reasoning_tokens_usage": null,
+      "reasoning_tokens_offline": null,
+      "content_tokens_offline": null,
+      "reasoning_chars": {
+        "count": 20,
+        "min": 1363.0,
+        "mean": 4994.1,
+        "median": 4585.5,
+        "p75": 6051.25,
+        "p95": 9966.75,
+        "max": 11140.0
+      },
+      "content_chars": {
+        "count": 20,
+        "min": 17.0,
+        "mean": 17.65,
+        "median": 18.0,
+        "p75": 18.0,
+        "p95": 18.05,
+        "max": 19.0
+      },
+      "latency_seconds": {
+        "count": 20,
+        "min": 24.711012739688158,
+        "mean": 83.26127971410752,
+        "median": 82.16589264757931,
+        "p75": 101.39175208285451,
+        "p95": 162.27520922236147,
+        "max": 176.9242561161518
+      }
+    },
+    "nde": {
+      "count": 20,
+      "completed_http_success": 20,
+      "strict_format_valid_count": 20,
+      "strict_format_valid_rate": 1.0,
+      "strict_correct_count": 18,
+      "strict_accuracy": 0.9,
+      "accuracy_among_valid": 0.9,
+      "finish_reason_length_count": 0,
+      "finish_reason_length_rate": 0.0,
+      "terminal_status_counts": {
+        "completed": 20
+      },
+      "completion_tokens_reported": {
+        "count": 20,
+        "min": 817.0,
+        "mean": 1773.55,
+        "median": 1552.0,
+        "p75": 2172.25,
+        "p95": 2961.050000000001,
+        "max": 4387.0
+      },
+      "output_token_ids_count": {
+        "count": 20,
+        "min": 817.0,
+        "mean": 1773.55,
+        "median": 1552.0,
+        "p75": 2172.25,
+        "p95": 2961.050000000001,
+        "max": 4387.0
+      },
+      "reasoning_tokens_usage": null,
+      "reasoning_tokens_offline": null,
+      "content_tokens_offline": null,
+      "reasoning_chars": {
+        "count": 20,
+        "min": 2378.0,
+        "mean": 5499.1,
+        "median": 4857.0,
+        "p75": 6360.75,
+        "p95": 9297.900000000005,
+        "max": 16383.0
+      },
+      "content_chars": {
+        "count": 20,
+        "min": 17.0,
+        "mean": 17.5,
+        "median": 17.5,
+        "p75": 18.0,
+        "p95": 18.0,
+        "max": 18.0
+      },
+      "latency_seconds": {
+        "count": 20,
+        "min": 43.226925022900105,
+        "mean": 93.77396022826433,
+        "median": 82.32258412241936,
+        "p75": 115.06985958106816,
+        "p95": 156.58057594355202,
+        "max": 229.97303230315447
+      }
+    },
+    "nie": {
+      "count": 20,
+      "completed_http_success": 20,
+      "strict_format_valid_count": 20,
+      "strict_format_valid_rate": 1.0,
+      "strict_correct_count": 14,
+      "strict_accuracy": 0.7,
+      "accuracy_among_valid": 0.7,
+      "finish_reason_length_count": 0,
+      "finish_reason_length_rate": 0.0,
+      "terminal_status_counts": {
+        "completed": 20
+      },
+      "completion_tokens_reported": {
+        "count": 20,
+        "min": 540.0,
+        "mean": 1290.25,
+        "median": 1193.0,
+        "p75": 1324.5,
+        "p95": 2497.850000000001,
+        "max": 3540.0
+      },
+      "output_token_ids_count": {
+        "count": 20,
+        "min": 540.0,
+        "mean": 1290.25,
+        "median": 1193.0,
+        "p75": 1324.5,
+        "p95": 2497.850000000001,
+        "max": 3540.0
+      },
+      "reasoning_tokens_usage": null,
+      "reasoning_tokens_offline": null,
+      "content_tokens_offline": null,
+      "reasoning_chars": {
+        "count": 20,
+        "min": 1570.0,
+        "mean": 3863.5,
+        "median": 3277.0,
+        "p75": 4793.5,
+        "p95": 8576.75,
+        "max": 9085.0
+      },
+      "content_chars": {
+        "count": 20,
+        "min": 17.0,
+        "mean": 17.5,
+        "median": 17.5,
+        "p75": 18.0,
+        "p95": 18.0,
+        "max": 18.0
+      },
+      "latency_seconds": {
+        "count": 20,
+        "min": 28.46031979471445,
+        "mean": 67.54541297703982,
+        "median": 63.34794704429805,
+        "p75": 69.53846008051187,
+        "p95": 128.61915798150008,
+        "max": 179.31872353330255
+      }
+    }
+  },
+  "by_target_outcome_class": {
+    "baseline_correct": {
+      "count": 50,
+      "completed_http_success": 50,
+      "strict_format_valid_count": 50,
+      "strict_format_valid_rate": 1.0,
+      "strict_correct_count": 49,
+      "strict_accuracy": 0.98,
+      "accuracy_among_valid": 0.98,
+      "finish_reason_length_count": 0,
+      "finish_reason_length_rate": 0.0,
+      "terminal_status_counts": {
+        "completed": 50
+      },
+      "completion_tokens_reported": {
+        "count": 50,
+        "min": 14.0,
+        "mean": 1109.88,
+        "median": 1018.0,
+        "p75": 1305.5,
+        "p95": 2003.7499999999993,
+        "max": 3157.0
+      },
+      "output_token_ids_count": {
+        "count": 50,
+        "min": 14.0,
+        "mean": 1109.88,
+        "median": 1018.0,
+        "p75": 1305.5,
+        "p95": 2003.7499999999993,
+        "max": 3157.0
+      },
+      "reasoning_tokens_usage": null,
+      "reasoning_tokens_offline": null,
+      "content_tokens_offline": null,
+      "reasoning_chars": {
+        "count": 50,
+        "min": 16.0,
+        "mean": 3390.12,
+        "median": 3112.5,
+        "p75": 4723.25,
+        "p95": 5965.0,
+        "max": 7465.0
+      },
+      "content_chars": {
+        "count": 50,
+        "min": 17.0,
+        "mean": 17.54,
+        "median": 18.0,
+        "p75": 18.0,
+        "p95": 18.0,
+        "max": 19.0
+      },
+      "latency_seconds": {
+        "count": 50,
+        "min": 2.5354807935655117,
+        "mean": 59.453199950382114,
+        "median": 55.311810279265046,
+        "p75": 69.52158971317112,
+        "p95": 106.97256479971108,
+        "max": 170.08506220579147
+      }
+    },
+    "baseline_valid_wrong": {
+      "count": 50,
+      "completed_http_success": 50,
+      "strict_format_valid_count": 50,
+      "strict_format_valid_rate": 1.0,
+      "strict_correct_count": 28,
+      "strict_accuracy": 0.56,
+      "accuracy_among_valid": 0.56,
+      "finish_reason_length_count": 0,
+      "finish_reason_length_rate": 0.0,
+      "terminal_status_counts": {
+        "completed": 50
+      },
+      "completion_tokens_reported": {
+        "count": 50,
+        "min": 540.0,
+        "mean": 1814.8,
+        "median": 1693.0,
+        "p75": 2474.5,
+        "p95": 3255.4999999999995,
+        "max": 4387.0
+      },
+      "output_token_ids_count": {
+        "count": 50,
+        "min": 540.0,
+        "mean": 1814.8,
+        "median": 1693.0,
+        "p75": 2474.5,
+        "p95": 3255.4999999999995,
+        "max": 4387.0
+      },
+      "reasoning_tokens_usage": null,
+      "reasoning_tokens_offline": null,
+      "content_tokens_offline": null,
+      "reasoning_chars": {
+        "count": 50,
+        "min": 1930.0,
+        "mean": 5706.3,
+        "median": 5052.0,
+        "p75": 6917.0,
+        "p95": 9863.15,
+        "max": 16383.0
+      },
+      "content_chars": {
+        "count": 50,
+        "min": 17.0,
+        "mean": 17.44,
+        "median": 17.0,
+        "p75": 18.0,
+        "p95": 18.0,
+        "max": 18.0
+      },
+      "latency_seconds": {
+        "count": 50,
+        "min": 28.46031979471445,
+        "mean": 96.21031721323729,
+        "median": 90.91695393249393,
+        "p75": 130.41284702718258,
+        "p95": 173.97256458587944,
+        "max": 229.97303230315447
+      }
+    }
+  },
+  "notes": {
+    "strict_accuracy_denominator": "all 100 frozen targets; missing/invalid outputs count incorrect",
+    "cot_length": "reasoning_tokens_offline uses the local Qwen3.6 tokenizer when supplied; reasoning_chars is always retained as a tokenizer-independent length metric",
+    "baseline_groups": "baseline_correct measures retention; baseline_valid_wrong measures correction rate"
+  }
+}

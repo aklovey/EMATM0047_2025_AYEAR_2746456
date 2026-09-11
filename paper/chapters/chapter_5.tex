@@ -1,0 +1,95 @@
+\chapter{Results}\label{ch:5}
+
+\section{Construction, compression and fallback}\label{sec:5.1}
+
+Phase56 produced accepted shorter traces for 52 of 56 parent questions, an acceptance rate of 92.86\% \hyperref[sec:A.2]{[E3]}. Across the 52 accepted pairs, reasoning tokens fell from 116,826 to 75,074, a reduction of 35.74\%. The median item-level reduction was 38.78\%, with an interquartile range of 30.01\%--45.89\%. The selected outputs comprised 22 KEEP and 30 DELETE continuations; no REPLACE calls were recorded. Four parent questions had no accepted compressed candidate and remained in the construction denominator.
+
+The deployment bank retained all 56 demonstration identities, using the original parents for the four construction failures. Its aggregate reasoning length was 87,012 tokens, compared with 128,764 for the full bank, a reduction of 32.43\%. Fallback was needed to support two distinct same-type examples for ETT, which had only one accepted compressed trace. In the 300-target evaluation, PNS used parent fallbacks in 117 of 600 demonstration positions; in the fresh evaluation, it used fallbacks in 107 of 492 positions. FULL used full reasoning in every position. The same demonstration identities and order were retained across the three conditions using examples.
+
+Figure~\ref{fig:5.1} shows how compression varied across the 52 accepted traces.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth,height=.70\textheight,keepaspectratio]{figures/figure5_1_phase56_compression.pdf}
+\caption[Compression among the 52 accepted Phase56 traces]{Compression among the 52 accepted Phase56 traces. (a) Each point pairs parent and compressed reasoning lengths; the dashed line denotes equal length. (b) The histogram uses 10-percentage-point bins. Its dashed line marks the median per-trace reduction of 38.78\% (interquartile range 30.01\%--45.89\%); the aggregate reduction was 35.74\%. The four unaccepted parents and their deployment fallbacks are excluded.}\label{fig:5.1}
+\end{figure}
+
+\section{Paired evaluations in two cohorts}\label{sec:5.2}
+
+Table~\ref{tab:5.1} reports the four conditions and Table~\ref{tab:5.2} reports the three prespecified PNS contrasts per cohort. Each cohort was analysed separately, and all six contrasts retain the joint Holm correction. Comparisons with ZERO include the effect of adding demonstrations and therefore do not isolate compression.
+
+\begin{table}[htbp]
+\centering
+\begingroup
+\setlength{\tabcolsep}{2pt}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.115\linewidth}>{\raggedright\arraybackslash}p{0.135\linewidth}>{\raggedright\arraybackslash}p{0.12\linewidth}>{\raggedright\arraybackslash}p{0.16\linewidth}>{\raggedright\arraybackslash}p{0.195\linewidth}>{\raggedright\arraybackslash}p{0.195\linewidth}@{}}
+\toprule
+\textbf{Cohort} & \textbf{Condition} & \textbf{Strict accuracy} & \textbf{Format valid} & \textbf{Input tokens} & \textbf{Output tokens} \\
+\midrule
+Main 300 & ZERO & 254/300\newline (84.67\%) & 293/300 & 66,982 & 543,770 \\
+Main 300 & FULL & 277/300\newline (92.33\%) & 300/300 & 2,093,177 & 370,815 \\
+Main 300 & HEURISTIC & 272/300\newline (90.67\%) & 297/300 & 1,670,645 & 400,950 \\
+Main 300 & PNS & 279/300\newline (93.00\%) & 300/300 & 1,670,526 & 370,548 \\
+Fresh 246 & ZERO & 187/246\newline (76.02\%) & 240/246 & 65,759 & 823,411 \\
+Fresh 246 & FULL & 208/246\newline (84.55\%) & 246/246 & 1,898,530 & 446,995 \\
+Fresh 246 & HEURISTIC & 208/246\newline (84.55\%) & 243/246 & 1,545,106 & 466,829 \\
+Fresh 246 & PNS & 224/246\newline (91.06\%) & 245/246 & 1,545,034 & 397,597 \\
+\bottomrule
+\end{tabular}
+\endgroup
+\caption[Four-condition results for the two evaluation cohorts]{Four-condition results for the two evaluation cohorts. Strict accuracy retains all planned targets, including invalid or truncated outputs. Input and output columns are measured token counts and exclude demonstration construction costs.}\label{tab:5.1}
+\end{table}
+
+\subsection{Previously evaluated 300-target cohort}\label{sec:5.2.1}
+
+PNS answered 279/300 questions correctly, compared with 277/300 for FULL and 272/300 for HEURISTIC. The paired differences were +0.67 and +2.33 percentage points, respectively. Both full-CPT cluster-bootstrap intervals included zero, leaving the accuracy differences unresolved. The analysis retained all 300 targets and accounted for their 271 numerical groups; the documented historical exposure remained a limitation. All 1,200 requests completed without API failures or length truncation, and measured prompt counts matched the prepared counts \hyperref[sec:A.2]{[E3]}.
+
+PNS used 20.19\% fewer input tokens than FULL, a saving of 422,651 tokens. Output use fell by 267 tokens, or 0.072\%. PNS and HEURISTIC input totals differed by 119 tokens across the cohort, so their accuracy comparison was closely matched for input length. ZERO used substantially fewer input tokens than any demonstration condition because it contained no examples.
+
+\subsection{Newly generated numerical instances}\label{sec:5.2.2}
+
+All 984 planned requests returned terminal responses without API failures, and measured prompt counts matched preparation \hyperref[sec:A.2]{[E6]}. ZERO had three length truncations; the other conditions had none. Strict scoring retained all 246 targets. The evaluation retained the frozen demonstration policy and used the same rule for computing target-specific output caps as the earlier cohort.
+
+PNS answered 224/246 questions correctly, compared with 208/246 for both FULL and HEURISTIC. Each accuracy gain was 6.50 percentage points. The FULL comparison comprised 21 gains and five losses; the HEURISTIC comparison comprised 24 gains and eight losses. Both pointwise bootstrap intervals excluded zero, and both comparisons remained significant after the six-comparison Holm adjustment (Table~\ref{tab:5.2}). These accuracy gains were observed for the evaluated construction and fallback policy as a whole.
+
+PNS used 18.62\% fewer input tokens and 11.05\% fewer output tokens than FULL. HEURISTIC used 72 more input tokens than PNS across the entire cohort, providing a close match in total input use. The accuracy gains and lower input use were observed on new numerical instances sampled under the fixed validity and novelty filters in Section~\ref{sec:4.1.1}. These instances reused existing graph families and story templates.
+
+\begin{table}[htbp]
+\centering
+\begingroup
+\setlength{\tabcolsep}{2pt}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}llrcrl@{}}
+\toprule
+\textbf{Cohort} & \textbf{Comparison} & \textbf{\ensuremath{\Delta} (pp)} & \textbf{95\% CI (pp)} & \shortstack[l]{\textbf{Gains /}\\\textbf{losses}} & \textbf{Holm p} \\
+\midrule
+Main 300 & PNS \ensuremath{-} FULL & +0.67 & [-2.02, +3.49] & 10 / 8 & 0.81457 \\
+Main 300 & PNS \ensuremath{-} HEURISTIC & +2.33 & [-0.33, +5.05] & 12 / 5 & 0.28544 \\
+Main 300 & PNS \ensuremath{-} ZERO & +8.33 & [+5.02, +11.84] & 28 / 3 & $2.5\times10^{-5}$ \\
+Fresh 246 & PNS \ensuremath{-} FULL & +6.50 & [+2.44, +10.57] & 21 / 5 & 0.00998 \\
+Fresh 246 & PNS \ensuremath{-} HEURISTIC & +6.50 & [+2.03, +10.98] & 24 / 8 & 0.02100 \\
+Fresh 246 & PNS \ensuremath{-} ZERO & +15.04 & [+10.16, +20.33] & 41 / 4 & $5.6\times10^{-8}$ \\
+\bottomrule
+\end{tabular*}
+\endgroup
+\caption[Paired accuracy differences for the six prespecified comparisons]{Paired accuracy differences for the six prespecified comparisons. Differences and 95\% intervals are in percentage points. Intervals are pointwise; Holm adjustment applies to p-values across all six comparisons. Gains and losses count paired target outcomes.}\label{tab:5.2}
+\end{table}
+
+The 300-target comparisons use full-CPT cluster-bootstrap intervals and group sign-flip Monte Carlo tests. The fresh comparisons use instance-level paired bootstrap intervals and exact McNemar tests. For main PNS--ZERO, the unadjusted p-value reached the Monte Carlo resolution floor of 1/200001; Table~\ref{tab:5.2} reports its Holm-adjusted value. Section~\ref{sec:4.4} gives the statistical settings and assumptions.
+
+Figure~\ref{fig:5.2} summarises the accuracy--input trade-off separately for the two cohorts.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth,height=.70\textheight,keepaspectratio]{figures/figure5_2_evaluation_efficiency.pdf}
+\caption[Input use and paired accuracy differences among demonstration conditions]{Input use and paired accuracy differences among demonstration conditions. Bars show mean complete-prompt input tokens per target, rounded to the nearest token. Circles and horizontal lines show PNS-minus-FULL or PNS-minus-HEURISTIC accuracy differences and pointwise 95\% bootstrap intervals. (a) The 300-target cohort uses 271 full-CPT groups. (b) The fresh cohort uses 246 distinct numerical-instance groups. The cohorts were analysed separately. Table~\ref{tab:5.2} reports Holm-adjusted p-values for all six contrasts, including PNS versus ZERO; the displayed intervals remain pointwise. Input savings exclude construction costs.}\label{fig:5.2}
+\end{figure}
+
+\section{Traceability checks and semantic failures}\label{sec:5.3}
+
+Independent component calculations agreed with the reference answer labels for all 56 demonstration questions \hyperref[sec:A.2]{[E5]}. Four source estimand values and several displayed arithmetic expressions nevertheless disagreed with independent calculations. These discrepancies concern source components, not counts of incorrect compressed traces. All 52 accepted traces passed segmentation, token recount and exact prefix-plus-suffix reconstruction, which verified the retained and generated text.
+
+A secondary model-based semantic review using Codex examined eight accepted traces and four candidates from unaccepted questions \hyperref[sec:A.2]{[E5]}. The underlying model version was not recorded. Three of the eight accepted traces received substantive flags, including an incorrect auxiliary effect calculation, an unsupported positive-effect claim and an unjustified formula under confounding. All four candidates from unaccepted questions were flagged. The final answers of all 12 candidates agreed with independent recomputation, showing that answer agreement can coexist with errors in the derivation. Section~\ref{sec:6.2} discusses representative accepted and unaccepted cases.
+
+Review decisions were fixed before source identities and original judge decisions were revealed, although the review prompts contained reference information. This purposive sample supports case analysis rather than an estimate of the population false-acceptance rate. The review left the frozen bank and target scores unchanged. Detailed calculations, candidate assessments and source records are retained in the electronic supplement.
+
+A separate public-only Qwen review covered 52 accepted traces and four candidate continuations from unaccepted questions, distinct from the deployment parent fallbacks \hyperref[sec:A.2]{[E8]}. It returned 29 parseable self-reported passes and 27 truncated unknowns. The diagnostic did not alter the bank or target scores and did not provide an independent semantic reference; its protocol and quotation checks are retained in the electronic supplement.

@@ -1,0 +1,118 @@
+{
+  "status": "OFFLINE_FROZEN_FRESH246_READY_NO_MODEL_CALLS",
+  "base_seed": 2026092000,
+  "order_seed": 2026092099,
+  "quota": {
+    "ate": 94,
+    "ett": 82,
+    "nde": 20,
+    "nie": 50
+  },
+  "stories": {
+    "ate": [
+      "smoking_frontdoor"
+    ],
+    "ett": [
+      "smoking_frontdoor"
+    ],
+    "nde": [
+      "alarm",
+      "blood_pressure",
+      "encouagement_program",
+      "gender_admission",
+      "neg_mediation",
+      "penguin"
+    ],
+    "nie": [
+      "alarm",
+      "blood_pressure",
+      "encouagement_program",
+      "gender_admission",
+      "neg_mediation",
+      "penguin"
+    ]
+  },
+  "generator": "unmodified author RandomBuilder + generate_questions",
+  "distribution": "independent Uniform(0,1) over all CPT cells",
+  "expected_graphs": {
+    "ate": "frontdoor",
+    "ett": "frontdoor",
+    "nde": "mediation",
+    "nie": "mediation"
+  },
+  "query_polarity": "alternate True/False by within-type accepted target index, set before each generation; no answer-balance selection",
+  "qid_start": 1100000,
+  "exclude_full_CPT_sources": [
+    "historical meta-models7064",
+    "probe8 models",
+    "already selected fresh models"
+  ],
+  "exclude_relevant_CPT_definition": {
+    "frontdoor": [
+      "p(V3 | X)",
+      "p(Y | V1, V3)"
+    ],
+    "mediation": [
+      "p(V2 | X)",
+      "p(Y | X, V2)"
+    ]
+  },
+  "fixed_exclusion_rules": [
+    "generation failure or missing query",
+    "author answer not yes/no",
+    "full or relevant CPT duplicate",
+    "full-precision independent numeric disagreement >1e-8",
+    "full-precision independent label disagreement",
+    "rounded-public probability label disagreement or zero/unknown",
+    "duplicate public text"
+  ],
+  "model_calls": 0,
+  "official_commit": "3d2d1169b4b939a09048a6a75956c8972a93cc38",
+  "n": 246,
+  "unique_groups": 246,
+  "unique_full_CPT": 246,
+  "unique_relevant_CPT": 246,
+  "type_counts": {
+    "ate": 94,
+    "ett": 82,
+    "nie": 50,
+    "nde": 20
+  },
+  "answer_counts": {
+    "yes": 116,
+    "no": 130
+  },
+  "story_counts": {
+    "smoking_frontdoor": 176,
+    "alarm": 13,
+    "gender_admission": 11,
+    "blood_pressure": 13,
+    "neg_mediation": 11,
+    "encouagement_program": 11,
+    "penguin": 11
+  },
+  "sampling_attempts": 257,
+  "status_counts": {
+    "selected": 246,
+    "excluded": 11
+  },
+  "exclusion_counts": {
+    "full_precision_label_disagreement": 10,
+    "public_precision_label_conflict_or_zero": 10
+  },
+  "generation_seconds": 20.671000000000276,
+  "versions": {
+    "pomegranate": "0.14.8",
+    "omnibelt": "0.7.6",
+    "omnifig": "1.0.1",
+    "omniply": "0.1.1",
+    "numpy": "1.22.4",
+    "pandas": "2.1.4",
+    "scipy": "1.10.1",
+    "networkx": "3.1"
+  },
+  "official_question_id_note": "Author generate_questions emits desc_id and within-model query index but no global question_id; our evaluation question_id is a separate explicit namespace.",
+  "proposal_distribution": "independent Uniform(0,1) over all CPT cells",
+  "selected_distribution": "Uniform-CPT proposal conditioned on prewritten validity, label/public-precision agreement, and novelty criteria; not unfiltered Uniform and not the historical balanced/difficulty distribution",
+  "local_verification_status": "PASS_LOCAL_INDEPENDENT_RECOMPUTATION_FRESH246"
+}

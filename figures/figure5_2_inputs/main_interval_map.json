@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "cohort_id": "main300",
+  "source_json": "main_CPT_sensitivity.json",
+  "n_pointer": "/n_frozen_targets",
+  "method_label": "95% paired CPT-cluster bootstrap",
+  "resampling_unit": "271 identical complete CPT mechanism groups",
+  "confidence_level": 0.95,
+  "comparisons": {
+    "PNS_COT:FULL_COT": {
+      "delta_pointer": "/comparisons/PNS_COT:FULL_COT/accuracy_delta",
+      "ci_pointer": "/comparisons/PNS_COT:FULL_COT/paired_CPT_cluster_bootstrap_ci95"
+    },
+    "PNS_COT:HEURISTIC_SHORT": {
+      "delta_pointer": "/comparisons/PNS_COT:HEURISTIC_SHORT/accuracy_delta",
+      "ci_pointer": "/comparisons/PNS_COT:HEURISTIC_SHORT/paired_CPT_cluster_bootstrap_ci95"
+    }
+  }
+}

@@ -1,0 +1,88 @@
+=== Worked example 1 ===
+[Problem]
+Background:
+Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Medication has a direct effect on blood pressure and heart condition. Blood pressure has a direct effect on heart condition.
+
+Given information:
+For people not taking any medication and with low blood pressure, the probability of healthy heart is 83%. For people not taking any medication and with high blood pressure, the probability of healthy heart is 43%. For people taking medication and with low blood pressure, the probability of healthy heart is 73%. For people taking medication and with high blood pressure, the probability of healthy heart is 50%. For people not taking any medication, the probability of high blood pressure is 82%. For people taking medication, the probability of high blood pressure is 1%.
+
+Question:
+Does medication positively affect heart condition through blood pressure?
+
+Candidate answers:
+Yes
+No
+
+[Assistant response]
+<think>
+The user wants to determine if medication positively affects heart condition *through* blood pressure based on a hypothetical scenario.
+This is a causal inference question asking about indirect effects.
+Let's represent the variables:
+M: Medication (1 = taking, 0 = not taking)
+B: Blood pressure (1 = high, 0 = low)
+H: Heart condition (1 = healthy, 0 = unhealthy)
+
+Given probabilities:
+P(H=1 | M=0, B=0) = 0.83
+P(H=1 | M=0, B=1) = 0.43
+P(H=1 | M=1, B=0) = 0.73
+P(H=1 | M=1, B=1) = 0.50
+
+P(B=1 | M=0) = 0.82
+P(B=1 | M=1) = 0.01
+
+We need to check the indirect effect of M on H through B.
+Medication reduces high blood pressure significantly (from 82% to 1%).
+Does high blood pressure negatively affect heart condition?
+P(H=1 | M=0, B=1) = 0.43 vs P(H=1 | M=0, B=0) = 0.83.
+So high BP decreases probability of healthy heart (0.43 < 0.83).
+Medication reduces high BP, which in turn increases healthy heart probability.
+Therefore, medication positively affects heart condition through blood pressure.
+
+Let's verify using the definition of indirect effect in a simple mediation setting.
+Effect of M on B: M=1 decreases P(B=1) from 0.82 to 0.01. So M -> B is negative (M=1 lowers B=1).
+Effect of B on H: B=1 decreases P(H=1) from 0.83 to 0.43 (at M=0) and from 0.73 to 0.50 (at M=1). So B -> H is negative (B=1 lowers H=1).
+Since M -> B is negative and B -> H is negative, the indirect effect is negative * negative = positive.
+Thus, medication positively affects heart condition through blood pressure.
+
+Wait, is there any trick? The question asks "Does medication positively affect heart condition through blood pressure?"
+Yes, it reduces high blood pressure, and high blood pressure harms the heart. So the pathway is beneficial.
+Therefore, the answer should be Yes.
+
+Let's double check probabilities.
+P(H=1|B=1, M=0) = 0.43 < P(H=1|B=0, M=0) = 0.83. High BP is bad for heart.
+P(B=1|M=1) = 0.01 < P(B=1|M=0) = 0.82. Medication lowers BP.
+Lowering a bad factor is a positive effect.
+So yes.
+
+I will output {"answer":"yes"}.
+Check format: exactly one JSON object: {"answer":"yes"} or {"answer":"no"}.
+The prompt says "Candidate answers: Yes No". I will output {"answer":"yes"}.
+All good.
+Let's consider if "positively affect" means increases the probability of healthy heart. Yes.
+Medication -> lower BP -> higher probability of healthy heart.
+Indirect effect is positive.
+Answer is yes.
+Done. 
+One minor point: sometimes these questions come from a benchmark like CLUTRR or similar causal QA datasets. They usually expect "yes" or "no". I will stick with "yes".
+The reasoning is solid.
+Output matches requirement.
+Done. 
+Proceed. 
+Self-Correction/Verification during thought:
+Could there be a direct negative effect? The question specifically asks about the effect *through blood pressure* (indirect effect).
+Indirect effect = Effect of M on B * Effect of B on H.
+Effect of M on B: M=1 reduces P(B=1). So M -> B is negative.
+Effect of B on H: B=1 reduces P(H=1). So B -> H is negative.
+Product is positive.
+So yes.
+Final answer: {"answer":"yes"}. 
+Matches instructions.
+Done. 
+Output Generation. 
+{"answer":"yes"}
+
+</think>
+
+{"answer":"yes"}
+

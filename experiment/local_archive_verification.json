@@ -1,0 +1,12 @@
+{
+  "archive_bytes": 16542678,
+  "members": 2357,
+  "response_counts": {
+    "dev10": 40,
+    "main300": 1200,
+    "fresh246": 984,
+    "self_review56": 56
+  },
+  "readable": true,
+  "model_generations": 2280
+}

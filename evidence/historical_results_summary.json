@@ -1,0 +1,398 @@
+{
+  "qwentest100_2shot_20260817": {
+    "n": 100,
+    "unique_qids": 100,
+    "correct": 71,
+    "valid": 100,
+    "completed": 100,
+    "prompt_tokens_reported": {
+      "n": 100,
+      "total": 671354,
+      "mean": 6713.54,
+      "median": 6964.5
+    },
+    "completion_tokens_reported": {
+      "n": 100,
+      "total": 147121,
+      "mean": 1471.21,
+      "median": 1274.5
+    },
+    "latency_seconds": {
+      "n": 100,
+      "total": 9570.341380812228,
+      "mean": 95.70341380812228,
+      "median": 79.64805733598769
+    },
+    "by_type": {
+      "ate": {
+        "n": 20,
+        "correct": 17
+      },
+      "det-counterfactual": {
+        "n": 20,
+        "correct": 15
+      },
+      "ett": {
+        "n": 20,
+        "correct": 12
+      },
+      "nde": {
+        "n": 20,
+        "correct": 14
+      },
+      "nie": {
+        "n": 20,
+        "correct": 13
+      }
+    },
+    "source": "C:\\Users\\aklovey\\Documents\\Codex\\2026-08-17\\qwen36-fewshot-icl-pilot\\outputs\\results\\qwentest100_2shot_20260817\\results\\scored_results.jsonl",
+    "paired_to_FULL": {
+      "paired_n": 100,
+      "gain": 0,
+      "loss": 0,
+      "gain_qids": [],
+      "loss_qids": [],
+      "mcnemar_exact_two_sided_p": 1.0,
+      "accuracy_difference_pp": 0.0,
+      "question_level_percentile_bootstrap_95CI_pp": [
+        0.0,
+        0.0
+      ],
+      "bootstrap_note": "exploratory, question-level resampling; instance grouping handled separately",
+      "exact_empirical_bootstrap_95CI_pp": [
+        0.0,
+        0.0
+      ],
+      "exact_empirical_bootstrap_method": "Exact n-fold convolution of empirical {-1,0,+1} paired differences; percentile quantiles .025 and .975, no Monte Carlo approximation. Exploratory, not selection-adjusted."
+    }
+  },
+  "qwentest100_causalmath_score_faithful_fixed_update_qwen36_deepseekv4pro_2shot_20260818": {
+    "n": 100,
+    "unique_qids": 100,
+    "correct": 63,
+    "valid": 79,
+    "completed": 100,
+    "prompt_tokens_reported": {
+      "n": 100,
+      "total": 581160,
+      "mean": 5811.6,
+      "median": 5748.5
+    },
+    "completion_tokens_reported": {
+      "n": 100,
+      "total": 133663,
+      "mean": 1336.63,
+      "median": 1188.5
+    },
+    "latency_seconds": {
+      "n": 100,
+      "total": 8408.452004000166,
+      "mean": 84.08452004000166,
+      "median": 75.45591694998438
+    },
+    "by_type": {
+      "ate": {
+        "n": 20,
+        "correct": 17
+      },
+      "det-counterfactual": {
+        "n": 20,
+        "correct": 12
+      },
+      "ett": {
+        "n": 20,
+        "correct": 4
+      },
+      "nde": {
+        "n": 20,
+        "correct": 16
+      },
+      "nie": {
+        "n": 20,
+        "correct": 14
+      }
+    },
+    "source": "C:\\Users\\aklovey\\Documents\\Codex\\2026-08-17\\qwen36-fewshot-icl-pilot\\outputs\\results\\qwentest100_causalmath_score_faithful_fixed_update_qwen36_deepseekv4pro_2shot_20260818\\results\\scored_results.jsonl",
+    "paired_to_FULL": {
+      "paired_n": 100,
+      "gain": 6,
+      "loss": 14,
+      "gain_qids": [
+        "5938",
+        "8684",
+        "16239",
+        "17434",
+        "21411",
+        "27509"
+      ],
+      "loss_qids": [
+        "421",
+        "716",
+        "1047",
+        "3766",
+        "4826",
+        "8127",
+        "9607",
+        "11509",
+        "11862",
+        "19035",
+        "21007",
+        "27471",
+        "30473",
+        "30674"
+      ],
+      "mcnemar_exact_two_sided_p": 0.11531829833984375,
+      "accuracy_difference_pp": -8.0,
+      "question_level_percentile_bootstrap_95CI_pp": [
+        -17.0,
+        1.0
+      ],
+      "bootstrap_note": "exploratory, question-level resampling; instance grouping handled separately"
+    }
+  },
+  "qwentest100_causalmath_score_faithful_fixed_update_qwen36_deepseekv4pro_2shot_exact21_repaired_demo_patch_final_20260818": {
+    "n": 21,
+    "unique_qids": 21,
+    "correct": 6,
+    "valid": 9,
+    "completed": 21,
+    "prompt_tokens_reported": {
+      "n": 21,
+      "total": 129369,
+      "mean": 6160.428571428572,
+      "median": 6744
+    },
+    "completion_tokens_reported": {
+      "n": 21,
+      "total": 47161,
+      "mean": 2245.7619047619046,
+      "median": 1884
+    },
+    "latency_seconds": {
+      "n": 21,
+      "total": 2901.2031606491655,
+      "mean": 138.15253145948407,
+      "median": 118.70115645602345
+    },
+    "by_type": {
+      "det-counterfactual": {
+        "n": 3,
+        "correct": 0
+      },
+      "ett": {
+        "n": 16,
+        "correct": 4
+      },
+      "nie": {
+        "n": 2,
+        "correct": 2
+      }
+    },
+    "source": "C:\\Users\\aklovey\\Documents\\Codex\\2026-08-17\\qwen36-fewshot-icl-pilot\\outputs\\results\\qwentest100_causalmath_score_faithful_fixed_update_qwen36_deepseekv4pro_2shot_exact21_repaired_demo_patch_final_20260818\\results\\scored_results.jsonl",
+    "paired_to_FULL": {
+      "paired_n": 21,
+      "gain": 2,
+      "loss": 8,
+      "gain_qids": [
+        "351",
+        "2246"
+      ],
+      "loss_qids": [
+        "716",
+        "3766",
+        "4826",
+        "8127",
+        "9607",
+        "11509",
+        "19035",
+        "30674"
+      ],
+      "mcnemar_exact_two_sided_p": 0.109375,
+      "accuracy_difference_pp": -28.571428571428573
+    }
+  },
+  "qwentest100_pns_cot_2shot_exhaustive_original_audit_20260817": {
+    "n": 100,
+    "unique_qids": 100,
+    "correct": 71,
+    "valid": 97,
+    "completed": 100,
+    "prompt_tokens_reported": {
+      "n": 100,
+      "total": 458093,
+      "mean": 4580.93,
+      "median": 4279.5
+    },
+    "completion_tokens_reported": {
+      "n": 100,
+      "total": 116649,
+      "mean": 1166.49,
+      "median": 1085.0
+    },
+    "latency_seconds": {
+      "n": 100,
+      "total": 8921.970635216683,
+      "mean": 89.21970635216684,
+      "median": 75.77372018434107
+    },
+    "by_type": {
+      "ate": {
+        "n": 20,
+        "correct": 15
+      },
+      "det-counterfactual": {
+        "n": 20,
+        "correct": 15
+      },
+      "ett": {
+        "n": 20,
+        "correct": 12
+      },
+      "nde": {
+        "n": 20,
+        "correct": 16
+      },
+      "nie": {
+        "n": 20,
+        "correct": 13
+      }
+    },
+    "source": "C:\\Users\\aklovey\\Documents\\Codex\\2026-08-17\\qwen36-fewshot-icl-pilot\\outputs\\results\\qwentest100_pns_cot_2shot_exhaustive_original_audit_20260817\\results\\scored_results.jsonl",
+    "paired_to_FULL": {
+      "paired_n": 100,
+      "gain": 7,
+      "loss": 7,
+      "gain_qids": [
+        "5938",
+        "8684",
+        "12679",
+        "14333",
+        "15514",
+        "17434",
+        "21411"
+      ],
+      "loss_qids": [
+        "1047",
+        "3766",
+        "8277",
+        "11509",
+        "15730",
+        "19035",
+        "23628"
+      ],
+      "mcnemar_exact_two_sided_p": 1.0,
+      "accuracy_difference_pp": 0.0,
+      "question_level_percentile_bootstrap_95CI_pp": [
+        -7.000000000000001,
+        7.000000000000001
+      ],
+      "bootstrap_note": "exploratory, question-level resampling; instance grouping handled separately",
+      "exact_empirical_bootstrap_95CI_pp": [
+        -7.0,
+        7.0
+      ],
+      "exact_empirical_bootstrap_method": "Exact n-fold convolution of empirical {-1,0,+1} paired differences; percentile quantiles .025 and .975, no Monte Carlo approximation. Exploratory, not selection-adjusted."
+    }
+  },
+  "qwentest100_pns_cot_2shot_strong_20260817": {
+    "n": 100,
+    "unique_qids": 100,
+    "correct": 77,
+    "valid": 100,
+    "completed": 100,
+    "prompt_tokens_reported": {
+      "n": 100,
+      "total": 601524,
+      "mean": 6015.24,
+      "median": 6794.0
+    },
+    "completion_tokens_reported": {
+      "n": 100,
+      "total": 146234,
+      "mean": 1462.34,
+      "median": 1250.5
+    },
+    "latency_seconds": {
+      "n": 100,
+      "total": 7783.17585818097,
+      "mean": 77.8317585818097,
+      "median": 66.46562886424363
+    },
+    "by_type": {
+      "ate": {
+        "n": 20,
+        "correct": 17
+      },
+      "det-counterfactual": {
+        "n": 20,
+        "correct": 16
+      },
+      "ett": {
+        "n": 20,
+        "correct": 12
+      },
+      "nde": {
+        "n": 20,
+        "correct": 18
+      },
+      "nie": {
+        "n": 20,
+        "correct": 14
+      }
+    },
+    "source": "C:\\Users\\aklovey\\Documents\\Codex\\2026-08-17\\qwen36-fewshot-icl-pilot\\outputs\\results\\qwentest100_pns_cot_2shot_strong_20260817\\results\\scored_results.jsonl",
+    "paired_to_FULL": {
+      "paired_n": 100,
+      "gain": 7,
+      "loss": 1,
+      "gain_qids": [
+        "351",
+        "5938",
+        "11545",
+        "12679",
+        "17434",
+        "21411",
+        "30900"
+      ],
+      "loss_qids": [
+        "23372"
+      ],
+      "mcnemar_exact_two_sided_p": 0.0703125,
+      "accuracy_difference_pp": 6.0,
+      "question_level_percentile_bootstrap_95CI_pp": [
+        1.0,
+        12.0
+      ],
+      "bootstrap_note": "exploratory, question-level resampling; instance grouping handled separately",
+      "exact_empirical_bootstrap_95CI_pp": [
+        1.0,
+        12.0
+      ],
+      "exact_empirical_bootstrap_method": "Exact n-fold convolution of empirical {-1,0,+1} paired differences; percentile quantiles .025 and .975, no Monte Carlo approximation. Exploratory, not selection-adjusted."
+    }
+  },
+  "token_amortization": {
+    "PNS56": {
+      "input_tokens_saved_per_target": 2132.61,
+      "output_tokens_saved_per_target": 304.72,
+      "total_tokens_saved_per_target": 2437.33,
+      "input_token_count_ratio": 2879.8247218197416,
+      "output_token_count_ratio": 47482.19020740352,
+      "unweighted_total_token_count_ratio": 8456.10401545954,
+      "unweighted_total_ratio_100_target_batches": 84.56104015459539,
+      "formula_weighted": "(6141543 + w * 14468773) / (2132.61 + w * 304.72)",
+      "caveat": "Pure token-count ratio at this pilot usage mix, not monetary or GPU break-even; excludes parent creation and earlier/later experiments; completion savings are observed outcomes rather than fixed guarantees."
+    },
+    "Strong14": {
+      "input_tokens_saved_per_target": 698.3,
+      "output_tokens_saved_per_target": 8.87,
+      "total_tokens_saved_per_target": 707.17,
+      "input_token_count_ratio": 8794.992123729056,
+      "output_token_count_ratio": 1631203.2694475763,
+      "unweighted_total_token_count_ratio": 29144.782725511548,
+      "unweighted_total_ratio_100_target_batches": 291.4478272551155,
+      "formula_weighted": "(6141543 + w * 14468773) / (698.3 + w * 8.87)",
+      "caveat": "Pure token-count ratio at this pilot usage mix, not monetary or GPU break-even; excludes parent creation and earlier/later experiments; completion savings are observed outcomes rather than fixed guarantees."
+    }
+  }
+}

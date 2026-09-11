@@ -1,0 +1,5354 @@
+{
+  "status": "COMPLETE_READ_ONLY_TARGET_AND_MODEL_AUDIT",
+  "prediction_files_read": 0,
+  "model_calls": 0,
+  "targets_mutated": false,
+  "analysis_role": "data quality and group-bootstrap sensitivity only; keep existing primary analysis and frozen targets",
+  "source_files": {
+    "main300": "C:\\Users\\aklovey\\Documents\\Codex\\2026-09-10\\9-4-cause-1-8-8\\work\\evaluation\\freeze300\\targets_public.jsonl",
+    "demo56": "C:\\Users\\aklovey\\Documents\\Codex\\2026-09-10\\9-4-cause-1-8-8\\work\\evaluation\\canonical56_with_heuristic.jsonl",
+    "core256": "C:\\Users\\aklovey\\Documents\\Codex\\2026-08-17\\qwen36-pns-256\\work\\input_validation_copy\\tiers\\pns_core_ready.jsonl",
+    "challenge100": "C:\\Users\\aklovey\\Documents\\Codex\\2026-08-17\\qwen36-fewshot-icl-pilot\\outputs\\plan\\qwentest100.jsonl"
+  },
+  "normalization": {
+    "full": "Exact graph_id plus sorted complete CPT mapping; roots unwrapped from scalar/length-1-list to float; all numeric cells normalized to float; parent order and axes retained. No rounding/tolerance/hash, no merging merely on graph_id.",
+    "fresh_relevant": "Exactly the existing fresh signature subsets for frontdoor and mediation only; other graph types not covered.",
+    "fresh_relevant_keys": {
+      "frontdoor": [
+        "p(V3 | X)",
+        "p(Y | V1, V3)"
+      ],
+      "mediation": [
+        "p(V2 | X)",
+        "p(Y | X, V2)"
+      ]
+    },
+    "extended_core": "Exploratory extension to all graphs: keep all non-root CPTs except the treatment X equation. Equals fresh subset definition on frontdoor/mediation. Root distributions and X mechanisms may matter to causal effects; matching this partial signature does NOT prove identical full SCM or identical query answer.",
+    "scope_limit": "Canonical-variable numerical SCM identity, not necessarily the same story semantics; no graph-isomorphism or approximate-CPT merging."
+  },
+  "all_meta_models": {
+    "rows": 7064,
+    "unique_model_ids": 7064,
+    "unique_full_CPT": 4256,
+    "unique_fresh_relevant_CPT": 828,
+    "unique_extended_core_CPT": 4252
+  },
+  "within_sets": {
+    "main300": {
+      "full": {
+        "total_qids": 300,
+        "covered_qids": 300,
+        "mechanism_groups": 271,
+        "duplicate_mechanism_groups": 16,
+        "qids_in_duplicate_groups": 45,
+        "excess_qids_over_one_per_group": 29,
+        "largest_group_size": 4,
+        "duplicate_groups": {
+          "full_cpt:01070": [
+            29734,
+            30742,
+            29879
+          ],
+          "full_cpt:01069": [
+            9772,
+            29728,
+            29594,
+            30021
+          ],
+          "full_cpt:03113": [
+            30734,
+            29719,
+            9542,
+            9653
+          ],
+          "full_cpt:02308": [
+            30767,
+            20562,
+            30620
+          ],
+          "full_cpt:02310": [
+            20494,
+            10103,
+            10185
+          ],
+          "full_cpt:02311": [
+            10087,
+            29758,
+            20519
+          ],
+          "full_cpt:00392": [
+            15182,
+            4790
+          ],
+          "full_cpt:02974": [
+            29995,
+            30426,
+            19976
+          ],
+          "full_cpt:00092": [
+            20444,
+            10332,
+            29938,
+            10052
+          ],
+          "full_cpt:03693": [
+            30919,
+            20219,
+            9850
+          ],
+          "full_cpt:00780": [
+            20364,
+            30098
+          ],
+          "full_cpt:03683": [
+            30791,
+            29930
+          ],
+          "full_cpt:02342": [
+            30698,
+            30985
+          ],
+          "full_cpt:03078": [
+            5550,
+            15941
+          ],
+          "full_cpt:00090": [
+            20700,
+            30954
+          ],
+          "full_cpt:04255": [
+            9677,
+            9958,
+            20067
+          ]
+        }
+      },
+      "fresh_relevant": {
+        "total_qids": 300,
+        "covered_qids": 76,
+        "mechanism_groups": 71,
+        "duplicate_mechanism_groups": 3,
+        "qids_in_duplicate_groups": 8,
+        "excess_qids_over_one_per_group": 5,
+        "largest_group_size": 3,
+        "duplicate_groups": {
+          "fresh_relevant_cpt:00265": [
+            30919,
+            20219,
+            9850
+          ],
+          "fresh_relevant_cpt:00001": [
+            30791,
+            29930
+          ],
+          "fresh_relevant_cpt:00827": [
+            9677,
+            9958,
+            20067
+          ]
+        }
+      },
+      "extended_core": {
+        "total_qids": 300,
+        "covered_qids": 300,
+        "mechanism_groups": 268,
+        "duplicate_mechanism_groups": 15,
+        "qids_in_duplicate_groups": 47,
+        "excess_qids_over_one_per_group": 32,
+        "largest_group_size": 6,
+        "duplicate_groups": {
+          "extended_core_cpt:01068": [
+            29734,
+            30742,
+            29879
+          ],
+          "extended_core_cpt:01067": [
+            9772,
+            29728,
+            29594,
+            30021
+          ],
+          "extended_core_cpt:02984": [
+            30734,
+            29719,
+            9542,
+            9653
+          ],
+          "extended_core_cpt:01893": [
+            30767,
+            20494,
+            10103,
+            20562,
+            10185,
+            30620
+          ],
+          "extended_core_cpt:01894": [
+            10087,
+            29758,
+            20519
+          ],
+          "extended_core_cpt:00121": [
+            15182,
+            4790
+          ],
+          "extended_core_cpt:02981": [
+            29995,
+            30426,
+            19976
+          ],
+          "extended_core_cpt:00002": [
+            20444,
+            10332,
+            20700,
+            30954,
+            29938,
+            10052
+          ],
+          "extended_core_cpt:03689": [
+            30919,
+            20219,
+            9850
+          ],
+          "extended_core_cpt:00001": [
+            29659,
+            10041
+          ],
+          "extended_core_cpt:00503": [
+            20364,
+            30098
+          ],
+          "extended_core_cpt:03425": [
+            30791,
+            29930
+          ],
+          "extended_core_cpt:02338": [
+            30698,
+            30985
+          ],
+          "extended_core_cpt:03379": [
+            5550,
+            15941
+          ],
+          "extended_core_cpt:04251": [
+            9677,
+            9958,
+            20067
+          ]
+        }
+      }
+    },
+    "demo56": {
+      "full": {
+        "total_qids": 56,
+        "covered_qids": 56,
+        "mechanism_groups": 40,
+        "duplicate_mechanism_groups": 12,
+        "qids_in_duplicate_groups": 28,
+        "excess_qids_over_one_per_group": 16,
+        "largest_group_size": 3,
+        "duplicate_groups": {
+          "full_cpt:02975": [
+            9577,
+            19969
+          ],
+          "full_cpt:02342": [
+            9588,
+            19978,
+            30846
+          ],
+          "full_cpt:02340": [
+            9590,
+            9611,
+            30701
+          ],
+          "full_cpt:02341": [
+            9686,
+            29833,
+            30257
+          ],
+          "full_cpt:00783": [
+            9883,
+            29962
+          ],
+          "full_cpt:03685": [
+            10242,
+            30505
+          ],
+          "full_cpt:04256": [
+            20214,
+            30491
+          ],
+          "full_cpt:01452": [
+            29590,
+            30749,
+            30894
+          ],
+          "full_cpt:03684": [
+            29642,
+            30363
+          ],
+          "full_cpt:02973": [
+            29705,
+            30995
+          ],
+          "full_cpt:02339": [
+            29980,
+            29982
+          ],
+          "full_cpt:03686": [
+            30359,
+            30650
+          ]
+        }
+      },
+      "fresh_relevant": {
+        "total_qids": 56,
+        "covered_qids": 25,
+        "mechanism_groups": 21,
+        "duplicate_mechanism_groups": 4,
+        "qids_in_duplicate_groups": 8,
+        "excess_qids_over_one_per_group": 4,
+        "largest_group_size": 2,
+        "duplicate_groups": {
+          "fresh_relevant_cpt:00263": [
+            10242,
+            30505
+          ],
+          "fresh_relevant_cpt:00828": [
+            20214,
+            30491
+          ],
+          "fresh_relevant_cpt:00002": [
+            29642,
+            30363
+          ],
+          "fresh_relevant_cpt:00264": [
+            30359,
+            30650
+          ]
+        }
+      },
+      "extended_core": {
+        "total_qids": 56,
+        "covered_qids": 56,
+        "mechanism_groups": 40,
+        "duplicate_mechanism_groups": 12,
+        "qids_in_duplicate_groups": 28,
+        "excess_qids_over_one_per_group": 16,
+        "largest_group_size": 3,
+        "duplicate_groups": {
+          "extended_core_cpt:02982": [
+            9577,
+            19969
+          ],
+          "extended_core_cpt:02338": [
+            9588,
+            19978,
+            30846
+          ],
+          "extended_core_cpt:02336": [
+            9590,
+            9611,
+            30701
+          ],
+          "extended_core_cpt:02337": [
+            9686,
+            29833,
+            30257
+          ],
+          "extended_core_cpt:00506": [
+            9883,
+            29962
+          ],
+          "extended_core_cpt:03687": [
+            10242,
+            30505
+          ],
+          "extended_core_cpt:04252": [
+            20214,
+            30491
+          ],
+          "extended_core_cpt:01450": [
+            29590,
+            30749,
+            30894
+          ],
+          "extended_core_cpt:03426": [
+            29642,
+            30363
+          ],
+          "extended_core_cpt:02720": [
+            29705,
+            30995
+          ],
+          "extended_core_cpt:02335": [
+            29980,
+            29982
+          ],
+          "extended_core_cpt:03688": [
+            30359,
+            30650
+          ]
+        }
+      }
+    },
+    "core256": {
+      "full": {
+        "total_qids": 256,
+        "covered_qids": 256,
+        "mechanism_groups": 58,
+        "duplicate_mechanism_groups": 34,
+        "qids_in_duplicate_groups": 232,
+        "excess_qids_over_one_per_group": 198,
+        "largest_group_size": 13,
+        "duplicate_groups": {
+          "full_cpt:03684": [
+            29639,
+            10222,
+            30067,
+            29934,
+            30510,
+            30364,
+            10220,
+            30362,
+            29932,
+            30363,
+            29642
+          ],
+          "full_cpt:02309": [
+            30476,
+            10143,
+            20568,
+            30188,
+            10112,
+            20456,
+            10145,
+            30909,
+            10064
+          ],
+          "full_cpt:03686": [
+            20622,
+            20623,
+            29632,
+            30648,
+            30359,
+            30361,
+            10229,
+            30650,
+            30928,
+            20621,
+            30506,
+            29780
+          ],
+          "full_cpt:03685": [
+            30652,
+            30073,
+            30505,
+            20633,
+            10242,
+            10236,
+            29791,
+            29790
+          ],
+          "full_cpt:02308": [
+            10096,
+            10153,
+            10167
+          ],
+          "full_cpt:00092": [
+            10360,
+            20193,
+            9721,
+            10362,
+            9804,
+            9810,
+            30810,
+            30956,
+            30658
+          ],
+          "full_cpt:00090": [
+            30235,
+            20177,
+            30801,
+            20422
+          ],
+          "full_cpt:00091": [
+            20438,
+            30671,
+            20181,
+            9726,
+            9789,
+            9730,
+            20122
+          ],
+          "full_cpt:03683": [
+            30942,
+            20638,
+            10246,
+            29776,
+            20639,
+            30501
+          ],
+          "full_cpt:02340": [
+            9590,
+            19982,
+            30701,
+            30556,
+            19984,
+            30842,
+            9611,
+            20002,
+            9610,
+            9690
+          ],
+          "full_cpt:02342": [
+            9616,
+            20008,
+            9588,
+            30846,
+            20088,
+            19978,
+            29694,
+            9615,
+            29826,
+            29827
+          ],
+          "full_cpt:01069": [
+            10009,
+            20164
+          ],
+          "full_cpt:02339": [
+            19988,
+            29982,
+            19997,
+            29681,
+            19986,
+            19996,
+            9594,
+            30116,
+            29980,
+            30118
+          ],
+          "full_cpt:02341": [
+            30555,
+            30124,
+            30981,
+            19993,
+            19991,
+            29833,
+            19999,
+            30257,
+            9598,
+            9686,
+            19998,
+            30413,
+            19990
+          ],
+          "full_cpt:00089": [
+            10355,
+            10348,
+            9740
+          ],
+          "full_cpt:01452": [
+            30894,
+            30453,
+            30455,
+            30605,
+            30892,
+            30308,
+            30749,
+            29590,
+            30895,
+            29886,
+            20153
+          ],
+          "full_cpt:03113": [
+            9638,
+            20023,
+            29861,
+            30002,
+            30581,
+            20030,
+            30155,
+            30005
+          ],
+          "full_cpt:02975": [
+            29986,
+            29696,
+            29852,
+            19969,
+            9577,
+            30420,
+            29698,
+            9571
+          ],
+          "full_cpt:00782": [
+            9939,
+            9864,
+            20379,
+            9984
+          ],
+          "full_cpt:01070": [
+            30316,
+            30449,
+            30451
+          ],
+          "full_cpt:01451": [
+            30024,
+            30459,
+            29874,
+            10287,
+            20676,
+            29741,
+            29596,
+            29599,
+            20159
+          ],
+          "full_cpt:02973": [
+            30995,
+            29705
+          ],
+          "full_cpt:03579": [
+            4255,
+            14647
+          ],
+          "full_cpt:00783": [
+            20323,
+            9883,
+            29962,
+            9882,
+            20273,
+            29666,
+            20386
+          ],
+          "full_cpt:04255": [
+            29630,
+            20350,
+            9841,
+            9834,
+            30628,
+            9526,
+            30049,
+            20094,
+            9703,
+            30343,
+            29911
+          ],
+          "full_cpt:03694": [
+            29913,
+            20098,
+            20099,
+            30344,
+            9530,
+            20238,
+            30768,
+            20354,
+            30345,
+            30192
+          ],
+          "full_cpt:00781": [
+            30387,
+            20250,
+            20592,
+            20314,
+            9897,
+            20369,
+            29953,
+            20370,
+            30830,
+            20313,
+            29810,
+            9856
+          ],
+          "full_cpt:02310": [
+            29612,
+            30470,
+            10136
+          ],
+          "full_cpt:02311": [
+            20550,
+            10120,
+            30610
+          ],
+          "full_cpt:04256": [
+            9524,
+            30774,
+            19915,
+            29769,
+            30491,
+            9823,
+            20214,
+            29770,
+            20064,
+            30490
+          ],
+          "full_cpt:00780": [
+            9874,
+            20267,
+            10208,
+            20338
+          ],
+          "full_cpt:02974": [
+            29700,
+            29701
+          ],
+          "full_cpt:03693": [
+            30779,
+            9713,
+            9828,
+            9957
+          ],
+          "full_cpt:02972": [
+            19960,
+            29990
+          ]
+        }
+      },
+      "fresh_relevant": {
+        "total_qids": 256,
+        "covered_qids": 91,
+        "mechanism_groups": 26,
+        "duplicate_mechanism_groups": 9,
+        "qids_in_duplicate_groups": 74,
+        "excess_qids_over_one_per_group": 65,
+        "largest_group_size": 12,
+        "duplicate_groups": {
+          "fresh_relevant_cpt:00002": [
+            29639,
+            10222,
+            30067,
+            29934,
+            30510,
+            30364,
+            10220,
+            30362,
+            29932,
+            30363,
+            29642
+          ],
+          "fresh_relevant_cpt:00264": [
+            20622,
+            20623,
+            29632,
+            30648,
+            30359,
+            30361,
+            10229,
+            30650,
+            30928,
+            20621,
+            30506,
+            29780
+          ],
+          "fresh_relevant_cpt:00263": [
+            30652,
+            30073,
+            30505,
+            20633,
+            10242,
+            10236,
+            29791,
+            29790
+          ],
+          "fresh_relevant_cpt:00001": [
+            30942,
+            20638,
+            10246,
+            29776,
+            20639,
+            30501
+          ],
+          "fresh_relevant_cpt:00068": [
+            4255,
+            14647
+          ],
+          "fresh_relevant_cpt:00827": [
+            29630,
+            20350,
+            9841,
+            9834,
+            30628,
+            9526,
+            30049,
+            20094,
+            9703,
+            30343,
+            29911
+          ],
+          "fresh_relevant_cpt:00266": [
+            29913,
+            20098,
+            20099,
+            30344,
+            9530,
+            20238,
+            30768,
+            20354,
+            30345,
+            30192
+          ],
+          "fresh_relevant_cpt:00828": [
+            9524,
+            30774,
+            19915,
+            29769,
+            30491,
+            9823,
+            20214,
+            29770,
+            20064,
+            30490
+          ],
+          "fresh_relevant_cpt:00265": [
+            30779,
+            9713,
+            9828,
+            9957
+          ]
+        }
+      },
+      "extended_core": {
+        "total_qids": 256,
+        "covered_qids": 256,
+        "mechanism_groups": 54,
+        "duplicate_mechanism_groups": 30,
+        "qids_in_duplicate_groups": 232,
+        "excess_qids_over_one_per_group": 202,
+        "largest_group_size": 13,
+        "duplicate_groups": {
+          "extended_core_cpt:03426": [
+            29639,
+            10222,
+            30067,
+            29934,
+            30510,
+            30364,
+            10220,
+            30362,
+            29932,
+            30363,
+            29642
+          ],
+          "extended_core_cpt:01894": [
+            30476,
+            10143,
+            20568,
+            30188,
+            10112,
+            20456,
+            10145,
+            30909,
+            10064,
+            20550,
+            10120,
+            30610
+          ],
+          "extended_core_cpt:03688": [
+            20622,
+            20623,
+            29632,
+            30648,
+            30359,
+            30361,
+            10229,
+            30650,
+            30928,
+            20621,
+            30506,
+            29780
+          ],
+          "extended_core_cpt:03687": [
+            30652,
+            30073,
+            30505,
+            20633,
+            10242,
+            10236,
+            29791,
+            29790
+          ],
+          "extended_core_cpt:01893": [
+            10096,
+            10153,
+            10167,
+            29612,
+            30470,
+            10136
+          ],
+          "extended_core_cpt:00002": [
+            10360,
+            30235,
+            20193,
+            9721,
+            10362,
+            20177,
+            9804,
+            9810,
+            30810,
+            30956,
+            30801,
+            20422,
+            30658
+          ],
+          "extended_core_cpt:00001": [
+            20438,
+            10355,
+            30671,
+            10348,
+            20181,
+            9726,
+            9789,
+            9740,
+            9730,
+            20122
+          ],
+          "extended_core_cpt:03425": [
+            30942,
+            20638,
+            10246,
+            29776,
+            20639,
+            30501
+          ],
+          "extended_core_cpt:02336": [
+            9590,
+            19982,
+            30701,
+            30556,
+            19984,
+            30842,
+            9611,
+            20002,
+            9610,
+            9690
+          ],
+          "extended_core_cpt:02338": [
+            9616,
+            20008,
+            9588,
+            30846,
+            20088,
+            19978,
+            29694,
+            9615,
+            29826,
+            29827
+          ],
+          "extended_core_cpt:01067": [
+            10009,
+            20164
+          ],
+          "extended_core_cpt:02335": [
+            19988,
+            29982,
+            19997,
+            29681,
+            19986,
+            19996,
+            9594,
+            30116,
+            29980,
+            30118
+          ],
+          "extended_core_cpt:02337": [
+            30555,
+            30124,
+            30981,
+            19993,
+            19991,
+            29833,
+            19999,
+            30257,
+            9598,
+            9686,
+            19998,
+            30413,
+            19990
+          ],
+          "extended_core_cpt:01450": [
+            30894,
+            30453,
+            30455,
+            30605,
+            30892,
+            30308,
+            30749,
+            29590,
+            30895,
+            29886,
+            20153
+          ],
+          "extended_core_cpt:02984": [
+            9638,
+            20023,
+            29861,
+            30002,
+            30581,
+            20030,
+            30155,
+            30005
+          ],
+          "extended_core_cpt:02982": [
+            29986,
+            29696,
+            29852,
+            19969,
+            9577,
+            30420,
+            29698,
+            9571
+          ],
+          "extended_core_cpt:00505": [
+            9939,
+            9864,
+            20379,
+            9984
+          ],
+          "extended_core_cpt:01068": [
+            30316,
+            30449,
+            30451
+          ],
+          "extended_core_cpt:01449": [
+            30024,
+            30459,
+            29874,
+            10287,
+            20676,
+            29741,
+            29596,
+            29599,
+            20159
+          ],
+          "extended_core_cpt:02720": [
+            30995,
+            29705
+          ],
+          "extended_core_cpt:03492": [
+            4255,
+            14647
+          ],
+          "extended_core_cpt:00506": [
+            20323,
+            9883,
+            29962,
+            9882,
+            20273,
+            29666,
+            20386
+          ],
+          "extended_core_cpt:04251": [
+            29630,
+            20350,
+            9841,
+            9834,
+            30628,
+            9526,
+            30049,
+            20094,
+            9703,
+            30343,
+            29911
+          ],
+          "extended_core_cpt:03690": [
+            29913,
+            20098,
+            20099,
+            30344,
+            9530,
+            20238,
+            30768,
+            20354,
+            30345,
+            30192
+          ],
+          "extended_core_cpt:00504": [
+            30387,
+            20250,
+            20592,
+            20314,
+            9897,
+            20369,
+            29953,
+            20370,
+            30830,
+            20313,
+            29810,
+            9856
+          ],
+          "extended_core_cpt:04252": [
+            9524,
+            30774,
+            19915,
+            29769,
+            30491,
+            9823,
+            20214,
+            29770,
+            20064,
+            30490
+          ],
+          "extended_core_cpt:00503": [
+            9874,
+            20267,
+            10208,
+            20338
+          ],
+          "extended_core_cpt:02981": [
+            29700,
+            29701
+          ],
+          "extended_core_cpt:03689": [
+            30779,
+            9713,
+            9828,
+            9957
+          ],
+          "extended_core_cpt:02719": [
+            19960,
+            29990
+          ]
+        }
+      }
+    },
+    "challenge100": {
+      "full": {
+        "total_qids": 100,
+        "covered_qids": 100,
+        "mechanism_groups": 93,
+        "duplicate_mechanism_groups": 4,
+        "qids_in_duplicate_groups": 11,
+        "excess_qids_over_one_per_group": 7,
+        "largest_group_size": 4,
+        "duplicate_groups": {
+          "full_cpt:03112": [
+            9623,
+            20014,
+            30445
+          ],
+          "full_cpt:00092": [
+            10364,
+            20723
+          ],
+          "full_cpt:00783": [
+            29664,
+            30674
+          ],
+          "full_cpt:02308": [
+            29605,
+            30042,
+            30473,
+            30900
+          ]
+        }
+      },
+      "fresh_relevant": {
+        "total_qids": 100,
+        "covered_qids": 40,
+        "mechanism_groups": 40,
+        "duplicate_mechanism_groups": 0,
+        "qids_in_duplicate_groups": 0,
+        "excess_qids_over_one_per_group": 0,
+        "largest_group_size": 1,
+        "duplicate_groups": {}
+      },
+      "extended_core": {
+        "total_qids": 100,
+        "covered_qids": 100,
+        "mechanism_groups": 92,
+        "duplicate_mechanism_groups": 4,
+        "qids_in_duplicate_groups": 12,
+        "excess_qids_over_one_per_group": 8,
+        "largest_group_size": 5,
+        "duplicate_groups": {
+          "extended_core_cpt:02983": [
+            9623,
+            20014,
+            30445
+          ],
+          "extended_core_cpt:00002": [
+            10364,
+            20723
+          ],
+          "extended_core_cpt:00506": [
+            29664,
+            30674
+          ],
+          "extended_core_cpt:01893": [
+            29605,
+            30042,
+            30473,
+            30618,
+            30900
+          ]
+        }
+      }
+    }
+  },
+  "main_vs_references": {
+    "demo56": {
+      "full": {
+        "target_covered_qids": 300,
+        "reference_covered_qids": 56,
+        "overlap_mechanism_groups": 14,
+        "matched_target_qids_count": 23,
+        "matched_reference_qids_count": 24,
+        "matched_qid_pair_count": 35,
+        "matched_target_by_query_type": {
+          "det-counterfactual": 23
+        },
+        "matched_target_qids": [
+          9772,
+          9850,
+          10041,
+          10103,
+          10185,
+          20085,
+          20219,
+          20309,
+          20494,
+          20700,
+          29594,
+          29728,
+          29739,
+          30021,
+          30132,
+          30219,
+          30270,
+          30561,
+          30598,
+          30698,
+          30919,
+          30954,
+          30985
+        ],
+        "matched_reference_qids": [
+          9577,
+          9588,
+          9590,
+          9611,
+          9883,
+          9957,
+          10009,
+          10242,
+          19969,
+          19978,
+          20177,
+          20438,
+          29590,
+          29612,
+          29962,
+          29980,
+          29982,
+          29990,
+          30459,
+          30505,
+          30701,
+          30749,
+          30846,
+          30894
+        ],
+        "overlap_groups": {
+          "full_cpt:00090": {
+            "target_qids": [
+              20700,
+              30954
+            ],
+            "reference_qids": [
+              20177
+            ]
+          },
+          "full_cpt:00091": {
+            "target_qids": [
+              10041
+            ],
+            "reference_qids": [
+              20438
+            ]
+          },
+          "full_cpt:00783": {
+            "target_qids": [
+              20309
+            ],
+            "reference_qids": [
+              9883,
+              29962
+            ]
+          },
+          "full_cpt:01069": {
+            "target_qids": [
+              9772,
+              29728,
+              29594,
+              30021
+            ],
+            "reference_qids": [
+              10009
+            ]
+          },
+          "full_cpt:01451": {
+            "target_qids": [
+              30598
+            ],
+            "reference_qids": [
+              30459
+            ]
+          },
+          "full_cpt:01452": {
+            "target_qids": [
+              29739
+            ],
+            "reference_qids": [
+              29590,
+              30749,
+              30894
+            ]
+          },
+          "full_cpt:02310": {
+            "target_qids": [
+              20494,
+              10103,
+              10185
+            ],
+            "reference_qids": [
+              29612
+            ]
+          },
+          "full_cpt:02339": {
+            "target_qids": [
+              30270
+            ],
+            "reference_qids": [
+              29980,
+              29982
+            ]
+          },
+          "full_cpt:02340": {
+            "target_qids": [
+              20085
+            ],
+            "reference_qids": [
+              9590,
+              9611,
+              30701
+            ]
+          },
+          "full_cpt:02342": {
+            "target_qids": [
+              30698,
+              30985
+            ],
+            "reference_qids": [
+              9588,
+              19978,
+              30846
+            ]
+          },
+          "full_cpt:02972": {
+            "target_qids": [
+              30561
+            ],
+            "reference_qids": [
+              29990
+            ]
+          },
+          "full_cpt:02975": {
+            "target_qids": [
+              30132
+            ],
+            "reference_qids": [
+              9577,
+              19969
+            ]
+          },
+          "full_cpt:03685": {
+            "target_qids": [
+              30219
+            ],
+            "reference_qids": [
+              10242,
+              30505
+            ]
+          },
+          "full_cpt:03693": {
+            "target_qids": [
+              30919,
+              20219,
+              9850
+            ],
+            "reference_qids": [
+              9957
+            ]
+          }
+        }
+      },
+      "fresh_relevant": {
+        "target_covered_qids": 76,
+        "reference_covered_qids": 25,
+        "overlap_mechanism_groups": 2,
+        "matched_target_qids_count": 4,
+        "matched_reference_qids_count": 3,
+        "matched_qid_pair_count": 5,
+        "matched_target_by_query_type": {
+          "det-counterfactual": 4
+        },
+        "matched_target_qids": [
+          9850,
+          20219,
+          30219,
+          30919
+        ],
+        "matched_reference_qids": [
+          9957,
+          10242,
+          30505
+        ],
+        "overlap_groups": {
+          "fresh_relevant_cpt:00263": {
+            "target_qids": [
+              30219
+            ],
+            "reference_qids": [
+              10242,
+              30505
+            ]
+          },
+          "fresh_relevant_cpt:00265": {
+            "target_qids": [
+              30919,
+              20219,
+              9850
+            ],
+            "reference_qids": [
+              9957
+            ]
+          }
+        }
+      },
+      "extended_core": {
+        "target_covered_qids": 300,
+        "reference_covered_qids": 56,
+        "overlap_mechanism_groups": 14,
+        "matched_target_qids_count": 31,
+        "matched_reference_qids_count": 24,
+        "matched_qid_pair_count": 43,
+        "matched_target_by_query_type": {
+          "det-counterfactual": 31
+        },
+        "matched_target_qids": [
+          9772,
+          9850,
+          10041,
+          10052,
+          10103,
+          10185,
+          10332,
+          20085,
+          20219,
+          20309,
+          20444,
+          20494,
+          20562,
+          20700,
+          29594,
+          29659,
+          29728,
+          29739,
+          29938,
+          30021,
+          30132,
+          30219,
+          30270,
+          30561,
+          30598,
+          30620,
+          30698,
+          30767,
+          30919,
+          30954,
+          30985
+        ],
+        "matched_reference_qids": [
+          9577,
+          9588,
+          9590,
+          9611,
+          9883,
+          9957,
+          10009,
+          10242,
+          19969,
+          19978,
+          20177,
+          20438,
+          29590,
+          29612,
+          29962,
+          29980,
+          29982,
+          29990,
+          30459,
+          30505,
+          30701,
+          30749,
+          30846,
+          30894
+        ],
+        "overlap_groups": {
+          "extended_core_cpt:00001": {
+            "target_qids": [
+              29659,
+              10041
+            ],
+            "reference_qids": [
+              20438
+            ]
+          },
+          "extended_core_cpt:00002": {
+            "target_qids": [
+              20444,
+              10332,
+              20700,
+              30954,
+              29938,
+              10052
+            ],
+            "reference_qids": [
+              20177
+            ]
+          },
+          "extended_core_cpt:00506": {
+            "target_qids": [
+              20309
+            ],
+            "reference_qids": [
+              9883,
+              29962
+            ]
+          },
+          "extended_core_cpt:01067": {
+            "target_qids": [
+              9772,
+              29728,
+              29594,
+              30021
+            ],
+            "reference_qids": [
+              10009
+            ]
+          },
+          "extended_core_cpt:01449": {
+            "target_qids": [
+              30598
+            ],
+            "reference_qids": [
+              30459
+            ]
+          },
+          "extended_core_cpt:01450": {
+            "target_qids": [
+              29739
+            ],
+            "reference_qids": [
+              29590,
+              30749,
+              30894
+            ]
+          },
+          "extended_core_cpt:01893": {
+            "target_qids": [
+              30767,
+              20494,
+              10103,
+              20562,
+              10185,
+              30620
+            ],
+            "reference_qids": [
+              29612
+            ]
+          },
+          "extended_core_cpt:02335": {
+            "target_qids": [
+              30270
+            ],
+            "reference_qids": [
+              29980,
+              29982
+            ]
+          },
+          "extended_core_cpt:02336": {
+            "target_qids": [
+              20085
+            ],
+            "reference_qids": [
+              9590,
+              9611,
+              30701
+            ]
+          },
+          "extended_core_cpt:02338": {
+            "target_qids": [
+              30698,
+              30985
+            ],
+            "reference_qids": [
+              9588,
+              19978,
+              30846
+            ]
+          },
+          "extended_core_cpt:02719": {
+            "target_qids": [
+              30561
+            ],
+            "reference_qids": [
+              29990
+            ]
+          },
+          "extended_core_cpt:02982": {
+            "target_qids": [
+              30132
+            ],
+            "reference_qids": [
+              9577,
+              19969
+            ]
+          },
+          "extended_core_cpt:03687": {
+            "target_qids": [
+              30219
+            ],
+            "reference_qids": [
+              10242,
+              30505
+            ]
+          },
+          "extended_core_cpt:03689": {
+            "target_qids": [
+              30919,
+              20219,
+              9850
+            ],
+            "reference_qids": [
+              9957
+            ]
+          }
+        }
+      }
+    },
+    "core256": {
+      "full": {
+        "target_covered_qids": 300,
+        "reference_covered_qids": 256,
+        "overlap_mechanism_groups": 27,
+        "matched_target_qids_count": 54,
+        "matched_reference_qids_count": 164,
+        "matched_qid_pair_count": 303,
+        "matched_target_by_query_type": {
+          "det-counterfactual": 54
+        },
+        "matched_target_qids": [
+          9542,
+          9653,
+          9677,
+          9772,
+          9850,
+          9958,
+          10041,
+          10052,
+          10087,
+          10103,
+          10185,
+          10197,
+          10332,
+          19976,
+          20067,
+          20085,
+          20219,
+          20309,
+          20364,
+          20444,
+          20494,
+          20519,
+          20562,
+          20654,
+          20700,
+          29594,
+          29659,
+          29719,
+          29728,
+          29734,
+          29739,
+          29758,
+          29879,
+          29930,
+          29938,
+          29995,
+          30021,
+          30098,
+          30132,
+          30219,
+          30270,
+          30426,
+          30561,
+          30587,
+          30598,
+          30620,
+          30698,
+          30734,
+          30742,
+          30767,
+          30791,
+          30919,
+          30954,
+          30985
+        ],
+        "matched_reference_qids": [
+          9526,
+          9571,
+          9577,
+          9588,
+          9590,
+          9594,
+          9610,
+          9611,
+          9615,
+          9616,
+          9638,
+          9644,
+          9690,
+          9703,
+          9713,
+          9721,
+          9726,
+          9730,
+          9740,
+          9789,
+          9804,
+          9810,
+          9828,
+          9834,
+          9841,
+          9856,
+          9864,
+          9874,
+          9882,
+          9883,
+          9897,
+          9939,
+          9957,
+          9984,
+          10009,
+          10096,
+          10120,
+          10136,
+          10153,
+          10167,
+          10208,
+          10236,
+          10242,
+          10246,
+          10287,
+          10348,
+          10355,
+          10360,
+          10362,
+          19960,
+          19969,
+          19978,
+          19982,
+          19984,
+          19986,
+          19988,
+          19996,
+          19997,
+          20002,
+          20008,
+          20023,
+          20030,
+          20088,
+          20094,
+          20122,
+          20153,
+          20159,
+          20164,
+          20177,
+          20181,
+          20193,
+          20250,
+          20267,
+          20273,
+          20313,
+          20314,
+          20323,
+          20338,
+          20350,
+          20369,
+          20370,
+          20379,
+          20386,
+          20422,
+          20438,
+          20550,
+          20592,
+          20633,
+          20638,
+          20639,
+          20676,
+          29590,
+          29596,
+          29599,
+          29612,
+          29630,
+          29666,
+          29681,
+          29694,
+          29696,
+          29698,
+          29700,
+          29701,
+          29741,
+          29776,
+          29790,
+          29791,
+          29810,
+          29826,
+          29827,
+          29852,
+          29861,
+          29874,
+          29886,
+          29911,
+          29953,
+          29962,
+          29980,
+          29982,
+          29986,
+          29990,
+          30002,
+          30005,
+          30024,
+          30049,
+          30073,
+          30116,
+          30118,
+          30155,
+          30235,
+          30308,
+          30316,
+          30343,
+          30387,
+          30420,
+          30449,
+          30451,
+          30453,
+          30455,
+          30459,
+          30470,
+          30501,
+          30505,
+          30556,
+          30581,
+          30605,
+          30610,
+          30628,
+          30652,
+          30658,
+          30671,
+          30701,
+          30749,
+          30779,
+          30801,
+          30810,
+          30830,
+          30842,
+          30846,
+          30892,
+          30894,
+          30895,
+          30942,
+          30956
+        ],
+        "overlap_groups": {
+          "full_cpt:00089": {
+            "target_qids": [
+              29659
+            ],
+            "reference_qids": [
+              10355,
+              10348,
+              9740
+            ]
+          },
+          "full_cpt:00090": {
+            "target_qids": [
+              20700,
+              30954
+            ],
+            "reference_qids": [
+              30235,
+              20177,
+              30801,
+              20422
+            ]
+          },
+          "full_cpt:00091": {
+            "target_qids": [
+              10041
+            ],
+            "reference_qids": [
+              20438,
+              30671,
+              20181,
+              9726,
+              9789,
+              9730,
+              20122
+            ]
+          },
+          "full_cpt:00092": {
+            "target_qids": [
+              20444,
+              10332,
+              29938,
+              10052
+            ],
+            "reference_qids": [
+              10360,
+              20193,
+              9721,
+              10362,
+              9804,
+              9810,
+              30810,
+              30956,
+              30658
+            ]
+          },
+          "full_cpt:00780": {
+            "target_qids": [
+              20364,
+              30098
+            ],
+            "reference_qids": [
+              9874,
+              20267,
+              10208,
+              20338
+            ]
+          },
+          "full_cpt:00781": {
+            "target_qids": [
+              10197
+            ],
+            "reference_qids": [
+              30387,
+              20250,
+              20592,
+              20314,
+              9897,
+              20369,
+              29953,
+              20370,
+              30830,
+              20313,
+              29810,
+              9856
+            ]
+          },
+          "full_cpt:00782": {
+            "target_qids": [
+              20654
+            ],
+            "reference_qids": [
+              9939,
+              9864,
+              20379,
+              9984
+            ]
+          },
+          "full_cpt:00783": {
+            "target_qids": [
+              20309
+            ],
+            "reference_qids": [
+              20323,
+              9883,
+              29962,
+              9882,
+              20273,
+              29666,
+              20386
+            ]
+          },
+          "full_cpt:01069": {
+            "target_qids": [
+              9772,
+              29728,
+              29594,
+              30021
+            ],
+            "reference_qids": [
+              10009,
+              20164
+            ]
+          },
+          "full_cpt:01070": {
+            "target_qids": [
+              29734,
+              30742,
+              29879
+            ],
+            "reference_qids": [
+              30316,
+              30449,
+              30451
+            ]
+          },
+          "full_cpt:01451": {
+            "target_qids": [
+              30598
+            ],
+            "reference_qids": [
+              30024,
+              30459,
+              29874,
+              10287,
+              20676,
+              29741,
+              29596,
+              29599,
+              20159
+            ]
+          },
+          "full_cpt:01452": {
+            "target_qids": [
+              29739
+            ],
+            "reference_qids": [
+              30894,
+              30453,
+              30455,
+              30605,
+              30892,
+              30308,
+              30749,
+              29590,
+              30895,
+              29886,
+              20153
+            ]
+          },
+          "full_cpt:02308": {
+            "target_qids": [
+              30767,
+              20562,
+              30620
+            ],
+            "reference_qids": [
+              10096,
+              10153,
+              10167
+            ]
+          },
+          "full_cpt:02310": {
+            "target_qids": [
+              20494,
+              10103,
+              10185
+            ],
+            "reference_qids": [
+              29612,
+              30470,
+              10136
+            ]
+          },
+          "full_cpt:02311": {
+            "target_qids": [
+              10087,
+              29758,
+              20519
+            ],
+            "reference_qids": [
+              20550,
+              10120,
+              30610
+            ]
+          },
+          "full_cpt:02339": {
+            "target_qids": [
+              30270
+            ],
+            "reference_qids": [
+              19988,
+              29982,
+              19997,
+              29681,
+              19986,
+              19996,
+              9594,
+              30116,
+              29980,
+              30118
+            ]
+          },
+          "full_cpt:02340": {
+            "target_qids": [
+              20085
+            ],
+            "reference_qids": [
+              9590,
+              19982,
+              30701,
+              30556,
+              19984,
+              30842,
+              9611,
+              20002,
+              9610,
+              9690
+            ]
+          },
+          "full_cpt:02342": {
+            "target_qids": [
+              30698,
+              30985
+            ],
+            "reference_qids": [
+              9616,
+              20008,
+              9588,
+              30846,
+              20088,
+              19978,
+              29694,
+              9615,
+              29826,
+              29827
+            ]
+          },
+          "full_cpt:02972": {
+            "target_qids": [
+              30561
+            ],
+            "reference_qids": [
+              19960,
+              29990
+            ]
+          },
+          "full_cpt:02974": {
+            "target_qids": [
+              29995,
+              30426,
+              19976
+            ],
+            "reference_qids": [
+              29700,
+              29701
+            ]
+          },
+          "full_cpt:02975": {
+            "target_qids": [
+              30132
+            ],
+            "reference_qids": [
+              29986,
+              29696,
+              29852,
+              19969,
+              9577,
+              30420,
+              29698,
+              9571
+            ]
+          },
+          "full_cpt:03112": {
+            "target_qids": [
+              30587
+            ],
+            "reference_qids": [
+              9644
+            ]
+          },
+          "full_cpt:03113": {
+            "target_qids": [
+              30734,
+              29719,
+              9542,
+              9653
+            ],
+            "reference_qids": [
+              9638,
+              20023,
+              29861,
+              30002,
+              30581,
+              20030,
+              30155,
+              30005
+            ]
+          },
+          "full_cpt:03683": {
+            "target_qids": [
+              30791,
+              29930
+            ],
+            "reference_qids": [
+              30942,
+              20638,
+              10246,
+              29776,
+              20639,
+              30501
+            ]
+          },
+          "full_cpt:03685": {
+            "target_qids": [
+              30219
+            ],
+            "reference_qids": [
+              30652,
+              30073,
+              30505,
+              20633,
+              10242,
+              10236,
+              29791,
+              29790
+            ]
+          },
+          "full_cpt:03693": {
+            "target_qids": [
+              30919,
+              20219,
+              9850
+            ],
+            "reference_qids": [
+              30779,
+              9713,
+              9828,
+              9957
+            ]
+          },
+          "full_cpt:04255": {
+            "target_qids": [
+              9677,
+              9958,
+              20067
+            ],
+            "reference_qids": [
+              29630,
+              20350,
+              9841,
+              9834,
+              30628,
+              9526,
+              30049,
+              20094,
+              9703,
+              30343,
+              29911
+            ]
+          }
+        }
+      },
+      "fresh_relevant": {
+        "target_covered_qids": 76,
+        "reference_covered_qids": 91,
+        "overlap_mechanism_groups": 4,
+        "matched_target_qids_count": 9,
+        "matched_reference_qids_count": 29,
+        "matched_qid_pair_count": 65,
+        "matched_target_by_query_type": {
+          "det-counterfactual": 9
+        },
+        "matched_target_qids": [
+          9677,
+          9850,
+          9958,
+          20067,
+          20219,
+          29930,
+          30219,
+          30791,
+          30919
+        ],
+        "matched_reference_qids": [
+          9526,
+          9703,
+          9713,
+          9828,
+          9834,
+          9841,
+          9957,
+          10236,
+          10242,
+          10246,
+          20094,
+          20350,
+          20633,
+          20638,
+          20639,
+          29630,
+          29776,
+          29790,
+          29791,
+          29911,
+          30049,
+          30073,
+          30343,
+          30501,
+          30505,
+          30628,
+          30652,
+          30779,
+          30942
+        ],
+        "overlap_groups": {
+          "fresh_relevant_cpt:00001": {
+            "target_qids": [
+              30791,
+              29930
+            ],
+            "reference_qids": [
+              30942,
+              20638,
+              10246,
+              29776,
+              20639,
+              30501
+            ]
+          },
+          "fresh_relevant_cpt:00263": {
+            "target_qids": [
+              30219
+            ],
+            "reference_qids": [
+              30652,
+              30073,
+              30505,
+              20633,
+              10242,
+              10236,
+              29791,
+              29790
+            ]
+          },
+          "fresh_relevant_cpt:00265": {
+            "target_qids": [
+              30919,
+              20219,
+              9850
+            ],
+            "reference_qids": [
+              30779,
+              9713,
+              9828,
+              9957
+            ]
+          },
+          "fresh_relevant_cpt:00827": {
+            "target_qids": [
+              9677,
+              9958,
+              20067
+            ],
+            "reference_qids": [
+              29630,
+              20350,
+              9841,
+              9834,
+              30628,
+              9526,
+              30049,
+              20094,
+              9703,
+              30343,
+              29911
+            ]
+          }
+        }
+      },
+      "extended_core": {
+        "target_covered_qids": 300,
+        "reference_covered_qids": 256,
+        "overlap_mechanism_groups": 24,
+        "matched_target_qids_count": 54,
+        "matched_reference_qids_count": 173,
+        "matched_qid_pair_count": 392,
+        "matched_target_by_query_type": {
+          "det-counterfactual": 54
+        },
+        "matched_target_qids": [
+          9542,
+          9653,
+          9677,
+          9772,
+          9850,
+          9958,
+          10041,
+          10052,
+          10087,
+          10103,
+          10185,
+          10197,
+          10332,
+          19976,
+          20067,
+          20085,
+          20219,
+          20309,
+          20364,
+          20444,
+          20494,
+          20519,
+          20562,
+          20654,
+          20700,
+          29594,
+          29659,
+          29719,
+          29728,
+          29734,
+          29739,
+          29758,
+          29879,
+          29930,
+          29938,
+          29995,
+          30021,
+          30098,
+          30132,
+          30219,
+          30270,
+          30426,
+          30561,
+          30587,
+          30598,
+          30620,
+          30698,
+          30734,
+          30742,
+          30767,
+          30791,
+          30919,
+          30954,
+          30985
+        ],
+        "matched_reference_qids": [
+          9526,
+          9571,
+          9577,
+          9588,
+          9590,
+          9594,
+          9610,
+          9611,
+          9615,
+          9616,
+          9638,
+          9644,
+          9690,
+          9703,
+          9713,
+          9721,
+          9726,
+          9730,
+          9740,
+          9789,
+          9804,
+          9810,
+          9828,
+          9834,
+          9841,
+          9856,
+          9864,
+          9874,
+          9882,
+          9883,
+          9897,
+          9939,
+          9957,
+          9984,
+          10009,
+          10064,
+          10096,
+          10112,
+          10120,
+          10136,
+          10143,
+          10145,
+          10153,
+          10167,
+          10208,
+          10236,
+          10242,
+          10246,
+          10287,
+          10348,
+          10355,
+          10360,
+          10362,
+          19960,
+          19969,
+          19978,
+          19982,
+          19984,
+          19986,
+          19988,
+          19996,
+          19997,
+          20002,
+          20008,
+          20023,
+          20030,
+          20088,
+          20094,
+          20122,
+          20153,
+          20159,
+          20164,
+          20177,
+          20181,
+          20193,
+          20250,
+          20267,
+          20273,
+          20313,
+          20314,
+          20323,
+          20338,
+          20350,
+          20369,
+          20370,
+          20379,
+          20386,
+          20422,
+          20438,
+          20456,
+          20550,
+          20568,
+          20592,
+          20633,
+          20638,
+          20639,
+          20676,
+          29590,
+          29596,
+          29599,
+          29612,
+          29630,
+          29666,
+          29681,
+          29694,
+          29696,
+          29698,
+          29700,
+          29701,
+          29741,
+          29776,
+          29790,
+          29791,
+          29810,
+          29826,
+          29827,
+          29852,
+          29861,
+          29874,
+          29886,
+          29911,
+          29953,
+          29962,
+          29980,
+          29982,
+          29986,
+          29990,
+          30002,
+          30005,
+          30024,
+          30049,
+          30073,
+          30116,
+          30118,
+          30155,
+          30188,
+          30235,
+          30308,
+          30316,
+          30343,
+          30387,
+          30420,
+          30449,
+          30451,
+          30453,
+          30455,
+          30459,
+          30470,
+          30476,
+          30501,
+          30505,
+          30556,
+          30581,
+          30605,
+          30610,
+          30628,
+          30652,
+          30658,
+          30671,
+          30701,
+          30749,
+          30779,
+          30801,
+          30810,
+          30830,
+          30842,
+          30846,
+          30892,
+          30894,
+          30895,
+          30909,
+          30942,
+          30956
+        ],
+        "overlap_groups": {
+          "extended_core_cpt:00001": {
+            "target_qids": [
+              29659,
+              10041
+            ],
+            "reference_qids": [
+              20438,
+              10355,
+              30671,
+              10348,
+              20181,
+              9726,
+              9789,
+              9740,
+              9730,
+              20122
+            ]
+          },
+          "extended_core_cpt:00002": {
+            "target_qids": [
+              20444,
+              10332,
+              20700,
+              30954,
+              29938,
+              10052
+            ],
+            "reference_qids": [
+              10360,
+              30235,
+              20193,
+              9721,
+              10362,
+              20177,
+              9804,
+              9810,
+              30810,
+              30956,
+              30801,
+              20422,
+              30658
+            ]
+          },
+          "extended_core_cpt:00503": {
+            "target_qids": [
+              20364,
+              30098
+            ],
+            "reference_qids": [
+              9874,
+              20267,
+              10208,
+              20338
+            ]
+          },
+          "extended_core_cpt:00504": {
+            "target_qids": [
+              10197
+            ],
+            "reference_qids": [
+              30387,
+              20250,
+              20592,
+              20314,
+              9897,
+              20369,
+              29953,
+              20370,
+              30830,
+              20313,
+              29810,
+              9856
+            ]
+          },
+          "extended_core_cpt:00505": {
+            "target_qids": [
+              20654
+            ],
+            "reference_qids": [
+              9939,
+              9864,
+              20379,
+              9984
+            ]
+          },
+          "extended_core_cpt:00506": {
+            "target_qids": [
+              20309
+            ],
+            "reference_qids": [
+              20323,
+              9883,
+              29962,
+              9882,
+              20273,
+              29666,
+              20386
+            ]
+          },
+          "extended_core_cpt:01067": {
+            "target_qids": [
+              9772,
+              29728,
+              29594,
+              30021
+            ],
+            "reference_qids": [
+              10009,
+              20164
+            ]
+          },
+          "extended_core_cpt:01068": {
+            "target_qids": [
+              29734,
+              30742,
+              29879
+            ],
+            "reference_qids": [
+              30316,
+              30449,
+              30451
+            ]
+          },
+          "extended_core_cpt:01449": {
+            "target_qids": [
+              30598
+            ],
+            "reference_qids": [
+              30024,
+              30459,
+              29874,
+              10287,
+              20676,
+              29741,
+              29596,
+              29599,
+              20159
+            ]
+          },
+          "extended_core_cpt:01450": {
+            "target_qids": [
+              29739
+            ],
+            "reference_qids": [
+              30894,
+              30453,
+              30455,
+              30605,
+              30892,
+              30308,
+              30749,
+              29590,
+              30895,
+              29886,
+              20153
+            ]
+          },
+          "extended_core_cpt:01893": {
+            "target_qids": [
+              30767,
+              20494,
+              10103,
+              20562,
+              10185,
+              30620
+            ],
+            "reference_qids": [
+              10096,
+              10153,
+              10167,
+              29612,
+              30470,
+              10136
+            ]
+          },
+          "extended_core_cpt:01894": {
+            "target_qids": [
+              10087,
+              29758,
+              20519
+            ],
+            "reference_qids": [
+              30476,
+              10143,
+              20568,
+              30188,
+              10112,
+              20456,
+              10145,
+              30909,
+              10064,
+              20550,
+              10120,
+              30610
+            ]
+          },
+          "extended_core_cpt:02335": {
+            "target_qids": [
+              30270
+            ],
+            "reference_qids": [
+              19988,
+              29982,
+              19997,
+              29681,
+              19986,
+              19996,
+              9594,
+              30116,
+              29980,
+              30118
+            ]
+          },
+          "extended_core_cpt:02336": {
+            "target_qids": [
+              20085
+            ],
+            "reference_qids": [
+              9590,
+              19982,
+              30701,
+              30556,
+              19984,
+              30842,
+              9611,
+              20002,
+              9610,
+              9690
+            ]
+          },
+          "extended_core_cpt:02338": {
+            "target_qids": [
+              30698,
+              30985
+            ],
+            "reference_qids": [
+              9616,
+              20008,
+              9588,
+              30846,
+              20088,
+              19978,
+              29694,
+              9615,
+              29826,
+              29827
+            ]
+          },
+          "extended_core_cpt:02719": {
+            "target_qids": [
+              30561
+            ],
+            "reference_qids": [
+              19960,
+              29990
+            ]
+          },
+          "extended_core_cpt:02981": {
+            "target_qids": [
+              29995,
+              30426,
+              19976
+            ],
+            "reference_qids": [
+              29700,
+              29701
+            ]
+          },
+          "extended_core_cpt:02982": {
+            "target_qids": [
+              30132
+            ],
+            "reference_qids": [
+              29986,
+              29696,
+              29852,
+              19969,
+              9577,
+              30420,
+              29698,
+              9571
+            ]
+          },
+          "extended_core_cpt:02983": {
+            "target_qids": [
+              30587
+            ],
+            "reference_qids": [
+              9644
+            ]
+          },
+          "extended_core_cpt:02984": {
+            "target_qids": [
+              30734,
+              29719,
+              9542,
+              9653
+            ],
+            "reference_qids": [
+              9638,
+              20023,
+              29861,
+              30002,
+              30581,
+              20030,
+              30155,
+              30005
+            ]
+          },
+          "extended_core_cpt:03425": {
+            "target_qids": [
+              30791,
+              29930
+            ],
+            "reference_qids": [
+              30942,
+              20638,
+              10246,
+              29776,
+              20639,
+              30501
+            ]
+          },
+          "extended_core_cpt:03687": {
+            "target_qids": [
+              30219
+            ],
+            "reference_qids": [
+              30652,
+              30073,
+              30505,
+              20633,
+              10242,
+              10236,
+              29791,
+              29790
+            ]
+          },
+          "extended_core_cpt:03689": {
+            "target_qids": [
+              30919,
+              20219,
+              9850
+            ],
+            "reference_qids": [
+              30779,
+              9713,
+              9828,
+              9957
+            ]
+          },
+          "extended_core_cpt:04251": {
+            "target_qids": [
+              9677,
+              9958,
+              20067
+            ],
+            "reference_qids": [
+              29630,
+              20350,
+              9841,
+              9834,
+              30628,
+              9526,
+              30049,
+              20094,
+              9703,
+              30343,
+              29911
+            ]
+          }
+        }
+      }
+    },
+    "challenge100": {
+      "full": {
+        "target_covered_qids": 300,
+        "reference_covered_qids": 100,
+        "overlap_mechanism_groups": 16,
+        "matched_target_qids_count": 30,
+        "matched_reference_qids_count": 23,
+        "matched_qid_pair_count": 46,
+        "matched_target_by_query_type": {
+          "nde": 1,
+          "det-counterfactual": 25,
+          "ate": 4
+        },
+        "matched_target_qids": [
+          2277,
+          9677,
+          9958,
+          10052,
+          10087,
+          10103,
+          10185,
+          10332,
+          10741,
+          11590,
+          13835,
+          18518,
+          19976,
+          20067,
+          20309,
+          20444,
+          20494,
+          20519,
+          20562,
+          29758,
+          29930,
+          29938,
+          29995,
+          30132,
+          30270,
+          30426,
+          30587,
+          30620,
+          30767,
+          30791
+        ],
+        "matched_reference_qids": [
+          351,
+          1199,
+          3443,
+          8127,
+          9570,
+          9584,
+          9623,
+          10364,
+          12669,
+          20014,
+          20353,
+          20554,
+          20723,
+          29605,
+          29664,
+          29680,
+          30042,
+          30069,
+          30445,
+          30473,
+          30618,
+          30674,
+          30900
+        ],
+        "overlap_groups": {
+          "full_cpt:00092": {
+            "target_qids": [
+              20444,
+              10332,
+              29938,
+              10052
+            ],
+            "reference_qids": [
+              10364,
+              20723
+            ]
+          },
+          "full_cpt:00243": {
+            "target_qids": [
+              13835
+            ],
+            "reference_qids": [
+              3443
+            ]
+          },
+          "full_cpt:00783": {
+            "target_qids": [
+              20309
+            ],
+            "reference_qids": [
+              29664,
+              30674
+            ]
+          },
+          "full_cpt:01203": {
+            "target_qids": [
+              18518
+            ],
+            "reference_qids": [
+              8127
+            ]
+          },
+          "full_cpt:02308": {
+            "target_qids": [
+              30767,
+              20562,
+              30620
+            ],
+            "reference_qids": [
+              29605,
+              30042,
+              30473,
+              30900
+            ]
+          },
+          "full_cpt:02310": {
+            "target_qids": [
+              20494,
+              10103,
+              10185
+            ],
+            "reference_qids": [
+              30618
+            ]
+          },
+          "full_cpt:02311": {
+            "target_qids": [
+              10087,
+              29758,
+              20519
+            ],
+            "reference_qids": [
+              20554
+            ]
+          },
+          "full_cpt:02339": {
+            "target_qids": [
+              30270
+            ],
+            "reference_qids": [
+              29680
+            ]
+          },
+          "full_cpt:02623": {
+            "target_qids": [
+              11590
+            ],
+            "reference_qids": [
+              1199
+            ]
+          },
+          "full_cpt:02747": {
+            "target_qids": [
+              10741
+            ],
+            "reference_qids": [
+              351
+            ]
+          },
+          "full_cpt:02974": {
+            "target_qids": [
+              29995,
+              30426,
+              19976
+            ],
+            "reference_qids": [
+              9584
+            ]
+          },
+          "full_cpt:02975": {
+            "target_qids": [
+              30132
+            ],
+            "reference_qids": [
+              9570
+            ]
+          },
+          "full_cpt:03112": {
+            "target_qids": [
+              30587
+            ],
+            "reference_qids": [
+              9623,
+              20014,
+              30445
+            ]
+          },
+          "full_cpt:03683": {
+            "target_qids": [
+              30791,
+              29930
+            ],
+            "reference_qids": [
+              30069
+            ]
+          },
+          "full_cpt:03963": {
+            "target_qids": [
+              2277
+            ],
+            "reference_qids": [
+              12669
+            ]
+          },
+          "full_cpt:04255": {
+            "target_qids": [
+              9677,
+              9958,
+              20067
+            ],
+            "reference_qids": [
+              20353
+            ]
+          }
+        }
+      },
+      "fresh_relevant": {
+        "target_covered_qids": 76,
+        "reference_covered_qids": 40,
+        "overlap_mechanism_groups": 3,
+        "matched_target_qids_count": 6,
+        "matched_reference_qids_count": 3,
+        "matched_qid_pair_count": 6,
+        "matched_target_by_query_type": {
+          "nde": 1,
+          "det-counterfactual": 5
+        },
+        "matched_target_qids": [
+          2277,
+          9677,
+          9958,
+          20067,
+          29930,
+          30791
+        ],
+        "matched_reference_qids": [
+          12669,
+          20353,
+          30069
+        ],
+        "overlap_groups": {
+          "fresh_relevant_cpt:00001": {
+            "target_qids": [
+              30791,
+              29930
+            ],
+            "reference_qids": [
+              30069
+            ]
+          },
+          "fresh_relevant_cpt:00535": {
+            "target_qids": [
+              2277
+            ],
+            "reference_qids": [
+              12669
+            ]
+          },
+          "fresh_relevant_cpt:00827": {
+            "target_qids": [
+              9677,
+              9958,
+              20067
+            ],
+            "reference_qids": [
+              20353
+            ]
+          }
+        }
+      },
+      "extended_core": {
+        "target_covered_qids": 300,
+        "reference_covered_qids": 100,
+        "overlap_mechanism_groups": 15,
+        "matched_target_qids_count": 32,
+        "matched_reference_qids_count": 23,
+        "matched_qid_pair_count": 65,
+        "matched_target_by_query_type": {
+          "nde": 1,
+          "det-counterfactual": 27,
+          "ate": 4
+        },
+        "matched_target_qids": [
+          2277,
+          9677,
+          9958,
+          10052,
+          10087,
+          10103,
+          10185,
+          10332,
+          10741,
+          11590,
+          13835,
+          18518,
+          19976,
+          20067,
+          20309,
+          20444,
+          20494,
+          20519,
+          20562,
+          20700,
+          29758,
+          29930,
+          29938,
+          29995,
+          30132,
+          30270,
+          30426,
+          30587,
+          30620,
+          30767,
+          30791,
+          30954
+        ],
+        "matched_reference_qids": [
+          351,
+          1199,
+          3443,
+          8127,
+          9570,
+          9584,
+          9623,
+          10364,
+          12669,
+          20014,
+          20353,
+          20554,
+          20723,
+          29605,
+          29664,
+          29680,
+          30042,
+          30069,
+          30445,
+          30473,
+          30618,
+          30674,
+          30900
+        ],
+        "overlap_groups": {
+          "extended_core_cpt:00002": {
+            "target_qids": [
+              20444,
+              10332,
+              20700,
+              30954,
+              29938,
+              10052
+            ],
+            "reference_qids": [
+              10364,
+              20723
+            ]
+          },
+          "extended_core_cpt:00174": {
+            "target_qids": [
+              13835
+            ],
+            "reference_qids": [
+              3443
+            ]
+          },
+          "extended_core_cpt:00506": {
+            "target_qids": [
+              20309
+            ],
+            "reference_qids": [
+              29664,
+              30674
+            ]
+          },
+          "extended_core_cpt:01201": {
+            "target_qids": [
+              18518
+            ],
+            "reference_qids": [
+              8127
+            ]
+          },
+          "extended_core_cpt:01893": {
+            "target_qids": [
+              30767,
+              20494,
+              10103,
+              20562,
+              10185,
+              30620
+            ],
+            "reference_qids": [
+              29605,
+              30042,
+              30473,
+              30618,
+              30900
+            ]
+          },
+          "extended_core_cpt:01894": {
+            "target_qids": [
+              10087,
+              29758,
+              20519
+            ],
+            "reference_qids": [
+              20554
+            ]
+          },
+          "extended_core_cpt:02335": {
+            "target_qids": [
+              30270
+            ],
+            "reference_qids": [
+              29680
+            ]
+          },
+          "extended_core_cpt:02619": {
+            "target_qids": [
+              11590
+            ],
+            "reference_qids": [
+              1199
+            ]
+          },
+          "extended_core_cpt:02878": {
+            "target_qids": [
+              10741
+            ],
+            "reference_qids": [
+              351
+            ]
+          },
+          "extended_core_cpt:02981": {
+            "target_qids": [
+              29995,
+              30426,
+              19976
+            ],
+            "reference_qids": [
+              9584
+            ]
+          },
+          "extended_core_cpt:02982": {
+            "target_qids": [
+              30132
+            ],
+            "reference_qids": [
+              9570
+            ]
+          },
+          "extended_core_cpt:02983": {
+            "target_qids": [
+              30587
+            ],
+            "reference_qids": [
+              9623,
+              20014,
+              30445
+            ]
+          },
+          "extended_core_cpt:03425": {
+            "target_qids": [
+              30791,
+              29930
+            ],
+            "reference_qids": [
+              30069
+            ]
+          },
+          "extended_core_cpt:03959": {
+            "target_qids": [
+              2277
+            ],
+            "reference_qids": [
+              12669
+            ]
+          },
+          "extended_core_cpt:04251": {
+            "target_qids": [
+              9677,
+              9958,
+              20067
+            ],
+            "reference_qids": [
+              20353
+            ]
+          }
+        }
+      }
+    }
+  },
+  "main_vs_reference_union": {
+    "full": {
+      "target_covered_qids": 300,
+      "reference_covered_qids": 356,
+      "overlap_mechanism_groups": 32,
+      "matched_target_qids_count": 59,
+      "matched_reference_qids_count": 187,
+      "matched_qid_pair_count": 349,
+      "matched_target_by_query_type": {
+        "nde": 1,
+        "det-counterfactual": 54,
+        "ate": 4
+      },
+      "matched_target_qids": [
+        2277,
+        9542,
+        9653,
+        9677,
+        9772,
+        9850,
+        9958,
+        10041,
+        10052,
+        10087,
+        10103,
+        10185,
+        10197,
+        10332,
+        10741,
+        11590,
+        13835,
+        18518,
+        19976,
+        20067,
+        20085,
+        20219,
+        20309,
+        20364,
+        20444,
+        20494,
+        20519,
+        20562,
+        20654,
+        20700,
+        29594,
+        29659,
+        29719,
+        29728,
+        29734,
+        29739,
+        29758,
+        29879,
+        29930,
+        29938,
+        29995,
+        30021,
+        30098,
+        30132,
+        30219,
+        30270,
+        30426,
+        30561,
+        30587,
+        30598,
+        30620,
+        30698,
+        30734,
+        30742,
+        30767,
+        30791,
+        30919,
+        30954,
+        30985
+      ],
+      "matched_reference_qids": [
+        351,
+        1199,
+        3443,
+        8127,
+        9526,
+        9570,
+        9571,
+        9577,
+        9584,
+        9588,
+        9590,
+        9594,
+        9610,
+        9611,
+        9615,
+        9616,
+        9623,
+        9638,
+        9644,
+        9690,
+        9703,
+        9713,
+        9721,
+        9726,
+        9730,
+        9740,
+        9789,
+        9804,
+        9810,
+        9828,
+        9834,
+        9841,
+        9856,
+        9864,
+        9874,
+        9882,
+        9883,
+        9897,
+        9939,
+        9957,
+        9984,
+        10009,
+        10096,
+        10120,
+        10136,
+        10153,
+        10167,
+        10208,
+        10236,
+        10242,
+        10246,
+        10287,
+        10348,
+        10355,
+        10360,
+        10362,
+        10364,
+        12669,
+        19960,
+        19969,
+        19978,
+        19982,
+        19984,
+        19986,
+        19988,
+        19996,
+        19997,
+        20002,
+        20008,
+        20014,
+        20023,
+        20030,
+        20088,
+        20094,
+        20122,
+        20153,
+        20159,
+        20164,
+        20177,
+        20181,
+        20193,
+        20250,
+        20267,
+        20273,
+        20313,
+        20314,
+        20323,
+        20338,
+        20350,
+        20353,
+        20369,
+        20370,
+        20379,
+        20386,
+        20422,
+        20438,
+        20550,
+        20554,
+        20592,
+        20633,
+        20638,
+        20639,
+        20676,
+        20723,
+        29590,
+        29596,
+        29599,
+        29605,
+        29612,
+        29630,
+        29664,
+        29666,
+        29680,
+        29681,
+        29694,
+        29696,
+        29698,
+        29700,
+        29701,
+        29741,
+        29776,
+        29790,
+        29791,
+        29810,
+        29826,
+        29827,
+        29852,
+        29861,
+        29874,
+        29886,
+        29911,
+        29953,
+        29962,
+        29980,
+        29982,
+        29986,
+        29990,
+        30002,
+        30005,
+        30024,
+        30042,
+        30049,
+        30069,
+        30073,
+        30116,
+        30118,
+        30155,
+        30235,
+        30308,
+        30316,
+        30343,
+        30387,
+        30420,
+        30445,
+        30449,
+        30451,
+        30453,
+        30455,
+        30459,
+        30470,
+        30473,
+        30501,
+        30505,
+        30556,
+        30581,
+        30605,
+        30610,
+        30618,
+        30628,
+        30652,
+        30658,
+        30671,
+        30674,
+        30701,
+        30749,
+        30779,
+        30801,
+        30810,
+        30830,
+        30842,
+        30846,
+        30892,
+        30894,
+        30895,
+        30900,
+        30942,
+        30956
+      ],
+      "overlap_groups": {
+        "full_cpt:00089": {
+          "target_qids": [
+            29659
+          ],
+          "reference_qids": [
+            9740,
+            10348,
+            10355
+          ]
+        },
+        "full_cpt:00090": {
+          "target_qids": [
+            20700,
+            30954
+          ],
+          "reference_qids": [
+            20177,
+            20422,
+            30235,
+            30801
+          ]
+        },
+        "full_cpt:00091": {
+          "target_qids": [
+            10041
+          ],
+          "reference_qids": [
+            9726,
+            9730,
+            9789,
+            20122,
+            20181,
+            20438,
+            30671
+          ]
+        },
+        "full_cpt:00092": {
+          "target_qids": [
+            20444,
+            10332,
+            29938,
+            10052
+          ],
+          "reference_qids": [
+            9721,
+            9804,
+            9810,
+            10360,
+            10362,
+            10364,
+            20193,
+            20723,
+            30658,
+            30810,
+            30956
+          ]
+        },
+        "full_cpt:00243": {
+          "target_qids": [
+            13835
+          ],
+          "reference_qids": [
+            3443
+          ]
+        },
+        "full_cpt:00780": {
+          "target_qids": [
+            20364,
+            30098
+          ],
+          "reference_qids": [
+            9874,
+            10208,
+            20267,
+            20338
+          ]
+        },
+        "full_cpt:00781": {
+          "target_qids": [
+            10197
+          ],
+          "reference_qids": [
+            9856,
+            9897,
+            20250,
+            20313,
+            20314,
+            20369,
+            20370,
+            20592,
+            29810,
+            29953,
+            30387,
+            30830
+          ]
+        },
+        "full_cpt:00782": {
+          "target_qids": [
+            20654
+          ],
+          "reference_qids": [
+            9864,
+            9939,
+            9984,
+            20379
+          ]
+        },
+        "full_cpt:00783": {
+          "target_qids": [
+            20309
+          ],
+          "reference_qids": [
+            9882,
+            9883,
+            20273,
+            20323,
+            20386,
+            29664,
+            29666,
+            29962,
+            30674
+          ]
+        },
+        "full_cpt:01069": {
+          "target_qids": [
+            9772,
+            29728,
+            29594,
+            30021
+          ],
+          "reference_qids": [
+            10009,
+            20164
+          ]
+        },
+        "full_cpt:01070": {
+          "target_qids": [
+            29734,
+            30742,
+            29879
+          ],
+          "reference_qids": [
+            30316,
+            30449,
+            30451
+          ]
+        },
+        "full_cpt:01203": {
+          "target_qids": [
+            18518
+          ],
+          "reference_qids": [
+            8127
+          ]
+        },
+        "full_cpt:01451": {
+          "target_qids": [
+            30598
+          ],
+          "reference_qids": [
+            10287,
+            20159,
+            20676,
+            29596,
+            29599,
+            29741,
+            29874,
+            30024,
+            30459
+          ]
+        },
+        "full_cpt:01452": {
+          "target_qids": [
+            29739
+          ],
+          "reference_qids": [
+            20153,
+            29590,
+            29886,
+            30308,
+            30453,
+            30455,
+            30605,
+            30749,
+            30892,
+            30894,
+            30895
+          ]
+        },
+        "full_cpt:02308": {
+          "target_qids": [
+            30767,
+            20562,
+            30620
+          ],
+          "reference_qids": [
+            10096,
+            10153,
+            10167,
+            29605,
+            30042,
+            30473,
+            30900
+          ]
+        },
+        "full_cpt:02310": {
+          "target_qids": [
+            20494,
+            10103,
+            10185
+          ],
+          "reference_qids": [
+            10136,
+            29612,
+            30470,
+            30618
+          ]
+        },
+        "full_cpt:02311": {
+          "target_qids": [
+            10087,
+            29758,
+            20519
+          ],
+          "reference_qids": [
+            10120,
+            20550,
+            20554,
+            30610
+          ]
+        },
+        "full_cpt:02339": {
+          "target_qids": [
+            30270
+          ],
+          "reference_qids": [
+            9594,
+            19986,
+            19988,
+            19996,
+            19997,
+            29680,
+            29681,
+            29980,
+            29982,
+            30116,
+            30118
+          ]
+        },
+        "full_cpt:02340": {
+          "target_qids": [
+            20085
+          ],
+          "reference_qids": [
+            9590,
+            9610,
+            9611,
+            9690,
+            19982,
+            19984,
+            20002,
+            30556,
+            30701,
+            30842
+          ]
+        },
+        "full_cpt:02342": {
+          "target_qids": [
+            30698,
+            30985
+          ],
+          "reference_qids": [
+            9588,
+            9615,
+            9616,
+            19978,
+            20008,
+            20088,
+            29694,
+            29826,
+            29827,
+            30846
+          ]
+        },
+        "full_cpt:02623": {
+          "target_qids": [
+            11590
+          ],
+          "reference_qids": [
+            1199
+          ]
+        },
+        "full_cpt:02747": {
+          "target_qids": [
+            10741
+          ],
+          "reference_qids": [
+            351
+          ]
+        },
+        "full_cpt:02972": {
+          "target_qids": [
+            30561
+          ],
+          "reference_qids": [
+            19960,
+            29990
+          ]
+        },
+        "full_cpt:02974": {
+          "target_qids": [
+            29995,
+            30426,
+            19976
+          ],
+          "reference_qids": [
+            9584,
+            29700,
+            29701
+          ]
+        },
+        "full_cpt:02975": {
+          "target_qids": [
+            30132
+          ],
+          "reference_qids": [
+            9570,
+            9571,
+            9577,
+            19969,
+            29696,
+            29698,
+            29852,
+            29986,
+            30420
+          ]
+        },
+        "full_cpt:03112": {
+          "target_qids": [
+            30587
+          ],
+          "reference_qids": [
+            9623,
+            9644,
+            20014,
+            30445
+          ]
+        },
+        "full_cpt:03113": {
+          "target_qids": [
+            30734,
+            29719,
+            9542,
+            9653
+          ],
+          "reference_qids": [
+            9638,
+            20023,
+            20030,
+            29861,
+            30002,
+            30005,
+            30155,
+            30581
+          ]
+        },
+        "full_cpt:03683": {
+          "target_qids": [
+            30791,
+            29930
+          ],
+          "reference_qids": [
+            10246,
+            20638,
+            20639,
+            29776,
+            30069,
+            30501,
+            30942
+          ]
+        },
+        "full_cpt:03685": {
+          "target_qids": [
+            30219
+          ],
+          "reference_qids": [
+            10236,
+            10242,
+            20633,
+            29790,
+            29791,
+            30073,
+            30505,
+            30652
+          ]
+        },
+        "full_cpt:03693": {
+          "target_qids": [
+            30919,
+            20219,
+            9850
+          ],
+          "reference_qids": [
+            9713,
+            9828,
+            9957,
+            30779
+          ]
+        },
+        "full_cpt:03963": {
+          "target_qids": [
+            2277
+          ],
+          "reference_qids": [
+            12669
+          ]
+        },
+        "full_cpt:04255": {
+          "target_qids": [
+            9677,
+            9958,
+            20067
+          ],
+          "reference_qids": [
+            9526,
+            9703,
+            9834,
+            9841,
+            20094,
+            20350,
+            20353,
+            29630,
+            29911,
+            30049,
+            30343,
+            30628
+          ]
+        }
+      }
+    },
+    "fresh_relevant": {
+      "target_covered_qids": 76,
+      "reference_covered_qids": 131,
+      "overlap_mechanism_groups": 5,
+      "matched_target_qids_count": 10,
+      "matched_reference_qids_count": 32,
+      "matched_qid_pair_count": 71,
+      "matched_target_by_query_type": {
+        "nde": 1,
+        "det-counterfactual": 9
+      },
+      "matched_target_qids": [
+        2277,
+        9677,
+        9850,
+        9958,
+        20067,
+        20219,
+        29930,
+        30219,
+        30791,
+        30919
+      ],
+      "matched_reference_qids": [
+        9526,
+        9703,
+        9713,
+        9828,
+        9834,
+        9841,
+        9957,
+        10236,
+        10242,
+        10246,
+        12669,
+        20094,
+        20350,
+        20353,
+        20633,
+        20638,
+        20639,
+        29630,
+        29776,
+        29790,
+        29791,
+        29911,
+        30049,
+        30069,
+        30073,
+        30343,
+        30501,
+        30505,
+        30628,
+        30652,
+        30779,
+        30942
+      ],
+      "overlap_groups": {
+        "fresh_relevant_cpt:00001": {
+          "target_qids": [
+            30791,
+            29930
+          ],
+          "reference_qids": [
+            10246,
+            20638,
+            20639,
+            29776,
+            30069,
+            30501,
+            30942
+          ]
+        },
+        "fresh_relevant_cpt:00263": {
+          "target_qids": [
+            30219
+          ],
+          "reference_qids": [
+            10236,
+            10242,
+            20633,
+            29790,
+            29791,
+            30073,
+            30505,
+            30652
+          ]
+        },
+        "fresh_relevant_cpt:00265": {
+          "target_qids": [
+            30919,
+            20219,
+            9850
+          ],
+          "reference_qids": [
+            9713,
+            9828,
+            9957,
+            30779
+          ]
+        },
+        "fresh_relevant_cpt:00535": {
+          "target_qids": [
+            2277
+          ],
+          "reference_qids": [
+            12669
+          ]
+        },
+        "fresh_relevant_cpt:00827": {
+          "target_qids": [
+            9677,
+            9958,
+            20067
+          ],
+          "reference_qids": [
+            9526,
+            9703,
+            9834,
+            9841,
+            20094,
+            20350,
+            20353,
+            29630,
+            29911,
+            30049,
+            30343,
+            30628
+          ]
+        }
+      }
+    },
+    "extended_core": {
+      "target_covered_qids": 300,
+      "reference_covered_qids": 356,
+      "overlap_mechanism_groups": 29,
+      "matched_target_qids_count": 59,
+      "matched_reference_qids_count": 196,
+      "matched_qid_pair_count": 457,
+      "matched_target_by_query_type": {
+        "nde": 1,
+        "det-counterfactual": 54,
+        "ate": 4
+      },
+      "matched_target_qids": [
+        2277,
+        9542,
+        9653,
+        9677,
+        9772,
+        9850,
+        9958,
+        10041,
+        10052,
+        10087,
+        10103,
+        10185,
+        10197,
+        10332,
+        10741,
+        11590,
+        13835,
+        18518,
+        19976,
+        20067,
+        20085,
+        20219,
+        20309,
+        20364,
+        20444,
+        20494,
+        20519,
+        20562,
+        20654,
+        20700,
+        29594,
+        29659,
+        29719,
+        29728,
+        29734,
+        29739,
+        29758,
+        29879,
+        29930,
+        29938,
+        29995,
+        30021,
+        30098,
+        30132,
+        30219,
+        30270,
+        30426,
+        30561,
+        30587,
+        30598,
+        30620,
+        30698,
+        30734,
+        30742,
+        30767,
+        30791,
+        30919,
+        30954,
+        30985
+      ],
+      "matched_reference_qids": [
+        351,
+        1199,
+        3443,
+        8127,
+        9526,
+        9570,
+        9571,
+        9577,
+        9584,
+        9588,
+        9590,
+        9594,
+        9610,
+        9611,
+        9615,
+        9616,
+        9623,
+        9638,
+        9644,
+        9690,
+        9703,
+        9713,
+        9721,
+        9726,
+        9730,
+        9740,
+        9789,
+        9804,
+        9810,
+        9828,
+        9834,
+        9841,
+        9856,
+        9864,
+        9874,
+        9882,
+        9883,
+        9897,
+        9939,
+        9957,
+        9984,
+        10009,
+        10064,
+        10096,
+        10112,
+        10120,
+        10136,
+        10143,
+        10145,
+        10153,
+        10167,
+        10208,
+        10236,
+        10242,
+        10246,
+        10287,
+        10348,
+        10355,
+        10360,
+        10362,
+        10364,
+        12669,
+        19960,
+        19969,
+        19978,
+        19982,
+        19984,
+        19986,
+        19988,
+        19996,
+        19997,
+        20002,
+        20008,
+        20014,
+        20023,
+        20030,
+        20088,
+        20094,
+        20122,
+        20153,
+        20159,
+        20164,
+        20177,
+        20181,
+        20193,
+        20250,
+        20267,
+        20273,
+        20313,
+        20314,
+        20323,
+        20338,
+        20350,
+        20353,
+        20369,
+        20370,
+        20379,
+        20386,
+        20422,
+        20438,
+        20456,
+        20550,
+        20554,
+        20568,
+        20592,
+        20633,
+        20638,
+        20639,
+        20676,
+        20723,
+        29590,
+        29596,
+        29599,
+        29605,
+        29612,
+        29630,
+        29664,
+        29666,
+        29680,
+        29681,
+        29694,
+        29696,
+        29698,
+        29700,
+        29701,
+        29741,
+        29776,
+        29790,
+        29791,
+        29810,
+        29826,
+        29827,
+        29852,
+        29861,
+        29874,
+        29886,
+        29911,
+        29953,
+        29962,
+        29980,
+        29982,
+        29986,
+        29990,
+        30002,
+        30005,
+        30024,
+        30042,
+        30049,
+        30069,
+        30073,
+        30116,
+        30118,
+        30155,
+        30188,
+        30235,
+        30308,
+        30316,
+        30343,
+        30387,
+        30420,
+        30445,
+        30449,
+        30451,
+        30453,
+        30455,
+        30459,
+        30470,
+        30473,
+        30476,
+        30501,
+        30505,
+        30556,
+        30581,
+        30605,
+        30610,
+        30618,
+        30628,
+        30652,
+        30658,
+        30671,
+        30674,
+        30701,
+        30749,
+        30779,
+        30801,
+        30810,
+        30830,
+        30842,
+        30846,
+        30892,
+        30894,
+        30895,
+        30900,
+        30909,
+        30942,
+        30956
+      ],
+      "overlap_groups": {
+        "extended_core_cpt:00001": {
+          "target_qids": [
+            29659,
+            10041
+          ],
+          "reference_qids": [
+            9726,
+            9730,
+            9740,
+            9789,
+            10348,
+            10355,
+            20122,
+            20181,
+            20438,
+            30671
+          ]
+        },
+        "extended_core_cpt:00002": {
+          "target_qids": [
+            20444,
+            10332,
+            20700,
+            30954,
+            29938,
+            10052
+          ],
+          "reference_qids": [
+            9721,
+            9804,
+            9810,
+            10360,
+            10362,
+            10364,
+            20177,
+            20193,
+            20422,
+            20723,
+            30235,
+            30658,
+            30801,
+            30810,
+            30956
+          ]
+        },
+        "extended_core_cpt:00174": {
+          "target_qids": [
+            13835
+          ],
+          "reference_qids": [
+            3443
+          ]
+        },
+        "extended_core_cpt:00503": {
+          "target_qids": [
+            20364,
+            30098
+          ],
+          "reference_qids": [
+            9874,
+            10208,
+            20267,
+            20338
+          ]
+        },
+        "extended_core_cpt:00504": {
+          "target_qids": [
+            10197
+          ],
+          "reference_qids": [
+            9856,
+            9897,
+            20250,
+            20313,
+            20314,
+            20369,
+            20370,
+            20592,
+            29810,
+            29953,
+            30387,
+            30830
+          ]
+        },
+        "extended_core_cpt:00505": {
+          "target_qids": [
+            20654
+          ],
+          "reference_qids": [
+            9864,
+            9939,
+            9984,
+            20379
+          ]
+        },
+        "extended_core_cpt:00506": {
+          "target_qids": [
+            20309
+          ],
+          "reference_qids": [
+            9882,
+            9883,
+            20273,
+            20323,
+            20386,
+            29664,
+            29666,
+            29962,
+            30674
+          ]
+        },
+        "extended_core_cpt:01067": {
+          "target_qids": [
+            9772,
+            29728,
+            29594,
+            30021
+          ],
+          "reference_qids": [
+            10009,
+            20164
+          ]
+        },
+        "extended_core_cpt:01068": {
+          "target_qids": [
+            29734,
+            30742,
+            29879
+          ],
+          "reference_qids": [
+            30316,
+            30449,
+            30451
+          ]
+        },
+        "extended_core_cpt:01201": {
+          "target_qids": [
+            18518
+          ],
+          "reference_qids": [
+            8127
+          ]
+        },
+        "extended_core_cpt:01449": {
+          "target_qids": [
+            30598
+          ],
+          "reference_qids": [
+            10287,
+            20159,
+            20676,
+            29596,
+            29599,
+            29741,
+            29874,
+            30024,
+            30459
+          ]
+        },
+        "extended_core_cpt:01450": {
+          "target_qids": [
+            29739
+          ],
+          "reference_qids": [
+            20153,
+            29590,
+            29886,
+            30308,
+            30453,
+            30455,
+            30605,
+            30749,
+            30892,
+            30894,
+            30895
+          ]
+        },
+        "extended_core_cpt:01893": {
+          "target_qids": [
+            30767,
+            20494,
+            10103,
+            20562,
+            10185,
+            30620
+          ],
+          "reference_qids": [
+            10096,
+            10136,
+            10153,
+            10167,
+            29605,
+            29612,
+            30042,
+            30470,
+            30473,
+            30618,
+            30900
+          ]
+        },
+        "extended_core_cpt:01894": {
+          "target_qids": [
+            10087,
+            29758,
+            20519
+          ],
+          "reference_qids": [
+            10064,
+            10112,
+            10120,
+            10143,
+            10145,
+            20456,
+            20550,
+            20554,
+            20568,
+            30188,
+            30476,
+            30610,
+            30909
+          ]
+        },
+        "extended_core_cpt:02335": {
+          "target_qids": [
+            30270
+          ],
+          "reference_qids": [
+            9594,
+            19986,
+            19988,
+            19996,
+            19997,
+            29680,
+            29681,
+            29980,
+            29982,
+            30116,
+            30118
+          ]
+        },
+        "extended_core_cpt:02336": {
+          "target_qids": [
+            20085
+          ],
+          "reference_qids": [
+            9590,
+            9610,
+            9611,
+            9690,
+            19982,
+            19984,
+            20002,
+            30556,
+            30701,
+            30842
+          ]
+        },
+        "extended_core_cpt:02338": {
+          "target_qids": [
+            30698,
+            30985
+          ],
+          "reference_qids": [
+            9588,
+            9615,
+            9616,
+            19978,
+            20008,
+            20088,
+            29694,
+            29826,
+            29827,
+            30846
+          ]
+        },
+        "extended_core_cpt:02619": {
+          "target_qids": [
+            11590
+          ],
+          "reference_qids": [
+            1199
+          ]
+        },
+        "extended_core_cpt:02719": {
+          "target_qids": [
+            30561
+          ],
+          "reference_qids": [
+            19960,
+            29990
+          ]
+        },
+        "extended_core_cpt:02878": {
+          "target_qids": [
+            10741
+          ],
+          "reference_qids": [
+            351
+          ]
+        },
+        "extended_core_cpt:02981": {
+          "target_qids": [
+            29995,
+            30426,
+            19976
+          ],
+          "reference_qids": [
+            9584,
+            29700,
+            29701
+          ]
+        },
+        "extended_core_cpt:02982": {
+          "target_qids": [
+            30132
+          ],
+          "reference_qids": [
+            9570,
+            9571,
+            9577,
+            19969,
+            29696,
+            29698,
+            29852,
+            29986,
+            30420
+          ]
+        },
+        "extended_core_cpt:02983": {
+          "target_qids": [
+            30587
+          ],
+          "reference_qids": [
+            9623,
+            9644,
+            20014,
+            30445
+          ]
+        },
+        "extended_core_cpt:02984": {
+          "target_qids": [
+            30734,
+            29719,
+            9542,
+            9653
+          ],
+          "reference_qids": [
+            9638,
+            20023,
+            20030,
+            29861,
+            30002,
+            30005,
+            30155,
+            30581
+          ]
+        },
+        "extended_core_cpt:03425": {
+          "target_qids": [
+            30791,
+            29930
+          ],
+          "reference_qids": [
+            10246,
+            20638,
+            20639,
+            29776,
+            30069,
+            30501,
+            30942
+          ]
+        },
+        "extended_core_cpt:03687": {
+          "target_qids": [
+            30219
+          ],
+          "reference_qids": [
+            10236,
+            10242,
+            20633,
+            29790,
+            29791,
+            30073,
+            30505,
+            30652
+          ]
+        },
+        "extended_core_cpt:03689": {
+          "target_qids": [
+            30919,
+            20219,
+            9850
+          ],
+          "reference_qids": [
+            9713,
+            9828,
+            9957,
+            30779
+          ]
+        },
+        "extended_core_cpt:03959": {
+          "target_qids": [
+            2277
+          ],
+          "reference_qids": [
+            12669
+          ]
+        },
+        "extended_core_cpt:04251": {
+          "target_qids": [
+            9677,
+            9958,
+            20067
+          ],
+          "reference_qids": [
+            9526,
+            9703,
+            9834,
+            9841,
+            20094,
+            20350,
+            20353,
+            29630,
+            29911,
+            30049,
+            30343,
+            30628
+          ]
+        }
+      }
+    }
+  },
+  "qid_and_model_id_overlap": {
+    "demo56": {
+      "qid_overlap": 0,
+      "model_id_overlap": 0
+    },
+    "core256": {
+      "qid_overlap": 0,
+      "model_id_overlap": 0
+    },
+    "challenge100": {
+      "qid_overlap": 0,
+      "model_id_overlap": 0
+    }
+  },
+  "fresh246_recheck": {
+    "full": {
+      "n": 246,
+      "unique_CPT_signatures": 246,
+      "overlap_with_all_historical_signatures": 0
+    },
+    "fresh_relevant": {
+      "n": 246,
+      "unique_CPT_signatures": 246,
+      "overlap_with_all_historical_signatures": 0
+    }
+  },
+  "qid_to_full_CPT_group": {
+    "27122": "full_cpt:03436",
+    "26413": "full_cpt:02816",
+    "852": "full_cpt:03324",
+    "14660": "full_cpt:03536",
+    "29734": "full_cpt:01070",
+    "16350": "full_cpt:03870",
+    "24219": "full_cpt:02485",
+    "14721": "full_cpt:00715",
+    "9772": "full_cpt:01069",
+    "30734": "full_cpt:03113",
+    "21681": "full_cpt:03209",
+    "13560": "full_cpt:00529",
+    "28350": "full_cpt:02302",
+    "8791": "full_cpt:00564",
+    "14790": "full_cpt:00853",
+    "5352": "full_cpt:02664",
+    "20085": "full_cpt:02340",
+    "29113": "full_cpt:03266",
+    "30767": "full_cpt:02308",
+    "24244": "full_cpt:02837",
+    "2508": "full_cpt:00574",
+    "857": "full_cpt:03202",
+    "3092": "full_cpt:04075",
+    "30742": "full_cpt:01070",
+    "28004": "full_cpt:03639",
+    "20494": "full_cpt:02310",
+    "21396": "full_cpt:04145",
+    "16408": "full_cpt:02432",
+    "14579": "full_cpt:03577",
+    "11730": "full_cpt:04086",
+    "6014": "full_cpt:02445",
+    "8510": "full_cpt:02209",
+    "23697": "full_cpt:00482",
+    "25023": "full_cpt:00614",
+    "1613": "full_cpt:00456",
+    "12121": "full_cpt:01208",
+    "20795": "full_cpt:01346",
+    "22050": "full_cpt:02912",
+    "23024": "full_cpt:01321",
+    "1283": "full_cpt:02537",
+    "13835": "full_cpt:00243",
+    "2277": "full_cpt:03963",
+    "957": "full_cpt:03143",
+    "13241": "full_cpt:00854",
+    "967": "full_cpt:03104",
+    "18754": "full_cpt:02227",
+    "8028": "full_cpt:00929",
+    "12508": "full_cpt:03706",
+    "13228": "full_cpt:00876",
+    "586": "full_cpt:02397",
+    "10087": "full_cpt:02311",
+    "4248": "full_cpt:03572",
+    "24764": "full_cpt:01391",
+    "5686": "full_cpt:03299",
+    "13611": "full_cpt:00568",
+    "29879": "full_cpt:01070",
+    "2930": "full_cpt:00776",
+    "18975": "full_cpt:02157",
+    "6148": "full_cpt:03936",
+    "17296": "full_cpt:04059",
+    "16869": "full_cpt:01362",
+    "15903": "full_cpt:03023",
+    "15332": "full_cpt:03734",
+    "16221": "full_cpt:03964",
+    "14726": "full_cpt:00874",
+    "7262": "full_cpt:01034",
+    "13599": "full_cpt:00662",
+    "26507": "full_cpt:01205",
+    "15182": "full_cpt:00392",
+    "8076": "full_cpt:00970",
+    "29995": "full_cpt:02974",
+    "6084": "full_cpt:02464",
+    "30561": "full_cpt:02972",
+    "6051": "full_cpt:02410",
+    "20444": "full_cpt:00092",
+    "5283": "full_cpt:02644",
+    "21083": "full_cpt:00531",
+    "5820": "full_cpt:04069",
+    "12078": "full_cpt:01196",
+    "7097": "full_cpt:04192",
+    "4220": "full_cpt:03538",
+    "29719": "full_cpt:03113",
+    "6588": "full_cpt:00148",
+    "13675": "full_cpt:01072",
+    "28278": "full_cpt:01245",
+    "18518": "full_cpt:01203",
+    "14524": "full_cpt:00878",
+    "8181": "full_cpt:01285",
+    "9178": "full_cpt:00833",
+    "4961": "full_cpt:03736",
+    "10103": "full_cpt:02310",
+    "20562": "full_cpt:02308",
+    "15865": "full_cpt:03061",
+    "9542": "full_cpt:03113",
+    "29728": "full_cpt:01069",
+    "30919": "full_cpt:03693",
+    "13348": "full_cpt:00744",
+    "18739": "full_cpt:02229",
+    "15939": "full_cpt:03068",
+    "1716": "full_cpt:01231",
+    "23223": "full_cpt:03468",
+    "30219": "full_cpt:03685",
+    "29659": "full_cpt:00089",
+    "10544": "full_cpt:04046",
+    "30270": "full_cpt:02339",
+    "29739": "full_cpt:01452",
+    "28009": "full_cpt:00321",
+    "1791": "full_cpt:01182",
+    "18455": "full_cpt:01048",
+    "22882": "full_cpt:02550",
+    "8482": "full_cpt:02181",
+    "14506": "full_cpt:01003",
+    "25391": "full_cpt:00341",
+    "5776": "full_cpt:03268",
+    "2857": "full_cpt:00861",
+    "14036": "full_cpt:02119",
+    "23731": "full_cpt:00734",
+    "20219": "full_cpt:03693",
+    "18761": "full_cpt:02026",
+    "25778": "full_cpt:03537",
+    "6665": "full_cpt:00113",
+    "4898": "full_cpt:03840",
+    "4790": "full_cpt:00392",
+    "6508": "full_cpt:01386",
+    "30587": "full_cpt:03112",
+    "9034": "full_cpt:03652",
+    "13461": "full_cpt:04088",
+    "119": "full_cpt:03978",
+    "28440": "full_cpt:03625",
+    "28421": "full_cpt:03447",
+    "13302": "full_cpt:00852",
+    "10332": "full_cpt:00092",
+    "15716": "full_cpt:02657",
+    "25060": "full_cpt:02407",
+    "29463": "full_cpt:02591",
+    "9092": "full_cpt:00667",
+    "6831": "full_cpt:04216",
+    "14880": "full_cpt:01220",
+    "26704": "full_cpt:03642",
+    "9850": "full_cpt:03693",
+    "20309": "full_cpt:00783",
+    "2149": "full_cpt:03848",
+    "19671": "full_cpt:01185",
+    "6215": "full_cpt:03971",
+    "21787": "full_cpt:02313",
+    "5435": "full_cpt:02630",
+    "5214": "full_cpt:02605",
+    "7216": "full_cpt:00579",
+    "9081": "full_cpt:00653",
+    "4910": "full_cpt:03878",
+    "14113": "full_cpt:02008",
+    "22127": "full_cpt:01350",
+    "6781": "full_cpt:04146",
+    "20364": "full_cpt:00780",
+    "10185": "full_cpt:02310",
+    "4563": "full_cpt:01290",
+    "10839": "full_cpt:02395",
+    "29284": "full_cpt:04093",
+    "30791": "full_cpt:03683",
+    "24698": "full_cpt:02892",
+    "4027": "full_cpt:00965",
+    "29109": "full_cpt:03419",
+    "11590": "full_cpt:02623",
+    "19496": "full_cpt:00723",
+    "4685": "full_cpt:00206",
+    "27140": "full_cpt:00023",
+    "5440": "full_cpt:02611",
+    "20980": "full_cpt:03593",
+    "20893": "full_cpt:02296",
+    "25215": "full_cpt:01347",
+    "29090": "full_cpt:02996",
+    "29758": "full_cpt:02311",
+    "30698": "full_cpt:02342",
+    "28593": "full_cpt:02516",
+    "21453": "full_cpt:03671",
+    "11181": "full_cpt:03219",
+    "5906": "full_cpt:03933",
+    "4181": "full_cpt:03552",
+    "23668": "full_cpt:03630",
+    "10992": "full_cpt:02385",
+    "26276": "full_cpt:00495",
+    "7697": "full_cpt:00859",
+    "18063": "full_cpt:00828",
+    "21105": "full_cpt:00613",
+    "29594": "full_cpt:01069",
+    "5550": "full_cpt:03078",
+    "27147": "full_cpt:00179",
+    "22098": "full_cpt:03189",
+    "19582": "full_cpt:00523",
+    "12089": "full_cpt:01136",
+    "12462": "full_cpt:03800",
+    "24692": "full_cpt:02728",
+    "18623": "full_cpt:00016",
+    "24527": "full_cpt:03619",
+    "20700": "full_cpt:00090",
+    "8935": "full_cpt:03643",
+    "5173": "full_cpt:02938",
+    "30954": "full_cpt:00090",
+    "27991": "full_cpt:03626",
+    "27351": "full_cpt:01416",
+    "518": "full_cpt:02425",
+    "20654": "full_cpt:00782",
+    "23412": "full_cpt:02787",
+    "4421": "full_cpt:00730",
+    "18924": "full_cpt:02138",
+    "15632": "full_cpt:02641",
+    "8963": "full_cpt:03454",
+    "20875": "full_cpt:01946",
+    "1110": "full_cpt:03955",
+    "18263": "full_cpt:03718",
+    "24209": "full_cpt:02414",
+    "30985": "full_cpt:02342",
+    "21872": "full_cpt:03510",
+    "15494": "full_cpt:02926",
+    "17275": "full_cpt:04070",
+    "21502": "full_cpt:00694",
+    "16428": "full_cpt:02450",
+    "23303": "full_cpt:00787",
+    "15589": "full_cpt:02690",
+    "12863": "full_cpt:00516",
+    "14925": "full_cpt:01334",
+    "6109": "full_cpt:04090",
+    "5112": "full_cpt:02947",
+    "1693": "full_cpt:01151",
+    "29938": "full_cpt:00092",
+    "2390": "full_cpt:01061",
+    "17061": "full_cpt:00117",
+    "4601": "full_cpt:01133",
+    "28957": "full_cpt:00706",
+    "29930": "full_cpt:03683",
+    "21262": "full_cpt:01154",
+    "17009": "full_cpt:00142",
+    "17474": "full_cpt:04036",
+    "20519": "full_cpt:02311",
+    "7328": "full_cpt:01011",
+    "30426": "full_cpt:02974",
+    "23044": "full_cpt:01417",
+    "4947": "full_cpt:03795",
+    "27516": "full_cpt:03559",
+    "15817": "full_cpt:02580",
+    "9677": "full_cpt:04255",
+    "10197": "full_cpt:00781",
+    "10041": "full_cpt:00091",
+    "1090": "full_cpt:04201",
+    "27947": "full_cpt:03779",
+    "406": "full_cpt:02469",
+    "23817": "full_cpt:02956",
+    "23218": "full_cpt:03469",
+    "17407": "full_cpt:04227",
+    "10741": "full_cpt:02747",
+    "3288": "full_cpt:01163",
+    "9958": "full_cpt:04255",
+    "22002": "full_cpt:02667",
+    "6007": "full_cpt:02465",
+    "21779": "full_cpt:02314",
+    "27019": "full_cpt:02331",
+    "1413": "full_cpt:04117",
+    "17243": "full_cpt:03890",
+    "11007": "full_cpt:02451",
+    "14651": "full_cpt:03549",
+    "10052": "full_cpt:00092",
+    "22040": "full_cpt:02867",
+    "9510": "full_cpt:00015",
+    "30598": "full_cpt:01451",
+    "9653": "full_cpt:03113",
+    "21653": "full_cpt:03274",
+    "24188": "full_cpt:02539",
+    "3370": "full_cpt:01249",
+    "18584": "full_cpt:01317",
+    "8884": "full_cpt:00525",
+    "27502": "full_cpt:03854",
+    "30021": "full_cpt:01069",
+    "18847": "full_cpt:02136",
+    "15941": "full_cpt:03078",
+    "10773": "full_cpt:02752",
+    "30098": "full_cpt:00780",
+    "12970": "full_cpt:00569",
+    "5177": "full_cpt:02983",
+    "30620": "full_cpt:02308",
+    "6961": "full_cpt:03995",
+    "25706": "full_cpt:01928",
+    "662": "full_cpt:02484",
+    "13448": "full_cpt:03928",
+    "5117": "full_cpt:02943",
+    "363": "full_cpt:02781",
+    "28714": "full_cpt:01234",
+    "16367": "full_cpt:02406",
+    "22429": "full_cpt:02662",
+    "8999": "full_cpt:03458",
+    "4810": "full_cpt:03701",
+    "26957": "full_cpt:01228",
+    "10402": "full_cpt:04112",
+    "3789": "full_cpt:02246",
+    "30132": "full_cpt:02975",
+    "20067": "full_cpt:04255",
+    "7847": "full_cpt:03842",
+    "207": "full_cpt:03391",
+    "19976": "full_cpt:02974",
+    "22469": "full_cpt:02831",
+    "9330": "full_cpt:01165"
+  }
+}

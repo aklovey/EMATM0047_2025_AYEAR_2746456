@@ -1,0 +1,4337 @@
+{
+  "schema_version": 1,
+  "cohort": "released_followup300",
+  "analysis_role": "supplementary CPT sensitivity",
+  "n_frozen_targets": 300,
+  "unique_full_CPT_groups": 271,
+  "primary_denominator": "all 300 frozen items; no exclusions; missing/API/format failures wrong",
+  "estimand": "item-weighted paired correctness difference on the original frozen target set",
+  "grouping": "identical complete CPT mechanism mapping, not model_id",
+  "duplicate_CPT_groups": 16,
+  "items_in_duplicate_CPT_groups": 45,
+  "max_CPT_group_size": 4,
+  "seed": 20260910,
+  "rng": "NumPy default_rng / PCG64; SeedSequence.spawn(6)",
+  "bootstrap_replicates": 20000,
+  "permutation_replicates": 200000,
+  "arms": {
+    "PNS_COT": {
+      "correct": 279,
+      "n": 300,
+      "strict_accuracy": 0.93
+    },
+    "FULL_COT": {
+      "correct": 277,
+      "n": 300,
+      "strict_accuracy": 0.9233333333333333
+    },
+    "HEURISTIC_SHORT": {
+      "correct": 272,
+      "n": 300,
+      "strict_accuracy": 0.9066666666666666
+    },
+    "ZERO": {
+      "correct": 254,
+      "n": 300,
+      "strict_accuracy": 0.8466666666666667
+    }
+  },
+  "comparisons": {
+    "PNS_COT:FULL_COT": {
+      "n": 300,
+      "clusters": 271,
+      "candidate": "PNS_COT",
+      "reference": "FULL_COT",
+      "gain": 10,
+      "loss": 8,
+      "both_correct": 269,
+      "both_wrong": 13,
+      "accuracy_delta": 0.006666666666666667,
+      "paired_CPT_cluster_bootstrap_ci95": [
+        -0.020202020202020204,
+        0.03492063492063492
+      ],
+      "bootstrap": {
+        "ci95": [
+          -0.020202020202020204,
+          0.03492063492063492
+        ],
+        "replicates": 20000,
+        "method": "paired CPT cluster percentile bootstrap",
+        "statistic": "sum(sampled cluster difference totals) / sum(sampled cluster item counts)",
+        "simultaneous_ci": false
+      },
+      "cluster_permutation_p": 0.8145709271453643,
+      "cluster_permutation": {
+        "test": "paired CPT cluster sign-flip permutation (Monte Carlo)",
+        "observed_total_difference": 2,
+        "nonzero_cluster_totals": 18,
+        "replicates": 200000,
+        "extreme_count": 162914,
+        "p": 0.8145709271453643,
+        "two_sided_rule": "(1 + count(abs(null_total) >= abs(observed_total))) / (B + 1)",
+        "exact": false,
+        "add_one": true,
+        "monte_carlo_standard_error_approx": 0.0008690350297111822,
+        "null_mean_total": 0.00483,
+        "null_sd_total": 4.232374826394751
+      },
+      "diagnostic_mcnemar_p": 0.8145294189453125,
+      "diagnostic_mcnemar_scope": "item-level iid diagnostic only; repeated CPT mechanisms violate iid item premise",
+      "bootstrap_rng_spawn_key": [
+        0
+      ],
+      "permutation_rng_spawn_key": [
+        1
+      ],
+      "cluster_totals": [
+        {
+          "CPT_group": "full_cpt:00015",
+          "n": 1,
+          "paired_difference_total": -1
+        },
+        {
+          "CPT_group": "full_cpt:00016",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00023",
+          "n": 1,
+          "paired_difference_total": -1
+        },
+        {
+          "CPT_group": "full_cpt:00089",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00090",
+          "n": 2,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00091",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00092",
+          "n": 4,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00113",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00117",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00142",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00148",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00179",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00206",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00243",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00321",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00341",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00392",
+          "n": 2,
+          "paired_difference_total": 1
+        },
+        {
+          "CPT_group": "full_cpt:00456",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00482",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00495",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00516",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00523",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00525",
+          "n": 1,
+          "paired_difference_total": 1
+        },
+        {
+          "CPT_group": "full_cpt:00529",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00531",
+          "n": 1,
+          "paired_difference_total": 1
+        },
+        {
+          "CPT_group": "full_cpt:00564",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00568",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00569",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00574",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00579",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00613",
+          "n": 1,
+          "paired_difference_total": -1
+        },
+        {
+          "CPT_group": "full_cpt:00614",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00653",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00662",
+          "n": 1,
+          "paired_difference_total": 1
+        },
+        {
+          "CPT_group": "full_cpt:00667",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00694",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00706",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00715",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00723",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00730",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00734",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00744",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00776",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00780",
+          "n": 2,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00781",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00782",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00783",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00787",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00828",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00833",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00852",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00853",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00854",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00859",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00861",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00874",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00876",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00878",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00929",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00965",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00970",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01003",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01011",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01034",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01048",
+          "n": 1,
+          "paired_difference_total": -1
+        },
+        {
+          "CPT_group": "full_cpt:01061",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01069",
+          "n": 4,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01070",
+          "n": 3,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01072",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01133",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01136",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01151",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01154",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01163",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01165",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01182",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01185",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01196",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01203",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01205",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01208",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01220",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01228",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01231",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01234",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01245",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01249",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01285",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01290",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01317",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01321",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01334",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01346",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01347",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01350",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01362",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01386",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01391",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01416",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01417",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01451",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01452",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01928",
+          "n": 1,
+          "paired_difference_total": 1
+        },
+        {
+          "CPT_group": "full_cpt:01946",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02008",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02026",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02119",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02136",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02138",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02157",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02181",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02209",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02227",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02229",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02246",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02296",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02302",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02308",
+          "n": 3,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02310",
+          "n": 3,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02311",
+          "n": 3,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02313",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02314",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02331",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02339",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02340",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02342",
+          "n": 2,
+          "paired_difference_total": 1
+        },
+        {
+          "CPT_group": "full_cpt:02385",
+          "n": 1,
+          "paired_difference_total": 1
+        },
+        {
+          "CPT_group": "full_cpt:02395",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02397",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02406",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02407",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02410",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02414",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02425",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02432",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02445",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02450",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02451",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02464",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02465",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02469",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02484",
+          "n": 1,
+          "paired_difference_total": 1
+        },
+        {
+          "CPT_group": "full_cpt:02485",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02516",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02537",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02539",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02550",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02580",
+          "n": 1,
+          "paired_difference_total": 1
+        },
+        {
+          "CPT_group": "full_cpt:02591",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02605",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02611",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02623",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02630",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02641",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02644",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02657",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02662",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02664",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02667",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02690",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02728",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02747",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02752",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02781",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02787",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02816",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02831",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02837",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02867",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02892",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02912",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02926",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02938",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02943",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02947",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02956",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02972",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02974",
+          "n": 3,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02975",
+          "n": 1,
+          "paired_difference_total": 1
+        },
+        {
+          "CPT_group": "full_cpt:02983",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02996",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03023",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03061",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03068",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03078",
+          "n": 2,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03104",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03112",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03113",
+          "n": 4,
+          "paired_difference_total": -1
+        },
+        {
+          "CPT_group": "full_cpt:03143",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03189",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03202",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03209",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03219",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03266",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03268",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03274",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03299",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03324",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03391",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03419",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03436",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03447",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03454",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03458",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03468",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03469",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03510",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03536",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03537",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03538",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03549",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03552",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03559",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03572",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03577",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03593",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03619",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03625",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03626",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03630",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03639",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03642",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03643",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03652",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03671",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03683",
+          "n": 2,
+          "paired_difference_total": -1
+        },
+        {
+          "CPT_group": "full_cpt:03685",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03693",
+          "n": 3,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03701",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03706",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03718",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03734",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03736",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03779",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03795",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03800",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03840",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03842",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03848",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03854",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03870",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03878",
+          "n": 1,
+          "paired_difference_total": -1
+        },
+        {
+          "CPT_group": "full_cpt:03890",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03928",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03933",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03936",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03955",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03963",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03964",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03971",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03978",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03995",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:04036",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:04046",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:04059",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:04069",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:04070",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:04075",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:04086",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:04088",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:04090",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:04093",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:04112",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:04117",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:04145",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:04146",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:04192",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:04201",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:04216",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:04227",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:04255",
+          "n": 3,
+          "paired_difference_total": -1
+        }
+      ],
+      "cluster_permutation_holm_within_three_p": 0.8145709271453643
+    },
+    "PNS_COT:HEURISTIC_SHORT": {
+      "n": 300,
+      "clusters": 271,
+      "candidate": "PNS_COT",
+      "reference": "HEURISTIC_SHORT",
+      "gain": 12,
+      "loss": 5,
+      "both_correct": 267,
+      "both_wrong": 16,
+      "accuracy_delta": 0.023333333333333334,
+      "paired_CPT_cluster_bootstrap_ci95": [
+        -0.0033222591362126247,
+        0.050505050505050504
+      ],
+      "bootstrap": {
+        "ci95": [
+          -0.0033222591362126247,
+          0.050505050505050504
+        ],
+        "replicates": 20000,
+        "method": "paired CPT cluster percentile bootstrap",
+        "statistic": "sum(sampled cluster difference totals) / sum(sampled cluster item counts)",
+        "simultaneous_ci": false
+      },
+      "cluster_permutation_p": 0.14271928640356799,
+      "cluster_permutation": {
+        "test": "paired CPT cluster sign-flip permutation (Monte Carlo)",
+        "observed_total_difference": 7,
+        "nonzero_cluster_totals": 17,
+        "replicates": 200000,
+        "extreme_count": 28543,
+        "p": 0.14271928640356799,
+        "two_sided_rule": "(1 + count(abs(null_total) >= abs(observed_total))) / (B + 1)",
+        "exact": false,
+        "add_one": true,
+        "monte_carlo_standard_error_approx": 0.0007821441041861295,
+        "null_mean_total": 0.00343,
+        "null_sd_total": 4.123487387527698
+      },
+      "diagnostic_mcnemar_p": 0.143463134765625,
+      "diagnostic_mcnemar_scope": "item-level iid diagnostic only; repeated CPT mechanisms violate iid item premise",
+      "bootstrap_rng_spawn_key": [
+        2
+      ],
+      "permutation_rng_spawn_key": [
+        3
+      ],
+      "cluster_totals": [
+        {
+          "CPT_group": "full_cpt:00015",
+          "n": 1,
+          "paired_difference_total": -1
+        },
+        {
+          "CPT_group": "full_cpt:00016",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00023",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00089",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00090",
+          "n": 2,
+          "paired_difference_total": 1
+        },
+        {
+          "CPT_group": "full_cpt:00091",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00092",
+          "n": 4,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00113",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00117",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00142",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00148",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00179",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00206",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00243",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00321",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00341",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00392",
+          "n": 2,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00456",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00482",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00495",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00516",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00523",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00525",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00529",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00531",
+          "n": 1,
+          "paired_difference_total": 1
+        },
+        {
+          "CPT_group": "full_cpt:00564",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00568",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00569",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00574",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00579",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00613",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00614",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00653",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00662",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00667",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00694",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00706",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00715",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00723",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00730",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00734",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00744",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00776",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00780",
+          "n": 2,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00781",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00782",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00783",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00787",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00828",
+          "n": 1,
+          "paired_difference_total": 1
+        },
+        {
+          "CPT_group": "full_cpt:00833",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00852",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00853",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00854",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00859",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00861",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00874",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00876",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00878",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00929",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00965",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00970",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01003",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01011",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01034",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01048",
+          "n": 1,
+          "paired_difference_total": -1
+        },
+        {
+          "CPT_group": "full_cpt:01061",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01069",
+          "n": 4,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01070",
+          "n": 3,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01072",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01133",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01136",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01151",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01154",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01163",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01165",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01182",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01185",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01196",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01203",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01205",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01208",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01220",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01228",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01231",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01234",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01245",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01249",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01285",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01290",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01317",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01321",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01334",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01346",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01347",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01350",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01362",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01386",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01391",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01416",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01417",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01451",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01452",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01928",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01946",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02008",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02026",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02119",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02136",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02138",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02157",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02181",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02209",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02227",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02229",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02246",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02296",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02302",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02308",
+          "n": 3,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02310",
+          "n": 3,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02311",
+          "n": 3,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02313",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02314",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02331",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02339",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02340",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02342",
+          "n": 2,
+          "paired_difference_total": 1
+        },
+        {
+          "CPT_group": "full_cpt:02385",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02395",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02397",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02406",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02407",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02410",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02414",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02425",
+          "n": 1,
+          "paired_difference_total": 1
+        },
+        {
+          "CPT_group": "full_cpt:02432",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02445",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02450",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02451",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02464",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02465",
+          "n": 1,
+          "paired_difference_total": 1
+        },
+        {
+          "CPT_group": "full_cpt:02469",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02484",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02485",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02516",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02537",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02539",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02550",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02580",
+          "n": 1,
+          "paired_difference_total": 1
+        },
+        {
+          "CPT_group": "full_cpt:02591",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02605",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02611",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02623",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02630",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02641",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02644",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02657",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02662",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02664",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02667",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02690",
+          "n": 1,
+          "paired_difference_total": 1
+        },
+        {
+          "CPT_group": "full_cpt:02728",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02747",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02752",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02781",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02787",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02816",
+          "n": 1,
+          "paired_difference_total": 1
+        },
+        {
+          "CPT_group": "full_cpt:02831",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02837",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02867",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02892",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02912",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02926",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02938",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02943",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02947",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02956",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02972",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02974",
+          "n": 3,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02975",
+          "n": 1,
+          "paired_difference_total": 1
+        },
+        {
+          "CPT_group": "full_cpt:02983",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02996",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03023",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03061",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03068",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03078",
+          "n": 2,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03104",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03112",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03113",
+          "n": 4,
+          "paired_difference_total": -1
+        },
+        {
+          "CPT_group": "full_cpt:03143",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03189",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03202",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03209",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03219",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03266",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03268",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03274",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03299",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03324",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03391",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03419",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03436",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03447",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03454",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03458",
+          "n": 1,
+          "paired_difference_total": 1
+        },
+        {
+          "CPT_group": "full_cpt:03468",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03469",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03510",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03536",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03537",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03538",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03549",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03552",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03559",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03572",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03577",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03593",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03619",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03625",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03626",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03630",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03639",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03642",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03643",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03652",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03671",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03683",
+          "n": 2,
+          "paired_difference_total": -1
+        },
+        {
+          "CPT_group": "full_cpt:03685",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03693",
+          "n": 3,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03701",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03706",
+          "n": 1,
+          "paired_difference_total": 1
+        },
+        {
+          "CPT_group": "full_cpt:03718",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03734",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03736",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03779",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03795",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03800",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03840",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03842",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03848",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03854",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03870",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03878",
+          "n": 1,
+          "paired_difference_total": -1
+        },
+        {
+          "CPT_group": "full_cpt:03890",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03928",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03933",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03936",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03955",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03963",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03964",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03971",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03978",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03995",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:04036",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:04046",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:04059",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:04069",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:04070",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:04075",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:04086",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:04088",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:04090",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:04093",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:04112",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:04117",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:04145",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:04146",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:04192",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:04201",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:04216",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:04227",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:04255",
+          "n": 3,
+          "paired_difference_total": 0
+        }
+      ],
+      "cluster_permutation_holm_within_three_p": 0.28543857280713597
+    },
+    "PNS_COT:ZERO": {
+      "n": 300,
+      "clusters": 271,
+      "candidate": "PNS_COT",
+      "reference": "ZERO",
+      "gain": 28,
+      "loss": 3,
+      "both_correct": 251,
+      "both_wrong": 18,
+      "accuracy_delta": 0.08333333333333333,
+      "paired_CPT_cluster_bootstrap_ci95": [
+        0.05016722408026756,
+        0.11842105263157894
+      ],
+      "bootstrap": {
+        "ci95": [
+          0.05016722408026756,
+          0.11842105263157894
+        ],
+        "replicates": 20000,
+        "method": "paired CPT cluster percentile bootstrap",
+        "statistic": "sum(sampled cluster difference totals) / sum(sampled cluster item counts)",
+        "simultaneous_ci": false
+      },
+      "cluster_permutation_p": 4.9999750001249995e-06,
+      "cluster_permutation": {
+        "test": "paired CPT cluster sign-flip permutation (Monte Carlo)",
+        "observed_total_difference": 25,
+        "nonzero_cluster_totals": 28,
+        "replicates": 200000,
+        "extreme_count": 0,
+        "p": 4.9999750001249995e-06,
+        "two_sided_rule": "(1 + count(abs(null_total) >= abs(observed_total))) / (B + 1)",
+        "exact": false,
+        "add_one": true,
+        "monte_carlo_standard_error_approx": 4.9999625002343735e-06,
+        "null_mean_total": -0.0142,
+        "null_sd_total": 5.5656983712738155
+      },
+      "diagnostic_mcnemar_p": 4.649162292480469e-06,
+      "diagnostic_mcnemar_scope": "item-level iid diagnostic only; repeated CPT mechanisms violate iid item premise",
+      "bootstrap_rng_spawn_key": [
+        4
+      ],
+      "permutation_rng_spawn_key": [
+        5
+      ],
+      "cluster_totals": [
+        {
+          "CPT_group": "full_cpt:00015",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00016",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00023",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00089",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00090",
+          "n": 2,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00091",
+          "n": 1,
+          "paired_difference_total": 1
+        },
+        {
+          "CPT_group": "full_cpt:00092",
+          "n": 4,
+          "paired_difference_total": 2
+        },
+        {
+          "CPT_group": "full_cpt:00113",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00117",
+          "n": 1,
+          "paired_difference_total": 1
+        },
+        {
+          "CPT_group": "full_cpt:00142",
+          "n": 1,
+          "paired_difference_total": 1
+        },
+        {
+          "CPT_group": "full_cpt:00148",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00179",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00206",
+          "n": 1,
+          "paired_difference_total": 1
+        },
+        {
+          "CPT_group": "full_cpt:00243",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00321",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00341",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00392",
+          "n": 2,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00456",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00482",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00495",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00516",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00523",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00525",
+          "n": 1,
+          "paired_difference_total": 1
+        },
+        {
+          "CPT_group": "full_cpt:00529",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00531",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00564",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00568",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00569",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00574",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00579",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00613",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00614",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00653",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00662",
+          "n": 1,
+          "paired_difference_total": 1
+        },
+        {
+          "CPT_group": "full_cpt:00667",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00694",
+          "n": 1,
+          "paired_difference_total": 1
+        },
+        {
+          "CPT_group": "full_cpt:00706",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00715",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00723",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00730",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00734",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00744",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00776",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00780",
+          "n": 2,
+          "paired_difference_total": 1
+        },
+        {
+          "CPT_group": "full_cpt:00781",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00782",
+          "n": 1,
+          "paired_difference_total": 1
+        },
+        {
+          "CPT_group": "full_cpt:00783",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00787",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00828",
+          "n": 1,
+          "paired_difference_total": 1
+        },
+        {
+          "CPT_group": "full_cpt:00833",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00852",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00853",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00854",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00859",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00861",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00874",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00876",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00878",
+          "n": 1,
+          "paired_difference_total": 1
+        },
+        {
+          "CPT_group": "full_cpt:00929",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00965",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:00970",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01003",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01011",
+          "n": 1,
+          "paired_difference_total": 1
+        },
+        {
+          "CPT_group": "full_cpt:01034",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01048",
+          "n": 1,
+          "paired_difference_total": -1
+        },
+        {
+          "CPT_group": "full_cpt:01061",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01069",
+          "n": 4,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01070",
+          "n": 3,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01072",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01133",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01136",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01151",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01154",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01163",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01165",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01182",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01185",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01196",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01203",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01205",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01208",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01220",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01228",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01231",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01234",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01245",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01249",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01285",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01290",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01317",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01321",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01334",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01346",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01347",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01350",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01362",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01386",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01391",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01416",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01417",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01451",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01452",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:01928",
+          "n": 1,
+          "paired_difference_total": 1
+        },
+        {
+          "CPT_group": "full_cpt:01946",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02008",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02026",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02119",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02136",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02138",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02157",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02181",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02209",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02227",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02229",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02246",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02296",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02302",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02308",
+          "n": 3,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02310",
+          "n": 3,
+          "paired_difference_total": 1
+        },
+        {
+          "CPT_group": "full_cpt:02311",
+          "n": 3,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02313",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02314",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02331",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02339",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02340",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02342",
+          "n": 2,
+          "paired_difference_total": 1
+        },
+        {
+          "CPT_group": "full_cpt:02385",
+          "n": 1,
+          "paired_difference_total": 1
+        },
+        {
+          "CPT_group": "full_cpt:02395",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02397",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02406",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02407",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02410",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02414",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02425",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02432",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02445",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02450",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02451",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02464",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02465",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02469",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02484",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02485",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02516",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02537",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02539",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02550",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02580",
+          "n": 1,
+          "paired_difference_total": 1
+        },
+        {
+          "CPT_group": "full_cpt:02591",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02605",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02611",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02623",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02630",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02641",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02644",
+          "n": 1,
+          "paired_difference_total": 1
+        },
+        {
+          "CPT_group": "full_cpt:02657",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02662",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02664",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02667",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02690",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02728",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02747",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02752",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02781",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02787",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02816",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02831",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02837",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02867",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02892",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02912",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02926",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02938",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02943",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02947",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02956",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02972",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02974",
+          "n": 3,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02975",
+          "n": 1,
+          "paired_difference_total": 1
+        },
+        {
+          "CPT_group": "full_cpt:02983",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:02996",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03023",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03061",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03068",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03078",
+          "n": 2,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03104",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03112",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03113",
+          "n": 4,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03143",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03189",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03202",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03209",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03219",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03266",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03268",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03274",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03299",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03324",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03391",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03419",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03436",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03447",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03454",
+          "n": 1,
+          "paired_difference_total": 1
+        },
+        {
+          "CPT_group": "full_cpt:03458",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03468",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03469",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03510",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03536",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03537",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03538",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03549",
+          "n": 1,
+          "paired_difference_total": 1
+        },
+        {
+          "CPT_group": "full_cpt:03552",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03559",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03572",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03577",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03593",
+          "n": 1,
+          "paired_difference_total": 1
+        },
+        {
+          "CPT_group": "full_cpt:03619",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03625",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03626",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03630",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03639",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03642",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03643",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03652",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03671",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03683",
+          "n": 2,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03685",
+          "n": 1,
+          "paired_difference_total": 1
+        },
+        {
+          "CPT_group": "full_cpt:03693",
+          "n": 3,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03701",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03706",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03718",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03734",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03736",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03779",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03795",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03800",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03840",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03842",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03848",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03854",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03870",
+          "n": 1,
+          "paired_difference_total": 1
+        },
+        {
+          "CPT_group": "full_cpt:03878",
+          "n": 1,
+          "paired_difference_total": -1
+        },
+        {
+          "CPT_group": "full_cpt:03890",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03928",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03933",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03936",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03955",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03963",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03964",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03971",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03978",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:03995",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:04036",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:04046",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:04059",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:04069",
+          "n": 1,
+          "paired_difference_total": 1
+        },
+        {
+          "CPT_group": "full_cpt:04070",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:04075",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:04086",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:04088",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:04090",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:04093",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:04112",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:04117",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:04145",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:04146",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:04192",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:04201",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:04216",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:04227",
+          "n": 1,
+          "paired_difference_total": 0
+        },
+        {
+          "CPT_group": "full_cpt:04255",
+          "n": 3,
+          "paired_difference_total": 0
+        }
+      ],
+      "cluster_permutation_holm_within_three_p": 1.4999925000374999e-05
+    }
+  },
+  "assumptions_and_limits": [
+    "CPT clusters are independent sampling units; within-CPT dependence is unrestricted.",
+    "Sign-flip inference assumes joint exchangeability of the two condition labels inside every CPT cluster under the null, equivalently symmetric cluster differences. A zero population mean alone is insufficient.",
+    "Prompt conditions were not randomly assigned; permutation inference is model-based under the exchangeability assumption, not a design-based randomized experiment.",
+    "Monte Carlo sign flips with add-one adjustment, not exact permutation enumeration.",
+    "Point estimate denominator is all 300 original items; bootstrap resamples 271 clusters and uses their sampled item count as its ratio denominator.",
+    "CPT clustering does not remove history/demo overlap or demonstrate generalization to unseen mechanisms.",
+    "Item-level exact McNemar is retained only as an iid diagnostic for main300.",
+    "Per-comparison percentile CIs are not simultaneous intervals and need not give identical decisions to permutation p-values.",
+    "No equivalence or non-inferiority claim; failure to reject is not evidence of equality."
+  ],
+  "sources": [
+    {
+      "url": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.permutation_test.html",
+      "checked_date": "2026-09-10",
+      "scope": "paired label swaps/sign flips, randomized add-one p, and caution about two-sided conventions; our tail is absolute statistic, not SciPy's default twice-min-tail"
+    }
+  ],
+  "within_cohort_multiplicity": {
+    "method": "Holm step-down",
+    "family_size": 3,
+    "p_type": "CPT cluster permutation Monte Carlo"
+  },
+  "fallacy_scope_review": {
+    "coverage": "11/11 assessed for the scope of this sensitivity analysis; not a global validity certification",
+    "Simpson_paradox": "No subgroup generalization; query-type heterogeneity is outside this pooled sensitivity and remains in original descriptive output.",
+    "ecological_fallacy": "Item-weighted estimand is explicit; no inference about persons or group averages.",
+    "Berkson_selection": "Frozen selected benchmark; no unrestricted population claim; history overlap remains a limitation.",
+    "collider_bias": "No post-outcome filtering or covariate adjustment.",
+    "base_rate_neglect": "Reports all-item accuracy and paired differences; does not infer PPV or clinical performance.",
+    "regression_to_mean": "Not a pre/post intervention design; selection and reuse remain limits.",
+    "survivorship_bias": "All frozen items retained including failed or invalid responses.",
+    "look_elsewhere": "All three fixed contrasts reported; within-three and optional joint-six Holm.",
+    "forking_paths": "Supplement added after data audit but before outcomes; preserves original analysis and records prespec.",
+    "correlation_causation": "Algorithmic paired comparison; no real-world causal effect claim.",
+    "reverse_causality": "Not a temporal observational causal claim."
+  },
+  "original_point_estimates_cross_check": "PASS: n/gain/loss/both-correct/both-wrong/delta identical for every comparison",
+  "provenance": {
+    "generated_utc": "2026-09-09T22:32:31.997807+00:00",
+    "final_input_confirmed": true,
+    "model_calls": 0,
+    "python": "3.11.9",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "inputs_and_code": [
+      {
+        "path": "C:\\Users\\aklovey\\Documents\\Codex\\2026-09-10\\9-4-cause-1-8-8\\work\\evaluation\\main300_CPT_groups.json",
+        "sha256": "d645d5550d043e5af39b7c5d4d691efa4d09d6afcc8b00c5425698c44c650424",
+        "bytes": 8894
+      },
+      {
+        "path": "C:\\Users\\aklovey\\Documents\\Codex\\2026-09-10\\9-4-cause-1-8-8\\work\\evaluation\\analyze_paired.py",
+        "sha256": "daf07aacb6ca84ad218c360d1c8d3d0ee53320dc062167e6eed8bc2c231b5b15",
+        "bytes": 11124
+      },
+      {
+        "path": "C:\\Users\\aklovey\\Documents\\Codex\\2026-09-10\\9-4-cause-1-8-8\\work\\cpt_statistics\\CPT_SENSITIVITY_PRESPEC.md",
+        "sha256": "6ba649a3f274cb9e98d76ff017a6ed25db944f0a0e677bcb8cae98c2a170e114",
+        "bytes": 5074
+      },
+      {
+        "path": "C:\\Users\\aklovey\\Documents\\Codex\\2026-09-10\\9-4-cause-1-8-8\\work\\cpt_statistics\\analyze_cpt_sensitivity.py",
+        "sha256": "d40cd21e85b470659f383ef039b4fbe7e62c2124ee49d0b4fcaf1c8e961c426b",
+        "bytes": 20398
+      },
+      {
+        "path": "C:\\Users\\aklovey\\Documents\\Codex\\2026-09-10\\9-4-cause-1-8-8\\work\\evaluation\\observed_main300\\analysis\\scored_all_frozen_targets.csv",
+        "sha256": "88800e0b31a0f4494b8e04ddd6d9949c42cf567a56ee7f60086c0a2b77ae0f81",
+        "bytes": 117015
+      },
+      {
+        "path": "C:\\Users\\aklovey\\Documents\\Codex\\2026-09-10\\9-4-cause-1-8-8\\work\\evaluation\\observed_main300\\analysis\\paired_analysis.json",
+        "sha256": "1b10bf250ea37e39a65733ca1198c284487f64514c0c304b4e9ab7b54fb87639",
+        "bytes": 9297
+      }
+    ]
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "test100": {
+    "path": "C:\\Users\\aklovey\\Documents\\Codex\\2026-08-17\\qwen36-fewshot-icl-pilot\\outputs\\plan\\qwentest100.jsonl",
+    "n": 100,
+    "unique_qids": 100,
+    "missing_source_qids": [],
+    "unique_model_id": 100,
+    "max_questions_per_model": 1
+  },
+  "core256": {
+    "path": "C:\\Users\\aklovey\\Documents\\Codex\\2026-08-17\\qwen36-pns-256\\work\\input_validation_copy\\tiers\\pns_core_ready.jsonl",
+    "n": 256,
+    "unique_qids": 256,
+    "missing_source_qids": [],
+    "unique_model_id": 212,
+    "max_questions_per_model": 3
+  },
+  "demo56": {
+    "path": "C:\\Users\\aklovey\\Documents\\Codex\\2026-08-17\\qwen36-pns-256\\outputs\\qwentest100_demo56_pns_final_20260817\\qwentest100_demo56_pns_cot_artifact.jsonl",
+    "n": 56,
+    "unique_qids": 56,
+    "missing_source_qids": [],
+    "unique_model_id": 55,
+    "max_questions_per_model": 2
+  },
+  "core256_vs_test100": {
+    "qid_overlap": 0,
+    "model_id_overlap": 8,
+    "overlap_model_ids": [
+      2063,
+      2269,
+      3228,
+      3349,
+      3430,
+      3456,
+      3506,
+      3510
+    ]
+  },
+  "core256_vs_demo56": {
+    "qid_overlap": 56,
+    "model_id_overlap": 55,
+    "overlap_model_ids": [
+      319,
+      962,
+      979,
+      984,
+      986,
+      1434,
+      1771,
+      2063,
+      2078,
+      2260,
+      2862,
+      2951,
+      3061,
+      3154,
+      3228,
+      3230,
+      3231,
+      3236,
+      3249,
+      3283,
+      3297,
+      3306,
+      3334,
+      3360,
+      3362,
+      3398,
+      3404,
+      3442,
+      3485,
+      3493,
+      3500,
+      3516,
+      3548,
+      3580,
+      3585,
+      3587,
+      3654,
+      3676,
+      3679,
+      3680,
+      3702,
+      3712,
+      3715,
+      3752,
+      3765,
+      3775,
+      3801,
+      3811,
+      3839,
+      4774,
+      5498,
+      5651,
+      5925,
+      5936,
+      6745
+    ]
+  },
+  "demo56_vs_test100": {
+    "qid_overlap": 0,
+    "model_id_overlap": 2,
+    "overlap_model_ids": [
+      2063,
+      3228
+    ]
+  },
+  "candidate_pool": {
+    "all_dataset_rows": 10112,
+    "unique_dataset_models": 5268,
+    "excluded_models": 304,
+    "remaining_rows": 9221,
+    "remaining_models": 4964,
+    "matched_five_types_rows": 4409,
+    "matched_five_types_models": 3006,
+    "by_type": {
+      "nde": 287,
+      "ate": 1374,
+      "nie": 740,
+      "ett": 1212,
+      "det-counterfactual": 796
+    },
+    "caveat": "Excludes only mapped core256 and test100 instance groups. Historical full10112 baseline screening has touched all dataset rows; cannot claim never-exposed holdout."
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "claim": "The same frozen policy was evaluated in two distinct cohorts with different sampling and inference units.",
+  "archetype": "native method diagram",
+  "role": "clarify evaluation design and separate cohort inference",
+  "source_facts": {
+    "demo_identities": 56,
+    "accepted": 52,
+    "fallback": 4,
+    "main_targets": 300,
+    "main_cpt_groups": 271,
+    "main_prior_cpt_overlap_targets": 59,
+    "main_requests": 1200,
+    "fresh_proposals": 257,
+    "fresh_excluded": 11,
+    "fresh_retained": 246,
+    "fresh_requests": 984,
+    "joint_pvalues": 6
+  },
+  "native_vertices": 16,
+  "native_connectors": 8,
+  "source_file": "figure4_1_evaluation_design.drawio",
+  "caption_file": "figure4_1_caption.md"
+}

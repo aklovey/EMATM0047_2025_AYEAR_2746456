@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "cohort_id": "fresh246",
+  "source_json": "fresh_analysis.json",
+  "n_pointer": "/n_frozen_targets",
+  "method_label": "95% paired instance bootstrap",
+  "resampling_unit": "246 independent new CPT mechanisms, one item per group",
+  "confidence_level": 0.95,
+  "comparisons": {
+    "PNS_COT:FULL_COT": {
+      "delta_pointer": "/comparisons/PNS_COT:FULL_COT/accuracy_delta",
+      "ci_pointer": "/comparisons/PNS_COT:FULL_COT/paired_cluster_bootstrap_ci95"
+    },
+    "PNS_COT:HEURISTIC_SHORT": {
+      "delta_pointer": "/comparisons/PNS_COT:HEURISTIC_SHORT/accuracy_delta",
+      "ci_pointer": "/comparisons/PNS_COT:HEURISTIC_SHORT/paired_cluster_bootstrap_ci95"
+    }
+  }
+}

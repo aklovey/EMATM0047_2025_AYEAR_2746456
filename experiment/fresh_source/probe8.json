@@ -1,0 +1,1013 @@
+{
+  "rows": [
+    {
+      "desc_id": "smoking_frontdoor-frontdoor-ate-model0-spec0-q0",
+      "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Gender has a direct effect on smoking and lung cancer. Smoking has a direct effect on tar deposit. Tar deposit has a direct effect on lung cancer. Gender is unobserved.",
+      "given_info": "For nonsmokers, the probability of high tar deposit is 53%. For smokers, the probability of high tar deposit is 81%. For nonsmokers and with no tar deposit, the probability of lung cancer is 60%. For nonsmokers and with high tar deposit, the probability of lung cancer is 72%. For smokers and with no tar deposit, the probability of lung cancer is 56%. For smokers and with high tar deposit, the probability of lung cancer is 79%. The overall probability of smoking is 22%.",
+      "question": "Will smoking increase the chance of lung cancer?",
+      "answer": "yes",
+      "meta": {
+        "story_id": "smoking_frontdoor",
+        "graph_id": "frontdoor",
+        "treated": true,
+        "result": true,
+        "polarity": true,
+        "groundtruth": 0.04145891771309895,
+        "query_type": "ate",
+        "rung": 2,
+        "formal_form": "E[Y | do(X = 1)] - E[Y | do(X = 0)]",
+        "given_info": {
+          "p(V3 | X)": [
+            0.5268415508727843,
+            0.8109764328115411
+          ],
+          "p(Y | X, V3)": [
+            [
+              0.6007285306291785,
+              0.7215790692361158
+            ],
+            [
+              0.5584405885842054,
+              0.7935316000215866
+            ]
+          ],
+          "p(X)": [
+            0.21938167877492418
+          ]
+        },
+        "estimand": "\\sum_{V3 = v} [P(V3 = v|X = 1) - P(V3 = v|X = 0)] * [\\sum_{X = h} P(Y = 1|X = h,V3 = v)*P(X = h)]",
+        "treatment": "X",
+        "outcome": "Y",
+        "model_id": 0
+      },
+      "reasoning": {
+        "step0": "Let V1 = gender; X = smoking; V3 = tar deposit; Y = lung cancer.",
+        "step1": "V1->X,X->V3,V1->Y,V3->Y",
+        "step2": "E[Y | do(X = 1)] - E[Y | do(X = 0)]",
+        "step3": "\\sum_{V3 = v} [P(V3 = v|X = 1) - P(V3 = v|X = 0)] * [\\sum_{X = h} P(Y = 1|X = h,V3 = v)*P(X = h)]",
+        "step4": "P(V3=1 | X=0) = 0.53\nP(V3=1 | X=1) = 0.81\nP(Y=1 | X=0, V3=0) = 0.60\nP(Y=1 | X=0, V3=1) = 0.72\nP(Y=1 | X=1, V3=0) = 0.56\nP(Y=1 | X=1, V3=1) = 0.79\nP(X=1) = 0.22",
+        "step5": "(0.81 - 0.53)* (0.79 * 0.22) + (0.19 - 0.47) * (0.72 * 0.78) = 0.04",
+        "end": "0.04 > 0"
+      },
+      "question_id": 1000000,
+      "generator_seed": 2026091000,
+      "generation_source": "unmodified_author_generate_questions"
+    },
+    {
+      "desc_id": "smoking_frontdoor-frontdoor-ate-model1-spec0-q0",
+      "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Gender has a direct effect on smoking and lung cancer. Smoking has a direct effect on tar deposit. Tar deposit has a direct effect on lung cancer. Gender is unobserved.",
+      "given_info": "For nonsmokers, the probability of high tar deposit is 50%. For smokers, the probability of high tar deposit is 32%. For nonsmokers and with no tar deposit, the probability of lung cancer is 24%. For nonsmokers and with high tar deposit, the probability of lung cancer is 59%. For smokers and with no tar deposit, the probability of lung cancer is 19%. For smokers and with high tar deposit, the probability of lung cancer is 63%. The overall probability of smoking is 41%.",
+      "question": "Will smoking increase the chance of lung cancer?",
+      "answer": "no",
+      "meta": {
+        "story_id": "smoking_frontdoor",
+        "graph_id": "frontdoor",
+        "treated": true,
+        "result": true,
+        "polarity": true,
+        "groundtruth": -0.0684824589515301,
+        "query_type": "ate",
+        "rung": 2,
+        "formal_form": "E[Y | do(X = 1)] - E[Y | do(X = 0)]",
+        "given_info": {
+          "p(V3 | X)": [
+            0.4995931225833877,
+            0.32255003048600017
+          ],
+          "p(Y | X, V3)": [
+            [
+              0.24152667249497467,
+              0.5933690792151376
+            ],
+            [
+              0.19389960998171832,
+              0.6316170994388556
+            ]
+          ],
+          "p(X)": [
+            0.4072190358161232
+          ]
+        },
+        "estimand": "\\sum_{V3 = v} [P(V3 = v|X = 1) - P(V3 = v|X = 0)] * [\\sum_{X = h} P(Y = 1|X = h,V3 = v)*P(X = h)]",
+        "treatment": "X",
+        "outcome": "Y",
+        "model_id": 1
+      },
+      "reasoning": {
+        "step0": "Let V1 = gender; X = smoking; V3 = tar deposit; Y = lung cancer.",
+        "step1": "V1->X,X->V3,V1->Y,V3->Y",
+        "step2": "E[Y | do(X = 1)] - E[Y | do(X = 0)]",
+        "step3": "\\sum_{V3 = v} [P(V3 = v|X = 1) - P(V3 = v|X = 0)] * [\\sum_{X = h} P(Y = 1|X = h,V3 = v)*P(X = h)]",
+        "step4": "P(V3=1 | X=0) = 0.50\nP(V3=1 | X=1) = 0.32\nP(Y=1 | X=0, V3=0) = 0.24\nP(Y=1 | X=0, V3=1) = 0.59\nP(Y=1 | X=1, V3=0) = 0.19\nP(Y=1 | X=1, V3=1) = 0.63\nP(X=1) = 0.41",
+        "step5": "(0.32 - 0.50)* (0.63 * 0.41) + (0.68 - 0.50) * (0.59 * 0.59) = -0.07",
+        "end": "-0.07 < 0"
+      },
+      "question_id": 1000001,
+      "generator_seed": 2026091101,
+      "generation_source": "unmodified_author_generate_questions"
+    },
+    {
+      "desc_id": "smoking_frontdoor-frontdoor-ett-model2-spec0-q0",
+      "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Gender has a direct effect on smoking and lung cancer. Smoking has a direct effect on tar deposit. Tar deposit has a direct effect on lung cancer. Gender is unobserved.",
+      "given_info": "For nonsmokers and with no tar deposit, the probability of lung cancer is 69%. For nonsmokers and with high tar deposit, the probability of lung cancer is 51%. For smokers and with no tar deposit, the probability of lung cancer is 92%. For smokers and with high tar deposit, the probability of lung cancer is 54%. For nonsmokers, the probability of high tar deposit is 19%. For smokers, the probability of high tar deposit is 93%.",
+      "question": "For smokers, would it be more likely to see lung cancer if the person had been a nonsmoker?",
+      "answer": "yes",
+      "meta": {
+        "story_id": "smoking_frontdoor",
+        "graph_id": "frontdoor",
+        "treated": true,
+        "result": true,
+        "polarity": true,
+        "groundtruth": -0.2760518277889499,
+        "query_type": "ett",
+        "rung": 3,
+        "formal_form": "E[Y_{X = 1} - Y_{X = 0} | X = 1]",
+        "given_info": {
+          "p(Y | X, V3)": [
+            [
+              0.6898049535843339,
+              0.5103430976228629
+            ],
+            [
+              0.916494920036827,
+              0.5447632177865098
+            ]
+          ],
+          "p(V3 | X)": [
+            0.18808211859404492,
+            0.9306925177551635
+          ]
+        },
+        "estimand": "\\sum_{V3=v}P(Y=1|X=1,V3=v)*[P(V3=v|X=1)-P(V3=v|X=0)]",
+        "treatment": "X",
+        "outcome": "Y",
+        "model_id": 2
+      },
+      "reasoning": {
+        "step0": "Let V1 = gender; X = smoking; V3 = tar deposit; Y = lung cancer.",
+        "step1": "V1->X,X->V3,V1->Y,V3->Y",
+        "step2": "E[Y_{X = 1} - Y_{X = 0} | X = 1]",
+        "step3": "\\sum_{V3=v}P(Y=1|X=1,V3=v)*[P(V3=v|X=1)-P(V3=v|X=0)]",
+        "step4": "P(Y=1 | X=0, V3=0) = 0.69\nP(Y=1 | X=0, V3=1) = 0.51\nP(Y=1 | X=1, V3=0) = 0.92\nP(Y=1 | X=1, V3=1) = 0.54\nP(V3=1 | X=0) = 0.19\nP(V3=1 | X=1) = 0.93",
+        "step5": "0.54 * (0.93 - 0.19) + 0.51 * (0.07 - 0.81) = -0.28",
+        "end": "-0.28 < 0"
+      },
+      "question_id": 1000002,
+      "generator_seed": 2026101000,
+      "generation_source": "unmodified_author_generate_questions"
+    },
+    {
+      "desc_id": "smoking_frontdoor-frontdoor-ett-model3-spec0-q0",
+      "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Gender has a direct effect on smoking and lung cancer. Smoking has a direct effect on tar deposit. Tar deposit has a direct effect on lung cancer. Gender is unobserved.",
+      "given_info": "For nonsmokers and with no tar deposit, the probability of lung cancer is 76%. For nonsmokers and with high tar deposit, the probability of lung cancer is 38%. For smokers and with no tar deposit, the probability of lung cancer is 37%. For smokers and with high tar deposit, the probability of lung cancer is 19%. For nonsmokers, the probability of high tar deposit is 31%. For smokers, the probability of high tar deposit is 15%.",
+      "question": "For smokers, would it be more likely to see lung cancer if the person had been a nonsmoker?",
+      "answer": "no",
+      "meta": {
+        "story_id": "smoking_frontdoor",
+        "graph_id": "frontdoor",
+        "treated": true,
+        "result": true,
+        "polarity": true,
+        "groundtruth": 0.028274083633635372,
+        "query_type": "ett",
+        "rung": 3,
+        "formal_form": "E[Y_{X = 1} - Y_{X = 0} | X = 1]",
+        "given_info": {
+          "p(Y | X, V3)": [
+            [
+              0.757516197068641,
+              0.37691965836831776
+            ],
+            [
+              0.37153949590557644,
+              0.191691105222199
+            ]
+          ],
+          "p(V3 | X)": [
+            0.3091322312324628,
+            0.15192157437753515
+          ]
+        },
+        "estimand": "\\sum_{V3=v}P(Y=1|X=1,V3=v)*[P(V3=v|X=1)-P(V3=v|X=0)]",
+        "treatment": "X",
+        "outcome": "Y",
+        "model_id": 3
+      },
+      "reasoning": {
+        "step0": "Let V1 = gender; X = smoking; V3 = tar deposit; Y = lung cancer.",
+        "step1": "V1->X,X->V3,V1->Y,V3->Y",
+        "step2": "E[Y_{X = 1} - Y_{X = 0} | X = 1]",
+        "step3": "\\sum_{V3=v}P(Y=1|X=1,V3=v)*[P(V3=v|X=1)-P(V3=v|X=0)]",
+        "step4": "P(Y=1 | X=0, V3=0) = 0.76\nP(Y=1 | X=0, V3=1) = 0.38\nP(Y=1 | X=1, V3=0) = 0.37\nP(Y=1 | X=1, V3=1) = 0.19\nP(V3=1 | X=0) = 0.31\nP(V3=1 | X=1) = 0.15",
+        "step5": "0.19 * (0.15 - 0.31) + 0.38 * (0.85 - 0.69) = 0.03",
+        "end": "0.03 > 0"
+      },
+      "question_id": 1000003,
+      "generator_seed": 2026101101,
+      "generation_source": "unmodified_author_generate_questions"
+    },
+    {
+      "desc_id": "blood_pressure-mediation-nde-model4-spec0-q0",
+      "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Medication has a direct effect on blood pressure and heart condition. Blood pressure has a direct effect on heart condition.",
+      "given_info": "For people not taking any medication and with low blood pressure, the probability of healthy heart is 28%. For people not taking any medication and with high blood pressure, the probability of healthy heart is 92%. For people taking medication and with low blood pressure, the probability of healthy heart is 0%. For people taking medication and with high blood pressure, the probability of healthy heart is 59%. For people not taking any medication, the probability of high blood pressure is 3%. For people taking medication, the probability of high blood pressure is 64%.",
+      "question": "If we disregard the mediation effect through blood pressure, would medication positively affect heart condition?",
+      "answer": "no",
+      "meta": {
+        "story_id": "blood_pressure",
+        "graph_id": "mediation",
+        "mediators": [
+          "V2"
+        ],
+        "polarity": true,
+        "groundtruth": -0.2775631493069462,
+        "query_type": "nde",
+        "rung": 3,
+        "formal_form": "E[Y_{X=1, V2=0} - Y_{X=0, V2=0}]",
+        "given_info": {
+          "p(Y | X, V2)": [
+            [
+              0.27932875356852765,
+              0.9162283117219919
+            ],
+            [
+              0.003372043740397345,
+              0.5882276148100098
+            ]
+          ],
+          "p(V2 | X)": [
+            0.030866956373420844,
+            0.6374082183435423
+          ]
+        },
+        "estimand": "\\sum_{V2=v} P(V2=v|X=0)*[P(Y=1|X=1,V2=v) - P(Y=1|X=0, V2=v)]",
+        "treatment": "X",
+        "outcome": "Y",
+        "model_id": 4
+      },
+      "reasoning": {
+        "step0": "Let X = medication; V2 = blood pressure; Y = heart condition.",
+        "step1": "X->V2,X->Y,V2->Y",
+        "step2": "E[Y_{X=1, V2=0} - Y_{X=0, V2=0}]",
+        "step3": "\\sum_{V2=v} P(V2=v|X=0)*[P(Y=1|X=1,V2=v) - P(Y=1|X=0, V2=v)]",
+        "step4": "P(Y=1 | X=0, V2=0) = 0.28\nP(Y=1 | X=0, V2=1) = 0.92\nP(Y=1 | X=1, V2=0) = 0.00\nP(Y=1 | X=1, V2=1) = 0.59\nP(V2=1 | X=0) = 0.03\nP(V2=1 | X=1) = 0.64",
+        "step5": "0.03 * (0.59 - 0.00) + 0.64 * (0.92 - 0.28) = -0.28",
+        "end": "-0.28 < 0"
+      },
+      "question_id": 1000004,
+      "generator_seed": 2026111000,
+      "generation_source": "unmodified_author_generate_questions"
+    },
+    {
+      "desc_id": "blood_pressure-mediation-nde-model5-spec0-q0",
+      "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Medication has a direct effect on blood pressure and heart condition. Blood pressure has a direct effect on heart condition.",
+      "given_info": "For people not taking any medication and with low blood pressure, the probability of healthy heart is 8%. For people not taking any medication and with high blood pressure, the probability of healthy heart is 72%. For people taking medication and with low blood pressure, the probability of healthy heart is 37%. For people taking medication and with high blood pressure, the probability of healthy heart is 56%. For people not taking any medication, the probability of high blood pressure is 35%. For people taking medication, the probability of high blood pressure is 33%.",
+      "question": "If we disregard the mediation effect through blood pressure, would medication positively affect heart condition?",
+      "answer": "yes",
+      "meta": {
+        "story_id": "blood_pressure",
+        "graph_id": "mediation",
+        "mediators": [
+          "V2"
+        ],
+        "polarity": true,
+        "groundtruth": 0.13317388670710661,
+        "query_type": "nde",
+        "rung": 3,
+        "formal_form": "E[Y_{X=1, V2=0} - Y_{X=0, V2=0}]",
+        "given_info": {
+          "p(Y | X, V2)": [
+            [
+              0.0766822150271778,
+              0.7205425993035369
+            ],
+            [
+              0.3719272688327439,
+              0.5561188774062842
+            ]
+          ],
+          "p(V2 | X)": [
+            0.3525825021520289,
+            0.32788833159533365
+          ]
+        },
+        "estimand": "\\sum_{V2=v} P(V2=v|X=0)*[P(Y=1|X=1,V2=v) - P(Y=1|X=0, V2=v)]",
+        "treatment": "X",
+        "outcome": "Y",
+        "model_id": 5
+      },
+      "reasoning": {
+        "step0": "Let X = medication; V2 = blood pressure; Y = heart condition.",
+        "step1": "X->V2,X->Y,V2->Y",
+        "step2": "E[Y_{X=1, V2=0} - Y_{X=0, V2=0}]",
+        "step3": "\\sum_{V2=v} P(V2=v|X=0)*[P(Y=1|X=1,V2=v) - P(Y=1|X=0, V2=v)]",
+        "step4": "P(Y=1 | X=0, V2=0) = 0.08\nP(Y=1 | X=0, V2=1) = 0.72\nP(Y=1 | X=1, V2=0) = 0.37\nP(Y=1 | X=1, V2=1) = 0.56\nP(V2=1 | X=0) = 0.35\nP(V2=1 | X=1) = 0.33",
+        "step5": "0.35 * (0.56 - 0.37) + 0.33 * (0.72 - 0.08) = 0.13",
+        "end": "0.13 > 0"
+      },
+      "question_id": 1000005,
+      "generator_seed": 2026111101,
+      "generation_source": "unmodified_author_generate_questions"
+    },
+    {
+      "desc_id": "blood_pressure-mediation-nie-model6-spec0-q0",
+      "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Medication has a direct effect on blood pressure and heart condition. Blood pressure has a direct effect on heart condition.",
+      "given_info": "For people not taking any medication and with low blood pressure, the probability of healthy heart is 70%. For people not taking any medication and with high blood pressure, the probability of healthy heart is 89%. For people taking medication and with low blood pressure, the probability of healthy heart is 4%. For people taking medication and with high blood pressure, the probability of healthy heart is 42%. For people not taking any medication, the probability of high blood pressure is 34%. For people taking medication, the probability of high blood pressure is 39%.",
+      "question": "Does medication positively affect heart condition through blood pressure?",
+      "answer": "yes",
+      "meta": {
+        "story_id": "blood_pressure",
+        "graph_id": "mediation",
+        "mediators": [
+          "V2"
+        ],
+        "polarity": true,
+        "groundtruth": 0.009069302574765903,
+        "query_type": "nie",
+        "rung": 3,
+        "formal_form": "E[Y_{X=0, V2=1} - Y_{X=0, V2=0}]",
+        "given_info": {
+          "p(Y | X, V2)": [
+            [
+              0.698265235077143,
+              0.8892624426162933
+            ],
+            [
+              0.04223151006834078,
+              0.4178100257413206
+            ]
+          ],
+          "p(V2 | X)": [
+            0.3388355998704453,
+            0.3863195536497527
+          ]
+        },
+        "estimand": "\\sum_{V2 = v} P(Y=1|X =0,V2 = v)*[P(V2 = v | X = 1) − P(V2 = v | X = 0)]",
+        "treatment": "X",
+        "outcome": "Y",
+        "model_id": 6
+      },
+      "reasoning": {
+        "step0": "Let X = medication; V2 = blood pressure; Y = heart condition.",
+        "step1": "X->V2,X->Y,V2->Y",
+        "step2": "E[Y_{X=0, V2=1} - Y_{X=0, V2=0}]",
+        "step3": "\\sum_{V2 = v} P(Y=1|X =0,V2 = v)*[P(V2 = v | X = 1) − P(V2 = v | X = 0)]",
+        "step4": "P(Y=1 | X=0, V2=0) = 0.70\nP(Y=1 | X=0, V2=1) = 0.89\nP(Y=1 | X=1, V2=0) = 0.04\nP(Y=1 | X=1, V2=1) = 0.42\nP(V2=1 | X=0) = 0.34\nP(V2=1 | X=1) = 0.39",
+        "step5": "0.39 * (0.89 - 0.70)+ 0.34 * (0.42 - 0.04)= 0.01",
+        "end": "0.01 > 0"
+      },
+      "question_id": 1000006,
+      "generator_seed": 2026121000,
+      "generation_source": "unmodified_author_generate_questions"
+    },
+    {
+      "desc_id": "blood_pressure-mediation-nie-model7-spec0-q0",
+      "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Medication has a direct effect on blood pressure and heart condition. Blood pressure has a direct effect on heart condition.",
+      "given_info": "For people not taking any medication and with low blood pressure, the probability of healthy heart is 77%. For people not taking any medication and with high blood pressure, the probability of healthy heart is 87%. For people taking medication and with low blood pressure, the probability of healthy heart is 25%. For people taking medication and with high blood pressure, the probability of healthy heart is 33%. For people not taking any medication, the probability of high blood pressure is 75%. For people taking medication, the probability of high blood pressure is 56%.",
+      "question": "Does medication positively affect heart condition through blood pressure?",
+      "answer": "no",
+      "meta": {
+        "story_id": "blood_pressure",
+        "graph_id": "mediation",
+        "mediators": [
+          "V2"
+        ],
+        "polarity": true,
+        "groundtruth": -0.01823259802383681,
+        "query_type": "nie",
+        "rung": 3,
+        "formal_form": "E[Y_{X=0, V2=1} - Y_{X=0, V2=0}]",
+        "given_info": {
+          "p(Y | X, V2)": [
+            [
+              0.7676455157124544,
+              0.8666073905714778
+            ],
+            [
+              0.24671572088183885,
+              0.33399799766559923
+            ]
+          ],
+          "p(V2 | X)": [
+            0.7482951438498486,
+            0.5640565363071955
+          ]
+        },
+        "estimand": "\\sum_{V2 = v} P(Y=1|X =0,V2 = v)*[P(V2 = v | X = 1) − P(V2 = v | X = 0)]",
+        "treatment": "X",
+        "outcome": "Y",
+        "model_id": 7
+      },
+      "reasoning": {
+        "step0": "Let X = medication; V2 = blood pressure; Y = heart condition.",
+        "step1": "X->V2,X->Y,V2->Y",
+        "step2": "E[Y_{X=0, V2=1} - Y_{X=0, V2=0}]",
+        "step3": "\\sum_{V2 = v} P(Y=1|X =0,V2 = v)*[P(V2 = v | X = 1) − P(V2 = v | X = 0)]",
+        "step4": "P(Y=1 | X=0, V2=0) = 0.77\nP(Y=1 | X=0, V2=1) = 0.87\nP(Y=1 | X=1, V2=0) = 0.25\nP(Y=1 | X=1, V2=1) = 0.33\nP(V2=1 | X=0) = 0.75\nP(V2=1 | X=1) = 0.56",
+        "step5": "0.56 * (0.87 - 0.77)+ 0.75 * (0.33 - 0.25)= -0.02",
+        "end": "-0.02 < 0"
+      },
+      "question_id": 1000007,
+      "generator_seed": 2026121101,
+      "generation_source": "unmodified_author_generate_questions"
+    }
+  ],
+  "models": [
+    {
+      "model_id": 0,
+      "story_id": "smoking_frontdoor",
+      "graph_id": "frontdoor",
+      "spec_id": 0,
+      "spec": {
+        "V1": [
+          0.411706174119317
+        ],
+        "X": [
+          0.06902768282758798,
+          0.4342250138342434
+        ],
+        "V3": [
+          0.5268415508727843,
+          0.8109764328115413
+        ],
+        "Y": [
+          0.6251593911002518,
+          0.6800101927395735,
+          0.5432853209312991,
+          0.8193181436466727
+        ]
+      },
+      "seed": 2026091000,
+      "builder": "random",
+      "equation_type": "bernoulli",
+      "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Gender has a direct effect on smoking and lung cancer. Smoking has a direct effect on tar deposit. Tar deposit has a direct effect on lung cancer. Gender is unobserved.",
+      "variable_mapping": {
+        "V1name": "gender",
+        "V11": "female",
+        "V10": "non-female",
+        "Xname": "smoking",
+        "X1": "smoking",
+        "X0": "nonsmoking",
+        "V3name": "tar deposit",
+        "V31": "high tar deposit",
+        "V30": "absence of tar deposit",
+        "Yname": "lung cancer",
+        "Y1": "lung cancer",
+        "Y0": "absence of lung cancer"
+      },
+      "structure": "V1->X,X->V3,V1->Y,V3->Y",
+      "params": {
+        "p(V1)": [
+          0.411706174119317
+        ],
+        "p(X | V1)": [
+          0.06902768282758798,
+          0.4342250138342434
+        ],
+        "p(V3 | X)": [
+          0.5268415508727843,
+          0.8109764328115413
+        ],
+        "p(Y | V1, V3)": [
+          [
+            0.6251593911002518,
+            0.6800101927395735
+          ],
+          [
+            0.5432853209312991,
+            0.8193181436466727
+          ]
+        ]
+      },
+      "groundtruth": {
+        "ATE(Y | X)": 0.04145891771309895,
+        "ETT(Y | X)": 0.06679755677962307,
+        "NDE(Y | X)": 0.0,
+        "NIE(Y | X)": 0.041458917713099064,
+        "P(Y=1 | X=1)": 0.7490938584257499,
+        "P(Y=1 | X=0)": 0.6643976158126687,
+        "P(V1=1)": 0.411706174119317,
+        "P(X=1)": 0.21938167877492418,
+        "P(V3=1)": 0.5891755382710234,
+        "P(Y=1)": 0.6774195865267688
+      }
+    },
+    {
+      "model_id": 1,
+      "story_id": "smoking_frontdoor",
+      "graph_id": "frontdoor",
+      "spec_id": 0,
+      "spec": {
+        "V1": [
+          0.6635404915254463
+        ],
+        "X": [
+          0.5332952903038584,
+          0.3432899234906105
+        ],
+        "V3": [
+          0.4995931225833877,
+          0.32255003048599995
+        ],
+        "Y": [
+          0.04229569137510658,
+          0.7533661521595981,
+          0.3133211026970756,
+          0.5357128923034223
+        ]
+      },
+      "seed": 2026091101,
+      "builder": "random",
+      "equation_type": "bernoulli",
+      "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Gender has a direct effect on smoking and lung cancer. Smoking has a direct effect on tar deposit. Tar deposit has a direct effect on lung cancer. Gender is unobserved.",
+      "variable_mapping": {
+        "V1name": "gender",
+        "V11": "female",
+        "V10": "non-female",
+        "Xname": "smoking",
+        "X1": "smoking",
+        "X0": "nonsmoking",
+        "V3name": "tar deposit",
+        "V31": "high tar deposit",
+        "V30": "absence of tar deposit",
+        "Yname": "lung cancer",
+        "Y1": "lung cancer",
+        "Y0": "absence of lung cancer"
+      },
+      "structure": "V1->X,X->V3,V1->Y,V3->Y",
+      "params": {
+        "p(V1)": [
+          0.6635404915254463
+        ],
+        "p(X | V1)": [
+          0.5332952903038584,
+          0.3432899234906105
+        ],
+        "p(V3 | X)": [
+          0.4995931225833877,
+          0.32255003048599995
+        ],
+        "p(Y | V1, V3)": [
+          [
+            0.04229569137510658,
+            0.7533661521595981
+          ],
+          [
+            0.3133211026970756,
+            0.5357128923034223
+          ]
+        ]
+      },
+      "groundtruth": {
+        "ATE(Y | X)": -0.0684824589515301,
+        "ETT(Y | X)": -0.07749485779859722,
+        "NDE(Y | X)": 5.551115123125783e-17,
+        "NIE(Y | X)": -0.06848245895152999,
+        "P(Y=1 | X=1)": 0.33508539955037336,
+        "P(Y=1 | X=0)": 0.4173047191255552,
+        "P(V1=1)": 0.6635404915254461,
+        "P(X=1)": 0.4072190358161232,
+        "P(V3=1)": 0.4274978053215844,
+        "P(Y=1)": 0.387493467451585
+      }
+    },
+    {
+      "model_id": 2,
+      "story_id": "smoking_frontdoor",
+      "graph_id": "frontdoor",
+      "spec_id": 0,
+      "spec": {
+        "V1": [
+          0.26427242552238317
+        ],
+        "X": [
+          0.34992074489456915,
+          0.07866174286128036
+        ],
+        "V3": [
+          0.18808211859404456,
+          0.9306925177551637
+        ],
+        "Y": [
+          0.9809846868705069,
+          0.5545552061946338,
+          0.1178345869095152,
+          0.4234963392105613
+        ]
+      },
+      "seed": 2026101000,
+      "builder": "random",
+      "equation_type": "bernoulli",
+      "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Gender has a direct effect on smoking and lung cancer. Smoking has a direct effect on tar deposit. Tar deposit has a direct effect on lung cancer. Gender is unobserved.",
+      "variable_mapping": {
+        "V1name": "gender",
+        "V11": "female",
+        "V10": "non-female",
+        "Xname": "smoking",
+        "X1": "smoking",
+        "X0": "nonsmoking",
+        "V3name": "tar deposit",
+        "V31": "high tar deposit",
+        "V30": "absence of tar deposit",
+        "Yname": "lung cancer",
+        "Y1": "lung cancer",
+        "Y0": "absence of lung cancer"
+      },
+      "structure": "V1->X,X->V3,V1->Y,V3->Y",
+      "params": {
+        "p(V1)": [
+          0.26427242552238317
+        ],
+        "p(X | V1)": [
+          0.34992074489456915,
+          0.07866174286128036
+        ],
+        "p(V3 | X)": [
+          0.18808211859404456,
+          0.9306925177551637
+        ],
+        "p(Y | V1, V3)": [
+          [
+            0.9809846868705069,
+            0.5545552061946338
+          ],
+          [
+            0.1178345869095152,
+            0.4234963392105613
+          ]
+        ]
+      },
+      "groundtruth": {
+        "ATE(Y | X)": -0.1729969998265818,
+        "ETT(Y | X)": -0.2760518277889499,
+        "NDE(Y | X)": 0.0,
+        "NIE(Y | X)": -0.1729969998265819,
+        "P(Y=1 | X=1)": 0.5705270061400665,
+        "P(Y=1 | X=0)": 0.6560513875082812,
+        "P(V1=1)": 0.2642724255223835,
+        "P(X=1)": 0.278234470482451,
+        "P(V3=1)": 0.3947019297794001,
+        "P(Y=1)": 0.6609289620337264
+      }
+    },
+    {
+      "model_id": 3,
+      "story_id": "smoking_frontdoor",
+      "graph_id": "frontdoor",
+      "spec_id": 0,
+      "spec": {
+        "V1": [
+          0.4824105488399226
+        ],
+        "X": [
+          0.3591965538905544,
+          0.960506156058195
+        ],
+        "V3": [
+          0.3091322312324627,
+          0.15192157437753484
+        ],
+        "Y": [
+          0.7893168023574738,
+          0.3921806316060076,
+          0.20391191605383197,
+          0.11124735307404376
+        ]
+      },
+      "seed": 2026101101,
+      "builder": "random",
+      "equation_type": "bernoulli",
+      "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Gender has a direct effect on smoking and lung cancer. Smoking has a direct effect on tar deposit. Tar deposit has a direct effect on lung cancer. Gender is unobserved.",
+      "variable_mapping": {
+        "V1name": "gender",
+        "V11": "female",
+        "V10": "non-female",
+        "Xname": "smoking",
+        "X1": "smoking",
+        "X0": "nonsmoking",
+        "V3name": "tar deposit",
+        "V31": "high tar deposit",
+        "V30": "absence of tar deposit",
+        "Yname": "lung cancer",
+        "Y1": "lung cancer",
+        "Y0": "absence of lung cancer"
+      },
+      "structure": "V1->X,X->V3,V1->Y,V3->Y",
+      "params": {
+        "p(V1)": [
+          0.4824105488399226
+        ],
+        "p(X | V1)": [
+          0.3591965538905544,
+          0.960506156058195
+        ],
+        "p(V3 | X)": [
+          0.3091322312324627,
+          0.15192157437753484
+        ],
+        "p(Y | V1, V3)": [
+          [
+            0.7893168023574738,
+            0.3921806316060076
+          ],
+          [
+            0.20391191605383197,
+            0.11124735307404376
+          ]
+        ]
+      },
+      "groundtruth": {
+        "ATE(Y | X)": 0.039342887399818005,
+        "ETT(Y | X)": 0.028274083633635372,
+        "NDE(Y | X)": 0.0,
+        "NIE(Y | X)": 0.039342887399817894,
+        "P(Y=1 | X=1)": 0.3442166452436917,
+        "P(Y=1 | X=0)": 0.6398615398608578,
+        "P(V1=1)": 0.4824105488399226,
+        "P(X=1)": 0.6492746490949615,
+        "P(V3=1)": 0.2070593371689913,
+        "P(Y=1)": 0.4550934983327696
+      }
+    },
+    {
+      "model_id": 4,
+      "story_id": "blood_pressure",
+      "graph_id": "mediation",
+      "spec_id": 0,
+      "spec": {
+        "X": [
+          0.8487686682497082
+        ],
+        "V2": [
+          0.030866956373420407,
+          0.6374082183435424
+        ],
+        "Y": [
+          0.2793287535685275,
+          0.916228311721992,
+          0.0033720437403971237,
+          0.5882276148100098
+        ]
+      },
+      "seed": 2026111000,
+      "builder": "random",
+      "equation_type": "bernoulli",
+      "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Medication has a direct effect on blood pressure and heart condition. Blood pressure has a direct effect on heart condition.",
+      "variable_mapping": {
+        "Xname": "medication",
+        "X1": "taking medication",
+        "X0": "not taking medication",
+        "V2name": "blood pressure",
+        "V21": "high blood pressure",
+        "V20": "low blood pressure",
+        "Yname": "heart condition",
+        "Y1": "healthy heart",
+        "Y0": "heart problems"
+      },
+      "structure": "X->V2,X->Y,V2->Y",
+      "params": {
+        "p(X)": [
+          0.8487686682497082
+        ],
+        "p(V2 | X)": [
+          0.030866956373420407,
+          0.6374082183435424
+        ],
+        "p(Y | X, V2)": [
+          [
+            0.2793287535685275,
+            0.916228311721992
+          ],
+          [
+            0.0033720437403971237,
+            0.5882276148100098
+          ]
+        ]
+      },
+      "groundtruth": {
+        "ATE(Y | X)": 0.07717588683987248,
+        "ETT(Y | X)": 0.07717588683987248,
+        "NDE(Y | X)": -0.2775631493069462,
+        "NIE(Y | X)": 0.38630586175061504,
+        "P(Y=1 | X=1)": 0.376163791284174,
+        "P(Y=1 | X=0)": 0.2989879044443015,
+        "P(X=1)": 0.8487686682497078,
+        "P(V2=1)": 0.5456801755342982,
+        "P(Y=1)": 0.36854431000616694
+      }
+    },
+    {
+      "model_id": 5,
+      "story_id": "blood_pressure",
+      "graph_id": "mediation",
+      "spec_id": 0,
+      "spec": {
+        "X": [
+          0.6112947496180633
+        ],
+        "V2": [
+          0.3525825021520288,
+          0.3278883315953335
+        ],
+        "Y": [
+          0.07668221502717765,
+          0.720542599303537,
+          0.37192726883274385,
+          0.5561188774062842
+        ]
+      },
+      "seed": 2026111101,
+      "builder": "random",
+      "equation_type": "bernoulli",
+      "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Medication has a direct effect on blood pressure and heart condition. Blood pressure has a direct effect on heart condition.",
+      "variable_mapping": {
+        "Xname": "medication",
+        "X1": "taking medication",
+        "X0": "not taking medication",
+        "V2name": "blood pressure",
+        "V21": "high blood pressure",
+        "V20": "low blood pressure",
+        "Yname": "heart condition",
+        "Y1": "healthy heart",
+        "Y0": "heart problems"
+      },
+      "structure": "X->V2,X->Y,V2->Y",
+      "params": {
+        "p(X)": [
+          0.6112947496180633
+        ],
+        "p(V2 | X)": [
+          0.3525825021520288,
+          0.3278883315953335
+        ],
+        "p(Y | X, V2)": [
+          [
+            0.07668221502717765,
+            0.720542599303537
+          ],
+          [
+            0.37192726883274385,
+            0.5561188774062842
+          ]
+        ]
+      },
+      "groundtruth": {
+        "ATE(Y | X)": 0.1286254277098794,
+        "ETT(Y | X)": 0.1286254277098794,
+        "NDE(Y | X)": 0.13317388670710661,
+        "NIE(Y | X)": -0.015899598144019755,
+        "P(Y=1 | X=1)": 0.4323215480617827,
+        "P(Y=1 | X=0)": 0.3036961203519033,
+        "P(X=1)": 0.611294749618063,
+        "P(V2=1)": 0.33748708534454813,
+        "P(Y=1)": 0.37962698531836864
+      }
+    },
+    {
+      "model_id": 6,
+      "story_id": "blood_pressure",
+      "graph_id": "mediation",
+      "spec_id": 0,
+      "spec": {
+        "X": [
+          0.95808612993743
+        ],
+        "V2": [
+          0.3388355998704452,
+          0.38631955364975257
+        ],
+        "Y": [
+          0.6982652350771431,
+          0.8892624426162934,
+          0.04223151006834058,
+          0.41781002574132053
+        ]
+      },
+      "seed": 2026121000,
+      "builder": "random",
+      "equation_type": "bernoulli",
+      "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Medication has a direct effect on blood pressure and heart condition. Blood pressure has a direct effect on heart condition.",
+      "variable_mapping": {
+        "Xname": "medication",
+        "X1": "taking medication",
+        "X0": "not taking medication",
+        "V2name": "blood pressure",
+        "V21": "high blood pressure",
+        "V20": "low blood pressure",
+        "Yname": "heart condition",
+        "Y1": "healthy heart",
+        "Y0": "heart problems"
+      },
+      "structure": "X->V2,X->Y,V2->Y",
+      "params": {
+        "p(X)": [
+          0.95808612993743
+        ],
+        "p(V2 | X)": [
+          0.3388355998704452,
+          0.38631955364975257
+        ],
+        "p(Y | X, V2)": [
+          [
+            0.6982652350771431,
+            0.8892624426162934
+          ],
+          [
+            0.04223151006834058,
+            0.41781002574132053
+          ]
+        ]
+      },
+      "groundtruth": {
+        "ATE(Y | X)": -0.5756570538636878,
+        "ETT(Y | X)": -0.5756570538636878,
+        "NDE(Y | X)": -0.5934910067424045,
+        "NIE(Y | X)": 0.009069302574765903,
+        "P(Y=1 | X=1)": 0.18732483460356306,
+        "P(Y=1 | X=0)": 0.7629818884672509,
+        "P(X=1)": 0.9580861299374294,
+        "P(V2=1)": 0.3843293173809897,
+        "P(Y=1)": 0.21110088664248178
+      }
+    },
+    {
+      "model_id": 7,
+      "story_id": "blood_pressure",
+      "graph_id": "mediation",
+      "spec_id": 0,
+      "spec": {
+        "X": [
+          0.027540165017742924
+        ],
+        "V2": [
+          0.7482951438498489,
+          0.5640565363071957
+        ],
+        "Y": [
+          0.7676455157124545,
+          0.8666073905714781,
+          0.2467157208818388,
+          0.33399799766559923
+        ]
+      },
+      "seed": 2026121101,
+      "builder": "random",
+      "equation_type": "bernoulli",
+      "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Medication has a direct effect on blood pressure and heart condition. Blood pressure has a direct effect on heart condition.",
+      "variable_mapping": {
+        "Xname": "medication",
+        "X1": "taking medication",
+        "X0": "not taking medication",
+        "V2name": "blood pressure",
+        "V21": "high blood pressure",
+        "V20": "low blood pressure",
+        "Yname": "heart condition",
+        "Y1": "healthy heart",
+        "Y0": "heart problems"
+      },
+      "structure": "X->V2,X->Y,V2->Y",
+      "params": {
+        "p(X)": [
+          0.027540165017742924
+        ],
+        "p(V2 | X)": [
+          0.7482951438498489,
+          0.5640565363071957
+        ],
+        "p(Y | X, V2)": [
+          [
+            0.7676455157124545,
+            0.8666073905714781
+          ],
+          [
+            0.2467157208818388,
+            0.33399799766559923
+          ]
+        ]
+      },
+      "groundtruth": {
+        "ATE(Y | X)": -0.5457503464902453,
+        "ETT(Y | X)": -0.5457503464902453,
+        "NDE(Y | X)": -0.529669581352453,
+        "NIE(Y | X)": -0.01823259802383681,
+        "P(Y=1 | X=1)": 0.2959478596054927,
+        "P(Y=1 | X=0)": 0.8416982060957381,
+        "P(X=1)": 0.027540165017743545,
+        "P(V2=1)": 0.7432211821954847,
+        "P(Y=1)": 0.8266105217427876
+      }
+    }
+  ],
+  "errors": [],
+  "elapsed_seconds": 0.21899999999914144,
+  "official_commit": "3d2d1169b4b939a09048a6a75956c8972a93cc38",
+  "versions": {
+    "pomegranate": "0.14.8",
+    "omnibelt": "0.7.6",
+    "omnifig": "1.0.1",
+    "omniply": "0.1.1",
+    "numpy": "1.22.4",
+    "pandas": "2.1.4",
+    "scipy": "1.10.1",
+    "networkx": "3.1"
+  }
+}

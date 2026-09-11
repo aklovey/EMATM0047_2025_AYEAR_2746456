@@ -1,0 +1,28 @@
+{
+  "date": "2026-09-12",
+  "scope": "Offline scoring and statistical reanalysis of the English distribution using preserved final responses and numerical observations",
+  "analyses": [
+    {
+      "analysis": "fresh",
+      "numeric_fields": 218,
+      "differences": 0
+    },
+    {
+      "analysis": "main",
+      "numeric_fields": 230,
+      "differences": 0
+    },
+    {
+      "analysis": "CPT",
+      "numeric_fields": 1723,
+      "differences": 0
+    },
+    {
+      "analysis": "joint",
+      "numeric_fields": 65,
+      "differences": 0
+    }
+  ],
+  "new_inference_calls": 0,
+  "language_release_note": "Translated prompt/reasoning spans are presentation text; original text hashes, offsets and token measurements refer to the original runs."
+}

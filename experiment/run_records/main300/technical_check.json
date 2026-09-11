@@ -1,0 +1,21 @@
+{
+  "n": 1200,
+  "unique_qid_arm": 1200,
+  "counts_by_arm": {
+    "FULL_COT": 300,
+    "HEURISTIC_SHORT": 300,
+    "PNS_COT": 300,
+    "ZERO": 300
+  },
+  "status_counts": {
+    "completed": 1200
+  },
+  "prompt_mismatches": [],
+  "common_seed_and_output_budget": true,
+  "same_fewshot_demo_identity_order": true,
+  "truncated_by_arm": {},
+  "started_at": "2026-09-09T21:43:54.510106+00:00",
+  "last_finished_at": "2026-09-09T22:24:03.526773+00:00",
+  "run_wall_seconds": 2409.016667,
+  "concurrency_per_endpoint": 24
+}

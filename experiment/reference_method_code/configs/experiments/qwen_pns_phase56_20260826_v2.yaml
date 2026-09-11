@@ -1,0 +1,179 @@
+protocol_id: qwen_pns_phase56_20260826_v2_qwen_source_segments
+status: local_protocol_frozen_live_gates_pending
+
+dataset:
+  name: CLADDER
+  loader: existing_dataset_source_adapter_and_task_frame
+  segmentation:
+    actual_source: frozen_input_qwen_parent_segments
+    parent_source: parent_reasoning
+    segment_source: segments
+    source_preserving: true
+    programmatic_source: cladder_programmatic_reasoning
+    programmatic_role: semantic_reference_alignment_anchor_only
+    one_to_one_required: false
+    same_path_required: false
+    canonical_author_text_qwen_prompt: forbidden
+    canonical_author_text_judge_payload: advisory_non_answer_steps_only
+    programmatic_steps_present_but_malformed: fail_closed
+    programmatic_steps_missing: named_explicit_fallback_only
+    fallback_id: qwen_parent_source_preserving_v1
+
+sample_manifest:
+  required: true
+  frozen_sample_count: 56
+  runtime_replacement_forbidden: true
+  path: runtime_bundle/batch_input_56.jsonl
+  selection_policy: historical_qwentest100_demo56_fixed_order_v1
+  baseline_model: Qwen/Qwen3.6-35B-A3B
+  baseline_correct_cot_bank_count: 9239
+  sample_ids:
+    - 1428
+    - 4171
+    - 4255
+    - 4274
+    - 4284
+    - 8752
+    - 9577
+    - 9588
+    - 9590
+    - 9611
+    - 9686
+    - 9883
+    - 9957
+    - 10009
+    - 10242
+    - 11849
+    - 13224
+    - 14516
+    - 14591
+    - 17519
+    - 18188
+    - 19368
+    - 19407
+    - 19969
+    - 19978
+    - 20177
+    - 20214
+    - 20438
+    - 20959
+    - 23635
+    - 23999
+    - 24494
+    - 24894
+    - 28145
+    - 29590
+    - 29612
+    - 29642
+    - 29705
+    - 29833
+    - 29962
+    - 29980
+    - 29982
+    - 29990
+    - 30257
+    - 30344
+    - 30359
+    - 30363
+    - 30459
+    - 30491
+    - 30505
+    - 30650
+    - 30701
+    - 30749
+    - 30846
+    - 30894
+    - 30995
+
+phase56:
+  accepted_target: 56
+  preserve_all_attempt_and_judge_trajectories: true
+  silent_sample_drop_forbidden: true
+  fallback_counts_as_accepted: false
+  final_qwen_tokens:
+    operator: "<"
+    reference: parent_qwen_tokens
+    scope: complete_reasoning_chain
+
+rollout:
+  initial_valid_rounds: 3
+  max_valid_rounds: 5
+  max_raw_attempts_per_lineage: 5
+  accept_correct_votes: 3
+  accept_at_five: "3:2"
+  extra_recovery: false
+
+judge:
+  provider: deepseek
+  transport: chat.completions
+  model: deepseek-v4-pro
+  thinking:
+    type: enabled
+  reasoning_effort: max
+  response_format:
+    type: json_object
+  omit_max_tokens: true
+  openai_or_gpt_fallback: forbidden
+  error_parse_or_skip_policy: reject
+  replacement_semantic_acceptance:
+    any_of: [semantically_equivalent, valid_alternative_path]
+    all_of: [no_contradiction, valid_intervention]
+  complete_chain_acceptance:
+    all_of: [chain_coherent, logic_valid]
+  deterministic_answer_validation: required_separate_hard_gate
+
+concurrency:
+  scope: endpoint_local
+  endpoints: [gpu0, gpu1]
+  generation_route: qid_plus_step_mod_backend_count
+  affinity_fields: [qid, step]
+  matched_branches_same_endpoint: true
+  initial_inflight_per_endpoint: 48
+  aggregate_generation_limit: null
+  outer_item_scheduler: fully_expanded
+  outer_step_scheduler: fully_expanded
+  controller_signals:
+    - vllm:kv_cache_usage_perc
+    - vllm:num_requests_waiting
+    - vllm:num_preemptions_total
+  automatic_failover: false
+
+execution_topology:
+  controller: main_laptop_local
+  judge_and_journal_location: main_laptop_local
+  deepseek_key_copy_to_gpu_host: forbidden
+  qwen_transport: dedicated_nested_ssh_port_forward
+  local_qwen_base_urls:
+    - http://127.0.0.1:18000
+    - http://127.0.0.1:18001
+  remote_qwen_ports: [8000, 8001]
+  remote_service_root: /root/autodl-tmp/qwen36_pns_phase56_deepseek_judge_20260826_v2/services_dual_tp1_3to5_v2
+  local_output_root: artifacts/experiments/qwen_pns_phase56_20260826_v2
+  historical_run_or_journal_reuse: forbidden
+
+gates:
+  required_before_remote_start:
+    - local_static_tests_green
+    - command_ready
+    - frozen_manifest_ready
+    - fresh_output_root_ready
+    - offline_final_payload_preflight_ready
+    - bounded_live_judge_canary_plan_ready
+    - live_judge_canary_or_strict_local_rebind_passed
+  required_before_full_phase56:
+    - first_formal_accepted_artifact_judge_passed
+  live_status_is_not_asserted_by_this_config: true
+
+stage_order:
+  - phase56_exactly_56_accepted_pns_cot
+  - freeze_demo_pool_and_check_test100_leakage
+  - qwen_test100_matched_icl_zero_full_pns
+  - historical_settings_and_results_table
+  - unvalidated_coarse_tuning_directions_only
+  - user_confirmation_and_frozen_phase256_config
+
+cost_policy:
+  paid_remote_required_state_before_all_start_gates: stopped
+  no_idle_boot_for_local_code_or_gate_repairs: true
+  stop_after_each_terminal_stage_unless_next_stage_starts_immediately: true
+  phase256_preboot_forbidden: true

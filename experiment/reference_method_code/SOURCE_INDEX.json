@@ -1,0 +1,151 @@
+{
+  "captured_at_utc": "2026-09-09T22:57:00.294336+00:00",
+  "source_root": "E:\\wt\\cause-qwen-pns-adaptive-20260826",
+  "current_HEAD_reference_only": "069175d7c4aa4a6becfe6330c6a628952a98b58f",
+  "historical_execution_identity_established": false,
+  "direct_archived_py_files_in_run_root": [],
+  "files": [
+    {
+      "path": "scripts/run_qwen_pns_adaptive.py",
+      "source_path": "E:\\wt\\cause-qwen-pns-adaptive-20260826\\scripts\\run_qwen_pns_adaptive.py",
+      "size": 42941,
+      "mtime_utc": "2026-08-26T18:18:02.964842+00:00",
+      "credential_scan_flags": [],
+      "status": "included"
+    },
+    {
+      "path": "scripts/recover_qwen_pns_existing_candidates.py",
+      "source_path": "E:\\wt\\cause-qwen-pns-adaptive-20260826\\scripts\\recover_qwen_pns_existing_candidates.py",
+      "size": 8774,
+      "mtime_utc": "2026-08-26T18:03:07.725679+00:00",
+      "credential_scan_flags": [],
+      "status": "included"
+    },
+    {
+      "path": "src/qwen_pns_adaptive.py",
+      "source_path": "E:\\wt\\cause-qwen-pns-adaptive-20260826\\src\\qwen_pns_adaptive.py",
+      "size": 52683,
+      "mtime_utc": "2026-08-26T18:08:48.668391+00:00",
+      "credential_scan_flags": [],
+      "status": "included"
+    },
+    {
+      "path": "src/qwen_pns_batch56_adapter.py",
+      "source_path": "E:\\wt\\cause-qwen-pns-adaptive-20260826\\src\\qwen_pns_batch56_adapter.py",
+      "size": 103492,
+      "mtime_utc": "2026-08-26T18:13:28.239780+00:00",
+      "credential_scan_flags": [],
+      "status": "included"
+    },
+    {
+      "path": "src/qwen_pns_judge_gate.py",
+      "source_path": "E:\\wt\\cause-qwen-pns-adaptive-20260826\\src\\qwen_pns_judge_gate.py",
+      "size": 40324,
+      "mtime_utc": "2026-08-26T11:32:20.054183+00:00",
+      "credential_scan_flags": [],
+      "status": "included"
+    },
+    {
+      "path": "src/qwen_pns_phase_gate.py",
+      "source_path": "E:\\wt\\cause-qwen-pns-adaptive-20260826\\src\\qwen_pns_phase_gate.py",
+      "size": 31171,
+      "mtime_utc": "2026-08-26T03:07:45.426788+00:00",
+      "credential_scan_flags": [],
+      "status": "included"
+    },
+    {
+      "path": "src/qwen_pns_request_recovery.py",
+      "source_path": "E:\\wt\\cause-qwen-pns-adaptive-20260826\\src\\qwen_pns_request_recovery.py",
+      "size": 31231,
+      "mtime_utc": "2026-08-26T17:57:19.803910+00:00",
+      "credential_scan_flags": [],
+      "status": "included"
+    },
+    {
+      "path": "src/qwen_pns_candidate_materialization_recovery.py",
+      "source_path": "E:\\wt\\cause-qwen-pns-adaptive-20260826\\src\\qwen_pns_candidate_materialization_recovery.py",
+      "size": 103761,
+      "mtime_utc": "2026-08-26T18:02:56.400343+00:00",
+      "credential_scan_flags": [],
+      "status": "included"
+    },
+    {
+      "path": "src/qwen_pns_max7_recovery.py",
+      "source_path": "E:\\wt\\cause-qwen-pns-adaptive-20260826\\src\\qwen_pns_max7_recovery.py",
+      "size": 21211,
+      "mtime_utc": "2026-08-26T18:15:06.925622+00:00",
+      "credential_scan_flags": [],
+      "status": "included"
+    },
+    {
+      "path": "src/providers/deepseek_client.py",
+      "source_path": "E:\\wt\\cause-qwen-pns-adaptive-20260826\\src\\providers\\deepseek_client.py",
+      "size": 13587,
+      "mtime_utc": "2026-08-26T02:46:57.814078+00:00",
+      "credential_scan_flags": [
+        "literal-credential-dictionary"
+      ],
+      "status": "excluded_by_credential_scan"
+    },
+    {
+      "path": "src/experiments/cladder_pns_mvp/judge.py",
+      "source_path": "E:\\wt\\cause-qwen-pns-adaptive-20260826\\src\\experiments\\cladder_pns_mvp\\judge.py",
+      "size": 39089,
+      "mtime_utc": "2026-08-26T04:42:35.159446+00:00",
+      "credential_scan_flags": [],
+      "status": "included"
+    },
+    {
+      "path": "src/experiments/cladder_pns_mvp/judge_transport.py",
+      "source_path": "E:\\wt\\cause-qwen-pns-adaptive-20260826\\src\\experiments\\cladder_pns_mvp\\judge_transport.py",
+      "size": 8588,
+      "mtime_utc": "2026-08-26T02:46:57.814078+00:00",
+      "credential_scan_flags": [],
+      "status": "included"
+    },
+    {
+      "path": "src/pns_judge_ledger.py",
+      "source_path": "E:\\wt\\cause-qwen-pns-adaptive-20260826\\src\\pns_judge_ledger.py",
+      "size": 5976,
+      "mtime_utc": "2026-08-26T02:51:22.427918+00:00",
+      "credential_scan_flags": [],
+      "status": "included"
+    },
+    {
+      "path": "src/pns_dataset_preparation.py",
+      "source_path": "E:\\wt\\cause-qwen-pns-adaptive-20260826\\src\\pns_dataset_preparation.py",
+      "size": 7525,
+      "mtime_utc": "2026-08-26T04:43:15.587926+00:00",
+      "credential_scan_flags": [],
+      "status": "included"
+    },
+    {
+      "path": "configs/experiments/qwen_pns_phase56_20260826_v2.yaml",
+      "source_path": "E:\\wt\\cause-qwen-pns-adaptive-20260826\\configs\\experiments\\qwen_pns_phase56_20260826_v2.yaml",
+      "size": 4743,
+      "mtime_utc": "2026-08-26T04:46:55.538347+00:00",
+      "credential_scan_flags": [],
+      "status": "included"
+    },
+    {
+      "path": "configs/experiments/qwen_pns_phase56_20260826_v2_cli_proxy_resume.yaml",
+      "source_path": "E:\\wt\\cause-qwen-pns-adaptive-20260826\\configs\\experiments\\qwen_pns_phase56_20260826_v2_cli_proxy_resume.yaml",
+      "size": 3033,
+      "mtime_utc": "2026-08-26T11:22:31.859169+00:00",
+      "credential_scan_flags": [],
+      "status": "included"
+    }
+  ],
+  "snapshot_status": "reference snapshot captured now, historical execution identity not established",
+  "excluded_categories": [
+    "models",
+    "caches",
+    "databases",
+    "journals",
+    "raw requests/responses",
+    ".env",
+    "auth files",
+    "credential literals detected by scan"
+  ],
+  "no_source_code_execution": true
+}

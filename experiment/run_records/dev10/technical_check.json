@@ -1,0 +1,9 @@
+{
+  "n": 40,
+  "status_counts": {
+    "completed": 40
+  },
+  "prompt_mismatch": [],
+  "same_target_seed_budget_consistent": true,
+  "truncated": 0
+}

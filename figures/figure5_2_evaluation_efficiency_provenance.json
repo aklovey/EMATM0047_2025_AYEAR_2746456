@@ -1,0 +1,177 @@
+{
+  "status": "final",
+  "pooled": false,
+  "width_mm": 160.02,
+  "height_mm": 110.49,
+  "cohorts": [
+    {
+      "id": "main300",
+      "n": 300,
+      "source": "C:\\Users\\aklovey\\Documents\\Codex\\2026-09-10\\9-4-cause-1-8-8\\work\\add_figures\\numeric\\figure5_2_inputs\\main_analysis.json",
+      "source_sha256": "1b10bf250ea37e39a65733ca1198c284487f64514c0c304b4e9ab7b54fb87639",
+      "interval_provenance": {
+        "map": "C:\\Users\\aklovey\\Documents\\Codex\\2026-09-10\\9-4-cause-1-8-8\\work\\add_figures\\numeric\\figure5_2_inputs\\main_interval_map.json",
+        "map_sha256": "8aea80eecf2c62fc05c633b65a07bbba804d79b1a4f7ddb27481381a1663dbf8",
+        "source": "C:\\Users\\aklovey\\Documents\\Codex\\2026-09-10\\9-4-cause-1-8-8\\work\\add_figures\\numeric\\figure5_2_inputs\\main_CPT_sensitivity.json",
+        "source_sha256": "032fe40e2b9cfa74ae06d179a4ab1b7eae0724f28a048122d2b2d4bc71092f9e",
+        "method_label": "95% paired CPT-cluster bootstrap",
+        "resampling_unit": "271 identical complete CPT mechanism groups",
+        "confidence_level": 0.95,
+        "pointers": {
+          "PNS_COT:FULL_COT": {
+            "delta_pointer": "/comparisons/PNS_COT:FULL_COT/accuracy_delta",
+            "ci_pointer": "/comparisons/PNS_COT:FULL_COT/paired_CPT_cluster_bootstrap_ci95"
+          },
+          "PNS_COT:HEURISTIC_SHORT": {
+            "delta_pointer": "/comparisons/PNS_COT:HEURISTIC_SHORT/accuracy_delta",
+            "ci_pointer": "/comparisons/PNS_COT:HEURISTIC_SHORT/paired_CPT_cluster_bootstrap_ci95"
+          }
+        }
+      },
+      "input_saving_fraction": 0.20191842352557865,
+      "gains_losses": {
+        "PNS_COT:FULL_COT": [
+          10,
+          8
+        ],
+        "PNS_COT:HEURISTIC_SHORT": [
+          12,
+          5
+        ]
+      }
+    },
+    {
+      "id": "fresh246",
+      "n": 246,
+      "source": "C:\\Users\\aklovey\\Documents\\Codex\\2026-09-10\\9-4-cause-1-8-8\\work\\add_figures\\numeric\\figure5_2_inputs\\fresh_analysis.json",
+      "source_sha256": "f95c487b139a900d0d93f27cc2a9e16a7c6c53d709fce1404f71257fae157b38",
+      "interval_provenance": {
+        "map": "C:\\Users\\aklovey\\Documents\\Codex\\2026-09-10\\9-4-cause-1-8-8\\work\\add_figures\\numeric\\figure5_2_inputs\\fresh_interval_map.json",
+        "map_sha256": "f63b2c5308371c59e8591bcf4fa027a6045a61af3449d46542e02dc06f66501c",
+        "source": "C:\\Users\\aklovey\\Documents\\Codex\\2026-09-10\\9-4-cause-1-8-8\\work\\add_figures\\numeric\\figure5_2_inputs\\fresh_analysis.json",
+        "source_sha256": "f95c487b139a900d0d93f27cc2a9e16a7c6c53d709fce1404f71257fae157b38",
+        "method_label": "95% paired instance bootstrap",
+        "resampling_unit": "246 independent new CPT mechanisms, one item per group",
+        "confidence_level": 0.95,
+        "pointers": {
+          "PNS_COT:FULL_COT": {
+            "delta_pointer": "/comparisons/PNS_COT:FULL_COT/accuracy_delta",
+            "ci_pointer": "/comparisons/PNS_COT:FULL_COT/paired_cluster_bootstrap_ci95"
+          },
+          "PNS_COT:HEURISTIC_SHORT": {
+            "delta_pointer": "/comparisons/PNS_COT:HEURISTIC_SHORT/accuracy_delta",
+            "ci_pointer": "/comparisons/PNS_COT:HEURISTIC_SHORT/paired_cluster_bootstrap_ci95"
+          }
+        }
+      },
+      "input_saving_fraction": 0.18619458212406437,
+      "gains_losses": {
+        "PNS_COT:FULL_COT": [
+          21,
+          5
+        ],
+        "PNS_COT:HEURISTIC_SHORT": [
+          24,
+          8
+        ]
+      }
+    }
+  ],
+  "main_iid_interval_used": false,
+  "svg_text_objects": 56,
+  "joint_inference_provenance": {
+    "source": "C:\\Users\\aklovey\\Documents\\Codex\\2026-09-10\\9-4-cause-1-8-8\\work\\add_figures\\numeric\\figure5_2_inputs\\joint_comparisons.json",
+    "sha256": "a0a3fc1631c6a1a43a6564af7ddd8fe9d839cbe011b7ea41dc351a307a1cb4cf",
+    "family_size": 6,
+    "adjustment": "Holm step-down",
+    "cohorts_pooled": false,
+    "displayed_contrasts": [
+      {
+        "cohort": "released_followup300",
+        "n": 300,
+        "inference_groups": 271,
+        "comparison": "PNS_COT:FULL_COT",
+        "test": "paired CPT cluster sign-flip permutation (Monte Carlo)",
+        "primary_p": 0.8145709271453643,
+        "holm_within_cohort_p": 0.8145709271453643,
+        "accuracy_delta": 0.006666666666666667,
+        "gain": 10,
+        "loss": 8,
+        "paired_ci95": [
+          -0.020202020202020204,
+          0.03492063492063492
+        ],
+        "ci_method": "paired CPT cluster percentile bootstrap",
+        "diagnostic_mcnemar_p": 0.8145294189453125,
+        "holm_across_six_p": 0.8145709271453643
+      },
+      {
+        "cohort": "released_followup300",
+        "n": 300,
+        "inference_groups": 271,
+        "comparison": "PNS_COT:HEURISTIC_SHORT",
+        "test": "paired CPT cluster sign-flip permutation (Monte Carlo)",
+        "primary_p": 0.14271928640356799,
+        "holm_within_cohort_p": 0.28543857280713597,
+        "accuracy_delta": 0.023333333333333334,
+        "gain": 12,
+        "loss": 5,
+        "paired_ci95": [
+          -0.0033222591362126247,
+          0.050505050505050504
+        ],
+        "ci_method": "paired CPT cluster percentile bootstrap",
+        "diagnostic_mcnemar_p": 0.143463134765625,
+        "holm_across_six_p": 0.28543857280713597
+      },
+      {
+        "cohort": "fresh_SCM246",
+        "n": 246,
+        "inference_groups": 246,
+        "comparison": "PNS_COT:FULL_COT",
+        "test": "paired item-level exact McNemar (independent fresh mechanisms)",
+        "primary_p": 0.002493917942047119,
+        "holm_within_cohort_p": 0.004987835884094238,
+        "accuracy_delta": 0.06504065040650407,
+        "gain": 21,
+        "loss": 5,
+        "paired_ci95": [
+          0.024390243902439025,
+          0.10569105691056911
+        ],
+        "ci_method": "paired instance percentile bootstrap",
+        "holm_across_six_p": 0.009975671768188477
+      },
+      {
+        "cohort": "fresh_SCM246",
+        "n": 246,
+        "inference_groups": 246,
+        "comparison": "PNS_COT:HEURISTIC_SHORT",
+        "test": "paired item-level exact McNemar (independent fresh mechanisms)",
+        "primary_p": 0.0070003666914999485,
+        "holm_within_cohort_p": 0.0070003666914999485,
+        "accuracy_delta": 0.06504065040650407,
+        "gain": 24,
+        "loss": 8,
+        "paired_ci95": [
+          0.02032520325203252,
+          0.10975609756097561
+        ],
+        "ci_method": "paired instance percentile bootstrap",
+        "holm_across_six_p": 0.021001100074499846
+      }
+    ],
+    "ci_coverage": "pointwise 95%; not simultaneous; p-values adjusted separately"
+  },
+  "source_data": "C:\\Users\\aklovey\\Documents\\Codex\\2026-09-10\\9-4-cause-1-8-8\\work\\add_figures\\numeric\\figure5_2_evaluation_efficiency_source_data.csv",
+  "exports": {
+    "svg": "C:\\Users\\aklovey\\Documents\\Codex\\2026-09-10\\9-4-cause-1-8-8\\work\\add_figures\\numeric\\figure5_2_evaluation_efficiency.svg",
+    "pdf": "C:\\Users\\aklovey\\Documents\\Codex\\2026-09-10\\9-4-cause-1-8-8\\work\\add_figures\\numeric\\figure5_2_evaluation_efficiency.pdf",
+    "png": "C:\\Users\\aklovey\\Documents\\Codex\\2026-09-10\\9-4-cause-1-8-8\\work\\add_figures\\numeric\\figure5_2_evaluation_efficiency.png"
+  },
+  "python": "D:\\CodexTools\\cause-academic\\venv\\Scripts\\python.exe",
+  "python_version": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "matplotlib_version": "3.11.1",
+  "numpy_version": "2.4.6",
+  "visual_qa": "PASS: original-resolution PNG inspected; labels, plotted marks and layout clear, with no clipping or overlap"
+}

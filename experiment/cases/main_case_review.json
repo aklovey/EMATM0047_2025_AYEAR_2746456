@@ -1,0 +1,829 @@
+{
+  "review_type": "nonblinded_model_assisted_descriptive_case_review",
+  "new_model_api_calls": 0,
+  "selection_plan": "work/evaluation_case_selection_plan.md",
+  "selection_manifest": "work/main_cases/selection.json",
+  "selection_totals_as_recorded": {
+    "PNS_gain_over_FULL": 10,
+    "PNS_loss_to_FULL": 8,
+    "format_failure_target_count": 10
+  },
+  "selection_scope": "Under the rules written in advance, the two lowest qids are selected from each of the gain and loss groups, along with the lowest qid with a format failure. This review does not resample or change scoring.",
+  "limitations": [
+    "This is a non-blinded case review assisted by a single model, not human or expert ground truth.",
+    "There is one stochastic rollout per arm for the same target, which does not establish the causal mechanism of the compression intervention.",
+    "The main 300 set reuses CPTs. All cases describe only this completed sample and do not support generalisation across CPTs or to the population.",
+    "The main strict scoring uses the saved content and the original contract. Answers are not recovered from reasoning, capitalisation is not corrected, and no retries are made.",
+    "The public IV graph for q9510 does not sufficiently identify the ATE. Correctness against the source gold label and scientific reasoning validity are recorded separately."
+  ],
+  "cases": [
+    {
+      "question_id": 662,
+      "category": "PNS_gain_over_FULL",
+      "source_gold": "yes",
+      "strict_pair": {
+        "FULL_COT": {
+          "answer": "no",
+          "correct": false,
+          "format_valid": true
+        },
+        "PNS_COT": {
+          "answer": "yes",
+          "correct": true,
+          "format_valid": true
+        }
+      },
+      "target": "The sign of the natural indirect effect of season on wet ground through weather and sprinkling as joint mediators",
+      "public_formula": "Season has no parents, and there is no direct Season->Ground edge. The joint mediators cover all causal paths, so NDE=0 and joint NIE=TE=P(wet|rainy)-P(wet|dry)=0.60-0.55=0.05.",
+      "calculation": {
+        "joint_NIE": 0.05
+      },
+      "comparison": "FULL initially calculates TE=IE=0.05 correctly, but then requires every individual path to be positive and rejects the joint indirect effect because mediator-stratified information is missing. PNS ultimately retains the joint-mediator interpretation and answers yes.",
+      "quotes": [
+        {
+          "arm": "FULL_COT",
+          "text": "So Indirect Effect = 0.05 (positive).",
+          "meaning": "A correct derivation already appears in the middle of FULL."
+        },
+        {
+          "arm": "FULL_COT",
+          "text": "But we definitely lack the data to confirm the mediation paths are positive.",
+          "meaning": "The joint-effect question is subsequently changed into a question about the sign of each path."
+        },
+        {
+          "arm": "PNS_COT",
+          "text": "The combined indirect effect is positive.",
+          "meaning": "PNS ultimately makes clear that the question concerns the joint paths rather than requiring each path to be positive."
+        }
+      ],
+      "correction_handling": "FULL's correct intermediate expression is overridden by a later incorrect conclusion. PNS's early concern about insufficient data is corrected by the explicit explanation that there is no direct path and that the effect is joint.",
+      "semantic_caveats": [
+        "PNS writes the two natural path effects as a simple sum, which should not be generalised to path-specific effects with interactions. The conclusion needed here, that the joint mediators cover all paths, still holds."
+      ],
+      "interpretation": "This difference between one FULL and one PNS generation for the same target descriptively shows different interpretations of the estimand's scope. It does not establish that compression caused recovery of the correct estimand.",
+      "saved_responses": {
+        "ZERO": {
+          "raw_path": "work\\main_cases\\raw\\q662_ZERO.json",
+          "sha256": "fdfb3ec7308e02425bf17c9b7d0f3920701d4354b2147ca1e21465b8ef93deef",
+          "content_exact": "\n\n{\"answer\":\"yes\"}",
+          "content_valid_json": true,
+          "content_valid_enum": true,
+          "finish_reason": "stop",
+          "original_score": {
+            "question_id": "662",
+            "group_id": "model:148",
+            "query_type": "nie",
+            "arm": "ZERO",
+            "gold_answer": "yes",
+            "predicted_answer": "yes",
+            "correct": "1",
+            "format_valid": "1",
+            "api_ok": "1",
+            "status": "completed",
+            "truncated": "0",
+            "prompt_tokens": "179.0",
+            "completion_tokens": "787.0",
+            "total_tokens": "966.0",
+            "latency_seconds": "48.84412690997124"
+          }
+        },
+        "FULL_COT": {
+          "raw_path": "work\\main_cases\\raw\\q662_FULL_COT.json",
+          "sha256": "5af8c85a84fa7b81e2dc9668ea9ac57423199ee8fef122f79afd71ae6f00911a",
+          "content_exact": "\n\n{\"answer\":\"no\"}",
+          "content_valid_json": true,
+          "content_valid_enum": true,
+          "finish_reason": "stop",
+          "original_score": {
+            "question_id": "662",
+            "group_id": "model:148",
+            "query_type": "nie",
+            "arm": "FULL_COT",
+            "gold_answer": "yes",
+            "predicted_answer": "no",
+            "correct": "0",
+            "format_valid": "1",
+            "api_ok": "1",
+            "status": "completed",
+            "truncated": "0",
+            "prompt_tokens": "5149.0",
+            "completion_tokens": "1172.0",
+            "total_tokens": "6321.0",
+            "latency_seconds": "73.21655054204166"
+          }
+        },
+        "HEURISTIC_SHORT": {
+          "raw_path": "work\\main_cases\\raw\\q662_HEURISTIC_SHORT.json",
+          "sha256": "919828e4fc71f8fa311e877b23673309a9acf2beff490d12ee2836c16a7646b1",
+          "content_exact": "\n\n{\"answer\":\"yes\"}",
+          "content_valid_json": true,
+          "content_valid_enum": true,
+          "finish_reason": "stop",
+          "original_score": {
+            "question_id": "662",
+            "group_id": "model:148",
+            "query_type": "nie",
+            "arm": "HEURISTIC_SHORT",
+            "gold_answer": "yes",
+            "predicted_answer": "yes",
+            "correct": "1",
+            "format_valid": "1",
+            "api_ok": "1",
+            "status": "completed",
+            "truncated": "0",
+            "prompt_tokens": "3152.0",
+            "completion_tokens": "879.0",
+            "total_tokens": "4031.0",
+            "latency_seconds": "54.818935280665755"
+          }
+        },
+        "PNS_COT": {
+          "raw_path": "work\\main_cases\\raw\\q662_PNS_COT.json",
+          "sha256": "e8c89178b1b2dec6898abc978538892afbf6bd3525cb5320a44d7eb9cba8bc9d",
+          "content_exact": "\n\n{\"answer\":\"yes\"}",
+          "content_valid_json": true,
+          "content_valid_enum": true,
+          "finish_reason": "stop",
+          "original_score": {
+            "question_id": "662",
+            "group_id": "model:148",
+            "query_type": "nie",
+            "arm": "PNS_COT",
+            "gold_answer": "yes",
+            "predicted_answer": "yes",
+            "correct": "1",
+            "format_valid": "1",
+            "api_ok": "1",
+            "status": "completed",
+            "truncated": "0",
+            "prompt_tokens": "3151.0",
+            "completion_tokens": "802.0",
+            "total_tokens": "3953.0",
+            "latency_seconds": "49.978025775402784"
+          }
+        }
+      }
+    },
+    {
+      "question_id": 8884,
+      "category": "PNS_gain_over_FULL",
+      "source_gold": "yes",
+      "strict_pair": {
+        "FULL_COT": {
+          "answer": "no",
+          "correct": false,
+          "format_valid": true
+        },
+        "PNS_COT": {
+          "answer": "yes",
+          "correct": true,
+          "format_valid": true
+        }
+      },
+      "target": "Whether the population ATE of maternal smoking on high infant mortality is negative",
+      "public_formula": "The supplied graph contains S->B,S->Y,H->B,H->Y,B->Y, with no H->S. S has no backdoor path, so P(Y|do(S))=P(Y|S). ATE=0.54-0.70=-0.16. H confounding B->Y does not mean that it confounds the total effect S->Y.",
+      "calculation": {
+        "ATE": -0.16
+      },
+      "comparison": "FULL invents H->S and then changes its answer to no based on unobserved confounding and speculation about the benchmark or medical common knowledge. PNS ultimately maintains that the question has no H->S and uses the marginal risk difference to obtain yes.",
+      "quotes": [
+        {
+          "arm": "FULL_COT",
+          "text": "H -> S",
+          "meaning": "An added causal edge that is absent from the question"
+        },
+        {
+          "arm": "FULL_COT",
+          "text": "The safest causal inference answer is \"No\"",
+          "meaning": "Non-identifiability or a speculated reversal cannot serve as a proof of no."
+        },
+        {
+          "arm": "PNS_COT",
+          "text": "No H -> S. So S is exogenous with respect to M's confounders. Observational = Causal.",
+          "meaning": "The final rule agrees with the question's graph."
+        }
+      ],
+      "correction_handling": "PNS's intermediate wording about whether H confounds S/B is confused, but its final derivation corrects this by explicitly stating that there is no H->S and that S is exogenous. FULL still retains the added H->S at the end.",
+      "semantic_caveats": [
+        "PNS also states the incorrect general rule, \"The direct S->M arrow means H doesn't confound S and M.\" The correct basis is the absence of a backdoor path entering S, rather than the presence of a direct edge. The candidate's full text cannot be described as rigorous in every sentence."
+      ],
+      "interpretation": "This comparison shows whether these responses respect the closed DAG. It does not establish that PNS systematically suppresses added edges or common-knowledge bias.",
+      "saved_responses": {
+        "ZERO": {
+          "raw_path": "work\\main_cases\\raw\\q8884_ZERO.json",
+          "sha256": "859d5b1b1b8a6b0c177e47e5834b0c48858d5c7c8e088f5ae24e98dad228668b",
+          "content_exact": "\n\n{\"answer\":\"no\"}",
+          "content_valid_json": true,
+          "content_valid_enum": true,
+          "finish_reason": "stop",
+          "original_score": {
+            "question_id": "8884",
+            "group_id": "model:4798",
+            "query_type": "ate",
+            "arm": "ZERO",
+            "gold_answer": "yes",
+            "predicted_answer": "no",
+            "correct": "0",
+            "format_valid": "1",
+            "api_ok": "1",
+            "status": "completed",
+            "truncated": "0",
+            "prompt_tokens": "204.0",
+            "completion_tokens": "1903.0",
+            "total_tokens": "2107.0",
+            "latency_seconds": "118.59257475100458"
+          }
+        },
+        "FULL_COT": {
+          "raw_path": "work\\main_cases\\raw\\q8884_FULL_COT.json",
+          "sha256": "f639db77934b9644d148ec79d641f62b3400830c0094bf392b72857f3dfde6f8",
+          "content_exact": "\n\n{\"answer\":\"no\"}",
+          "content_valid_json": true,
+          "content_valid_enum": true,
+          "finish_reason": "stop",
+          "original_score": {
+            "question_id": "8884",
+            "group_id": "model:4798",
+            "query_type": "ate",
+            "arm": "FULL_COT",
+            "gold_answer": "yes",
+            "predicted_answer": "no",
+            "correct": "0",
+            "format_valid": "1",
+            "api_ok": "1",
+            "status": "completed",
+            "truncated": "0",
+            "prompt_tokens": "7946.0",
+            "completion_tokens": "2535.0",
+            "total_tokens": "10481.0",
+            "latency_seconds": "158.1081277485937"
+          }
+        },
+        "HEURISTIC_SHORT": {
+          "raw_path": "work\\main_cases\\raw\\q8884_HEURISTIC_SHORT.json",
+          "sha256": "95daafda5c36aa5dd132570e727a3a5076c6404fe897fe262efc62ab787ad7c4",
+          "content_exact": "\n\n{\"answer\":\"yes\"}",
+          "content_valid_json": true,
+          "content_valid_enum": true,
+          "finish_reason": "stop",
+          "original_score": {
+            "question_id": "8884",
+            "group_id": "model:4798",
+            "query_type": "ate",
+            "arm": "HEURISTIC_SHORT",
+            "gold_answer": "yes",
+            "predicted_answer": "yes",
+            "correct": "1",
+            "format_valid": "1",
+            "api_ok": "1",
+            "status": "completed",
+            "truncated": "0",
+            "prompt_tokens": "6743.0",
+            "completion_tokens": "1602.0",
+            "total_tokens": "8345.0",
+            "latency_seconds": "100.04676833190024"
+          }
+        },
+        "PNS_COT": {
+          "raw_path": "work\\main_cases\\raw\\q8884_PNS_COT.json",
+          "sha256": "b7acb56203e28d2bb672514ad80fff4feb50fc89d00344986e636daffc9485ef",
+          "content_exact": "\n\n{\"answer\":\"yes\"}",
+          "content_valid_json": true,
+          "content_valid_enum": true,
+          "finish_reason": "stop",
+          "original_score": {
+            "question_id": "8884",
+            "group_id": "model:4798",
+            "query_type": "ate",
+            "arm": "PNS_COT",
+            "gold_answer": "yes",
+            "predicted_answer": "yes",
+            "correct": "1",
+            "format_valid": "1",
+            "api_ok": "1",
+            "status": "completed",
+            "truncated": "0",
+            "prompt_tokens": "6742.0",
+            "completion_tokens": "1493.0",
+            "total_tokens": "8235.0",
+            "latency_seconds": "93.26867532171309"
+          }
+        }
+      }
+    },
+    {
+      "question_id": 4910,
+      "category": "PNS_loss_to_FULL",
+      "source_gold": "no",
+      "strict_pair": {
+        "FULL_COT": {
+          "answer": "no",
+          "correct": true,
+          "format_valid": true
+        },
+        "PNS_COT": {
+          "answer": "yes",
+          "correct": false,
+          "format_valid": true
+        }
+      },
+      "target": "Whether the population ATE of the husband setting an alarm on the probability of ringing is positive",
+      "public_formula": "Husband has no parents, Wife is a downstream mediator, and the supplied graph has no treatment-outcome backdoor path. ATE=P(ring|H=1)-P(ring|H=0)=0.31-0.79=-0.48, so the answer to increase is no.",
+      "calculation": {
+        "ATE": -0.48
+      },
+      "comparison": "FULL uses the negative marginal difference and states that there is no unmentioned confounding. PNS correctly reads 0.31<0.79, but ultimately infers a positive effect from the everyday meaning of setting an alarm and from the directed edge.",
+      "quotes": [
+        {
+          "arm": "FULL_COT",
+          "text": "Setting the alarm by the husband decreases the probability of the alarm ringing (0.31 < 0.79).",
+          "meaning": "The target direction agrees with the supplied numbers."
+        },
+        {
+          "arm": "PNS_COT",
+          "text": "Direct causal effect implies increase.",
+          "meaning": "The presence of a causal edge is mistaken for a positive sign."
+        },
+        {
+          "arm": "PNS_COT",
+          "text": "The direct effect of Husband setting the alarm on the alarm ringing is presumably positive",
+          "meaning": "A common-knowledge direction is introduced in place of the numbers supplied in the question."
+        }
+      ],
+      "correction_handling": "PNS did not fail to read the numbers, nor was this simply an arithmetic error. The negative numerical result had already been acknowledged, but the final rule remained uncorrected.",
+      "semantic_caveats": [],
+      "interpretation": "The PNS answer deteriorates in this instance through an incorrect default to a positive direction. A single rollout cannot establish which piece of valid knowledge compression removed.",
+      "saved_responses": {
+        "ZERO": {
+          "raw_path": "work\\main_cases\\raw\\q4910_ZERO.json",
+          "sha256": "2cffedf9c59e95c4b99a97ee3ac3fd644e429904a3c1ebff6383fd2def5d91cd",
+          "content_exact": "\n\n{\"answer\":\"no\"}",
+          "content_valid_json": true,
+          "content_valid_enum": true,
+          "finish_reason": "stop",
+          "original_score": {
+            "question_id": "4910",
+            "group_id": "model:3864",
+            "query_type": "ate",
+            "arm": "ZERO",
+            "gold_answer": "no",
+            "predicted_answer": "no",
+            "correct": "1",
+            "format_valid": "1",
+            "api_ok": "1",
+            "status": "completed",
+            "truncated": "0",
+            "prompt_tokens": "174.0",
+            "completion_tokens": "1155.0",
+            "total_tokens": "1329.0",
+            "latency_seconds": "72.19605164043605"
+          }
+        },
+        "FULL_COT": {
+          "raw_path": "work\\main_cases\\raw\\q4910_FULL_COT.json",
+          "sha256": "9a6559ae9a72ad3aa2f5c63f03d85fc608172c0b54eec4eb6215dc7cba0bae71",
+          "content_exact": "\n\n{\"answer\":\"no\"}",
+          "content_valid_json": true,
+          "content_valid_enum": true,
+          "finish_reason": "stop",
+          "original_score": {
+            "question_id": "4910",
+            "group_id": "model:3864",
+            "query_type": "ate",
+            "arm": "FULL_COT",
+            "gold_answer": "no",
+            "predicted_answer": "no",
+            "correct": "1",
+            "format_valid": "1",
+            "api_ok": "1",
+            "status": "completed",
+            "truncated": "0",
+            "prompt_tokens": "7296.0",
+            "completion_tokens": "863.0",
+            "total_tokens": "8159.0",
+            "latency_seconds": "54.08833649754524"
+          }
+        },
+        "HEURISTIC_SHORT": {
+          "raw_path": "work\\main_cases\\raw\\q4910_HEURISTIC_SHORT.json",
+          "sha256": "d025293eac936041518b85929d2eebd930f09c9f0e5e2ba0045128dd3e6f5a62",
+          "content_exact": "\n\n{\"answer\":\"no\"}",
+          "content_valid_json": true,
+          "content_valid_enum": true,
+          "finish_reason": "stop",
+          "original_score": {
+            "question_id": "4910",
+            "group_id": "model:3864",
+            "query_type": "ate",
+            "arm": "HEURISTIC_SHORT",
+            "gold_answer": "no",
+            "predicted_answer": "no",
+            "correct": "1",
+            "format_valid": "1",
+            "api_ok": "1",
+            "status": "completed",
+            "truncated": "0",
+            "prompt_tokens": "5169.0",
+            "completion_tokens": "8.0",
+            "total_tokens": "5177.0",
+            "latency_seconds": "0.8559405896812677"
+          }
+        },
+        "PNS_COT": {
+          "raw_path": "work\\main_cases\\raw\\q4910_PNS_COT.json",
+          "sha256": "6b0411cef991d253c722291835dd4aedd31445143533103d3d40704e3313f08f",
+          "content_exact": "\n\n{\"answer\":\"yes\"}",
+          "content_valid_json": true,
+          "content_valid_enum": true,
+          "finish_reason": "stop",
+          "original_score": {
+            "question_id": "4910",
+            "group_id": "model:3864",
+            "query_type": "ate",
+            "arm": "PNS_COT",
+            "gold_answer": "no",
+            "predicted_answer": "yes",
+            "correct": "0",
+            "format_valid": "1",
+            "api_ok": "1",
+            "status": "completed",
+            "truncated": "0",
+            "prompt_tokens": "5169.0",
+            "completion_tokens": "1321.0",
+            "total_tokens": "6490.0",
+            "latency_seconds": "82.51549749262631"
+          }
+        }
+      }
+    },
+    {
+      "question_id": 9510,
+      "category": "PNS_loss_to_FULL_source_scoring",
+      "source_gold": "yes",
+      "strict_pair": {
+        "FULL_COT": {
+          "answer": "yes",
+          "correct": true,
+          "format_valid": true
+        },
+        "PNS_COT": {
+          "answer": "no",
+          "correct": false,
+          "format_valid": true
+        }
+      },
+      "target": "Whether the population ATE of clean water W on cholera Y is positive in a general IV graph",
+      "public_formula": "For Z=global relative to local, ΔY=0.41-0.54=-0.13 and ΔW=0.26-0.56=-0.30, giving the Wald ratio (-0.13)/(-0.30)=13/30=0.433333. Interpreting this as the ATE requires additional conditions such as effect homogeneity. Monotonicity generally supports only a local-effect interpretation, which is not automatically equivalent to the population ATE. The question supplies only a general IV graph and marginal quantities.",
+      "calculation": {
+        "reduced_form": -0.13,
+        "first_stage": -0.3,
+        "Wald_ratio": 0.43333333333333335,
+        "ATE_identified_from_public_problem": false
+      },
+      "comparison": "Under the fixed source gold label, FULL yes/PNS no is a deterioration. A sign error appears in the first half of FULL, but the second half explicitly corrects it to negative×positive=negative. The early error should not be treated as its final sign calculation. PNS ultimately appeals to the real-world common knowledge that clean water protects health and mislabels the company-stratified difference as poverty confounding. FULL's remaining theoretical problem is its unconditional use of the product of two marginal effects to identify the ATE.",
+      "quotes": [
+        {
+          "arm": "FULL_COT",
+          "text": "So Effect W->C must be Positive!",
+          "meaning": "The early sign error is explicitly corrected."
+        },
+        {
+          "arm": "FULL_COT",
+          "text": "So the mediation equation holds exactly.",
+          "meaning": "The product decomposition of effects in a general IV graph is overstated."
+        },
+        {
+          "arm": "PNS_COT",
+          "text": "In any reasonable model, clean water reduces disease.",
+          "meaning": "The requirement to rely only on the closed hypothetical world is violated."
+        },
+        {
+          "arm": "PNS_COT",
+          "text": "But this association is confounded by Poverty.",
+          "meaning": "The question contains no path associating Z with H, so changes across Z strata cannot be directly attributed to changes in the H distribution."
+        }
+      ],
+      "correction_handling": "FULL's early sign error is corrected, and its final yes follows from a positive Wald-style direction. However, the missing ATE identification assumptions are not corrected. PNS retains both the common-knowledge direction and the confounding claim about Z strata through the end.",
+      "semantic_caveats": [
+        "FULL being source-correct must not be presented as theoretically correct identification of the population ATE. Nor should PNS's no be interpreted as discovering non-identifiability, because its text does not make that argument.",
+        "The counterexample establishes only that the public question is insufficient. It does not show that the actual hidden source CPT has a negative ATE, and it does not change any main scoring."
+      ],
+      "counterexample": {
+        "description": "Binary H and Z are independent, with P(H=0)=P(H=1)=1/2. All mechanisms use independent noise in addition to their displayed parents, which is consistent with the supplied graph. A shared Uniform threshold can make the effect of Z on W monotonic.",
+        "H_probabilities": [
+          0.5,
+          0.5
+        ],
+        "P_W1_given_local_H": [
+          "7/10",
+          "21/50"
+        ],
+        "P_W1_given_global_H": [
+          "9/70",
+          "137/350"
+        ],
+        "P_Y1_given_W0_H": [
+          "26/125",
+          "9/10"
+        ],
+        "P_Y1_given_W1_H": [
+          "177/250",
+          "0"
+        ],
+        "reproduced_public_probabilities": {
+          "W_local": "14/25 = 0.56",
+          "W_global": "13/50 = 0.26",
+          "Y_local": "27/50 = 0.54",
+          "Y_global": "41/100 = 0.41"
+        },
+        "ATE": "-1/5 = -0.20",
+        "explanation": "For H=0, the W effect is +0.5; for H=1, it is -0.9, giving a population average of -0.2. The change in the W distribution induced by the instrument assigns more weight to the positive-effect stratum, so the Wald ratio can be positive while the ATE is negative."
+      },
+      "interpretation": "Only the source-scored paired deterioration and the reasoning behaviour of the two candidates can be reported. This example cannot be used as evidence that PNS damaged an identifiable ATE formula.",
+      "saved_responses": {
+        "ZERO": {
+          "raw_path": "work\\main_cases\\raw\\q9510_ZERO.json",
+          "sha256": "32cf380a7e3d42547f31a547f27247d8192df355278f32cc5650af693947771e",
+          "content_exact": "\n\n{\"answer\":\"no\"}",
+          "content_valid_json": true,
+          "content_valid_enum": true,
+          "finish_reason": "stop",
+          "original_score": {
+            "question_id": "9510",
+            "group_id": "model:4951",
+            "query_type": "ate",
+            "arm": "ZERO",
+            "gold_answer": "yes",
+            "predicted_answer": "no",
+            "correct": "0",
+            "format_valid": "1",
+            "api_ok": "1",
+            "status": "completed",
+            "truncated": "0",
+            "prompt_tokens": "233.0",
+            "completion_tokens": "3050.0",
+            "total_tokens": "3283.0",
+            "latency_seconds": "189.7046979777515"
+          }
+        },
+        "FULL_COT": {
+          "raw_path": "work\\main_cases\\raw\\q9510_FULL_COT.json",
+          "sha256": "2feadc6733b62d8ffa5276e11eb620b441adf4b6e83449934bfd919b1127b104",
+          "content_exact": "\n\n{\"answer\":\"yes\"}",
+          "content_valid_json": true,
+          "content_valid_enum": true,
+          "finish_reason": "stop",
+          "original_score": {
+            "question_id": "9510",
+            "group_id": "model:4951",
+            "query_type": "ate",
+            "arm": "FULL_COT",
+            "gold_answer": "yes",
+            "predicted_answer": "yes",
+            "correct": "1",
+            "format_valid": "1",
+            "api_ok": "1",
+            "status": "completed",
+            "truncated": "0",
+            "prompt_tokens": "7355.0",
+            "completion_tokens": "2686.0",
+            "total_tokens": "10041.0",
+            "latency_seconds": "167.28011211939156"
+          }
+        },
+        "HEURISTIC_SHORT": {
+          "raw_path": "work\\main_cases\\raw\\q9510_HEURISTIC_SHORT.json",
+          "sha256": "da42920014fc2e3bb9bbe6fdb19914a9abf37131fcbf3967bb1bf65231f532b6",
+          "content_exact": "\n\n{\"answer\":\"yes\"}",
+          "content_valid_json": true,
+          "content_valid_enum": true,
+          "finish_reason": "stop",
+          "original_score": {
+            "question_id": "9510",
+            "group_id": "model:4951",
+            "query_type": "ate",
+            "arm": "HEURISTIC_SHORT",
+            "gold_answer": "yes",
+            "predicted_answer": "yes",
+            "correct": "1",
+            "format_valid": "1",
+            "api_ok": "1",
+            "status": "completed",
+            "truncated": "0",
+            "prompt_tokens": "5228.0",
+            "completion_tokens": "1593.0",
+            "total_tokens": "6821.0",
+            "latency_seconds": "99.50373243540525"
+          }
+        },
+        "PNS_COT": {
+          "raw_path": "work\\main_cases\\raw\\q9510_PNS_COT.json",
+          "sha256": "0f59fd07c99b92f892291c105b4262bd63b540c1279bc7c6e2db17a103688f48",
+          "content_exact": "\n\n{\"answer\":\"no\"}",
+          "content_valid_json": true,
+          "content_valid_enum": true,
+          "finish_reason": "stop",
+          "original_score": {
+            "question_id": "9510",
+            "group_id": "model:4951",
+            "query_type": "ate",
+            "arm": "PNS_COT",
+            "gold_answer": "yes",
+            "predicted_answer": "no",
+            "correct": "0",
+            "format_valid": "1",
+            "api_ok": "1",
+            "status": "completed",
+            "truncated": "0",
+            "prompt_tokens": "5228.0",
+            "completion_tokens": "1711.0",
+            "total_tokens": "6939.0",
+            "latency_seconds": "106.97232666052878"
+          }
+        }
+      }
+    },
+    {
+      "question_id": 5820,
+      "category": "smallest_qid_format_failure",
+      "source_gold": "no",
+      "strict_pair": {
+        "FULL_COT": {
+          "answer": "no",
+          "correct": true,
+          "format_valid": true
+        },
+        "PNS_COT": {
+          "answer": "no",
+          "correct": true,
+          "format_valid": true
+        }
+      },
+      "target": "The direct effect of the decision on penguin survival after excluding mediation through mood; both candidates independently take stairs relative to elevator as the comparison",
+      "public_formula": "Under the candidates' named comparison stairs(1) vs elevator(0), the survival differences in the two mood strata are -(0.96-0.49)=-0.47 and -(0.71-0.26)=-0.45. Using the elevator M(0) weights, NDE_survival=0.18*(-0.47)+0.82*(-0.45)=-0.4536. Reversing the named comparison gives +0.4568.",
+      "calculation": {
+        "survival_CDE_sad_stairs_vs_elevator": -0.47,
+        "survival_CDE_happy_stairs_vs_elevator": -0.45,
+        "NDE_survival_stairs_vs_elevator": -0.4536,
+        "NDE_survival_elevator_vs_stairs": 0.4568
+      },
+      "format_evidence": {
+        "failure_arm": "ZERO",
+        "raw_content": "\n\n{\"answer\": \"No\"}",
+        "json_syntax_valid": true,
+        "answer_value": "No",
+        "schema_enum_valid": false,
+        "strict_scored_prediction": "",
+        "strict_scored_correct": 0,
+        "code_fence": false,
+        "explanation_prefix": false,
+        "empty_content": false,
+        "finish_reason": "stop",
+        "truncated_from_selection": false,
+        "reason": "Capitalised No is outside the strict lowercase yes/no enumeration. This is not a JSON syntax error, an empty response or truncation."
+      },
+      "comparison": "FULL/PNS both output valid lowercase no. ZERO content is valid JSON, but its value is capitalised No, which the original strict contract scores as a format failure. Reasoning in all four arms uses stairs relative to elevator and converts death to survival to conclude no. ZERO's original empty prediction and incorrect score are retained, without normalising content capitalisation or recovering an answer from reasoning.",
+      "quotes": [
+        {
+          "arm": "ZERO",
+          "text": "{\"answer\": \"No\"}",
+          "meaning": "The exact content string after removing permitted whitespace"
+        },
+        {
+          "arm": "FULL_COT",
+          "text": "Stairs vs Elevator: Let's treat Elevator as baseline/reference.",
+          "meaning": "The direction of comparison explicitly stated by FULL"
+        },
+        {
+          "arm": "PNS_COT",
+          "text": "Direct effect on Survival = - (Direct effect on Death) = ~ -0.46.",
+          "meaning": "Converting from death to its complementary event, survival"
+        },
+        {
+          "arm": "HEURISTIC_SHORT",
+          "text": "It's ambiguous which arm is the \"treatment\"",
+          "meaning": "The public question does not explicitly specify the semantic direction of treatment 1/0."
+        }
+      ],
+      "correction_handling": "The main failure in this case is the output enumeration format. The presence of the correct intention in reasoning should not be used to award a correct score.",
+      "semantic_caveats": [
+        "The public question says only my decision, without clearly specifying stairs relative to elevator or the reverse. The calculations above explicitly follow the candidates' chosen named comparison. The source no label cannot be used to infer that their variable coding must be correct.",
+        "If the source Y actually encodes death while the variable is labelled survival, an additional check of the source-code mapping is needed. This bounded review does not speculate about that unsupplied mapping."
+      ],
+      "interpretation": "This is a format-sensitivity case with no main-score difference between FULL/PNS. It must not be rewritten as an improvement of PNS over FULL.",
+      "saved_responses": {
+        "ZERO": {
+          "raw_path": "work\\main_cases\\raw\\q5820_ZERO.json",
+          "sha256": "d2903dfcedd57e124c705535a5a26cfa821e5652e3e14432e806205d176675a5",
+          "content_exact": "\n\n{\"answer\": \"No\"}",
+          "content_valid_json": true,
+          "content_valid_enum": false,
+          "finish_reason": "stop",
+          "original_score": {
+            "question_id": "5820",
+            "group_id": "model:4084",
+            "query_type": "nde",
+            "arm": "ZERO",
+            "gold_answer": "no",
+            "predicted_answer": "",
+            "correct": "0",
+            "format_valid": "0",
+            "api_ok": "1",
+            "status": "completed",
+            "truncated": "0",
+            "prompt_tokens": "296.0",
+            "completion_tokens": "1424.0",
+            "total_tokens": "1720.0",
+            "latency_seconds": "89.79465347528458"
+          }
+        },
+        "FULL_COT": {
+          "raw_path": "work\\main_cases\\raw\\q5820_FULL_COT.json",
+          "sha256": "e0bcd3a9a334fa96342c56d012d8559504222bc75bdb4e06cf8b3cea149fe362",
+          "content_exact": "\n\n{\"answer\":\"no\"}",
+          "content_valid_json": true,
+          "content_valid_enum": true,
+          "finish_reason": "stop",
+          "original_score": {
+            "question_id": "5820",
+            "group_id": "model:4084",
+            "query_type": "nde",
+            "arm": "FULL_COT",
+            "gold_answer": "no",
+            "predicted_answer": "no",
+            "correct": "1",
+            "format_valid": "1",
+            "api_ok": "1",
+            "status": "completed",
+            "truncated": "0",
+            "prompt_tokens": "8674.0",
+            "completion_tokens": "1280.0",
+            "total_tokens": "9954.0",
+            "latency_seconds": "80.80352434888482"
+          }
+        },
+        "HEURISTIC_SHORT": {
+          "raw_path": "work\\main_cases\\raw\\q5820_HEURISTIC_SHORT.json",
+          "sha256": "c0cd90d51765ba3d8cabd0290c1b81689b3118e524b468bb1555e537b7b54c89",
+          "content_exact": "\n\n{\"answer\":\"no\"}",
+          "content_valid_json": true,
+          "content_valid_enum": true,
+          "finish_reason": "stop",
+          "original_score": {
+            "question_id": "5820",
+            "group_id": "model:4084",
+            "query_type": "nde",
+            "arm": "HEURISTIC_SHORT",
+            "gold_answer": "no",
+            "predicted_answer": "no",
+            "correct": "1",
+            "format_valid": "1",
+            "api_ok": "1",
+            "status": "completed",
+            "truncated": "0",
+            "prompt_tokens": "6962.0",
+            "completion_tokens": "1978.0",
+            "total_tokens": "8940.0",
+            "latency_seconds": "124.14157185330987"
+          }
+        },
+        "PNS_COT": {
+          "raw_path": "work\\main_cases\\raw\\q5820_PNS_COT.json",
+          "sha256": "b347d5a6664a10a7349d8f249d5dbc58e9f0edbe5577c676768c420e66faca85",
+          "content_exact": "\n\n{\"answer\":\"no\"}",
+          "content_valid_json": true,
+          "content_valid_enum": true,
+          "finish_reason": "stop",
+          "original_score": {
+            "question_id": "5820",
+            "group_id": "model:4084",
+            "query_type": "nde",
+            "arm": "PNS_COT",
+            "gold_answer": "no",
+            "predicted_answer": "no",
+            "correct": "1",
+            "format_valid": "1",
+            "api_ok": "1",
+            "status": "completed",
+            "truncated": "0",
+            "prompt_tokens": "6962.0",
+            "completion_tokens": "1444.0",
+            "total_tokens": "8406.0",
+            "latency_seconds": "91.04845573939383"
+          }
+        }
+      }
+    }
+  ],
+  "verification": {
+    "case_count": 5,
+    "exact_quote_count": 17,
+    "raw_response_count": 20,
+    "selection_and_original_score_consistency": "pass",
+    "all_quotes_exact_substrings": true,
+    "strict_enum_diagnostic_matches_original_all20": true,
+    "new_model_api_calls": 0,
+    "original_files_modified": false,
+    "counterexample_executable": "outputs/evidence/q9510_public_iv_counterexample.py"
+  }
+}

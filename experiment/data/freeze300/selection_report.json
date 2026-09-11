@@ -1,0 +1,27 @@
+{
+  "status": "PREPARED_NO_MODEL_CALLS",
+  "seed": 20260910,
+  "n": 300,
+  "unique_groups": 300,
+  "stratum_counts": {
+    "nie": 50,
+    "ate": 94,
+    "ett": 82,
+    "det-counterfactual": 54,
+    "nde": 20
+  },
+  "eligible_rows": 4409,
+  "eligible_groups": 3006,
+  "excluded_qids_in_dataset": 356,
+  "excluded_groups": 304,
+  "exclusion_sources": {
+    "C:\\Users\\aklovey\\cause_handoffs\\qwen36_full10112_cot_screened_pns_20260816\\tiers\\pns_core_ready.jsonl": 256,
+    "C:\\Users\\aklovey\\Documents\\Codex\\2026-08-17\\qwen36-fewshot-icl-pilot\\outputs\\plan\\qwentest100.jsonl": 100,
+    "C:\\Users\\aklovey\\Documents\\Codex\\2026-09-10\\9-4-cause-1-8-8\\work\\evidence\\phase56\\phase56_original_inputs56.jsonl": 56
+  },
+  "exclusions_not_in_dataset": [],
+  "source_data": "D:\\CAUSE_DATASETS\\dataset21_20260908\\source_root\\data\\cladder-v1-balanced.json",
+  "source_models": "D:\\CAUSE_DATASETS\\dataset21_20260908\\source_root\\data\\cladder-v1-meta-models.json",
+  "selection_rule": "five-type proportional quotas; one target per model_id; no gold/correctness selection",
+  "independence_limit": "All source rows have historical baseline exposure. Known development/demo groups are excluded; unknown historical use and shared graph/story templates remain possible. This is not a fresh benchmark."
+}

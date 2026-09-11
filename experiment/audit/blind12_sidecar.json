@@ -1,0 +1,74 @@
+[
+  {
+    "audit_id": "A01",
+    "question_id": 30257,
+    "source_status": "unaccepted_question_shortest_valid_correct",
+    "request_key": "q30257-s001-delete-r2"
+  },
+  {
+    "audit_id": "A02",
+    "question_id": 4171,
+    "source_status": "accepted",
+    "request_key": "q4171-s023-delete-r2"
+  },
+  {
+    "audit_id": "A03",
+    "question_id": 11849,
+    "source_status": "accepted",
+    "request_key": "q11849-s003-keep-r5"
+  },
+  {
+    "audit_id": "A04",
+    "question_id": 19407,
+    "source_status": "unaccepted_question_shortest_valid_correct",
+    "request_key": "q19407-s001-keep-r4"
+  },
+  {
+    "audit_id": "A05",
+    "question_id": 30359,
+    "source_status": "accepted",
+    "request_key": "q30359-s001-delete-r2"
+  },
+  {
+    "audit_id": "A06",
+    "question_id": 18188,
+    "source_status": "accepted",
+    "request_key": "q18188-s012-delete-r2"
+  },
+  {
+    "audit_id": "A07",
+    "question_id": 30344,
+    "source_status": "accepted",
+    "request_key": "q30344-s004-keep-r4"
+  },
+  {
+    "audit_id": "A08",
+    "question_id": 4255,
+    "source_status": "accepted",
+    "request_key": "q4255-s036-delete-r5"
+  },
+  {
+    "audit_id": "A09",
+    "question_id": 24494,
+    "source_status": "unaccepted_question_shortest_valid_correct",
+    "request_key": "q24494-s025-keep-r4"
+  },
+  {
+    "audit_id": "A10",
+    "question_id": 29833,
+    "source_status": "unaccepted_question_shortest_valid_correct",
+    "request_key": "q29833-s005-keep-r5"
+  },
+  {
+    "audit_id": "A11",
+    "question_id": 8752,
+    "source_status": "accepted",
+    "request_key": "q8752-s008-keep-r1"
+  },
+  {
+    "audit_id": "A12",
+    "question_id": 4284,
+    "source_status": "accepted",
+    "request_key": "q4284-s009-keep-r1"
+  }
+]

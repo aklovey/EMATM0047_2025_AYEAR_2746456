@@ -1,0 +1,37 @@
+{
+  "parsed": 29,
+  "quote_slots": 145,
+  "exact_nonempty_quotes": 65,
+  "empty_quotes": 28,
+  "nonverbatim_quotes": 52,
+  "overlength_quotes": 0,
+  "notes": {
+    "causal_rules_quote_not_verbatim": 14,
+    "arithmetic_quote_not_verbatim": 4,
+    "conclusion_quote_not_verbatim": 15,
+    "query_quote_not_verbatim": 5,
+    "world_update_quote_not_verbatim": 14
+  },
+  "unaccepted_reviews": [
+    {
+      "qid": 24494,
+      "status": "review_truncated",
+      "reported_overall": null
+    },
+    {
+      "qid": 19407,
+      "status": "review_truncated",
+      "reported_overall": null
+    },
+    {
+      "qid": 30257,
+      "status": "review_parsed",
+      "reported_overall": "pass"
+    },
+    {
+      "qid": 29833,
+      "status": "review_parsed",
+      "reported_overall": "pass"
+    }
+  ]
+}

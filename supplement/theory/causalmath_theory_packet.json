@@ -1,0 +1,131 @@
+{
+  "scope": "Theory and algorithm proposal only, with no manuscript mutation or new experiments",
+  "reference": {
+    "number": 14,
+    "key": "NEURIPS2025_b7870bd4",
+    "title": "Causal Sufficiency and Necessity Improves Chain-of-Thought Reasoning",
+    "authors": [
+      "Xiangning Yu",
+      "Zhuohan Wang",
+      "Linyi Yang",
+      "Haoxuan Li",
+      "Anjie Liu",
+      "Xiao Xue",
+      "Jun Wang",
+      "Mengyue Yang"
+    ],
+    "booktitle": "Advances in Neural Information Processing Systems",
+    "volume": "38, Main Conference",
+    "pages": "126109–126141",
+    "year": 2025,
+    "doi": "10.52202/085713-4204",
+    "official_metadata_url": "https://papers.nips.cc/paper_files/paper/2025/hash/b7870bd43b2d133a1ed95582ae5d82a4-Abstract-Conference.html",
+    "official_bibtex_url": "https://papers.nips.cc/paper_files/paper/28608-/bibtex",
+    "official_pdf_url": "https://papers.nips.cc/paper_files/paper/2025/file/b7870bd43b2d133a1ed95582ae5d82a4-Paper-Conference.pdf",
+    "official_repository": "https://github.com/yxn9191/causalmath",
+    "arxiv": "2506.09853",
+    "bibtex_verbatim": "@inproceedings{NEURIPS2025_b7870bd4,\n author = {Yu, Xiangning and Wang, Zhuohan and Yang, Linyi and Li, Haoxuan and Liu, Anjie and Xue, Xiao and Wang, Jun and Yang, Mengyue},\n booktitle = {Advances in Neural Information Processing Systems},\n doi = {10.52202/085713-4204},\n editor = {D. Belgrave and C. Zhang and H. Lin and R. Pascanu and P. Koniusz and M. Ghassemi and N. Chen},\n pages = {126109--126141},\n publisher = {Curran Associates, Inc.},\n title = {Causal Sufficiency and Necessity Improves Chain-of-Thought Reasoning},\n url = {https://proceedings.neurips.cc/paper_files/paper/2025/file/b7870bd43b2d133a1ed95582ae5d82a4-Paper-Conference.pdf},\n volume = {38, Main Conference},\n year = {2025}\n}\n",
+    "local_bib_difference": "Current official BibTeX includes the DOI and volume text 38, Main Conference. The older local BibTeX lacks the DOI and gives volume 38. No existing bibliography entries are modified."
+  },
+  "proposed_formula_blocks": [
+    {
+      "id": "T1",
+      "placement": "2.5",
+      "name": "Conditional sufficiency and necessity",
+      "latex": "\\begin{aligned}\\mathrm{PS}(S,q)&=P(A_{\\operatorname{do}(S)}=y\\mid A\\ne y,\\bar S,q),\\\\\\mathrm{PN}(S,\\bar s_t,q)&=P(A_{\\operatorname{do}(S_t^{\\prime})}\\ne y\\mid A=y,S,q).\\end{aligned}",
+      "source": "Definitions 2 and 3, equations (2) and (3), printed page 4",
+      "note": "Sbar is the null or incorrect reference chain. S_t_prime=(s_<t,sbar_t,s_prime_>t), where the alternative step changes the downstream rollout. Conditional definitions are not the binary parent-correctness check."
+    },
+    {
+      "id": "T2",
+      "placement": "2.5",
+      "name": "Joint counterfactual PNS",
+      "latex": "\\mathrm{PNS}(S,\\bar s_t,q)=P\\!\\left(A_S=y,\\ A_{S_t^{\\prime}}\\ne y\\mid q\\right),\\qquad S_t^{\\prime}=(s_{<t},\\bar s_t,s_{>t}^{\\prime}).",
+      "source": "Definition 4 begins on printed page 4 and equation (4) appears on printed page 5",
+      "note": "Notation makes conditioning on q explicit, which is implicit in original equation (4). This is a joint counterfactual event, not a difference of two arbitrarily sampled text-completion rates."
+    },
+    {
+      "id": "T3",
+      "placement": "2.5",
+      "name": "Identification under stated conditions",
+      "latex": "\\mathrm{PNS}(S,\\bar s_t,q)=\\begin{cases}p_S(q)-p_{S_t^{\\prime}}(q),&\\text{under exogeneity and monotonicity},\\\\1-p_{S_t^{\\prime}}(q),&\\text{under exogeneity and a perfect intervention with }p_S(q)=1.\\end{cases}",
+      "source": "Lemma 1, printed pages 5–6; Appendix A.1 and Lemma 2, printed pages 23–24; Appendix A.3 and Lemma 3, printed page 24",
+      "definition_latex": "p_S(q)=P(A=y\\mid\\operatorname{do}(S),q)",
+      "exogeneity_latex": "P(s_t\\mid\\operatorname{do}(s_{<t}),q)=P(s_t\\mid s_{<t},q)",
+      "monotonicity_latex": "P(A_S\\ne y,\\ A_{S_t^{\\prime}}=y\\mid q)=0",
+      "note": "The second route removes monotonicity but retains the specified perfect-intervention interpretation and its connection to interventional probabilities. Appendix A.3 also invokes exogeneity in its proof. One observed correct trace does not establish p_S=1."
+    },
+    {
+      "id": "T4",
+      "placement": "2.5",
+      "name": "CausalMath Monte Carlo score",
+      "latex": "\\widehat{\\mathrm{PNS}}_{\\mathrm{CM}}(S,\\bar s_t,q)=1-\\frac{1}{k}\\sum_{j=1}^{k}V\\!\\left(S_t^{\\prime(j)}\\right).",
+      "source": "Equation (5), printed page 6; Algorithm 1, printed page 5",
+      "note": "Under the preceding perfect-original-intervention condition, ideal V is the binary success indicator for the altered rollout. The paper applies a validation model to logical integrity and coherence as well as answer success. With an imperfect validator this is a validator-based approximation, not an exact identified quantity."
+    },
+    {
+      "id": "T5",
+      "placement": "3.4",
+      "name": "Actual Phase56 local continuation contrast",
+      "latex": "\\widehat{\\Delta}_t(n)=\\frac{C_{K,t}(n)-C_{D,t}(n)}{n},\\qquad C_{b,t}(n)=\\sum_{r=1}^{n}\\mathbf{1}\\{\\widehat y_{b,t,r}=y\\},\\quad b\\in\\{K,D\\}.",
+      "source": "qwen_pns_adaptive.py decide_keep_delete and run_adaptive_keep_delete, lines 312–468; archived adaptive_rollout.steps records",
+      "note": "n counts admitted valid matched rounds, rather than raw attempts. The implemented decision uses the integer numerator d. Matching is bookkeeping across sampled continuations, not a pairing of observed individual counterfactual outcomes. Validity filtering and adaptive stopping remain part of the score definition."
+    }
+  ],
+  "section_2_5_draft": "CausalMath [14] connects reasoning-step interventions to the probability of necessity and sufficiency. For a question q and known correct answer y, let S be the original chain and let S′t replace step st with an altered step while regenerating its continuation. Its PS and PN definitions condition on different factual outcomes, which separates the chance that a chain corrects a failure from the chance that altering a step breaks a successful answer. The joint PNS event requires success under the original chain and failure under the altered chain for the same underlying case.\n\nThe identification conditions determine when this joint event can be recovered from intervention probabilities. CausalMath defines exogeneity through P(st | do(s<t), q) = P(st | s<t, q). Its monotonicity assumption excludes an altered chain correcting an answer that would fail under the original chain. Under these conditions, PNS equals the difference between original and altered intervention success probabilities. A second result replaces monotonicity with the stronger requirement that the original intervention succeeds with probability one. PNS then becomes one minus the success probability of the altered intervention. A single correct parent response provides an operational starting point, but does not establish that probability-one condition.\n\nAlgorithm 1 of CausalMath evaluates altered continuations with a validator and estimates the score through a Monte Carlo average. It retains steps whose scores exceed a threshold and uses the resulting traces as demonstrations or training data. The present method adopts step interventions and continuation-based evaluation for demonstration compression, with a different search procedure. All candidates originate from a fixed parent, KEEP and DELETE are compared through admitted valid rounds, and the final trajectory is selected globally by length subject to answer, provenance and semantic checks. The resulting local contrast measures response sensitivity under this procedure. The experiments do not establish the identification assumptions needed to interpret it as Pearl PNS.",
+  "phase56_executed_pseudocode": "Algorithm 1  Frozen-parent candidate search executed in Phase56\nInput  Public problem q, known demonstration answer y, frozen parent S,\n       eligible source-preserving segments T, raw cap 5 per branch\nOutput An accepted shorter trajectory or a recorded construction failure\n\nC ← empty candidate pool\nfor each segment t in T\n    prefix K ← S through the end of t\n    prefix D ← S before the start of t\n    n ← 0; raw K ← 0; raw D ← 0; d ← 0\n    observations ← empty; local decision ← inconclusive\n    while n < 5\n        trial K ← NextValid(K, raw cap 5)\n        if trial K is missing\n            break\n        trial D ← NextValid(D, raw cap 5)\n        if trial D is missing\n            break\n        admit both trials as the next completed matched round\n        n ← n + 1\n        d ← d + correct(K) − correct(D)\n        if n = 3 and d > 2\n            local decision ← trigger replacement; break\n        if n = 3 and d + 2 ≤ 0\n            local decision ← do not trigger; break\n        if n = 5\n            local decision ← trigger replacement if d > 0 else do not trigger\n    add every individually exportable admitted K or D observation to C\n    save local decision and all attempts\n\nrank C by complete reasoning tokens, characters, then candidate identifier\nmaterialise the first candidate when C is nonempty\nretain it only if final materialisation acceptance succeeds\notherwise preserve the construction failure in the closure\n\nNextValid samples from public q plus the fixed branch prefix until a valid\ntrial appears or that branch has used five raw attempts across this step.\nEvery raw attempt is recorded, including failures. An unmatched valid trial\nremains in the record but is not admitted to the vote vectors or candidate pool.\n",
+  "algorithm_scope_note": "This pseudocode describes the executed KEEP/DELETE search and its final selection, rather than reproducing CausalMath Algorithm 1. Each trial is a newly sampled suffix. Invalid attempts consume the branch cap, while only a complete valid pair can enter the vote vectors or candidate pool. Four rounds are not an early stopping checkpoint. The local decision controls the configured replacement extension, but it is not a universal majority or export criterion. Individually exportable KEEP/DELETE continuations require correctness, admission to a completed pair, the required checks, a shorter complete chain and valid provenance. They may be selected even when the local comparison remains inconclusive.\n\nThe configured extension would freeze one replacement step and sample its REPLACE lineage, accepting that lineage at the three- or five-valid-trial checkpoint only with at least three correct votes and an exportable continuation. Phase56 contains no replacement-generation or REPLACE request rows, so that extension contributes no empirical result here and is omitted from the executed pseudocode. The planned increase to seven raw attempts was also not executed. Construction ended with 52 accepted trajectories and 4 failures. The later use of the exact parent for those four demonstration identities is a separate downstream policy, which does not convert the construction failures into successes.",
+  "method_differences": [
+    [
+      "Purpose",
+      "PNS-based reconstruction for mathematical and commonsense reasoning, followed by ICL or SFT",
+      "Auditable demonstration compression evaluated on few-shot causal inference"
+    ],
+    [
+      "Intervention",
+      "An altered or corrupted step and a regenerated continuation, with semantic-disjointness required in Algorithm 1",
+      "KEEP ends after a frozen parent segment and DELETE ends before it; continuations may recover omitted content"
+    ],
+    [
+      "Search state",
+      "Paper describes iterative necessity-based pruning; current official code updates the chain from the edited step onward",
+      "Every eligible position is evaluated against the same frozen parent; candidate trajectories are pooled globally"
+    ],
+    [
+      "Local quantity",
+      "One minus average validation success for altered rollouts, interpreted under stated assumptions",
+      "Difference of correct-answer counts across admitted valid KEEP and DELETE rounds"
+    ],
+    [
+      "Sampling and stopping",
+      "k altered rollouts and a necessity threshold alpha in paper Algorithm 1",
+      "Checks at 3 and 5 valid matched rounds with independent raw cap 5 per branch; invalid attempts do not vote"
+    ],
+    [
+      "Selection",
+      "Retain or prune using the necessity threshold; repository also contains iterative suffix replacement",
+      "Individual export eligibility followed by complete-token, character and identifier ordering; final acceptance is separate"
+    ],
+    [
+      "Replacement",
+      "Central to the stated counterfactual construction",
+      "A configured extension with no observed replacement-generation or REPLACE rows in Phase56"
+    ],
+    [
+      "Semantic guarantees",
+      "Identification relies on specified interventions and assumptions",
+      "Structural traceability, answer checks and fallible semantic judging are recorded; no identification or semantic-fidelity theorem is established"
+    ]
+  ],
+  "numbering_note": "Formula IDs T1–T5 are proposal placeholders. Original source numbering is retained in source fields. PDF page numbers equal the printed page numbers in the official 33-page paper.",
+  "implementation_sources": [
+    "outputs/experiment/reference_method_code/src/qwen_pns_adaptive.py",
+    "outputs/experiment/phase56/phase56_closure_summary.json",
+    "work/rubric_revision/case_example.json"
+  ],
+  "implementation_source_limit": "The code is a current reference snapshot, not a proven byte-identical historical runtime. Actual matching, eligibility, selection and non-execution are cross-checked against the archived Phase56 records.",
+  "paper_vs_repo_note": "The source of the theory and algorithm numbering is the official paper. The current public repository is read as supporting implementation context and is not assumed byte-identical to the paper experiments.",
+  "source_pdf_local": "D:/UOB PG 2026 FINAL/references/open-access-papers/causalmath-neurips-2025.pdf",
+  "new_model_calls": 0,
+  "existing_results_changed": false
+}

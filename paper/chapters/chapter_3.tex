@@ -1,0 +1,119 @@
+\chapter{Method and System}\label{ch:3}
+
+\section{Problem definition and information access}\label{sec:3.1}
+
+Let $x$ be a public causal problem, $y$ its reference answer and $C_0$ the frozen parent reasoning. A demonstration $(x,C,y)$ supplies reasoning $C$ and the final answer separately; $C$ may be full reasoning, a compressed representation or a parent fallback. A target prompt contains a fixed instruction, $k$ demonstrations and a new public problem $x_t$. Its reference answer $y_t$ is used only after generation for scoring.
+
+Reference answers and oracle computations support offline checks. The target-prompt contract excludes target labels, reference reasoning, correctness-derived selection features and oracle outputs. Query type is explicitly available for same-type demonstration routing; it does not supply the target answer.
+
+The Phase56 contract permits non-answer steps from CLADDER reference reasoning as advisory judge material \hyperref[sec:A.2]{[E3]}. The continuation model and target prompts do not receive this canonical reasoning. Neither an identical derivation nor one-to-one step alignment is required. The judge thus has broader permitted information access than the generator, while provenance remains tied to the frozen Qwen parent and its segments.
+
+\section{Parent selection and the construction denominator}\label{sec:3.2}
+
+Parent selection requires a correct final answer, usable reasoning and compatibility with segmentation and audit checks. The selected text is frozen before search, with stable identifiers and content records linking later candidates to their source. Construction results therefore describe parents that meet these eligibility criteria.
+
+The historical inventory contains 10,112 baseline records, 9,239 usable answer-correct traces and a static 256-question core, of which 231 questions are deterministic counterfactuals \hyperref[sec:A.2]{[E1, E2]}. The current Phase56 experiment uses 56 fixed parents drawn from that development material. Earlier construction banks and the 100-question challenge evaluation used different protocols; their results are retained in the electronic supplement rather than combined with the current evaluation.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth,height=.70\textheight,keepaspectratio]{figures/figure1_auditable_compression.pdf}
+\caption[Construction and use of the auditable demonstration bank]{Construction and use of the auditable demonstration bank. Reference labels and oracle outputs enter offline checks; target responses are scored after generation. The general search includes KEEP, DELETE and REPLACE, but Phase56 executed only KEEP and DELETE. The downstream policy retains the original parent when compression fails (Section~\ref{sec:3.6}).}\label{fig:3.1}
+\end{figure}
+
+\section{Lossless segmentation and answer exposure}\label{sec:3.3}
+
+The Phase56 runner consumed frozen parent units and their character offsets. Preparation converted zero-based units to one-based segments and attached intervening whitespace to the preceding unit. Validation checked consecutive step indexes, contiguous ranges, exact substring equality and reconstruction of the parent. These checks establish the textual boundaries used by the run \hyperref[sec:A.2]{[E3]}.
+
+Exposure annotations mark a cumulative suffix of the parent. During preparation, the exposure boundary is recorded at the earlier of the position marked by the frozen exposure annotation and the position detected by a strong-answer pattern matching explicit answer commitments. Only segments before this recorded boundary are eligible for intervention. Intermediate values can be misclassified, and implicit answer information can occur before an explicit final-answer marker.
+
+\section{Controlled continuation search}\label{sec:3.4}
+
+For step $s_i$, let $P_i$ be the frozen parent prefix preceding it. KEEP supplies $P_i$ followed by $s_i$; DELETE supplies $P_i$ alone; REPLACE supplies $P_i$ followed by a recorded replacement $r_i$. The model generates the remaining suffix. Each step is tested against the original $C_0$, without carrying earlier successful edits forward. Reconstruction distinguishes retained parent text, replacement text and generated suffix. Requested suffix and replacement caps are 8,000 and 1,024 tokens, respectively, subject to the context limit.
+
+For $n$ admitted valid matched rounds at segment $t$, the local contrast is the difference between KEEP and DELETE correct-answer rates. The implementation uses its integer numerator $d$ to make the decisions in Algorithm~\ref{alg:3.1}. Matching records one valid continuation from each branch; it does not observe individual counterfactual outcome pairs.
+
+\begin{equation}\label{eq:3.1}
+\widehat{\Delta}_t(n)=\frac{C_{K,t}(n)-C_{D,t}(n)}{n},\qquad C_{b,t}(n)=\sum_{r=1}^{n}\mathbf{1}\{\widehat y_{b,t,r}=y\},\quad b\in\{K,D\}.
+\end{equation}
+
+NextValid samples from the fixed branch prefix until a valid trial appears or the branch has used five raw attempts for the current segment. This cumulative allowance includes invalid attempts, which do not vote. A complete valid pair is required for admission. The two-round bounds at the three-round checkpoint give the same decision as the five-round rule. Exhaustion before a terminal comparison leaves an inconclusive local result.
+
+\begingroup\emergencystretch=1em
+When REPLACE is triggered, one replacement text is fixed before repeated continuations. The Phase56 journal contains only KEEP and DELETE generation records, with no REPLACE or re\-place\-ment-generation calls \hyperref[sec:A.2]{[E3]}; the replacement cap was unused. Archived code documents the decision rules, while dated runtime journals establish execution. Scientific raw-attempt limits and technical recovery are distinguished in the electronic accounting records.\par
+\endgroup
+
+\begin{algorithm}[htbp]
+\caption{Frozen-parent candidate search executed in Phase56}\label{alg:3.1}
+\SetAlgoNoLine
+\DontPrintSemicolon
+Input  Public problem q, reference y, frozen parent S and eligible segments T\;
+Output  Accepted shorter trajectory or recorded construction failure\;
+Pool \ensuremath{\leftarrow} empty candidate pool\;
+for each segment t in T\;
+\Indp
+K \ensuremath{\leftarrow} S through t; D \ensuremath{\leftarrow} S before t\;
+n \ensuremath{\leftarrow} 0; d \ensuremath{\leftarrow} 0; local decision \ensuremath{\leftarrow} inconclusive\;
+while n \textless{} 5\;
+\Indp
+K trial \ensuremath{\leftarrow} NextValid(K, 5); if missing, break\;
+D trial \ensuremath{\leftarrow} NextValid(D, 5); if missing, break\;
+Admit the complete pair; n \ensuremath{\leftarrow} n + 1\;
+d \ensuremath{\leftarrow} d + correct(K trial) \ensuremath{-} correct(D trial)\;
+If n = 3 and d \textgreater{} 2, set trigger replacement and break\;
+If n = 3 and d + 2 \ensuremath{\leq} 0, set do not trigger and break\;
+If n = 5, trigger replacement exactly when d \textgreater{} 0\;
+\Indm
+Add every individually exportable admitted K or D trial to Pool\;
+Save the local decision and all raw attempts\;
+\Indm
+Rank Pool by complete reasoning tokens, characters and candidate identifier\;
+Materialise the first candidate if Pool is nonempty\;
+Retain it only if final materialisation acceptance succeeds\;
+Otherwise record the construction failure\;
+\end{algorithm}
+
+Algorithm~\ref{alg:3.1} gives the Phase56 KEEP/DELETE procedure, which adapts the textual-intervention idea in CausalMath. Individually exportable trials satisfy the checks in Section~\ref{sec:3.5} and can enter the pool even when their local comparison is inconclusive. An unmatched valid trial remains in the record but is not admitted.
+
+\section{Candidate acceptance and deterministic selection}\label{sec:3.5}
+
+Acceptance is assessed on the complete reconstructed reasoning, including the retained prefix and generated suffix. Both parts are counted using the declared tokenizer and reasoning boundary to measure the reasoning length of a reusable demonstration. The separately stored final-answer JSON is excluded from reasoning compression and included later in full prompt costs.
+
+For KEEP and DELETE, a continuation is eligible for the global pool when it belongs to a complete valid matched round and individually satisfies the answer, structural, semantic, provenance and length checks. A local comparison can finish without a decision while leaving an eligible continuation available for selection. If REPLACE is triggered, one replacement text is frozen and its lineage additionally requires at least three correct votes at a three- or five-valid-trial checkpoint. That requirement concerns REPLACE qualification, which was not exercised in this Phase56 run \hyperref[sec:A.2]{[E3]}. Semantic review checks the estimand, causal rule, substitutions, world consistency and support for the conclusion; passing these checks is an operational acceptance decision.
+
+The global pool is ordered by complete reasoning token count, then character count, then candidate identifier. The shortest eligible continuation supplies the selected demonstration subject to final materialisation acceptance \hyperref[sec:A.2]{[E3]}. The 52 selected traces comprise 30 DELETE and 22 KEEP continuations. Saved execution records support the matching and selection behaviour described here. The dated source snapshot provides an implementation reference without establishing byte identity with the historical runtime.
+
+The closure records 52 accepted traces and four unaccepted parents, with exhausted, execution-failure and pending states kept distinct. Unchanged parent traces are available under the downstream fallback policy and do not count as compression successes.
+
+\subsection{A recorded compression example}\label{sec:3.5.1}
+
+Question 1428 asks whether medication improves heart condition through blood pressure in a specified mediation graph. Medication changes the probability of high blood pressure from 0.82 to 0.01. Without medication, the probability of a healthy heart is 0.83 under low blood pressure and 0.43 under high blood pressure. The corresponding probabilities with medication are 0.73 and 0.50. In the recorded excerpts, M denotes medication, B denotes high blood pressure and H denotes a healthy heart. These are local symbols for this example.
+
+The selected record is q1428-s001-keep-r1. KEEP retained the first 203 characters of the parent and generated the remaining reasoning again. Exact concatenation of the saved prefix and suffix reproduces the final demonstration. The complete saved reasoning fields contain 2,052 tokens for the parent and 954 for the accepted continuation, which is a reduction of 53.51\%. These counts exclude the separately stored final answer but retain any repeated checking or answer-like text within the reasoning field \hyperref[sec:A.2]{[E3]}.
+
+\begin{table}[htbp]
+\centering
+\begingroup
+\setlength{\tabcolsep}{2pt}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.23\linewidth}>{\raggedright\arraybackslash}p{0.71\linewidth}@{}}
+\toprule
+\textbf{Recorded component} & \textbf{Verbatim text} \\
+\midrule
+Frozen KEEP prefix & The user wants to determine if medication positively affects heart condition *through* blood pressure based on a hypothetical scenario.\newline This is a causal inference question asking about indirect effects.\newline  \\
+Editorial excerpt from the new suffix & Effect of M on B: M=1 decreases P(B=1) from 0.82 to 0.01. So M -\textgreater{} B is negative (M=1 lowers B=1).\newline Effect of B on H: B=1 decreases P(H=1) from 0.83 to 0.43 (at M=0) and from 0.73 to 0.50 (at M=1). So B -\textgreater{} H is negative (B=1 lowers H=1).\newline Since M -\textgreater{} B is negative and B -\textgreater{} H is negative, the indirect effect is negative * negative = positive.\newline Thus, medication positively affects heart condition through blood pressure. \\
+\bottomrule
+\end{tabular}
+\endgroup
+\caption[Saved text from the accepted q1428 continuation]{Saved text from the accepted q1428 continuation. The suffix passage is an editorial excerpt; the demonstration retains the entire saved 954-token reasoning field.}\label{tab:3.1}
+\end{table}
+
+The accepted suffix reasons from the signs of the two mediated relationships. An independent substitution using the rounded public probabilities gives NIE = 0.83 \ensuremath{\times} (0.99 \ensuremath{-} 0.18) + 0.43 \ensuremath{\times} (0.01 \ensuremath{-} 0.82) = 0.324 \textgreater{} 0, with medication held at 0 in the outcome reference setting. This numerical check supports the answer yes and is separate from the sign argument produced by the suffix. The accepted text also contains additional checking and repeated answer statements, which remain in the complete electronic case record.
+
+The local comparison for this segment exhausted five raw attempts per branch with four valid matched rounds and remained inconclusive. Because the first KEEP continuation was individually eligible, it remained available for global selection. The local comparison controlled the search, while the individual checks determined eligibility for the global pool. The electronic case appendix retains the complete prompts, source text, offsets and execution records.
+
+\section{Reusing the bank in few-shot prompts}\label{sec:3.6}
+
+The downstream comparisons hold demonstration questions, final answers, identities, order and count fixed across the three conditions using examples. Each target receives two distinct same-type demonstrations. The full reasoning and the PNS-policy representation are paired by identity, so the comparison changes the reasoning supplied for the same examples \hyperref[sec:A.2]{[E3, E6]}.
+
+Phase56 accepted 34 deterministic-counterfactual, nine NIE, six ATE, two NDE and one ETT trace. The single accepted ETT trace cannot meet the routing requirement for two distinct ETT demonstrations. The deployment policy therefore retains all 56 identities, using the 52 accepted shorter traces and keeping the four original parents. The heuristic uses the same four parent fallbacks. The accepted-trace counts alone do not identify the actual fallback positions.
+
+Four conditions are evaluated. ZERO supplies no demonstrations; FULL\_COT supplies full reasoning; PNS\_COT supplies accepted shorter reasoning or the parent fallback; and HEURISTIC\_SHORT supplies length-matched deterministic extraction or the same fallback. FULL, PNS and HEURISTIC are used as shorter names below. Section~\ref{sec:4.2} specifies the heuristic. Comparisons with FULL and HEURISTIC assess the construction policies, whereas comparison with ZERO also changes demonstration presence.

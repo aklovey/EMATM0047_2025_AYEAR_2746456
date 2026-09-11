@@ -1,0 +1,9 @@
+{
+  "updated_at": "2026-09-09T23:16:58.868176+00:00",
+  "expected_rows": 984,
+  "reserved_rows": 984,
+  "status_counts": {
+    "completed": 984
+  },
+  "no_automatic_resend": true
+}

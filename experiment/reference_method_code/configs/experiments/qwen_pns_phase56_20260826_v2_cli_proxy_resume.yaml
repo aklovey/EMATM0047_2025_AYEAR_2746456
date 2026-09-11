@@ -1,0 +1,81 @@
+contract_id: qwen_pns_phase56_v2_cli_proxy_future_judge_resume_20260826
+status: frozen_pending_live_canary
+
+parent_phase:
+  protocol_id: qwen_pns_phase56_20260826_v2_qwen_source_segments
+  config: configs/experiments/qwen_pns_phase56_20260826_v2.yaml
+  frozen_scientific_parameters_unchanged: true
+
+authorization:
+  scope: future_new_judge_evidence_only
+  instruction: future_new_judge_use_cli_proxy
+  switch_reason: user_authorized_future_judge
+  historical_evidence_rewrite_forbidden: true
+
+historical_judge_view:
+  source_ledger: artifacts/experiments/qwen_pns_phase56_20260826_v2/deepseek_semantic_judge.sqlite3
+  source_records_are_read_only: true
+  gpt55_recovery_overlay:
+    manifest: artifacts/experiments/qwen_pns_phase56_20260826_v2/gpt55_judge_recovery_113_xhigh_strict_manifest.json
+    sidecar: artifacts/experiments/qwen_pns_phase56_20260826_v2/gpt55_judge_recovery_113_xhigh_strict.sqlite3
+    exact_count: 113
+    additional_provider_calls: 0
+
+future_judge:
+  scope: future_new_evidence
+  provider: cli_proxy
+  transport: responses
+  base_url: http://127.0.0.1:8317/v1
+  requested_model: gpt-5.5
+  resolved_model: gpt-5.5
+  required_response_model: gpt-5.5
+  thinking:
+    type: enabled
+  reasoning_effort: xhigh
+  structured_output:
+    type: json_schema
+    strict: true
+  protocol_revision: future_responses_xhigh_strict_json_schema_v1
+  stream: false
+  store: false
+  scientific_raw_attempt_delta: 0
+  app_max_retries: 0
+  fallback_allowed: false
+  default_pass_allowed: false
+  error_parse_or_model_mismatch_policy: reject_fail_closed
+  ledger: artifacts/experiments/qwen_pns_phase56_20260826_v2/cli_proxy_future_semantic_judge.sqlite3
+  live_canary: artifacts/experiments/qwen_pns_phase56_20260826_v2/cli_proxy_future_judge_canary.json
+
+qwen_request_recovery:
+  manifest: artifacts/experiments/qwen_pns_phase56_20260826_v2/qwen_request_recovery_128_manifest.json
+  sidecar: artifacts/experiments/qwen_pns_phase56_20260826_v2/qwen_request_recovery_128_g1.sqlite3
+  exact_count: 128
+  generation: g1
+  g2_allowed: false
+  source_request_rows_mutated: false
+
+unchanged_invariants:
+  sample_count: 56
+  accepted_target: 56
+  segmentation: frozen_per_item_qwen_parent_segments
+  programmatic_steps_role: judge_advisory_semantic_reference_only
+  initial_valid_rounds: 3
+  max_valid_rounds: 5
+  max_raw_attempts_per_lineage: 5
+  terminal_majority: "3:2"
+  require_strictly_shorter_than_parent: true
+  deterministic_answer_validation: required
+  judge_chain_validity: required
+  generation_model: Qwen/Qwen3.6-35B-A3B
+  generation_provider: local_vllm_on_autodl907
+  aggregate_generation_limit: null
+  endpoint_local_adaptive_concurrency: true
+
+start_gate:
+  cli_proxy_authenticated_model_list_contains_gpt55: required
+  future_judge_offline_payload_preflight: required
+  future_judge_live_canary_parsed_with_exact_model: required
+  exact_113_overlay_validation: required
+  exact_128_qwen_recovery_validation: required
+  dual_service_restart_path_tested: required
+  paid_gpu_must_remain_off_until_all_gates_pass: true

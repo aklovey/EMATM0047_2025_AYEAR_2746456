@@ -1,0 +1,95 @@
+\chapter{Background and Related Work}\label{ch:2}
+
+\section{Formal causal questions and CLADDER}\label{sec:2.1}
+
+A structural causal model (SCM) defines endogenous variables through structural assignments and a distribution over exogenous variables; its graph records the dependencies. Observational queries concern the intact model. An intervention do(X = x) replaces the assignment for X. Counterfactual queries concern hypothetical outcomes for the same underlying unit or exogenous state; when factual evidence is supplied, it updates the exogenous-state distribution before the modified model is evaluated \cite{Pearl_2009}. These operations determine what a valid explanation must preserve.
+
+Conditioning on treatment and setting treatment by intervention can yield different results in the presence of confounding. Direct and indirect effects also differ in the worlds assigned to the mediator. Compression that substitutes one estimand for another may leave a binary answer unchanged merely because both effects share a sign.
+
+CLADDER generates natural-language questions from formal causal structures and derives reference answers through an oracle \cite{NEURIPS2023_631bb943}. This permits numerical checks alongside language-model evaluation. Chapter~\ref{ch:4} identifies the experimental subsets, selection rules and fresh-data generator revision.
+
+Synthetic generation does not eliminate ambiguous wording, missing information or differing label conventions. Public questions, reference labels and independent check results are stored separately so that disagreements remain traceable.
+
+The probability queries differ in the population or causal pathway that they compare. Let X denote a binary treatment, Y the outcome and M a mediator. The following definitions use the treatment-from-0-to-1 convention for the fresh probability queries, with baseline X = 0 and alternative X = 1 \cite{Pearl_2009,NEURIPS2023_631bb943} \hyperref[sec:A.2]{[E6]}.
+
+Average treatment effect (ATE) compares the average outcome under intervention X = 1 with the average outcome under intervention X = 0. Its explanation must retain the intervention and population averaging, which distinguish it from an unadjusted observational contrast.
+
+Effect of treatment on the treated (ETT) compares treatment outcomes within the group whose observed treatment is X = 1. The explanation must retain that factual group and the alternative outcome for the same group.
+
+Natural direct effect (NDE) changes treatment from 0 to 1 while retaining the mediator response that would arise under treatment 0. Both outcome settings therefore use the same baseline mediator response.
+
+Natural indirect effect (NIE) changes the mediator from its response under treatment 0 to its response under treatment 1, with the direct treatment setting held at 0. The explanation must preserve both the changing mediator response and the fixed direct treatment setting.
+
+The yes/no answer also depends on the question's direction. A question can ask whether an outcome increases or decreases, and ETT questions can describe changing the treatment of an observed group. Section~\ref{sec:4.1} records the label convention and validity checks used for the retained numerical instances.
+
+These definitions specify the causal question. Identification from the available probabilities still depends on the graph and the assumptions in the problem \cite{Pearl_2009,NEURIPS2023_631bb943}.
+
+Synthetic causal data can also support post-training. Dai et al.\ introduce UniCo, which represents problems in symbolic, executable-code and natural-language forms and covers 18 query types across the three levels of the causal ladder \cite{dai2026universalcausalreasoner}. They use 66,603 training examples for full-parameter supervised fine-tuning of Qwen3-4B, Qwen3-8B and Olmo-3-7B-Instruct. Evaluation covers UniCo's own evaluation set and seven external causal benchmarks, including all 10,112 CLADDER questions \cite{dai2026universalcausalreasoner}. This route studies improvement through post-training. The present dissertation keeps Qwen parameters fixed and studies how changing the reasoning in reusable demonstrations affects few-shot efficiency.
+
+\section{Few-shot learning and reasoning demonstrations}\label{sec:2.2}
+
+Few-shot ICL supplies examples at inference without updating model parameters \cite{NEURIPS2020_1457c0d6}. Wei et al.\ extend input--answer demonstrations with intermediate reasoning, so each example presents a question, a derivation and a final answer \cite{NEURIPS2022_9d560961}. They report gains on arithmetic, commonsense and symbolic reasoning tasks for the larger models evaluated, with results varying by model and task. For causal questions, a worked derivation can identify the estimand, select an appropriate formula, substitute the supplied probabilities and interpret the result.
+
+Demonstrations also communicate information beyond a derivation. Min et al.\ find that randomly replacing demonstration labels causes little performance loss across the classification and multiple-choice settings they evaluate \cite{min-etal-2022-rethinking}. Their analysis identifies the label vocabulary, the distribution of example inputs and the format of the input--output sequence as information conveyed by demonstrations. The label experiment addresses the role of demonstration labels in these settings; the validity of intermediate causal reasoning remains a separate question.
+
+These functions motivate controls over example selection and presentation. The three few-shot conditions use the same demonstration questions, final answers, identities, order and count. They differ only in the reasoning text supplied with each example. Format failures, which count as errors in strict accuracy, are also reported separately so that answer performance can be considered alongside compliance with the output convention.
+
+\section{Prompt compression and reasoning compression}\label{sec:2.3}
+
+Prompt compression reduces the text supplied to a model before inference. LLMLingua combines budget allocation across prompt components with iterative token removal using a smaller language model, and applies instruction tuning to align the compressor with the target-model distribution \cite{jiang-etal-2023-llmlingua}. LongLLMLingua makes compression question-aware and reorders context to improve the density and placement of relevant information in long prompts \cite{jiang-etal-2024-longllmlingua}. LLMLingua-2 instead trains a bidirectional token classifier on distilled compression examples to predict which source tokens to retain, supporting task-agnostic compression \cite{pan-etal-2024-llmlingua}. These methods differ in their compression decisions and dependence on the current question, but share an emphasis on retaining useful information in a smaller input. For reusable causal demonstrations, the additional concern is whether the retained text still states the intended estimand and the assumptions needed for its derivation.
+
+Reasoning compression can instead shape the text generated while solving a problem. TokenSkip first obtains answer-correct CoT trajectories, uses LLMLingua-2 to estimate token importance, and prunes the reasoning offline while retaining the answer in each training example. Supervised fine-tuning with low-rank adaptation (LoRA) then teaches the model to generate shorter reasoning and an answer conditioned on a requested compression ratio \cite{xia-etal-2025-tokenskip}. Its offline product is a set of compressed training targets, and its online use is controlled generation for a new question.
+
+Chain of Draft (CoD) uses prompting to encourage minimal intermediate steps \cite{xu2025chaindraftthinkingfaster}. Its experiments combine manually written draft-style few-shot examples with an instruction to use at most five words per reasoning step. This instruction is a guideline rather than an enforced limit, so CoD changes both demonstration style and the requested form of new reasoning. The reported accuracy trade-off varies by task, with lower GSM8K accuracy than CoT. CoD therefore connects compact demonstrations with concise generation through prompting.
+
+This study compresses generated causal reasoning for repeated use as few-shot input. Candidate suffixes are generated offline from recorded parent prefixes, then checked and selected before target evaluation. Model parameters remain fixed. The resulting demonstration bank can be inspected through its construction records. Chapter~\ref{ch:3} and Section~\ref{sec:4.2} specify the PNS and heuristic procedures evaluated in this dissertation. The other compression methods discussed here provide context for these two procedures.
+
+\section{Explanation validity and faithfulness}\label{sec:2.4}
+
+Fluent explanations need not reveal what determined a model's answer. Turpin et al. show that CoT can omit influences on model behaviour \cite{NEURIPS2023_ed3fea90}, while Lanham et al. probe faithfulness through reasoning interventions \cite{Lanham_2023_Faithfulness}. Such behavioural evidence motivates trajectory checks without treating an explanation as direct access to an internal algorithm.
+
+Three notions are kept separate. Answer correctness means agreement with the declared reference. Semantic validity concerns whether the explanation supports the intended causal conclusion. Auditability means that construction and checking can be reconstructed from records. A trace can have a correct answer and exact provenance while containing a semantic error; neither property establishes internal faithfulness.
+
+Model-based judges can make errors and are sensitive to evaluation design \cite{NEURIPS2023_91f18a12}. Here, a judge may overlook an estimand substitution or infer missing reasoning from the final answer. The saved judge inputs, raw responses and decisions make these judgements inspectable. Independent semantic calibration is still required.
+
+Textual interventions provide a behavioural probe, but interpreting the resulting success rates as probabilities of causation requires an explicit identification argument \cite{Lanham_2023_Faithfulness,Tian_2000}.
+
+\section{CausalMath and textual intervention}\label{sec:2.5}
+
+CausalMath \cite{NEURIPS2025_b7870bd4} connects reasoning-step interventions to the probability of sufficiency (PS), probability of necessity (PN), and probability of necessity and sufficiency (PNS) \cite{Tian_2000}. For a question q and known correct answer y, S denotes the original chain and A the answer. An altered chain replaces a selected step with an incorrect or corrupted alternative and regenerates its continuation. The PS definition conditions on a failed answer under a null or incorrect reference chain, whereas PN conditions on a successful answer under the original chain.
+
+\begin{equation}\label{eq:2.1}
+\begin{aligned}\mathrm{PS}(S,q)&=P(A_{\operatorname{do}(S)}=y\mid A\ne y,\bar S,q),\\\mathrm{PN}(S,\bar s_t,q)&=P(A_{\operatorname{do}(S_t^{\prime})}\ne y\mid A=y,S,q).\end{aligned}
+\end{equation}
+
+Here the bar marks a reference chain or altered step, and the prime marks a regenerated continuation. The joint PNS event requires the same underlying case to succeed under the original chain and fail under the altered chain.
+
+\begin{equation}\label{eq:2.2}
+\mathrm{PNS}(S,\bar s_t,q)=P\!\left(A_S=y,\ A_{S_t^{\prime}}\ne y\mid q\right),\qquad S_t^{\prime}=(s_{<t},\bar s_t,s_{>t}^{\prime}).
+\end{equation}
+
+Let the intervention success probability be defined by the following expression, with the analogous definition for the altered chain.
+
+\[
+p_S(q)=P(A=y\mid\operatorname{do}(S),q)
+\]
+
+The identification argument requires assumptions about the intervention. CausalMath defines exogeneity by equality of the interventional and observational step distributions.
+
+\[
+P(s_t\mid\operatorname{do}(s_{<t}),q)=P(s_t\mid s_{<t},q)
+\]
+
+Monotonicity excludes a case in which the altered chain succeeds while the original chain fails. Together, exogeneity and monotonicity identify PNS as a difference of intervention success probabilities. A second result replaces monotonicity with a perfect original intervention, whose success probability is one, while retaining exogeneity \cite{NEURIPS2025_b7870bd4}.
+
+\begin{equation}\label{eq:2.3}
+\mathrm{PNS}(S,\bar s_t,q)=\begin{cases}p_S(q)-p_{S_t^{\prime}}(q),&\substack{\text{under exogeneity}\\\text{and monotonicity}},\\1-p_{S_t^{\prime}}(q),&\substack{\text{under exogeneity and a perfect intervention}\\\text{with }p_S(q)=1.}\end{cases}
+\end{equation}
+
+Under the perfect-original-intervention condition, CausalMath estimates PNS by sampling k altered continuations. Ideally V is their binary success indicator. In the implementation described by the paper, a validation model assesses answer success and the logical integrity and coherence of each continuation, which makes the score a validator-based approximation.
+
+\begin{equation}\label{eq:2.4}
+\widehat{\mathrm{PNS}}_{\mathrm{CM}}(S,\bar s_t,q)=1-\frac{1}{k}\sum_{j=1}^{k}V\!\left(S_t^{\prime(j)}\right).
+\end{equation}
+
+CausalMath retains steps whose scores exceed a threshold and uses the resulting traces as demonstrations or training data. This study adopts step interventions and continuation-based evaluation for demonstration compression. It compares KEEP and DELETE continuations from a fixed parent and selects a complete trajectory globally by length subject to answer, provenance and semantic checks. The project name PNS refers to this adapted search procedure. Its local contrast measures response sensitivity under validity filtering and adaptive stopping. A correct parent answer alone does not establish a probability-one intervention, and the experiments do not establish the assumptions needed to identify the local contrast as PNS.

@@ -1,0 +1,225 @@
+{
+  "prepared": "2026-09-10",
+  "scope": "Completed main300, fresh246, joint statistics and Qwen self-review; original sources retained read-only. Cost-coverage and semantic-audit limitations are preserved.",
+  "sources": [
+    {
+      "artifact": "reference_layout.docx",
+      "role": "Layout reference only; retained unchanged",
+      "bytes": 386111,
+      "sha256": "7902e5f8d8eb3a2b819b233f6d260a9451833284b2d41453ed7661f95bcb50f5"
+    },
+    {
+      "artifact": "historical_structure_and_gaps.md",
+      "role": "Historical synthesis E1",
+      "bytes": 23976,
+      "sha256": "691ee9c5433d8d92c97e599fa589ccceee206a746c363b1954128b34c3119152"
+    },
+    {
+      "artifact": "historical_results_summary.json",
+      "role": "E2 historical results",
+      "bytes": 11099,
+      "sha256": "244f0eef9b496ef4012ecdc2a130ae9f5152c319e1696c1488f2948b320395ea"
+    },
+    {
+      "artifact": "historical_offline_full_journal_costs.json",
+      "role": "E2 historical costs",
+      "bytes": 10740,
+      "sha256": "00bbe3c8ed655b076ce9d716880d28d671f701fad4c27ea80197153e3ce3b213"
+    },
+    {
+      "artifact": "cladder_group_audit.json",
+      "role": "E2 historical groups",
+      "bytes": 2682,
+      "sha256": "494e2157bff58b8ca9d5d4afa1cd6a288562dc5147d2af0edd2f3bf56dd1f9d5"
+    },
+    {
+      "artifact": "historical_asset_builds.json",
+      "role": "E2 historical assets",
+      "bytes": 2512,
+      "sha256": "9007c1a3b5c6cc724e51f38b0cc4b215d60bd2dc23d83b6e02776f9c7c792447"
+    },
+    {
+      "artifact": "phase56_closure_all56.jsonl",
+      "role": "E3 phase closure",
+      "bytes": 28044224,
+      "sha256": "86049c389acbb62756105439bb05a78d53f474d258253d4a014eacc37a659f49"
+    },
+    {
+      "artifact": "phase56_accepted52_demo_pool.jsonl",
+      "role": "E3 accepted bank",
+      "bytes": 749270,
+      "sha256": "73bfe842a6b7b407f5bfe6a84c3868ab9258c840ea0702a7e7e5fc9d2f13e105"
+    },
+    {
+      "artifact": "phase56_selected_lineage52.jsonl",
+      "role": "E3 selected lineage",
+      "bytes": 778090,
+      "sha256": "4c45488ace520f56946693fe43080d1005d157fb0c4bad4e8dbbb87bddf46976"
+    },
+    {
+      "artifact": "phase56_ledger_accounting.json",
+      "role": "E3 phase accounting",
+      "bytes": 3782,
+      "sha256": "88d24c685d4c6eb392db96a4ee6c5148cd39ea56d730adcf118ca21eb5e35fcc"
+    },
+    {
+      "artifact": "phase56_method_contract_compact.json",
+      "role": "E3 original method contract",
+      "bytes": 2419,
+      "sha256": "9e974afe2d624817f76c18572ee7926b3bfeb6912d896c001b54b329950d9cf5"
+    },
+    {
+      "artifact": "FINAL_COMPARISON_SPEC.md",
+      "role": "E3 follow-up protocol",
+      "bytes": 9838,
+      "sha256": "4aad5a518968420062e1148b95c0c6629835ae7acb5ba3e38e728fe98ccc1ba8"
+    },
+    {
+      "artifact": "input_preparation_report.json",
+      "role": "E3 prepared bank",
+      "bytes": 678,
+      "sha256": "93c34d0aeec888efbc339d1d459378a78d895654f1b64bc06a074fb04913ffd1"
+    },
+    {
+      "artifact": "main300_CPT_overlap_audit.json",
+      "role": "E3 full-CPT overlap audit",
+      "bytes": 116761,
+      "sha256": "6c582153a9ad40f890c3ea988fbe230b92252da830fcb8bd99eda0be96e6d2a8"
+    },
+    {
+      "artifact": "CPT_SENSITIVITY_PRESPEC.md",
+      "role": "E3 CPT sensitivity prespecification",
+      "bytes": 5074,
+      "sha256": "6ba649a3f274cb9e98d76ff017a6ed25db944f0a0e677bcb8cae98c2a170e114"
+    },
+    {
+      "artifact": "paired_analysis.json",
+      "role": "E3 completed main300 results",
+      "bytes": 9297,
+      "sha256": "1b10bf250ea37e39a65733ca1198c284487f64514c0c304b4e9ab7b54fb87639"
+    },
+    {
+      "artifact": "technical_check.json",
+      "role": "E3 completed main300 technical check",
+      "bytes": 537,
+      "sha256": "a74cfec4501f789ea772079814383dfec18d74fa8bc7241e812aa197632aa6b6"
+    },
+    {
+      "artifact": "main_CPT_sensitivity.json",
+      "role": "E3 CPT sensitivity results",
+      "bytes": 112390,
+      "sha256": "032fe40e2b9cfa74ae06d179a4ab1b7eae0724f28a048122d2b2d4bc71092f9e"
+    },
+    {
+      "artifact": "phase56_compression_distribution.json",
+      "role": "E3 Phase56 length distribution",
+      "bytes": 2576,
+      "sha256": "a7a24d043aa7e6d34fb40e6669d559ece836ea1bbd5d33d8608b89715271c0dd"
+    },
+    {
+      "artifact": "observed_runtime_results.json",
+      "role": "E4 verifier replay",
+      "bytes": 6325,
+      "sha256": "8029f3d9bbd355d8c7aa39bd7b6750013e1710d8d5235327d399a45b6d5fde00"
+    },
+    {
+      "artifact": "phase56_independent_component_audit.json",
+      "role": "E5 component audit",
+      "bytes": 299283,
+      "sha256": "a47f7ca5c5cd6cc1ae647b3452b623a4175a0f822842dc9b5e94b90cfc8f03c3"
+    },
+    {
+      "artifact": "blinded_model_assisted_review.md",
+      "role": "E5 blinded model-assisted review",
+      "bytes": 4852,
+      "sha256": "27a6cb548bb38d481bd69e40dc12623f04a6a8b01d599c05281e4ae61662c37c"
+    },
+    {
+      "artifact": "fresh_evaluation_decision.md",
+      "role": "E6 prespecified decision",
+      "bytes": 3240,
+      "sha256": "be4182085395ac234b23a6262894655d12e88c14076d588999710122f64bbc2a"
+    },
+    {
+      "artifact": "manifest.json",
+      "role": "E6 fresh cohort manifest",
+      "bytes": 3373,
+      "sha256": "f79d7c1437ff1d7bd9fd5588be3e1793efeb4409fe5f715817f7c8200d817462"
+    },
+    {
+      "artifact": "generation_protocol.json",
+      "role": "E6 generation protocol",
+      "bytes": 1831,
+      "sha256": "bbc1a841f0516bc491806305d5f050f36d2e7d53cbd4afb9c039552779b756f8"
+    },
+    {
+      "artifact": "local_independent_verification.json",
+      "role": "E6 independent verification",
+      "bytes": 59527,
+      "sha256": "9939417c4e05ebeb2fe428fde63a52b6199ff0422ff956f8612d7456a8e88b63"
+    },
+    {
+      "artifact": "paired_analysis.json",
+      "role": "E6 completed fresh246 results",
+      "bytes": 8915,
+      "sha256": "f95c487b139a900d0d93f27cc2a9e16a7c6c53d709fce1404f71257fae157b38"
+    },
+    {
+      "artifact": "technical_check.json",
+      "role": "E6 completed fresh246 technical check",
+      "bytes": 553,
+      "sha256": "8c7812d787462bb06d7b91e75bf3c913aee34a5a3cbdee75f13ecb47dae5f758"
+    },
+    {
+      "artifact": "joint_comparisons.json",
+      "role": "E3 and E6 joint six-comparison Holm",
+      "bytes": 5100,
+      "sha256": "a0a3fc1631c6a1a43a6564af7ddd8fe9d839cbe011b7ea41dc351a307a1cb4cf"
+    },
+    {
+      "artifact": "main300_paired_change_cases.md",
+      "role": "E7 paired cases",
+      "bytes": 7221,
+      "sha256": "f10b2ac2ce4f56f5d880c306dfc063e01fe1530adad8a7dbdca7ab531b50dc00"
+    },
+    {
+      "artifact": "case_review.json",
+      "role": "E7 paired case machine evidence",
+      "bytes": 34006,
+      "sha256": "b576f713bee024d0d2840911a614c2e582637d0f7146f506cb9623b7343f10f3"
+    },
+    {
+      "artifact": "self_review_summary.json",
+      "role": "E8 Qwen self-review summary",
+      "bytes": 1917,
+      "sha256": "70cb2ee5bc2c4c5405dfdd5e40161963d604bd8fca3460a125f2e39c1ce64046"
+    },
+    {
+      "artifact": "self_review_records56.jsonl",
+      "role": "E8 Qwen self-review records",
+      "bytes": 96130,
+      "sha256": "6a9abeb2dd2fa595e80cbbd8c92408abd2e08050b342913417109b0f37dba94d"
+    },
+    {
+      "artifact": "autodl_billing_20260910.json",
+      "role": "E9 observed platform bill",
+      "bytes": 1623,
+      "sha256": "83525fd9a87c7806e9df2200da918447f076f396d01ae0638a820b37175aac59"
+    },
+    {
+      "artifact": "run_accounting_final.json",
+      "role": "E9 final Qwen generation accounting",
+      "bytes": 902,
+      "sha256": "b1b1acdba80c4921615b494edc6671fb8e882a3e291c5bb47996543d5acfe256"
+    }
+  ],
+  "phase56_item_compression_percent": {
+    "n": 52,
+    "min": 7.647240209682393,
+    "q1": 30.00770344606382,
+    "median": 38.78112550803522,
+    "q3": 45.88823959647149,
+    "max": 69.21797004991681,
+    "mean": 37.41956122290698
+  }
+}

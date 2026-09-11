@@ -1,0 +1,1076 @@
+{
+  "prepared": "2026-09-12",
+  "repository": "https://github.com/aklovey/EMATM0047_2025_AYEAR_2746456",
+  "scope": "English-language distribution of LaTeX sources and supporting code, data, response records, analyses and figures; the thesis PDF is excluded.",
+  "path_base": "repository root",
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 187
+    },
+    {
+      "path": "CITATION.bib",
+      "bytes": 295
+    },
+    {
+      "path": "docs/ENGLISH_RELEASE.md",
+      "bytes": 1419
+    },
+    {
+      "path": "docs/english_reproduction_check.json",
+      "bytes": 780
+    },
+    {
+      "path": "docs/EVIDENCE.md",
+      "bytes": 5509
+    },
+    {
+      "path": "docs/REPRODUCE.md",
+      "bytes": 7663
+    },
+    {
+      "path": "docs/reproduction_check.json",
+      "bytes": 818
+    },
+    {
+      "path": "evidence/autodl_billing_20260910.json",
+      "bytes": 1623
+    },
+    {
+      "path": "evidence/blinded_model_assisted_review.md",
+      "bytes": 6885
+    },
+    {
+      "path": "evidence/cladder_group_audit.json",
+      "bytes": 2682
+    },
+    {
+      "path": "evidence/fresh246_data_freeze_report.md",
+      "bytes": 5690
+    },
+    {
+      "path": "evidence/fresh_cladder_generation_feasibility.md",
+      "bytes": 5036
+    },
+    {
+      "path": "evidence/historical_asset_builds.json",
+      "bytes": 2512
+    },
+    {
+      "path": "evidence/historical_evidence_audit.md",
+      "bytes": 12785
+    },
+    {
+      "path": "evidence/historical_evidence_report.py",
+      "bytes": 17299
+    },
+    {
+      "path": "evidence/historical_offline_full_journal_costs.json",
+      "bytes": 10740
+    },
+    {
+      "path": "evidence/historical_results_summary.json",
+      "bytes": 11099
+    },
+    {
+      "path": "evidence/historical_test100_paired.csv",
+      "bytes": 18413
+    },
+    {
+      "path": "evidence/independent_semantic_and_arithmetic_audit.md",
+      "bytes": 14395
+    },
+    {
+      "path": "evidence/main300_CPT_overlap_audit.json",
+      "bytes": 116761
+    },
+    {
+      "path": "evidence/main300_cpt_overlap_audit.md",
+      "bytes": 4827
+    },
+    {
+      "path": "evidence/main300_paired_change_cases.md",
+      "bytes": 9615
+    },
+    {
+      "path": "evidence/phase56_closure_and_parameters.md",
+      "bytes": 8758
+    },
+    {
+      "path": "evidence/phase56_compression_distribution.json",
+      "bytes": 2576
+    },
+    {
+      "path": "evidence/phase56_independent_component_audit.csv",
+      "bytes": 30120
+    },
+    {
+      "path": "evidence/phase56_independent_component_audit.json",
+      "bytes": 299283
+    },
+    {
+      "path": "evidence/phase56_trace_lengths.csv",
+      "bytes": 2656
+    },
+    {
+      "path": "evidence/q9510_public_iv_counterexample.py",
+      "bytes": 1926
+    },
+    {
+      "path": "evidence/semantic_review_deblinded.json",
+      "bytes": 34016
+    },
+    {
+      "path": "evidence_ledger.md",
+      "bytes": 467
+    },
+    {
+      "path": "experiment/analysis_environment.json",
+      "bytes": 339
+    },
+    {
+      "path": "experiment/archive_verification.json",
+      "bytes": 195
+    },
+    {
+      "path": "experiment/audit/blind12_inputs.jsonl",
+      "bytes": 114640
+    },
+    {
+      "path": "experiment/audit/blind12_plan.md",
+      "bytes": 957
+    },
+    {
+      "path": "experiment/audit/blind12_review.jsonl",
+      "bytes": 26840
+    },
+    {
+      "path": "experiment/audit/blind12_sidecar.json",
+      "bytes": 1797
+    },
+    {
+      "path": "experiment/cases/main_case_raw_responses.tar.gz",
+      "bytes": 29357
+    },
+    {
+      "path": "experiment/cases/main_case_review.json",
+      "bytes": 36642
+    },
+    {
+      "path": "experiment/cases/main_case_selection.json",
+      "bytes": 16797
+    },
+    {
+      "path": "experiment/cases/selection_plan.md",
+      "bytes": 923
+    },
+    {
+      "path": "experiment/CAUSE_Experiment_English_Release_20260912.tar.gz",
+      "bytes": 15967410
+    },
+    {
+      "path": "experiment/data/demonstrations56.jsonl",
+      "bytes": 1048630
+    },
+    {
+      "path": "experiment/data/dev10/targets_public.jsonl",
+      "bytes": 8899
+    },
+    {
+      "path": "experiment/data/dev10/targets_scoring_only.jsonl",
+      "bytes": 952
+    },
+    {
+      "path": "experiment/data/freeze300/requests.token_summary.json",
+      "bytes": 88901
+    },
+    {
+      "path": "experiment/data/freeze300/selection_report.json",
+      "bytes": 1340
+    },
+    {
+      "path": "experiment/data/freeze300/targets_public.jsonl",
+      "bytes": 247080
+    },
+    {
+      "path": "experiment/data/freeze300/targets_scoring_only.jsonl",
+      "bytes": 28407
+    },
+    {
+      "path": "experiment/data/fresh246/manifest.json",
+      "bytes": 3373
+    },
+    {
+      "path": "experiment/data/fresh246/requests.token_summary.json",
+      "bytes": 73474
+    },
+    {
+      "path": "experiment/data/fresh246/targets_public.jsonl",
+      "bytes": 261918
+    },
+    {
+      "path": "experiment/data/fresh246/targets_scoring_only.jsonl",
+      "bytes": 25946
+    },
+    {
+      "path": "experiment/data/input_preparation_report.json",
+      "bytes": 678
+    },
+    {
+      "path": "experiment/data/main300_CPT_groups.json",
+      "bytes": 8894
+    },
+    {
+      "path": "experiment/dev_analysis/paired_analysis.json",
+      "bytes": 8692
+    },
+    {
+      "path": "experiment/dev_analysis/paired_analysis.md",
+      "bytes": 1322
+    },
+    {
+      "path": "experiment/dev_analysis/scored_all_frozen_targets.csv",
+      "bytes": 4099
+    },
+    {
+      "path": "experiment/fresh_analysis/paired_analysis.json",
+      "bytes": 8915
+    },
+    {
+      "path": "experiment/fresh_analysis/paired_analysis.md",
+      "bytes": 1410
+    },
+    {
+      "path": "experiment/fresh_analysis/scored_all_frozen_targets.csv",
+      "bytes": 107127
+    },
+    {
+      "path": "experiment/fresh_source/all_attempt_models.jsonl",
+      "bytes": 425553
+    },
+    {
+      "path": "experiment/fresh_source/generate_fresh246_executed.py",
+      "bytes": 9106
+    },
+    {
+      "path": "experiment/fresh_source/GENERATE_FRESH246_REPRODUCTION.md",
+      "bytes": 6129
+    },
+    {
+      "path": "experiment/fresh_source/generation_protocol.json",
+      "bytes": 1831
+    },
+    {
+      "path": "experiment/fresh_source/independent_calc.py",
+      "bytes": 4997
+    },
+    {
+      "path": "experiment/fresh_source/local_independent_verification.json",
+      "bytes": 59527
+    },
+    {
+      "path": "experiment/fresh_source/manifest.json",
+      "bytes": 3373
+    },
+    {
+      "path": "experiment/fresh_source/official_cladder_source.zip",
+      "bytes": 170130
+    },
+    {
+      "path": "experiment/fresh_source/probe8.json",
+      "bytes": 39786
+    },
+    {
+      "path": "experiment/fresh_source/README.md",
+      "bytes": 3683
+    },
+    {
+      "path": "experiment/fresh_source/sampling_attempts.jsonl",
+      "bytes": 158730
+    },
+    {
+      "path": "experiment/fresh_source/selected_source_and_validation246.jsonl",
+      "bytes": 1008482
+    },
+    {
+      "path": "experiment/fresh_source/verify246_local.py",
+      "bytes": 3905
+    },
+    {
+      "path": "experiment/joint_comparisons.json",
+      "bytes": 5100
+    },
+    {
+      "path": "experiment/local_archive_verification.json",
+      "bytes": 221
+    },
+    {
+      "path": "experiment/main_analysis/paired_analysis.json",
+      "bytes": 9840
+    },
+    {
+      "path": "experiment/main_analysis/paired_analysis.md",
+      "bytes": 1754
+    },
+    {
+      "path": "experiment/main_analysis/scored_all_frozen_targets.csv",
+      "bytes": 117015
+    },
+    {
+      "path": "experiment/main_CPT_sensitivity.json",
+      "bytes": 112390
+    },
+    {
+      "path": "experiment/main_CPT_sensitivity.md",
+      "bytes": 2728
+    },
+    {
+      "path": "experiment/phase56/export_remote_phase56.py",
+      "bytes": 4623
+    },
+    {
+      "path": "experiment/phase56/export_selected_lineages.py",
+      "bytes": 2411
+    },
+    {
+      "path": "experiment/phase56/ledger_accounting.py",
+      "bytes": 2685
+    },
+    {
+      "path": "experiment/phase56/phase56_accepted52_demo_pool.jsonl",
+      "bytes": 749308
+    },
+    {
+      "path": "experiment/phase56/PHASE56_ASSET_AUDIT.md",
+      "bytes": 8663
+    },
+    {
+      "path": "experiment/phase56/phase56_closure_all56.jsonl",
+      "bytes": 28044348
+    },
+    {
+      "path": "experiment/phase56/phase56_closure_summary.json",
+      "bytes": 4553
+    },
+    {
+      "path": "experiment/phase56/phase56_failed4.jsonl",
+      "bytes": 2300
+    },
+    {
+      "path": "experiment/phase56/phase56_ledger_accounting.json",
+      "bytes": 3782
+    },
+    {
+      "path": "experiment/phase56/phase56_method_contract_compact.json",
+      "bytes": 2419
+    },
+    {
+      "path": "experiment/phase56/phase56_original_inputs56.jsonl",
+      "bytes": 1582816
+    },
+    {
+      "path": "experiment/phase56/phase56_pending_candidate_rows.jsonl",
+      "bytes": 7401675
+    },
+    {
+      "path": "experiment/phase56/phase56_pending_judge_rows.jsonl",
+      "bytes": 2250026
+    },
+    {
+      "path": "experiment/phase56/phase56_selected_lineage52.jsonl",
+      "bytes": 778308
+    },
+    {
+      "path": "experiment/phase56/phase56_source_export.json",
+      "bytes": 59942777
+    },
+    {
+      "path": "experiment/phase56/summarize_phase56.py",
+      "bytes": 12848
+    },
+    {
+      "path": "experiment/protocol/FINAL_COMPARISON_SPEC.md",
+      "bytes": 12939
+    },
+    {
+      "path": "experiment/protocol/followup_design.md",
+      "bytes": 12939
+    },
+    {
+      "path": "experiment/protocol/fresh_evaluation_decision.md",
+      "bytes": 3240
+    },
+    {
+      "path": "experiment/README.md",
+      "bytes": 5087
+    },
+    {
+      "path": "experiment/reference_method_code/configs/experiments/qwen_pns_phase56_20260826_v2.yaml",
+      "bytes": 4743
+    },
+    {
+      "path": "experiment/reference_method_code/configs/experiments/qwen_pns_phase56_20260826_v2_cli_proxy_resume.yaml",
+      "bytes": 3033
+    },
+    {
+      "path": "experiment/reference_method_code/README.md",
+      "bytes": 4722
+    },
+    {
+      "path": "experiment/reference_method_code/scripts/recover_qwen_pns_existing_candidates.py",
+      "bytes": 8774
+    },
+    {
+      "path": "experiment/reference_method_code/scripts/run_qwen_pns_adaptive.py",
+      "bytes": 42941
+    },
+    {
+      "path": "experiment/reference_method_code/SOURCE_INDEX.json",
+      "bytes": 5850
+    },
+    {
+      "path": "experiment/reference_method_code/src/experiments/cladder_pns_mvp/judge.py",
+      "bytes": 39089
+    },
+    {
+      "path": "experiment/reference_method_code/src/experiments/cladder_pns_mvp/judge_transport.py",
+      "bytes": 8588
+    },
+    {
+      "path": "experiment/reference_method_code/src/pns_dataset_preparation.py",
+      "bytes": 7525
+    },
+    {
+      "path": "experiment/reference_method_code/src/pns_judge_ledger.py",
+      "bytes": 5976
+    },
+    {
+      "path": "experiment/reference_method_code/src/qwen_pns_adaptive.py",
+      "bytes": 52683
+    },
+    {
+      "path": "experiment/reference_method_code/src/qwen_pns_batch56_adapter.py",
+      "bytes": 103492
+    },
+    {
+      "path": "experiment/reference_method_code/src/qwen_pns_candidate_materialization_recovery.py",
+      "bytes": 103761
+    },
+    {
+      "path": "experiment/reference_method_code/src/qwen_pns_judge_gate.py",
+      "bytes": 40324
+    },
+    {
+      "path": "experiment/reference_method_code/src/qwen_pns_max7_recovery.py",
+      "bytes": 21211
+    },
+    {
+      "path": "experiment/reference_method_code/src/qwen_pns_phase_gate.py",
+      "bytes": 31171
+    },
+    {
+      "path": "experiment/reference_method_code/src/qwen_pns_request_recovery.py",
+      "bytes": 31231
+    },
+    {
+      "path": "experiment/run_accounting_final.json",
+      "bytes": 902
+    },
+    {
+      "path": "experiment/run_records/dev10/execution_config.json",
+      "bytes": 441
+    },
+    {
+      "path": "experiment/run_records/dev10/run_state.json",
+      "bytes": 178
+    },
+    {
+      "path": "experiment/run_records/dev10/technical_check.json",
+      "bytes": 156
+    },
+    {
+      "path": "experiment/run_records/fresh246/execution_config.json",
+      "bytes": 446
+    },
+    {
+      "path": "experiment/run_records/fresh246/run_state.json",
+      "bytes": 181
+    },
+    {
+      "path": "experiment/run_records/fresh246/technical_check.json",
+      "bytes": 553
+    },
+    {
+      "path": "experiment/run_records/main300/execution_config.json",
+      "bytes": 448
+    },
+    {
+      "path": "experiment/run_records/main300/run_state.json",
+      "bytes": 184
+    },
+    {
+      "path": "experiment/run_records/main300/technical_check.json",
+      "bytes": 537
+    },
+    {
+      "path": "experiment/scripts/analyze_paired.py",
+      "bytes": 11503
+    },
+    {
+      "path": "experiment/scripts/build_final_inputs.py",
+      "bytes": 6216
+    },
+    {
+      "path": "experiment/scripts/cpt_statistics/analyze_cpt_sensitivity.py",
+      "bytes": 21327
+    },
+    {
+      "path": "experiment/scripts/cpt_statistics/CPT_SENSITIVITY_PRESPEC.md",
+      "bytes": 6455
+    },
+    {
+      "path": "experiment/scripts/cpt_statistics/joint_holm.py",
+      "bytes": 4046
+    },
+    {
+      "path": "experiment/scripts/heuristic_short.py",
+      "bytes": 5346
+    },
+    {
+      "path": "experiment/scripts/prepare_holdout.py",
+      "bytes": 6101
+    },
+    {
+      "path": "experiment/scripts/prepare_requests.py",
+      "bytes": 6928
+    },
+    {
+      "path": "experiment/scripts/run_eval.py",
+      "bytes": 10814
+    },
+    {
+      "path": "experiment/scripts/self_review/parse_self_review.py",
+      "bytes": 7736
+    },
+    {
+      "path": "experiment/scripts/self_review/prepare_self_review.py",
+      "bytes": 12147
+    },
+    {
+      "path": "experiment/scripts/self_review/README.md",
+      "bytes": 5365
+    },
+    {
+      "path": "experiment/scripts/self_review/review_schema.json",
+      "bytes": 2886
+    },
+    {
+      "path": "experiment/scripts/self_review/review_system.txt",
+      "bytes": 2468
+    },
+    {
+      "path": "experiment/scripts/source_audit/audit_phase56.py",
+      "bytes": 25075
+    },
+    {
+      "path": "experiment/scripts/source_audit/write_audit_report.py",
+      "bytes": 14791
+    },
+    {
+      "path": "experiment/self_review/quote_validation_summary.json",
+      "bytes": 830
+    },
+    {
+      "path": "experiment/self_review/self_review_records56.jsonl",
+      "bytes": 96130
+    },
+    {
+      "path": "experiment/self_review/self_review_summary.json",
+      "bytes": 1917
+    },
+    {
+      "path": "experiment/self_review/technical_check.json",
+      "bytes": 153
+    },
+    {
+      "path": "experiment/service_stop.json",
+      "bytes": 117
+    },
+    {
+      "path": "experiment/source_data/cladder_v1_source_pair.zip",
+      "bytes": 2319216
+    },
+    {
+      "path": "experiment/source_data/development_question_ids.json",
+      "bytes": 5837
+    },
+    {
+      "path": "figures/build_design.py",
+      "bytes": 5685
+    },
+    {
+      "path": "figures/figure1_auditable_compression.drawio",
+      "bytes": 18876
+    },
+    {
+      "path": "figures/figure1_auditable_compression.pdf",
+      "bytes": 58570
+    },
+    {
+      "path": "figures/figure1_auditable_compression.png",
+      "bytes": 328700
+    },
+    {
+      "path": "figures/figure1_auditable_compression.svg",
+      "bytes": 17622
+    },
+    {
+      "path": "figures/figure4_1_caption.md",
+      "bytes": 601
+    },
+    {
+      "path": "figures/figure4_1_evaluation_design.drawio",
+      "bytes": 10047
+    },
+    {
+      "path": "figures/figure4_1_evaluation_design.pdf",
+      "bytes": 53711
+    },
+    {
+      "path": "figures/figure4_1_evaluation_design.png",
+      "bytes": 325258
+    },
+    {
+      "path": "figures/figure4_1_evaluation_design.svg",
+      "bytes": 1126379
+    },
+    {
+      "path": "figures/figure4_1_provenance.json",
+      "bytes": 745
+    },
+    {
+      "path": "figures/figure5_1_caption.md",
+      "bytes": 492
+    },
+    {
+      "path": "figures/figure5_1_phase56_compression.pdf",
+      "bytes": 44868
+    },
+    {
+      "path": "figures/figure5_1_phase56_compression.png",
+      "bytes": 300846
+    },
+    {
+      "path": "figures/figure5_1_phase56_compression.svg",
+      "bytes": 27878
+    },
+    {
+      "path": "figures/figure5_1_phase56_compression_provenance.json",
+      "bytes": 1792
+    },
+    {
+      "path": "figures/figure5_1_phase56_compression_source.py",
+      "bytes": 7001
+    },
+    {
+      "path": "figures/figure5_1_phase56_compression_source_data.csv",
+      "bytes": 2656
+    },
+    {
+      "path": "figures/figure5_1_phase56_compression_summary.json",
+      "bytes": 2576
+    },
+    {
+      "path": "figures/figure5_2_caption.md",
+      "bytes": 636
+    },
+    {
+      "path": "figures/figure5_2_evaluation_efficiency.pdf",
+      "bytes": 60500
+    },
+    {
+      "path": "figures/figure5_2_evaluation_efficiency.png",
+      "bytes": 402862
+    },
+    {
+      "path": "figures/figure5_2_evaluation_efficiency.svg",
+      "bytes": 28948
+    },
+    {
+      "path": "figures/figure5_2_evaluation_efficiency_provenance.json",
+      "bytes": 7801
+    },
+    {
+      "path": "figures/figure5_2_evaluation_efficiency_source.py",
+      "bytes": 18447
+    },
+    {
+      "path": "figures/figure5_2_evaluation_efficiency_source_data.csv",
+      "bytes": 2950
+    },
+    {
+      "path": "figures/figure5_2_inputs/fresh_analysis.json",
+      "bytes": 8915
+    },
+    {
+      "path": "figures/figure5_2_inputs/fresh_interval_map.json",
+      "bytes": 720
+    },
+    {
+      "path": "figures/figure5_2_inputs/joint_comparisons.json",
+      "bytes": 5100
+    },
+    {
+      "path": "figures/figure5_2_inputs/main_analysis.json",
+      "bytes": 9297
+    },
+    {
+      "path": "figures/figure5_2_inputs/main_CPT_sensitivity.json",
+      "bytes": 112390
+    },
+    {
+      "path": "figures/figure5_2_inputs/main_interval_map.json",
+      "bytes": 725
+    },
+    {
+      "path": "figures/README.md",
+      "bytes": 1296
+    },
+    {
+      "path": "paper/chapters/appendix_a.tex",
+      "bytes": 2754
+    },
+    {
+      "path": "paper/chapters/chapter_1.tex",
+      "bytes": 4333
+    },
+    {
+      "path": "paper/chapters/chapter_2.tex",
+      "bytes": 13881
+    },
+    {
+      "path": "paper/chapters/chapter_3.tex",
+      "bytes": 14731
+    },
+    {
+      "path": "paper/chapters/chapter_4.tex",
+      "bytes": 14769
+    },
+    {
+      "path": "paper/chapters/chapter_5.tex",
+      "bytes": 11294
+    },
+    {
+      "path": "paper/chapters/chapter_6.tex",
+      "bytes": 5320
+    },
+    {
+      "path": "paper/chapters/chapter_7.tex",
+      "bytes": 1452
+    },
+    {
+      "path": "paper/chapters/front_abstract.tex",
+      "bytes": 2541
+    },
+    {
+      "path": "paper/chapters/front_ethics.tex",
+      "bytes": 1456
+    },
+    {
+      "path": "paper/chapters/front_notation.tex",
+      "bytes": 791
+    },
+    {
+      "path": "paper/chapters/front_support.tex",
+      "bytes": 81
+    },
+    {
+      "path": "paper/citation_mapping.json",
+      "bytes": 450
+    },
+    {
+      "path": "paper/dissertation.cls",
+      "bytes": 6917
+    },
+    {
+      "path": "paper/figures/figure1_auditable_compression.drawio",
+      "bytes": 18876
+    },
+    {
+      "path": "paper/figures/figure1_auditable_compression.pdf",
+      "bytes": 58570
+    },
+    {
+      "path": "paper/figures/figure1_auditable_compression.png",
+      "bytes": 328700
+    },
+    {
+      "path": "paper/figures/figure1_auditable_compression.svg",
+      "bytes": 17622
+    },
+    {
+      "path": "paper/figures/figure4_1_evaluation_design.pdf",
+      "bytes": 53711
+    },
+    {
+      "path": "paper/figures/figure5_1_phase56_compression.pdf",
+      "bytes": 44868
+    },
+    {
+      "path": "paper/figures/figure5_2_evaluation_efficiency.pdf",
+      "bytes": 60500
+    },
+    {
+      "path": "paper/logo_uob_color.eps",
+      "bytes": 21121
+    },
+    {
+      "path": "paper/logo_uob_color.pdf",
+      "bytes": 10730
+    },
+    {
+      "path": "paper/main.tex",
+      "bytes": 1907
+    },
+    {
+      "path": "paper/README.md",
+      "bytes": 741
+    },
+    {
+      "path": "paper/references.bib",
+      "bytes": 12848
+    },
+    {
+      "path": "README.md",
+      "bytes": 6887
+    },
+    {
+      "path": "requirements-analysis.txt",
+      "bytes": 29
+    },
+    {
+      "path": "requirements-figures.txt",
+      "bytes": 50
+    },
+    {
+      "path": "supplement/case_raw/q4910_FULL_COT.json",
+      "bytes": 4149
+    },
+    {
+      "path": "supplement/case_raw/q4910_HEURISTIC_SHORT.json",
+      "bytes": 685
+    },
+    {
+      "path": "supplement/case_raw/q4910_PNS_COT.json",
+      "bytes": 6284
+    },
+    {
+      "path": "supplement/case_raw/q4910_ZERO.json",
+      "bytes": 5061
+    },
+    {
+      "path": "supplement/case_raw/q5820_FULL_COT.json",
+      "bytes": 5320
+    },
+    {
+      "path": "supplement/case_raw/q5820_HEURISTIC_SHORT.json",
+      "bytes": 8044
+    },
+    {
+      "path": "supplement/case_raw/q5820_PNS_COT.json",
+      "bytes": 6082
+    },
+    {
+      "path": "supplement/case_raw/q5820_ZERO.json",
+      "bytes": 6147
+    },
+    {
+      "path": "supplement/case_raw/q662_FULL_COT.json",
+      "bytes": 5708
+    },
+    {
+      "path": "supplement/case_raw/q662_HEURISTIC_SHORT.json",
+      "bytes": 4110
+    },
+    {
+      "path": "supplement/case_raw/q662_PNS_COT.json",
+      "bytes": 4049
+    },
+    {
+      "path": "supplement/case_raw/q662_ZERO.json",
+      "bytes": 3974
+    },
+    {
+      "path": "supplement/case_raw/q8884_FULL_COT.json",
+      "bytes": 11536
+    },
+    {
+      "path": "supplement/case_raw/q8884_HEURISTIC_SHORT.json",
+      "bytes": 6957
+    },
+    {
+      "path": "supplement/case_raw/q8884_PNS_COT.json",
+      "bytes": 6140
+    },
+    {
+      "path": "supplement/case_raw/q8884_ZERO.json",
+      "bytes": 8529
+    },
+    {
+      "path": "supplement/case_raw/q9510_FULL_COT.json",
+      "bytes": 11031
+    },
+    {
+      "path": "supplement/case_raw/q9510_HEURISTIC_SHORT.json",
+      "bytes": 6716
+    },
+    {
+      "path": "supplement/case_raw/q9510_PNS_COT.json",
+      "bytes": 7703
+    },
+    {
+      "path": "supplement/case_raw/q9510_ZERO.json",
+      "bytes": 13964
+    },
+    {
+      "path": "supplement/case_review.json",
+      "bytes": 36709
+    },
+    {
+      "path": "supplement/case_selection_plan.md",
+      "bytes": 923
+    },
+    {
+      "path": "supplement/CAUSE_Electronic_Supplement_20260910.md",
+      "bytes": 66537
+    },
+    {
+      "path": "supplement/compression_example/case_and_execution_evidence.md",
+      "bytes": 14399
+    },
+    {
+      "path": "supplement/compression_example/case_example.json",
+      "bytes": 210032
+    },
+    {
+      "path": "supplement/compression_example/q1428_final_demo_verbatim.txt",
+      "bytes": 4276
+    },
+    {
+      "path": "supplement/compression_example/root_q1428_check.json",
+      "bytes": 1039
+    },
+    {
+      "path": "supplement/historical/CAUSE_Thesis_Structure_and_Experiment_Gaps_2026-09-04.md",
+      "bytes": 31504
+    },
+    {
+      "path": "supplement/historical/CAUSE_Thesis_Structure_and_Experiment_Gaps_COMPLETED_20260910.md",
+      "bytes": 25482
+    },
+    {
+      "path": "supplement/historical/evidence_ledger_20260910.md",
+      "bytes": 2987
+    },
+    {
+      "path": "supplement/historical/scored_results/qwentest100_2shot_20260817/score_summary.json",
+      "bytes": 16050
+    },
+    {
+      "path": "supplement/historical/scored_results/qwentest100_2shot_20260817/scored_results.jsonl",
+      "bytes": 57183
+    },
+    {
+      "path": "supplement/historical/scored_results/qwentest100_causalmath_score_faithful_fixed_update_qwen36_deepseekv4pro_2shot_20260818/score_summary.json",
+      "bytes": 13507
+    },
+    {
+      "path": "supplement/historical/scored_results/qwentest100_causalmath_score_faithful_fixed_update_qwen36_deepseekv4pro_2shot_20260818/scored_results.jsonl",
+      "bytes": 57294
+    },
+    {
+      "path": "supplement/historical/scored_results/qwentest100_causalmath_score_faithful_fixed_update_qwen36_deepseekv4pro_2shot_exact21_repaired_demo_patch_final_20260818/score_summary.json",
+      "bytes": 12074
+    },
+    {
+      "path": "supplement/historical/scored_results/qwentest100_causalmath_score_faithful_fixed_update_qwen36_deepseekv4pro_2shot_exact21_repaired_demo_patch_final_20260818/scored_results.jsonl",
+      "bytes": 11973
+    },
+    {
+      "path": "supplement/historical/scored_results/qwentest100_pns_cot_2shot_exhaustive_original_audit_20260817/score_summary.json",
+      "bytes": 13424
+    },
+    {
+      "path": "supplement/historical/scored_results/qwentest100_pns_cot_2shot_exhaustive_original_audit_20260817/scored_results.jsonl",
+      "bytes": 57431
+    },
+    {
+      "path": "supplement/historical/scored_results/qwentest100_pns_cot_2shot_strong_20260817/score_summary.json",
+      "bytes": 13302
+    },
+    {
+      "path": "supplement/historical/scored_results/qwentest100_pns_cot_2shot_strong_20260817/scored_results.jsonl",
+      "bytes": 57490
+    },
+    {
+      "path": "supplement/historical/source_manifest_20260910.json",
+      "bytes": 7826
+    },
+    {
+      "path": "supplement/historical/verifier_replay/CAUSE_Verifier_English_Release_20260912.zip",
+      "bytes": 1283166
+    },
+    {
+      "path": "supplement/historical/verifier_replay/observed_runtime_results.json",
+      "bytes": 6128
+    },
+    {
+      "path": "supplement/historical_query_type_results.md",
+      "bytes": 1026
+    },
+    {
+      "path": "supplement/paired_case_records.md",
+      "bytes": 9153
+    },
+    {
+      "path": "supplement/phase56_length_distribution.json",
+      "bytes": 2576
+    },
+    {
+      "path": "supplement/phase56_trace_lengths.csv",
+      "bytes": 2656
+    },
+    {
+      "path": "supplement/q9510_public_iv_counterexample.py",
+      "bytes": 1926
+    },
+    {
+      "path": "supplement/selection.json",
+      "bytes": 16901
+    },
+    {
+      "path": "supplement/theory/causalmath_theory_packet.json",
+      "bytes": 14349
+    },
+    {
+      "path": "supplement/theory/causalmath_theory_packet.md",
+      "bytes": 14927
+    },
+    {
+      "path": "supplement/theory/official_neurips.bib",
+      "bytes": 712
+    }
+  ],
+  "portable_code_changes": [
+    "experiment/scripts/cpt_statistics/analyze_cpt_sensitivity.py",
+    "experiment/scripts/cpt_statistics/joint_holm.py"
+  ],
+  "file_inventory_excludes": [
+    ".git/",
+    "generated reanalysis/",
+    "Python bytecode",
+    "this manifest itself"
+  ],
+  "historical_note": "The full older exhaustive-PNS56 database is not included; its scoring outputs and retained accounting are supplied. Current Phase56 full56 closure and source export are included.",
+  "language_note": "Non-English prose and selected recorded prompt/reasoning spans have been translated. Numerical observations refer to the original runs. See docs/ENGLISH_RELEASE.md."
+}

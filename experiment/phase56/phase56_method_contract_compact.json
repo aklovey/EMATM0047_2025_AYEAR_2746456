@@ -1,0 +1,67 @@
+{
+  "adaptive_rollout_contract": {
+    "adapter_version": "qwen_pns_batch56_adapter_v2_qwen_source_segments",
+    "policy_version": "qwen_pns_adaptive_rollout_v2_3to5",
+    "model": "Qwen/Qwen3.6-35B-A3B",
+    "max_model_len": 16384,
+    "suffix_requested_max_tokens": 8000,
+    "replacement_requested_max_tokens": 1024,
+    "sampling": {
+      "temperature": 1.0,
+      "top_p": 0.95,
+      "top_k": 20,
+      "min_p": 0.0,
+      "repetition_penalty": 1.0,
+      "presence_penalty": 0.0,
+      "frequency_penalty": 0.0,
+      "n": 1,
+      "stream": false,
+      "ignore_eos": false,
+      "include_stop_str_in_output": false,
+      "return_token_ids": true
+    },
+    "initial_valid_rounds": 3,
+    "max_valid_rounds": 5,
+    "max_raw_attempts_per_lineage": 5,
+    "seed_schedule": {
+      "base_seed": 20260817,
+      "step_radix": 256,
+      "branch_radix": 8,
+      "legacy_rollout_radix": 4,
+      "extension_base_seed": 1000000000,
+      "extension_rollout_slots": 2
+    },
+    "decision_rule": "KEEP correct > DELETE correct at horizon 5; 3:2 accepted",
+    "invalid_trials_vote": false,
+    "selection": "complete Qwen tokens, chars, candidate id; audited fail-closed",
+    "item_workers": "all_frozen_items",
+    "journal_reference": "journal.sqlite3",
+    "dataset_pns_protocol_version": "cladder_qwen_parent_segments_v2"
+  },
+  "dataset_pns_reference_visibility": {
+    "version": "cladder_qwen_parent_segments_v2",
+    "dataset_name": "CLADDER",
+    "dataset_scope": "CLADDER-only",
+    "canonical_context_authorization": "pns_intervention_only",
+    "planner_visible": false,
+    "test_prompt_visible": false,
+    "parent_source": "parent_reasoning",
+    "segment_source": "segments",
+    "boundary_authority": "frozen_qwen_parent_segments",
+    "source_preserving": true,
+    "programmatic_role": "semantic_reference_alignment_anchor_only",
+    "one_to_one_required": false,
+    "same_path_required": false,
+    "canonical_author_text_generation_visible": false,
+    "canonical_author_text_judge_visible": true,
+    "canonical_author_text_judge_scope": "advisory_non_answer_steps_only",
+    "fallback_policy": "qwen_parent_source_preserving_v1",
+    "fallback_count": 0,
+    "segmentation_sources": {
+      "frozen_qwen_parent_segments": 56
+    },
+    "semantic_reference_sources": {
+      "cladder_programmatic_reasoning": 56
+    }
+  }
+}

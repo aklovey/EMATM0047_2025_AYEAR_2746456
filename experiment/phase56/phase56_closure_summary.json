@@ -1,0 +1,111 @@
+{
+  "protocol_revision": "20260910_completion_with_failures_no_new_phase56_calls",
+  "source_root": "E:\\wt\\cause-qwen-pns-adaptive-20260826",
+  "source_journal": "E:\\wt\\cause-qwen-pns-adaptive-20260826\\artifacts\\experiments\\qwen_pns_phase56_20260826_v2_recovery_18plus3_v1\\journal.sqlite3",
+  "historical_state_preserved": true,
+  "new_model_calls": 0,
+  "expected_items": 56,
+  "accepted_items": 52,
+  "failed_items": 4,
+  "acceptance_rate": 0.9285714285714286,
+  "all_accepted_hard_checks_revalidated": true,
+  "full_tokens_accepted": 116826,
+  "pns_tokens_accepted": 75074,
+  "tokens_saved": 41752,
+  "compression_rate_accepted": 0.3573861982777806,
+  "selected_branches": {
+    "keep": 22,
+    "delete": 30
+  },
+  "selected_judge_models": {
+    "deepseek-v4-pro": 1,
+    "gpt-5.5": 51
+  },
+  "eligible_safe_steps": 1691,
+  "base_generation_max_raw_calls": 27056,
+  "max7_generated_rows": 0,
+  "original_qwen_request_rows": 14508,
+  "g1_recovery_dispatches": 128,
+  "qwen_dispatch_records_including_g1": 14636,
+  "qwen_request_rows_are_not_unique_logical_samples": true,
+  "no_replace_or_replacement_generation_rows_observed": true,
+  "failed_records": [
+    {
+      "question_id": 19407,
+      "query_type": "ett",
+      "historical_state": "pending",
+      "closure_status": "failed_no_accepted_chain_at_close",
+      "closure_reason": "ETT was incorrectly treated as population ATE or an ordinary intervention effect; conditioning on treatment and unobserved confounding were not handled correctly. The historical judge repeatedly rejected it.",
+      "safe_steps": 41,
+      "original_raw_request_count": 207,
+      "original_request_states": {
+        "completed": 199,
+        "posting": 6,
+        "scientific_invalid": 2
+      },
+      "label_correct_shorter_raw_candidates": 49,
+      "stored_judge_decisions": {
+        "rejected": 162
+      }
+    },
+    {
+      "question_id": 24494,
+      "query_type": "ett",
+      "historical_state": "pending",
+      "closure_status": "failed_no_accepted_chain_at_close",
+      "closure_reason": "ETT was treated as an observational conditional difference or population effect, ignoring confounding and conditioning on the treated population. The historical judge repeatedly rejected it.",
+      "safe_steps": 35,
+      "original_raw_request_count": 175,
+      "original_request_states": {
+        "completed": 171,
+        "posting": 4
+      },
+      "label_correct_shorter_raw_candidates": 51,
+      "stored_judge_decisions": {
+        "rejected": 135
+      }
+    },
+    {
+      "question_id": 29833,
+      "query_type": "det-counterfactual",
+      "historical_state": "pending",
+      "closure_status": "failed_no_accepted_chain_at_close",
+      "closure_reason": "Both candidates that reached final materialization had matching answers and were shorter, but incorrectly treated muvy as remaining fixed at false after intervention and confused AND/OR gates; the judge rejected both.",
+      "safe_steps": 36,
+      "original_raw_request_count": 198,
+      "original_request_states": {
+        "completed": 198
+      },
+      "label_correct_shorter_raw_candidates": 107,
+      "stored_judge_decisions": {
+        "rejected": 150,
+        "indeterminate": 1
+      }
+    },
+    {
+      "question_id": 30257,
+      "query_type": "det-counterfactual",
+      "historical_state": "pending",
+      "closure_status": "failed_no_accepted_chain_at_close",
+      "closure_reason": "A negated causal relationship was misread, counterfactual updates relied on unsupported assumptions, and some chains contained internal contradictions; the historical judge repeatedly rejected them.",
+      "safe_steps": 27,
+      "original_raw_request_count": 145,
+      "original_request_states": {
+        "completed": 145
+      },
+      "label_correct_shorter_raw_candidates": 87,
+      "stored_judge_decisions": {
+        "rejected": 110,
+        "indeterminate": 1
+      }
+    }
+  ],
+  "limits": [
+    "Compression is conditional on the 52 accepted items, not all 56 targets.",
+    "The original DB keeps 4 pending items; only the new closure artifact labels them terminal failures.",
+    "Historical 128 posting rows are preserved; all have existing succeeded g1 recovery dispatches. They are not current in-flight calls.",
+    "No theorem or valid estimate of Pearl PNS follows from adaptive prompted continuations.",
+    "The planned max7 extension was not run.",
+    "Historic API token usage is incomplete for indeterminate calls and excludes service/tokenize operations and possible separate canaries."
+  ]
+}

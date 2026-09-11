@@ -1,0 +1,77 @@
+{
+  "scope": "52 accepted only; excludes four unaccepted at close, not full-path correctness certification",
+  "all_accepted": {
+    "n": 52,
+    "full_tokens": 116826,
+    "pns_tokens": 75074,
+    "aggregate_fraction": 0.3573861982777806,
+    "mean_fraction": 0.3741956122290698,
+    "min_fraction": 0.07647240209682393,
+    "q25_fraction": 0.30007703446063827,
+    "median_fraction": 0.38781125508035214,
+    "q75_fraction": 0.4588823959647149,
+    "max_fraction": 0.6921797004991681
+  },
+  "by_type": {
+    "nie": {
+      "n": 9,
+      "full_tokens": 21444,
+      "pns_tokens": 13598,
+      "aggregate_fraction": 0.3658832307405335,
+      "mean_fraction": 0.37366354806294155,
+      "min_fraction": 0.07647240209682393,
+      "q25_fraction": 0.30884904569115096,
+      "median_fraction": 0.4551792828685259,
+      "q75_fraction": 0.4629111266620014,
+      "max_fraction": 0.5350877192982456
+    },
+    "ate": {
+      "n": 6,
+      "full_tokens": 21867,
+      "pns_tokens": 15877,
+      "aggregate_fraction": 0.2739287510861115,
+      "mean_fraction": 0.26606763277982465,
+      "min_fraction": 0.13153217205830076,
+      "q25_fraction": 0.160907025886307,
+      "median_fraction": 0.19884189063493957,
+      "q75_fraction": 0.3940009818360334,
+      "max_fraction": 0.4598737601442741
+    },
+    "ett": {
+      "n": 1,
+      "full_tokens": 4342,
+      "pns_tokens": 3639,
+      "aggregate_fraction": 0.161906955320129,
+      "mean_fraction": 0.16190695532012897,
+      "min_fraction": 0.16190695532012897,
+      "q25_fraction": 0.16190695532012897,
+      "median_fraction": 0.16190695532012897,
+      "q75_fraction": 0.16190695532012897,
+      "max_fraction": 0.16190695532012897
+    },
+    "det-counterfactual": {
+      "n": 34,
+      "full_tokens": 61302,
+      "pns_tokens": 35801,
+      "aggregate_fraction": 0.41598969038530553,
+      "mean_fraction": 0.4092693899175949,
+      "min_fraction": 0.18737926593689633,
+      "q25_fraction": 0.3384719410704618,
+      "median_fraction": 0.41118479455813545,
+      "q75_fraction": 0.45982754910897805,
+      "max_fraction": 0.6921797004991681
+    },
+    "nde": {
+      "n": 2,
+      "full_tokens": 7871,
+      "pns_tokens": 6159,
+      "aggregate_fraction": 0.21750730529792905,
+      "mean_fraction": 0.2108639470739247,
+      "min_fraction": 0.12693156732891833,
+      "q25_fraction": 0.1688977572014215,
+      "median_fraction": 0.2108639470739247,
+      "q75_fraction": 0.25283013694642786,
+      "max_fraction": 0.29479632681893103
+    }
+  }
+}

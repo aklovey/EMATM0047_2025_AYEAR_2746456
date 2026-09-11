@@ -1,0 +1,46 @@
+{
+  "source": "AutoDL visible billing-detail UI, read 2026-09-10 Asia/Shanghai",
+  "instance_id": "fxqnqh00m3-1d1e6b8d",
+  "currency": "CNY",
+  "complete_power_cycle_bill": true,
+  "power_on_billing_start_local": "2026-09-10 05:25:41",
+  "records": [
+    {
+      "period_start_local": "2026-09-10 05:25:41",
+      "period_end_local": "2026-09-10 06:00:00",
+      "duration_seconds": 2059,
+      "balance_charge": 7.99,
+      "original_price": 8.41,
+      "discount": 0.42,
+      "no_gpu": false,
+      "reason": "scheduled billing"
+    },
+    {
+      "period_start_local": "2026-09-10 06:00:00",
+      "period_end_local": "2026-09-10 07:00:00",
+      "duration_seconds": 3600,
+      "balance_charge": 13.97,
+      "original_price": 14.7,
+      "discount": 0.73,
+      "no_gpu": false,
+      "reason": "scheduled billing"
+    },
+    {
+      "period_start_local": "2026-09-10 07:00:00",
+      "period_end_local": "2026-09-10 07:29:46",
+      "duration_seconds": 1786,
+      "balance_charge": 6.93,
+      "original_price": 7.29,
+      "discount": 0.36,
+      "no_gpu": false,
+      "reason": "shutdown"
+    }
+  ],
+  "scope": "Entire two-GPU instance power cycle including startup, preparation and multiple experiment phases; not arm-specific. Daily data-disk charges and historical model/Judge expenses are excluded.",
+  "power_off_billing_end_local": "2026-09-10 07:29:46",
+  "total_balance_charge": 28.89,
+  "total_original_price": 30.4,
+  "total_discount": 1.51,
+  "total_duration_seconds": 7445,
+  "power_state_verified": "D41 and 907 both powered off; instance not released"
+}

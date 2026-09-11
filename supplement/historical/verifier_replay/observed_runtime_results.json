@@ -1,0 +1,220 @@
+{
+  "provenance": "Read from task-owned Jupyter notebook outputs and SQLite journals in this session; full raw artifacts remain in the remote root.",
+  "remote_root": "/root/autodl-tmp/CAUSE-verifier-20260909",
+  "instance_id": "fxqnqh00m3-1d1e6b8d",
+  "run_id": "verifier-replay-001",
+  "status": "COMPLETE_WITH_UNKNOWN",
+  "questions": 10,
+  "raw_candidates": 42,
+  "eligible_candidates": 41,
+  "conditions": {
+    "keep": 20,
+    "delete": 20,
+    "replace": 2
+  },
+  "criterion_records": 126,
+  "valid_records": 122,
+  "invalid_records": 4,
+  "unknown_reasons": {
+    "original_rollout_invalid_or_unknown": 3,
+    "review_length": 1
+  },
+  "truncated_review": {
+    "candidate_id": "candidate_8efc0ca7d4caa75a35519469",
+    "criterion": "derivation_validity",
+    "output_token_cap": 2048,
+    "score_read_performed": false,
+    "retry_performed": false
+  },
+  "main_http": {
+    "review_posts": 123,
+    "score_read_posts": 122,
+    "total_posts": 245,
+    "attempted": 245,
+    "received": 245,
+    "complete": 245,
+    "pending": 0,
+    "prompt_tokens": 878534,
+    "completion_tokens": 61950,
+    "total_tokens": 940484,
+    "charged_tokens": 1130560,
+    "request_cap": 246,
+    "token_cap": 4030464,
+    "time_cap_seconds": 3600,
+    "wall_seconds": 1912.9933140277863,
+    "latency_median_seconds": 6.839829955250025,
+    "latency_max_seconds": 116.14094179868698,
+    "start_unix": 1788895847.3803217,
+    "finish_unix": 1788897760.3736358
+  },
+  "probe_http": {
+    "gets": 6,
+    "posts": 10,
+    "total_tokens": 1158,
+    "prompt_tokens": 1144,
+    "completion_tokens": 14
+  },
+  "official_http": {
+    "posts": 3,
+    "total_tokens": 3948,
+    "prompt_tokens": 3129,
+    "completion_tokens": 819,
+    "status": "PASS_OFFICIAL_API_DIAGNOSTIC",
+    "scores": [
+      0.9999693193177547,
+      0.15131267616644303
+    ],
+    "strict_main_result": false
+  },
+  "all_experiment_http": {
+    "gets": 6,
+    "posts": 258,
+    "total_tokens": 945590
+  },
+  "actual_concurrency": {
+    "replicas": 2,
+    "tensor_parallel_per_replica": 1,
+    "workers_per_replica": 1,
+    "measured_client_peak": 2,
+    "boost_used": false
+  },
+  "requested_boost": {
+    "workers_per_gpu_upper": 4,
+    "combined_upper": 8,
+    "real_gpu_load_validated_at_eight": false,
+    "scope": "Unsubmitted identities only, original shared budget, no in-flight or failed resends; completed batch is not rerun."
+  },
+  "same_distribution_ties": {
+    "query_fidelity": {
+      "pairs": 64,
+      "discrete_ties": 64,
+      "continuous_ties": 0,
+      "selection_changes_of_ten": 7
+    },
+    "derivation_validity": {
+      "pairs": 60,
+      "discrete_ties": 27,
+      "continuous_ties": 0,
+      "selection_changes_of_ten": 6
+    },
+    "conclusion_support": {
+      "pairs": 64,
+      "discrete_ties": 57,
+      "continuous_ties": 0,
+      "selection_changes_of_ten": 9
+    }
+  },
+  "tie_tolerance": 1e-10,
+  "accuracy_improvement_claimed": false,
+  "score_semantics": "conditional_expected_grade_not_probability_correct",
+  "online_pns": {
+    "status": "NOT_RUN_PROTOCOL_MINIMUM_EXCEEDS_32",
+    "new_rollouts": 0,
+    "old_smallest_legal_question_rollouts": 40,
+    "adaptive_earliest_legal_rollouts": 60,
+    "authorized_cap": 32
+  },
+  "calibration": {
+    "status": "NOT_RUN_MISSING_INDEPENDENT_PATH_LABELS",
+    "acceptance_enabled": false,
+    "tpr": "unknown",
+    "fpr": "unknown"
+  },
+  "coverage": {
+    "available_real_M": [
+      1,
+      2
+    ],
+    "unavailable_M": [
+      4,
+      8,
+      16,
+      32
+    ],
+    "independent_OracleValid_SelectedValid_OracleImprovement": "unknown",
+    "resampling": false
+  },
+  "environment": {
+    "model_id": "Qwen/Qwen3.6-35B-A3B",
+    "torch": "2.13.0+cu130",
+    "cuda_build": "13.0",
+    "vllm": "0.27.1",
+    "system_fingerprint": "vllm-0.27.1-701fabde",
+    "transformers": "5.15.0",
+    "container_memory_bytes": 257698037760,
+    "container_cpu_quota_cores": 50,
+    "model_hub_revision": "unknown",
+    "local_snapshot_fingerprint": "fb4c30fc93d2f7a19cd4d3b0727456820a044e8ebc07c556f0abb5661fb668eb",
+    "fingerprint_scope": "six config/tokenizer file hashes plus 26 shard metadata entries, not full model weight hashes",
+    "kv_cache_dtype": "unknown_not_independently_observed"
+  },
+  "tokenizer": {
+    "score_suffix": "\n\n[score]",
+    "labels": "ABCDEFGHIJKLMNOPQRST",
+    "token_ids": [
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51
+    ],
+    "all_twenty_distinct_single_tokens_verified": true,
+    "every_review_dependent_prefix_verified": true
+  },
+  "openapi": {
+    "source_sha256": "358c68e725e1236a0559d4841d2993f9df7b14c39375427b71449d31c60dd789",
+    "version": "3.1.0",
+    "chat_and_completion_choice_advertised": true,
+    "runtime_choice_test": "NOT_RUN",
+    "strict_main_uses_choice": false,
+    "chat_and_completion_logprob_token_ids": true
+  },
+  "prefix_cache": {
+    "scope": "per-engine counters since service start, including probes and main replay; token counters are distinct from verification-result cache hits",
+    "gpu0_queries": 440290,
+    "gpu0_hits": 304128,
+    "gpu1_queries": 442517,
+    "gpu1_hits": 300960
+  },
+  "service_restore": {
+    "status": "RESTORED_INITIAL_STOPPED_STATE",
+    "restore_process_pid": 20089,
+    "exit_code": 0,
+    "gpu_compute_apps_after_restore": [],
+    "restore_command": "sh /root/autodl-tmp/CAUSE-verifier-20260909/restore_original_service.sh"
+  },
+  "gpu_peak": {
+    "status": "COMPLETE",
+    "peak_memory_used_mib": {
+      "0": 82881,
+      "1": 82741
+    },
+    "samples": 5846,
+    "errors": 0,
+    "requested_interval_seconds": 1,
+    "scope": "sampled device memory peak, not allocator-exact peak"
+  },
+  "autodl_final_ui": {
+    "D41_fxqnqh00m3-1d1e6b8d": "Powered off",
+    "907_19d242bf57-23d96362": "Powered off",
+    "D41_retention_display": "Release after 14 days, 23 hours and 59 minutes",
+    "instance_released_by_agent": false
+  },
+  "local_tests_passed": 131,
+  "local_source_commit": "7db749852234deafcd4f4ecedc4e098736b5befc"
+}

@@ -1,0 +1,31 @@
+{
+  "status": "READY_FOR_EXACT_PROMPT_TOKENIZATION",
+  "generation_calls": 0,
+  "pool_total": 56,
+  "accepted": 52,
+  "parent_fallback": 4,
+  "fallback_qids": [
+    19407,
+    24494,
+    29833,
+    30257
+  ],
+  "type_counts": {
+    "nie": 9,
+    "ate": 6,
+    "ett": 3,
+    "det-counterfactual": 36,
+    "nde": 2
+  },
+  "full_cot_tokens": 128764,
+  "pns_policy_tokens": 87012,
+  "heuristic_tokens": 86970,
+  "max_abs_heuristic_gap": 3,
+  "main_targets": 300,
+  "dev_targets": 10,
+  "main_vs_demo_group_overlap": 0,
+  "main_vs_dev_group_overlap": 0,
+  "dev_vs_demo_group_overlap": 0,
+  "main_generation_budget": 1200,
+  "dev_generation_budget": 40
+}

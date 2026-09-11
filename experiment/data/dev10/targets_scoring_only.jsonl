@@ -1,0 +1,10 @@
+{"question_id": 8277, "group_id": "model:4643", "query_type": "ate", "gold_answer": "no"}
+{"question_id": 17649, "group_id": "model:5523", "query_type": "ate", "gold_answer": "yes"}
+{"question_id": 9584, "group_id": "model:3229", "query_type": "det-counterfactual", "gold_answer": "no"}
+{"question_id": 9623, "group_id": "model:3238", "query_type": "det-counterfactual", "gold_answer": "yes"}
+{"question_id": 27471, "group_id": "model:6596", "query_type": "ett", "gold_answer": "yes"}
+{"question_id": 29501, "group_id": "model:7043", "query_type": "ett", "gold_answer": "yes"}
+{"question_id": 13379, "group_id": "model:1801", "query_type": "nde", "gold_answer": "yes"}
+{"question_id": 21066, "group_id": "model:2282", "query_type": "nde", "gold_answer": "no"}
+{"question_id": 23648, "group_id": "model:2866", "query_type": "nie", "gold_answer": "yes"}
+{"question_id": 2246, "group_id": "model:528", "query_type": "nie", "gold_answer": "yes"}

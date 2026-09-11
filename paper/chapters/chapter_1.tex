@@ -1,0 +1,29 @@
+\chapter{Introduction}\label{ch:1}
+
+\section{The problem of reusable reasoning}\label{sec:1.1}
+
+A worked example can help a large language model (LLM) answer a causal question by showing which variables to condition on, which mechanisms an intervention changes, or how to evaluate a counterfactual. Long examples also occupy input context each time they are reused. The practical problem is to retain useful reasoning while removing repeated calculations, abandoned approaches and unnecessary restatements.
+
+Causal reasoning makes compression demanding because observational, interventional and counterfactual questions can involve the same variables but require different operations \cite{Pearl_2009,NEURIPS2023_631bb943}. A shortened trace may preserve its final answer while changing the estimand or omitting an essential assumption. Conversely, a long trace can contain redundant steps. Length, answer correctness and semantic validity therefore require separate assessment.
+
+Few-shot in-context learning (ICL) supplies demonstrations without updating model parameters \cite{NEURIPS2020_1457c0d6}; chain-of-thought (CoT) prompting adds intermediate reasoning \cite{NEURIPS2022_9d560961}. Reusable compression raises two practical questions. Do the shorter demonstrations help on other questions, and how does their construction effort compare with the input saved during reuse? These questions motivate separate evaluations of downstream performance and construction cost.
+
+I focus on the accuracy--input trade-off on CLADDER \cite{NEURIPS2023_631bb943}, using PNS to construct reusable demonstrations. Each selected demonstration retains a record of its parent text, intervention, continuation and acceptance decision. This record makes the compression process inspectable.
+
+\section{Research aim and questions}\label{sec:1.2}
+
+The central question is whether auditable trajectory compression improves the efficiency of few-shot causal reasoning. The evaluation measures strict answer accuracy, input and output tokens, and the construction effort needed to obtain the demonstration bank.
+
+RQ1 asks whether continuation search can produce shorter demonstrations that have correct final answers and pass the specified audit checks. RQ2 asks how the complete construction-and-fallback policy compares with full reasoning and ordinary compression when demonstrations are reused on other questions. RQ3 asks what semantic errors and recovery after an edit reveal about the construction and selection process, and how incomplete cost records limit the cost assessment.
+
+The comparison changes reasoning representations while holding demonstration identities, order and count fixed. It evaluates the complete construction and fallback policy.
+
+\section{Contributions and research responsibilities}\label{sec:1.3}
+
+I set the research question and narrowed the study to CLADDER, with demonstration reuse as the main evaluation setting. I also directed the scope and presentation of the dissertation, which focuses on the completed construction procedure and its two controlled evaluations. Codex assisted with drafting, code preparation and data analysis, and ChatGPT 6 Pro assisted with drafting and editorial review.
+
+The project-specific work comprises the frozen demonstration bank, the controlled four-condition evaluation, reconstruction and source checks, paired analyses, and an evidence package linking the reported results to saved responses. CLADDER supplied the generator and reference material, Qwen3.6 supplied the generation model, and vLLM provided model serving. The contribution lies in their integration into a traceable construction and evaluation workflow, including explicit handling of unsuccessful compression.
+
+\section{Organisation of the dissertation}\label{sec:1.4}
+
+Chapter~\ref{ch:2} introduces causal reasoning, demonstration compression and explanation assessment. Chapter~\ref{ch:3} specifies the construction and fallback policy, and Chapter~\ref{ch:4} describes the two cohorts, controls and analysis. Chapter~\ref{ch:5} reports construction, paired comparisons and semantic audits. Chapters~\ref{ch:6} and~\ref{ch:7} interpret the findings and answer the research questions. The electronic supplement preserves historical experiments and detailed implementation records.

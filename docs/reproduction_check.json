@@ -1,0 +1,31 @@
+{
+  "checked": "2026-09-11",
+  "scope": "Numerical fields of offline analyses recomputed from saved responses, excluding generated provenance metadata",
+  "python": "3.11.9",
+  "numpy": "2.4.6",
+  "scipy": "1.17.1",
+  "analyses": [
+    {
+      "analysis": "fresh246",
+      "numeric_fields": 218,
+      "differences": []
+    },
+    {
+      "analysis": "main300",
+      "numeric_fields": 230,
+      "differences": []
+    },
+    {
+      "analysis": "main_CPT",
+      "numeric_fields": 1723,
+      "differences": []
+    },
+    {
+      "analysis": "joint",
+      "numeric_fields": 65,
+      "differences": []
+    }
+  ],
+  "new_inference_calls": 0,
+  "portable_code_changes": "Delivered-path defaults and primary-scoring script location only; statistical settings and algorithms retained."
+}

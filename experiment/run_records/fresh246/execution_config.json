@@ -1,0 +1,12 @@
+{
+  "manifest": "/root/autodl-tmp/CAUSE-thesis-20260910/evaluation/fresh246/requests.jsonl",
+  "endpoints": [
+    "http://127.0.0.1:8000/v1/chat/completions",
+    "http://127.0.0.1:8001/v1/chat/completions"
+  ],
+  "concurrency_per_endpoint": 24,
+  "timeout_seconds": 1800,
+  "started_at": "2026-09-09T22:24:04.727652+00:00",
+  "expected_rows": 984,
+  "routing": "target_question_id modulo number of endpoints; same target all arms same service"
+}

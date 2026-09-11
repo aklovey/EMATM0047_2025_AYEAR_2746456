@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "analysis_plan": "work/cpt_statistics/CPT_SENSITIVITY_PRESPEC.md",
+  "cohorts_pooled": false,
+  "family_size": 6,
+  "adjustment": "Holm step-down",
+  "scope": "Three main300 cluster-permutation p-values and three fresh246 exact-McNemar p-values in one six-comparison family; never aggregate the different distributions into 546 items.",
+  "comparisons": [
+    {
+      "cohort": "released_followup300",
+      "n": 300,
+      "inference_groups": 271,
+      "comparison": "PNS_COT:FULL_COT",
+      "test": "paired CPT cluster sign-flip permutation (Monte Carlo)",
+      "primary_p": 0.8145709271453643,
+      "holm_within_cohort_p": 0.8145709271453643,
+      "accuracy_delta": 0.006666666666666667,
+      "gain": 10,
+      "loss": 8,
+      "paired_ci95": [
+        -0.020202020202020204,
+        0.03492063492063492
+      ],
+      "ci_method": "paired CPT cluster percentile bootstrap",
+      "diagnostic_mcnemar_p": 0.8145294189453125,
+      "holm_across_six_p": 0.8145709271453643
+    },
+    {
+      "cohort": "released_followup300",
+      "n": 300,
+      "inference_groups": 271,
+      "comparison": "PNS_COT:HEURISTIC_SHORT",
+      "test": "paired CPT cluster sign-flip permutation (Monte Carlo)",
+      "primary_p": 0.14271928640356799,
+      "holm_within_cohort_p": 0.28543857280713597,
+      "accuracy_delta": 0.023333333333333334,
+      "gain": 12,
+      "loss": 5,
+      "paired_ci95": [
+        -0.0033222591362126247,
+        0.050505050505050504
+      ],
+      "ci_method": "paired CPT cluster percentile bootstrap",
+      "diagnostic_mcnemar_p": 0.143463134765625,
+      "holm_across_six_p": 0.28543857280713597
+    },
+    {
+      "cohort": "released_followup300",
+      "n": 300,
+      "inference_groups": 271,
+      "comparison": "PNS_COT:ZERO",
+      "test": "paired CPT cluster sign-flip permutation (Monte Carlo)",
+      "primary_p": 4.9999750001249995e-06,
+      "holm_within_cohort_p": 1.4999925000374999e-05,
+      "accuracy_delta": 0.08333333333333333,
+      "gain": 28,
+      "loss": 3,
+      "paired_ci95": [
+        0.05016722408026756,
+        0.11842105263157894
+      ],
+      "ci_method": "paired CPT cluster percentile bootstrap",
+      "diagnostic_mcnemar_p": 4.649162292480469e-06,
+      "holm_across_six_p": 2.4999875000624998e-05
+    },
+    {
+      "cohort": "fresh_SCM246",
+      "n": 246,
+      "inference_groups": 246,
+      "comparison": "PNS_COT:FULL_COT",
+      "test": "paired item-level exact McNemar (independent fresh mechanisms)",
+      "primary_p": 0.002493917942047119,
+      "holm_within_cohort_p": 0.004987835884094238,
+      "accuracy_delta": 0.06504065040650407,
+      "gain": 21,
+      "loss": 5,
+      "paired_ci95": [
+        0.024390243902439025,
+        0.10569105691056911
+      ],
+      "ci_method": "paired instance percentile bootstrap",
+      "holm_across_six_p": 0.009975671768188477
+    },
+    {
+      "cohort": "fresh_SCM246",
+      "n": 246,
+      "inference_groups": 246,
+      "comparison": "PNS_COT:HEURISTIC_SHORT",
+      "test": "paired item-level exact McNemar (independent fresh mechanisms)",
+      "primary_p": 0.0070003666914999485,
+      "holm_within_cohort_p": 0.0070003666914999485,
+      "accuracy_delta": 0.06504065040650407,
+      "gain": 24,
+      "loss": 8,
+      "paired_ci95": [
+        0.02032520325203252,
+        0.10975609756097561
+      ],
+      "ci_method": "paired instance percentile bootstrap",
+      "holm_across_six_p": 0.021001100074499846
+    },
+    {
+      "cohort": "fresh_SCM246",
+      "n": 246,
+      "inference_groups": 246,
+      "comparison": "PNS_COT:ZERO",
+      "test": "paired item-level exact McNemar (independent fresh mechanisms)",
+      "primary_p": 9.334883088740753e-09,
+      "holm_within_cohort_p": 2.800464926622226e-08,
+      "accuracy_delta": 0.15040650406504066,
+      "gain": 41,
+      "loss": 4,
+      "paired_ci95": [
+        0.1016260162601626,
+        0.2032520325203252
+      ],
+      "ci_method": "paired instance percentile bootstrap",
+      "holm_across_six_p": 5.600929853244452e-08
+    }
+  ],
+  "provenance": {
+    "generated_utc": "2026-09-09T23:20:13.992783+00:00",
+    "inputs_and_code": [
+      {
+        "path": "C:\\Users\\aklovey\\Documents\\Codex\\2026-09-10\\9-4-cause-1-8-8\\outputs\\experiment\\main_CPT_sensitivity.json",
+        "sha256": "032fe40e2b9cfa74ae06d179a4ab1b7eae0724f28a048122d2b2d4bc71092f9e",
+        "bytes": 112390
+      },
+      {
+        "path": "C:\\Users\\aklovey\\Documents\\Codex\\2026-09-10\\9-4-cause-1-8-8\\outputs\\experiment\\fresh_analysis\\paired_analysis.json",
+        "sha256": "f95c487b139a900d0d93f27cc2a9e16a7c6c53d709fce1404f71257fae157b38",
+        "bytes": 8915
+      },
+      {
+        "path": "C:\\Users\\aklovey\\Documents\\Codex\\2026-09-10\\9-4-cause-1-8-8\\work\\cpt_statistics\\joint_holm.py",
+        "sha256": "920b17b868e2c872ee2e14abedc5a894542100562b85874f7227f447f84ae5e1",
+        "bytes": 4024
+      }
+    ],
+    "model_calls": 0
+  }
+}

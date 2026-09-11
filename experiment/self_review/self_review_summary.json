@@ -1,0 +1,70 @@
+{
+  "method": "same_generator_Qwen3.6_public_only_single_self_review",
+  "candidate_count": 56,
+  "expected_generation_calls_upper": 56,
+  "unknown_is_not_pass": true,
+  "review_status_counts": {
+    "review_truncated": 27,
+    "review_parsed": 29
+  },
+  "effective_overall_counts": {
+    "unknown": 27,
+    "pass": 29
+  },
+  "criterion_counts_among_parsed": {
+    "query": {
+      "pass": 29
+    },
+    "causal_rules": {
+      "pass": 29
+    },
+    "world_update": {
+      "pass": 29
+    },
+    "arithmetic": {
+      "pass": 29
+    },
+    "conclusion": {
+      "pass": 29
+    }
+  },
+  "source_groups": {
+    "accepted": {
+      "candidates": 52,
+      "effective_overall_counts": {
+        "unknown": 25,
+        "pass": 27
+      },
+      "review_status_counts": {
+        "review_truncated": 25,
+        "review_parsed": 27
+      }
+    },
+    "unaccepted_question_shortest_valid_correct": {
+      "candidates": 4,
+      "effective_overall_counts": {
+        "unknown": 2,
+        "pass": 2
+      },
+      "review_status_counts": {
+        "review_truncated": 2,
+        "review_parsed": 2
+      }
+    }
+  },
+  "reported_usage_sum": {
+    "prompt_tokens": 126818,
+    "total_tokens": 323482,
+    "completion_tokens": 196664
+  },
+  "latency_seconds_sum": 15309.86147455126,
+  "records_with_quote_notes": 26,
+  "independent_human_or_external_ground_truth": false,
+  "changes_to_main_evaluation_or_demo_policy": false,
+  "limitations": [
+    "Same-model self-review is correlated with the generator and may repeat its mistakes.",
+    "The 52 historically accepted and four selected unaccepted candidates are a fixed diagnostic set, not a random population sample.",
+    "Self-review disagreement with historical acceptance is a diagnostic signal, not an independently verified error rate.",
+    "No review, parse failure, unknown response, or truncation is retried; main evaluation data and policy are unchanged."
+  ]
+}

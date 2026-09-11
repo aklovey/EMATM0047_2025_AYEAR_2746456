@@ -1,0 +1,98 @@
+\chapter{Experimental Design}\label{ch:4}
+
+\section{Evidence sets and their roles}\label{sec:4.1}
+
+The evaluation includes 300 released CLADDER questions with prior experimental exposure and 246 newly generated numerical instances. Both cohorts use the same frozen demonstration policy and four conditions. Their selection rules and reuse of existing numerical configurations differ, so they are analysed separately.
+
+Historical development material includes the static 256-question core and an outcome-selected 100-question challenge set. These sets inform exclusion and exposure checks, not an independent estimate of current performance. A 10-target development smoke test used two questions per type from the challenge pool, excluding demonstration-overlapping model IDs. Detailed historical results and overlaps are provided in the electronic supplement.
+
+The main cohort fixed 300 targets and four conditions for 1,200 requests \hyperref[sec:A.2]{[E3]}. Exclusions covered model\_id groups from the static core, historical challenge set, demonstrations and current development and audit material. Preparation found no model\_id overlap between main targets and demonstrations, main and development targets, or development targets and demonstrations. These exclusions do not guarantee distinct underlying CPTs.
+
+Sampling used seed 20260910 and at most one question per model\_id. The cohort contained 94 ATE, 54 deterministic counterfactual, 82 ETT, 20 NDE and 50 NIE. The 300 distinct model IDs corresponded to 271 groups defined by graph identifier and normalised complete conditional probability tables (CPTs). Sixteen repeated groups contained 45 questions, with at most four questions per group.
+
+Across comparisons with the demonstration bank, static core and challenge set, 59 main targets shared full CPTs with prior material, spanning 32 groups. These targets comprised all 54 deterministic-counterfactual targets, four ATE targets and one NDE target. Stories, queries and intervention directions could still differ. The audit changed no target or prediction; the separate intersections and mappings are retained in the supplement.
+
+Baseline responses had already been generated for all 300 targets. Despite model-ID exclusions, the cohort retains prior experimental exposure and documented reuse of numerical SCMs, so it cannot serve as an instance-independent holdout. CPT grouping accounts for repeated numerical configurations but does not remove this exposure.
+
+\subsection{Newly generated numerical instances}\label{sec:4.1.1}
+
+The fresh extension was fixed before either cohort's accuracy was inspected \hyperref[sec:A.2]{[E6]}. The unmodified official CLADDER generator at commit 3d2d1169b4b939a09048a6a75956c8972a93cc38 produced the retained 246-instance cohort, which comprised 94 ATE, 82 ETT, 20 NDE and 50 NIE. ATE/ETT used the frontdoor structure and smoking\_frontdoor story; NDE/NIE used the mediation structure and six CLADDER story templates. No deterministic-counterfactual questions were included. Generator seeds, type offsets and ordering are recorded in the supplement.
+
+RandomBuilder proposes complete CPT parameters independently from Uniform(0,1). Retention required validity, agreement between labels and calculations from rounded public values, and numerical novelty. Neither full nor query-relevant CPT fingerprints duplicated historical metadata, the eight feasibility probes or another retained instance. The cohort is thus a filtered numerical sample within existing graph families and stories, not the released benchmark distribution or an evaluation on new graph families.
+
+Of 257 proposals, 246 were retained and 11 excluded for label-convention or public-precision conflicts. In ATE/ETT, CLADDER assigns no when the absolute effect is below 0.005; disagreement with a strict directional check can therefore reflect a convention rather than arithmetic error. Labels were unchanged, Qwen outcomes were not used for selection, and question polarity alternated without answer-balance selection. All retained labels agreed across generator, independent full-precision, rounded-public and full-SCM calculations. Independent full-precision values agreed within the preset 10\textsuperscript{-}\textsuperscript{8} tolerance. Individual exclusions and calculation checks are retained in the supplement.
+
+Figure~\ref{fig:4.1} summarises cohort construction and the distinct units used for paired analysis.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth,height=.70\textheight,keepaspectratio]{figures/figure4_1_evaluation_design.pdf}
+\caption[Evaluation cohorts and analysis units]{Evaluation cohorts and analysis units. Both cohorts reused the same 56-identity demonstration policy. The 300 previously evaluated targets formed 271 full-CPT groups, with 59 targets sharing full CPTs with earlier material. The fresh cohort retained 246 numerical instances from 257 proposals after fixed checks, using existing graph families and story templates. Bootstrap units and paired tests remained cohort-specific. Only the six prespecified p-values entered the joint Holm correction; target outcomes were not pooled. Output caps were shared across conditions within each target.}\label{fig:4.1}
+\end{figure}
+
+\section{Controlled conditions and budgets}\label{sec:4.2}
+
+HEURISTIC\_SHORT uses deterministic extraction without teacher-model calls or correctness-based candidate selection. It splits parent reasoning by sentences and lines, assigns fixed weights to formulae, numbers, conclusion terms and causal terminology, and penalises repetitive checking. Selected segments retain source order. Sentences exceeding 128 tokens are divided into 64-token chunks, and a source prefix can fill the remaining budget. Retained spans and any partial segment are recorded; extraction does not guarantee a complete derivation.
+
+The heuristic receives the corresponding PNS-policy reasoning length as its budget, not PNS reasoning content. The tolerance is max(16 tokens, 5\% of the target length); the largest observed gap is three tokens. Bank reasoning totals are 128,764 for FULL, 87,012 for PNS including fallback, and 86,970 for the heuristic. At closely matched input length, the PNS--HEURISTIC comparison evaluates the complete PNS construction policy against deterministic extraction from the same parents. Candidate-generation and validation effort remain unmatched.
+
+All four conditions share a target-specific completion budget. For target $t$ under condition $a$, let $L_{ta}$ be the token count of the serialised prompt. The completion limit is $B_t=\min(12{,}000,16{,}384-\max_a L_{ta}-128)$, where the maximum is taken over that target's four conditions. The longest prompt determines the upper bound imposed by the context limit, and every prompt was checked for context feasibility.
+
+\begin{table}[htbp]
+\centering
+\begingroup
+\setlength{\tabcolsep}{2pt}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.32\linewidth}>{\raggedright\arraybackslash}p{0.62\linewidth}@{}}
+\toprule
+\textbf{Item} & \textbf{Current setting} \\
+\midrule
+Evaluation cohorts & The main cohort contains 300 targets in 271 full-CPT groups, with five query types. The fresh cohort contains 246 new numerical instances, with four probability-query types. \\
+Demonstrations & Two distinct same-type examples per target in FULL, HEURISTIC and PNS; identities and order fixed across these conditions. ZERO has no demonstrations. \\
+Model and tokenizer & Qwen/Qwen3.6-35B-A3B; bfloat16 (BF16). Served tokenizer accessed through vLLM /tokenize; immutable Hub revision unavailable. \\
+Serving runtime & vLLM 0.27.1; two RTX PRO 6000 Blackwell Server Edition GPUs; tensor parallelism (TP) size 1 per GPU; prefix caching enabled. \\
+Sampling & Temperature 1.0; top-p 0.95; top-k 20; min-p 0; repetition penalty 1; presence and frequency penalties 0; matched target seed across conditions. \\
+Interface & Native /v1/chat/completions; thinking enabled; preserve\_thinking disabled. \\
+Context and output & 16,384-token context. Shared target cap = min(12,000, 16,384 \ensuremath{-} largest prompt count across four conditions \ensuremath{-} 128). \\
+Client concurrency & Development used 8 requests per GPU. Main and fresh evaluations used 24 per GPU, 48 in total. \\
+Completed requests & Main 1,200; fresh 984; development 40; Qwen self-review 56. All reached terminal responses; invalid and truncated outputs remained in their denominators. \\
+Frozen records & Public prompts, demonstration routing, generator settings, target-specific caps, full sampling fields and request histories are retained in the electronic supplement and source manifests. \\
+Construction interface & Raw /v1/completions with the public problem and the recorded prefix. The requested suffix allowance is 8,000 tokens, subject to the context limit. \\
+Construction sampling & Qwen/Qwen3.6-35B-A3B with temperature 1, top-p 0.95 and top-k 20. Construction settings are separate from the downstream target-specific completion-cap rule. \\
+\bottomrule
+\end{tabular}
+\endgroup
+\caption[Current experimental configuration]{Current experimental configuration. Both cohorts used the same four conditions, demonstration policy and model-serving setup. Target-specific caps controlled available output length; source manifests retain the full request and runtime records.}\label{tab:4.1}
+
+\par\medskip
+\begin{minipage}{\textwidth}
+\noindent Table~\ref{tab:4.1} records the current model and calling parameters. Prompt budgets used the served Qwen3.6-35B-A3B tokenizer through vLLM /tokenize; prepared counts matched returned usage for all 40 development requests. A local recount matched parent/candidate lengths for all 52 accepted pairs. The Hub revision remains unavailable. Request manifests, seeds and technical recovery records are retained electronically.
+\end{minipage}
+\end{table}
+
+\section{Answer performance and failures}\label{sec:4.3}
+
+The output contract is a single JavaScript Object Notation (JSON) object with the sole key answer and a lowercase value of yes or no. For target $t$ and condition $a$, $Y_{ta}$ is one only when the response satisfies this parser and matches the reference; otherwise it is zero. Strict accuracy is $\sum_t Y_{ta}/N$ over every frozen target. Missing or failed requests and malformed responses remain in the denominator. Execution, truncation and format status are recorded separately, since a completed response can still violate the schema or answer incorrectly.
+
+Format-valid counts show whether differences in accuracy are accompanied by differences in schema compliance. Per-type results are descriptive and report explicit denominators because small subgroups do not support stable claims about causal-query mechanisms.
+
+\section{Paired comparisons and uncertainty}\label{sec:4.4}
+
+For paired conditions $P$ and $F$, the accuracy difference is $\Delta=N^{-1}\sum_t(Y_{tP}-Y_{tF})=(g-l)/N$, where $g$ and $l$ count gains and losses relative to $F$. These counts reveal offsetting changes hidden by marginal accuracies.
+
+The fresh cohort's exact two-sided McNemar test conditions on the $g+l$ discordant pairs and uses a binomial null with probability one half, assuming independent paired units. Non-significance does not establish equivalence. No non-inferiority claim is made because it would require a justified, prespecified loss margin and an appropriate confidence bound.
+
+\begingroup\emergencystretch=1em
+The primary contrast is PNS\_\allowbreak{}COT minus FULL\_\allowbreak{}COT, accompanied by input-token savings. PNS\_\allowbreak{}COT minus HEURISTIC\_\allowbreak{}SHORT is secondary, and PNS\_\allowbreak{}COT minus ZERO is supplementary. Original question-level main-cohort calculations remain diagnostic because they do not account for repeated full-CPT groups. All main estimates retain the 300-target denominator.\par
+\endgroup
+
+After the input-only CPT audit and before predictions were inspected, the main analysis specified 20,000 cluster-bootstrap resamples \cite{Efron_1979} and 200,000 group-level sign flips, using root seed 20260910. Each bootstrap resample draws 271 groups with replacement, retains all paired questions in those groups and divides summed differences by the resampled question count. Pointwise 95\% intervals use the 2.5th/97.5th percentiles with linear interpolation. Sign-flip p-values use the two-sided add-one Monte Carlo rule, assuming independent groups and joint within-group exchangeability of condition labels under the null, or corresponding sign symmetry. Because the conditions were not randomly assigned, the sign-flip test is a sensitivity analysis that relies on these assumptions. Clustering does not remove historical exposure.
+
+The fresh cohort uses 20,000 paired bootstrap resamples of its 246 one-target instance groups. NumPy default\_rng starts at seed 20260910 and advances sequentially through PNS--FULL, PNS--HEURISTIC and PNS--ZERO. Pointwise 95\% intervals use the 2.5th/97.5th percentiles with linear interpolation. Within-cohort Holm corrections are supplemented by a joint six-comparison correction combining the three main cluster sign-flip p-values and three fresh exact McNemar p-values. The analysis specifications were fixed before accuracy was inspected, and the two cohorts were analysed separately.
+
+The intervals are conditional on the frozen bank and its routing policy. Each resample draws target instances or full-CPT groups while retaining their paired outputs, which measures variation across the evaluated targets. Rebuilding the bank, changing demonstration identities or repeating inference would introduce additional variation that this bootstrap does not estimate.
+
+\section{Resource accounting}\label{sec:4.5}
+
+Aggregate reasoning compression is one minus total compressed reasoning tokens divided by total parent reasoning tokens over the same examples. Online input saving uses the corresponding ratio of complete prompt-token totals, including instructions, examples, answers, target text and template overhead. Both are ratios of totals, not averages of item-level reductions. Completion tokens are reported separately.
+
+Construction accounting includes rejected generations and judge calls. Reported application programming interface (API) usage is distinct from billing, and missing usage cannot be treated as zero. When requests overlap, summing their latencies does not measure GPU wall-clock duration. The electronic ledger separates historical construction, target evaluation and auxiliary reviews, including failures and recovery. Incomplete usage records and differing prices prevent a reliable monetary break-even estimate.

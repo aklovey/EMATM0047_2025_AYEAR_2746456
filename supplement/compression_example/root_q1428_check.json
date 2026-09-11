@@ -1,0 +1,17 @@
+{
+  "question_id": 1428,
+  "selected_request_key": "q1428-s001-keep-r1",
+  "source": "work\\evidence\\phase56\\phase56_accepted52_demo_pool.jsonl",
+  "tokens_parent": 2052,
+  "tokens_candidate": 954,
+  "reduction_percent": 53.50877192982456,
+  "prefix_0_203_matches": true,
+  "prefix_exact": "The user wants to determine if medication positively affects heart condition *through* blood pressure based on a hypothetical scenario.\nThis is a causal inference question asking about indirect effects.\n",
+  "simple_mediation_pure_nie": "0.3240",
+  "reference_answer": "yes",
+  "last_output_matches": true,
+  "native_record_accepted": true,
+  "saved_audit_passed": true,
+  "new_model_calls": 0,
+  "narrative_note": "The stored candidate uses sign reasoning and does not state the numeric NIE. The 0.324 calculation is an independent explanatory check, not a fabricated quote from the candidate. Its trace still contains repetitions and a speculative benchmark aside; do not describe it as an ideally polished reasoning chain."
+}
