@@ -1,0 +1,16 @@
+{
+  "artifact": "equal_execution_contract_audit",
+  "checks": {
+    "gold_unavailable_to_both": true,
+    "same_concurrency": true,
+    "same_input_pack_hash": true,
+    "same_model": true,
+    "same_ordered_id_hash": true,
+    "same_provider_endpoint": true,
+    "same_reasoning_effort": true,
+    "same_schema_repair_attempts": true,
+    "same_timeout": true,
+    "same_transport_retries": true
+  },
+  "passed": true
+}

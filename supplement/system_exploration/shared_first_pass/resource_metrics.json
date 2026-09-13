@@ -1,0 +1,58 @@
+{
+  "artifact": "formal_resource_metrics",
+  "created_at": "2026-07-18T02:56:09.955586+00:00",
+  "packs": {
+    "clean_holdout_natural": {
+      "candidate_deployment": {
+        "incremental_revision_calls": 0,
+        "incremental_revision_tokens": 0,
+        "model_calls": 100,
+        "public_tool_count": 2,
+        "total_tokens": 1424946,
+        "wall_time_seconds": 1160.3928663000115
+      },
+      "legacy": {
+        "model_calls": 3571,
+        "public_tool_count": 9,
+        "tool_calls": 2582,
+        "total_tokens": 11140677,
+        "wall_time_seconds": 5203.191272499971
+      },
+      "ratios": {
+        "candidate_to_legacy_model_calls": 0.02800336040324839,
+        "candidate_to_legacy_tokens": 0.1279047942957147
+      },
+      "shared_experiment_cost": {
+        "model_calls": 100,
+        "total_tokens": 1424946
+      }
+    },
+    "structural_stress_holdout": {
+      "candidate_deployment": {
+        "incremental_revision_calls": 0,
+        "incremental_revision_tokens": 0,
+        "model_calls": 19,
+        "public_tool_count": 2,
+        "total_tokens": 282351,
+        "wall_time_seconds": 240.46421070001088
+      },
+      "legacy": {
+        "model_calls": 704,
+        "public_tool_count": 9,
+        "tool_calls": 517,
+        "total_tokens": 2302996,
+        "wall_time_seconds": 1250.2890794000123
+      },
+      "ratios": {
+        "candidate_to_legacy_model_calls": 0.026988636363636364,
+        "candidate_to_legacy_tokens": 0.12260160243439415
+      },
+      "shared_experiment_cost": {
+        "model_calls": 19,
+        "total_tokens": 282351
+      }
+    }
+  },
+  "wall_clock_attribution_allowed": false,
+  "wall_clock_note": "Concurrency, provider endpoint, model, reasoning effort, timeout, and transport retry settings are equalized, but wall time is descriptive because the agent protocols issue different call graphs."
+}

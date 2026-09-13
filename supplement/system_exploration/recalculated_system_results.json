@@ -1,0 +1,145 @@
+{
+  "verification_date": "2026-09-14",
+  "kind": "offline reanalysis of preserved records; no model execution",
+  "runtime": {
+    "python": "3.11.9",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1"
+  },
+  "packs": {
+    "clean_holdout_natural": {
+      "same_unique_ordered_questions": 974,
+      "empty_legacy_answers": 1,
+      "paired_comparison": {
+        "left_arm": "legacy",
+        "right_arm": "candidate",
+        "paired_n": 974,
+        "left_correct": 935,
+        "right_correct": 934,
+        "left_accuracy": 0.9599589322381931,
+        "right_accuracy": 0.9589322381930184,
+        "both_correct": 915,
+        "both_wrong": 20,
+        "baseline_only": 20,
+        "candidate_only": 19,
+        "corrections": 19,
+        "regressions": 20,
+        "delta": -0.001026694045174538,
+        "delta_pp": -0.10266940451745381,
+        "mcnemar_exact_two_sided_p": 1.0,
+        "paired_bootstrap_ci_low": -0.013347022587268994,
+        "paired_bootstrap_ci_high": 0.011293634496919919,
+        "paired_bootstrap_ci_low_pp": -1.3347022587268993,
+        "paired_bootstrap_ci_high_pp": 1.1293634496919918,
+        "bootstrap_resamples": 10000,
+        "bootstrap_seed": 20260718
+      },
+      "legacy_resources": {
+        "model_calls": 3571,
+        "transport_retries": 0,
+        "schema_repairs": 1,
+        "tool_calls": 2582,
+        "latency_ms_total": 0,
+        "usage": {
+          "completion_tokens": 1679369,
+          "prompt_tokens": 9461308,
+          "reasoning_tokens": 870418,
+          "total_tokens": 11140677
+        }
+      },
+      "shared_resources": {
+        "unique_shards": 49,
+        "model_calls": 100,
+        "model_retries": 2,
+        "latency_ms_total": 0,
+        "usage": {
+          "completion_tokens": 412280,
+          "prompt_tokens": 1012666,
+          "total_tokens": 1424946
+        }
+      },
+      "legacy_turn_distribution": {
+        "3": 520,
+        "4": 332,
+        "5": 50,
+        "6": 72
+      },
+      "resource_reduction_fractions": {
+        "prompt_tokens": 0.892967653098282,
+        "completion_tokens": 0.7545030306025656,
+        "total_tokens": 0.8720952057042853,
+        "model_calls": 0.9719966395967516
+      },
+      "matches_original_numerical_reports": true,
+      "unchanged_c0_confirmed": true,
+      "incremental_revision_calls": 0
+    },
+    "structural_stress_holdout": {
+      "same_unique_ordered_questions": 180,
+      "empty_legacy_answers": 1,
+      "paired_comparison": {
+        "left_arm": "legacy",
+        "right_arm": "candidate",
+        "paired_n": 180,
+        "left_correct": 163,
+        "right_correct": 158,
+        "left_accuracy": 0.9055555555555556,
+        "right_accuracy": 0.8777777777777778,
+        "both_correct": 156,
+        "both_wrong": 15,
+        "baseline_only": 7,
+        "candidate_only": 2,
+        "corrections": 2,
+        "regressions": 7,
+        "delta": -0.027777777777777776,
+        "delta_pp": -2.7777777777777777,
+        "mcnemar_exact_two_sided_p": 0.1796875,
+        "paired_bootstrap_ci_low": -0.06111111111111111,
+        "paired_bootstrap_ci_high": 0.0,
+        "paired_bootstrap_ci_low_pp": -6.111111111111111,
+        "paired_bootstrap_ci_high_pp": 0.0,
+        "bootstrap_resamples": 10000,
+        "bootstrap_seed": 20260718
+      },
+      "legacy_resources": {
+        "model_calls": 704,
+        "transport_retries": 0,
+        "schema_repairs": 1,
+        "tool_calls": 517,
+        "latency_ms_total": 0,
+        "usage": {
+          "completion_tokens": 359285,
+          "prompt_tokens": 1943711,
+          "reasoning_tokens": 188005,
+          "total_tokens": 2302996
+        }
+      },
+      "shared_resources": {
+        "unique_shards": 9,
+        "model_calls": 19,
+        "model_retries": 1,
+        "latency_ms_total": 0,
+        "usage": {
+          "completion_tokens": 84047,
+          "prompt_tokens": 198304,
+          "total_tokens": 282351
+        }
+      },
+      "legacy_turn_distribution": {
+        "3": 79,
+        "4": 62,
+        "5": 16,
+        "6": 23
+      },
+      "resource_reduction_fractions": {
+        "prompt_tokens": 0.8979766024887444,
+        "completion_tokens": 0.7660715031242606,
+        "total_tokens": 0.8773983975656059,
+        "model_calls": 0.9730113636363636
+      },
+      "matches_original_numerical_reports": true,
+      "unchanged_c0_confirmed": true,
+      "incremental_revision_calls": 0
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "all_first_pass_hashes_match": true,
+  "answer_intervention_enabled": false,
+  "artifact": "formal_selected_candidate_manifest",
+  "created_at": "2026-07-18T00:53:48.623694+00:00",
+  "gold_join_stage": "post_run_scoring_only",
+  "gold_not_available_to_execution": true,
+  "incremental_tokens": 0,
+  "model_calls_incremental": 0,
+  "rows": 974,
+  "selected_candidate": "C0_shared_first_pass",
+  "trigger_count_observe_only": 49,
+  "untriggered_rows_byte_identical": true
+}

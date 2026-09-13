@@ -5,6 +5,16 @@ This repository edition translates non-English prompt/reasoning spans. Offline s
 
 [Repository overview](../README.md) · [Evidence index](EVIDENCE.md)
 
+## Historical system evidence
+
+The [system-exploration supplement](../supplement/system_exploration/README.md) includes the original 974-question clean and 180-question stress paired matrix, resource summaries, selected per-question and per-shard accounting fields, and preserved source functions. After installing the same analysis requirements used below, run:
+
+```sh
+python supplement/system_exploration/recalculate_system_results.py --output reanalysis/system_exploration.json
+```
+
+This checks identical ordered question IDs, C0 preservation, original paired-bootstrap and McNemar results, the 49-shard accounting, legacy model turns plus schema repairs, and input/output/total-token identities. Its [saved result](../supplement/system_exploration/recalculated_system_results.json) matches both original comparison packs. The source excerpts are an inspection and offline-analysis supplement, not a complete live historical agent environment.
+
 ## Offline analysis
 
 These commands use the saved model outputs. Fresh scoring, main scoring, CPT-cluster inference and joint Holm correction were executed on 11 September 2026 with Python 3.11.9, NumPy 2.4.6 and SciPy 1.17.1. This verification consists of saved-output reanalysis. The [environment record](../experiment/analysis_environment.json) identifies the numerical runtime.

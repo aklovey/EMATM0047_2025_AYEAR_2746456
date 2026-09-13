@@ -1,0 +1,381 @@
+{
+  "release_date": "2026-09-14",
+  "description": "Source roles and release transformations. Local source locations are recorded separately in the private preparation record.",
+  "files": [
+    {
+      "file": "shared_first_pass/paired_sample_matrix.csv",
+      "source_snapshot": "july_20260718_preserved_20260720",
+      "source_relative_path": "paired_sample_matrix.csv",
+      "source_root_role": "experiment_directory",
+      "release_kind": "unmodified_preserved_file",
+      "details": {}
+    },
+    {
+      "file": "shared_first_pass/resource_metrics.json",
+      "source_snapshot": "july_20260718_preserved_20260720",
+      "source_relative_path": "resource_metrics.json",
+      "source_root_role": "experiment_directory",
+      "release_kind": "unmodified_preserved_file",
+      "details": {}
+    },
+    {
+      "file": "shared_first_pass/primary_paired_comparisons.csv",
+      "source_snapshot": "july_20260718_preserved_20260720",
+      "source_relative_path": "primary_paired_comparisons.csv",
+      "source_root_role": "experiment_directory",
+      "release_kind": "unmodified_preserved_file",
+      "details": {}
+    },
+    {
+      "file": "shared_first_pass/family_metrics.csv",
+      "source_snapshot": "july_20260718_preserved_20260720",
+      "source_relative_path": "family_metrics.csv",
+      "source_root_role": "experiment_directory",
+      "release_kind": "unmodified_preserved_file",
+      "details": {}
+    },
+    {
+      "file": "shared_first_pass/component_paired_comparisons.csv",
+      "source_snapshot": "july_20260718_preserved_20260720",
+      "source_relative_path": "component_paired_comparisons.csv",
+      "source_root_role": "experiment_directory",
+      "release_kind": "unmodified_preserved_file",
+      "details": {}
+    },
+    {
+      "file": "shared_first_pass/protocol_manifest.release.json",
+      "source_snapshot": "july_20260718_preserved_20260720",
+      "source_relative_path": "protocol_manifest.json",
+      "source_root_role": "experiment_directory",
+      "release_kind": "runtime_location_redacted_copy",
+      "details": {
+        "redacted_fields": [
+          "$.alias_registry.path",
+          "$.base_url",
+          "$.formal_freeze.candidate_selection_path",
+          "$.formal_freeze.post_freeze_orchestration_fixes[1].legacy_raw_record_checks.clean_holdout_natural.path",
+          "$.formal_freeze.post_freeze_orchestration_fixes[1].legacy_raw_record_checks.structural_stress_holdout.path",
+          "$.formal_freeze.post_freeze_orchestration_fixes[2].legacy_raw_record_checks.clean_holdout_natural.path",
+          "$.formal_freeze.post_freeze_orchestration_fixes[2].legacy_raw_record_checks.structural_stress_holdout.path",
+          "$.formal_freeze.runtime_contract.provider_base_url",
+          "$.git_status_short",
+          "$.legacy_root",
+          "$.output_root",
+          "$.policy.path",
+          "$.revised_root",
+          "$.revision_prompt.path"
+        ]
+      }
+    },
+    {
+      "file": "shared_first_pass/dataset_freeze_manifest.release.json",
+      "source_snapshot": "july_20260718_preserved_20260720",
+      "source_relative_path": "dataset_freeze_manifest.json",
+      "source_root_role": "experiment_directory",
+      "release_kind": "runtime_location_redacted_copy",
+      "details": {
+        "redacted_fields": [
+          "$.generation_command",
+          "$.packs.clean_holdout_natural.path",
+          "$.packs.structural_stress_holdout.path",
+          "$.source_path"
+        ]
+      }
+    },
+    {
+      "file": "shared_first_pass/clean_holdout_natural/shared_first_pass_manifest.release.json",
+      "source_snapshot": "july_20260718_preserved_20260720",
+      "source_relative_path": "holdout/shared_first_pass/clean_holdout_natural/shared_first_pass_manifest.json",
+      "source_root_role": "experiment_directory",
+      "release_kind": "runtime_location_redacted_copy",
+      "details": {
+        "redacted_fields": [
+          "$.first_pass_file",
+          "$.input_pack_path",
+          "$.provider_base_url"
+        ]
+      }
+    },
+    {
+      "file": "shared_first_pass/clean_holdout_natural/legacy_run_manifest.release.json",
+      "source_snapshot": "july_20260718_preserved_20260720",
+      "source_relative_path": "holdout/legacy_full_tools/clean_holdout_natural/run_manifest.json",
+      "source_root_role": "experiment_directory",
+      "release_kind": "runtime_location_redacted_copy",
+      "details": {
+        "redacted_fields": [
+          "$.provider_base_url"
+        ]
+      }
+    },
+    {
+      "file": "shared_first_pass/clean_holdout_natural/candidate_run_manifest.json",
+      "source_snapshot": "july_20260718_preserved_20260720",
+      "source_relative_path": "holdout/candidate/clean_holdout_natural/run_manifest.json",
+      "source_root_role": "experiment_directory",
+      "release_kind": "unmodified_preserved_file",
+      "details": {}
+    },
+    {
+      "file": "shared_first_pass/clean_holdout_natural/equal_execution_contract_audit.json",
+      "source_snapshot": "july_20260718_preserved_20260720",
+      "source_relative_path": "holdout/legacy_full_tools/clean_holdout_natural/equal_execution_contract_audit.json",
+      "source_root_role": "experiment_directory",
+      "release_kind": "unmodified_preserved_file",
+      "details": {}
+    },
+    {
+      "file": "shared_first_pass/clean_holdout_natural/legacy_accounting.csv",
+      "source_snapshot": "july_20260718_preserved_20260720",
+      "source_relative_path": "holdout/legacy_full_tools/clean_holdout_natural/raw_records.jsonl",
+      "source_root_role": "experiment_directory",
+      "release_kind": "selected_record_fields",
+      "details": {
+        "mapping": "question_id copies sample_uid; model_calls is turn_count plus repair_attempted. Other values are copied without translation."
+      }
+    },
+    {
+      "file": "shared_first_pass/clean_holdout_natural/shard_accounting.csv",
+      "source_snapshot": "july_20260718_preserved_20260720",
+      "source_relative_path": "holdout/shared_first_pass/clean_holdout_natural/shards",
+      "source_root_role": "experiment_directory",
+      "release_kind": "selected_shard_fields",
+      "details": {
+        "source_pattern": "*/graph_audit.json",
+        "source_file_count": 49,
+        "mapping": "One row per original graph audit; IDs, calls, retries and usage fields copied without translation."
+      }
+    },
+    {
+      "file": "shared_first_pass/structural_stress_holdout/shared_first_pass_manifest.release.json",
+      "source_snapshot": "july_20260718_preserved_20260720",
+      "source_relative_path": "holdout/shared_first_pass/structural_stress_holdout/shared_first_pass_manifest.json",
+      "source_root_role": "experiment_directory",
+      "release_kind": "runtime_location_redacted_copy",
+      "details": {
+        "redacted_fields": [
+          "$.first_pass_file",
+          "$.input_pack_path",
+          "$.provider_base_url"
+        ]
+      }
+    },
+    {
+      "file": "shared_first_pass/structural_stress_holdout/legacy_run_manifest.release.json",
+      "source_snapshot": "july_20260718_preserved_20260720",
+      "source_relative_path": "holdout/legacy_full_tools/structural_stress_holdout/run_manifest.json",
+      "source_root_role": "experiment_directory",
+      "release_kind": "runtime_location_redacted_copy",
+      "details": {
+        "redacted_fields": [
+          "$.provider_base_url"
+        ]
+      }
+    },
+    {
+      "file": "shared_first_pass/structural_stress_holdout/candidate_run_manifest.json",
+      "source_snapshot": "july_20260718_preserved_20260720",
+      "source_relative_path": "holdout/candidate/structural_stress_holdout/run_manifest.json",
+      "source_root_role": "experiment_directory",
+      "release_kind": "unmodified_preserved_file",
+      "details": {}
+    },
+    {
+      "file": "shared_first_pass/structural_stress_holdout/equal_execution_contract_audit.json",
+      "source_snapshot": "july_20260718_preserved_20260720",
+      "source_relative_path": "holdout/legacy_full_tools/structural_stress_holdout/equal_execution_contract_audit.json",
+      "source_root_role": "experiment_directory",
+      "release_kind": "unmodified_preserved_file",
+      "details": {}
+    },
+    {
+      "file": "shared_first_pass/structural_stress_holdout/legacy_accounting.csv",
+      "source_snapshot": "july_20260718_preserved_20260720",
+      "source_relative_path": "holdout/legacy_full_tools/structural_stress_holdout/raw_records.jsonl",
+      "source_root_role": "experiment_directory",
+      "release_kind": "selected_record_fields",
+      "details": {
+        "mapping": "question_id copies sample_uid; model_calls is turn_count plus repair_attempted. Other values are copied without translation."
+      }
+    },
+    {
+      "file": "shared_first_pass/structural_stress_holdout/shard_accounting.csv",
+      "source_snapshot": "july_20260718_preserved_20260720",
+      "source_relative_path": "holdout/shared_first_pass/structural_stress_holdout/shards",
+      "source_root_role": "experiment_directory",
+      "release_kind": "selected_shard_fields",
+      "details": {
+        "source_pattern": "*/graph_audit.json",
+        "source_file_count": 9,
+        "mapping": "One row per original graph audit; IDs, calls, retries and usage fields copied without translation."
+      }
+    },
+    {
+      "file": "deepseek_agent/agent_tools_100_report.english.md",
+      "source_snapshot": "august_20260824_checkout",
+      "source_relative_path": "outputs/dev_notes/DEEPSEEK_V4_AGENT_TOOLS_PNS_RESULTS_20260622.md",
+      "source_root_role": "checkout_root",
+      "release_kind": "translated_non_english_passages",
+      "details": {
+        "translated_passage_count": 6
+      }
+    },
+    {
+      "file": "deepseek_agent/agent_tools_500_report.md",
+      "source_snapshot": "august_20260824_checkout",
+      "source_relative_path": "outputs/dev_notes/DEEPSEEK_V4_CLADDER500_AGENT_TOOLS_UNCAPPED_RESULTS_20260622.md",
+      "source_root_role": "checkout_root",
+      "release_kind": "unmodified_preserved_file",
+      "details": {}
+    },
+    {
+      "file": "source_snapshots/resource_aggregation.py",
+      "source_snapshot": "july_20260718_preserved_20260720",
+      "source_relative_path": "src/formal_holdout_experiment.py",
+      "source_root_role": "checkout_root",
+      "release_kind": "verbatim_function_excerpts",
+      "details": {
+        "ranges": [
+          {
+            "function": "legacy_resource_metrics",
+            "start": 678,
+            "end": 699
+          },
+          {
+            "function": "_aggregate_generic_audits",
+            "start": 702,
+            "end": 724
+          }
+        ],
+        "imports_added_for_offline_analysis": "from __future__ import annotations\nfrom typing import Any"
+      }
+    },
+    {
+      "file": "source_snapshots/paired_statistics.py",
+      "source_snapshot": "july_20260718_preserved_20260720",
+      "source_relative_path": "src/formal_experiment_reporting.py",
+      "source_root_role": "checkout_root",
+      "release_kind": "verbatim_function_excerpts",
+      "details": {
+        "ranges": [
+          {
+            "function": "paired_binary_comparison",
+            "start": 35,
+            "end": 90
+          },
+          {
+            "function": "paired_bootstrap_interval",
+            "start": 93,
+            "end": 116
+          }
+        ],
+        "imports_added_for_offline_analysis": "from __future__ import annotations\nfrom typing import Any\nimport numpy as np\nfrom scipy.stats import binomtest"
+      }
+    },
+    {
+      "file": "source_snapshots/paired_matrix_order.py",
+      "source_snapshot": "july_20260718_preserved_20260720",
+      "source_relative_path": "src/formal_experiment_reporting.py",
+      "source_root_role": "checkout_root",
+      "release_kind": "verbatim_function_excerpts",
+      "details": {
+        "ranges": [
+          {
+            "function": "build_paired_matrix",
+            "start": 119,
+            "end": 154
+          }
+        ],
+        "imports_added_for_offline_analysis": "from __future__ import annotations\nfrom typing import Any\n# normalize_binary_answer is an original external source dependency."
+      }
+    },
+    {
+      "file": "source_snapshots/shard_index.py",
+      "source_snapshot": "july_20260718_preserved_20260720",
+      "source_relative_path": "src/shared_first_pass_experiment.py",
+      "source_root_role": "checkout_root",
+      "release_kind": "verbatim_function_excerpts",
+      "details": {
+        "ranges": [
+          {
+            "function": "index_generic_shards",
+            "start": 175,
+            "end": 199
+          }
+        ],
+        "imports_added_for_offline_analysis": "from __future__ import annotations\nfrom pathlib import Path\nfrom typing import Any\n# read_json and read_jsonl are original external source dependencies."
+      }
+    },
+    {
+      "file": "source_snapshots/july_legacy_history.md",
+      "source_snapshot": "july_20260718_preserved_20260720",
+      "source_relative_path": "scripts/run_deepseek_multiturn_tool_agent.py",
+      "source_root_role": "checkout_root",
+      "release_kind": "verbatim_line_excerpts",
+      "details": {
+        "ranges": [
+          [
+            778,
+            808
+          ],
+          [
+            1014,
+            1040
+          ]
+        ]
+      }
+    },
+    {
+      "file": "source_snapshots/august_agent_history.md",
+      "source_snapshot": "august_20260824_checkout",
+      "source_relative_path": "scripts/run_deepseek_multiturn_tool_agent.py",
+      "source_root_role": "checkout_root",
+      "release_kind": "verbatim_line_excerpts",
+      "details": {
+        "ranges": [
+          [
+            754,
+            802
+          ],
+          [
+            956,
+            1040
+          ]
+        ]
+      }
+    },
+    {
+      "file": "shared_first_pass/protocol.english.md",
+      "source_snapshot": "july_20260718_preserved_20260720",
+      "source_root_role": "experiment_directory",
+      "source_relative_path": "experiment_protocol.md",
+      "release_kind": "english_account_of_registered_protocol",
+      "details": {
+        "original_language_file_retained_locally": true,
+        "not_a_byte_identical_original": true
+      }
+    },
+    {
+      "file": "shared_first_pass/report.english.md",
+      "source_snapshot": "july_20260718_preserved_20260720",
+      "source_root_role": "experiment_directory",
+      "source_relative_path": "GPT-5.5 Shared First-Pass Rowwise Verifier Report.md",
+      "release_kind": "english_translation_and_duplicate_consolidation",
+      "details": {
+        "original_language_file_retained_locally": true,
+        "not_a_byte_identical_original": true
+      }
+    },
+    {
+      "file": "recalculated_system_results.json",
+      "source_snapshot": "released_saved_records",
+      "source_relative_path": "recalculate_system_results.py",
+      "source_root_role": "supplement_directory",
+      "release_kind": "new_offline_reanalysis",
+      "details": {
+        "no_model_calls": true,
+        "verbatim_historical_statistics_functions_used": true
+      }
+    }
+  ]
+}

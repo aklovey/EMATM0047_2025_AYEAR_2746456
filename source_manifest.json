@@ -1,5 +1,5 @@
 {
-  "prepared": "2026-09-12",
+  "prepared": "2026-09-14",
   "repository": "https://github.com/aklovey/EMATM0047_2025_AYEAR_2746456",
   "scope": "English-language distribution of LaTeX sources and supporting code, data, response records, analyses and figures; the thesis PDF is excluded.",
   "path_base": "repository root",
@@ -13,20 +13,24 @@
       "bytes": 295
     },
     {
+      "path": "README.md",
+      "bytes": 8262
+    },
+    {
       "path": "docs/ENGLISH_RELEASE.md",
       "bytes": 1419
     },
     {
-      "path": "docs/english_reproduction_check.json",
-      "bytes": 780
-    },
-    {
       "path": "docs/EVIDENCE.md",
-      "bytes": 5509
+      "bytes": 6295
     },
     {
       "path": "docs/REPRODUCE.md",
-      "bytes": 7663
+      "bytes": 8610
+    },
+    {
+      "path": "docs/english_reproduction_check.json",
+      "bytes": 780
     },
     {
       "path": "docs/reproduction_check.json",
@@ -125,6 +129,14 @@
       "bytes": 467
     },
     {
+      "path": "experiment/CAUSE_Experiment_English_Release_20260912.tar.gz",
+      "bytes": 15967410
+    },
+    {
+      "path": "experiment/README.md",
+      "bytes": 5087
+    },
+    {
       "path": "experiment/analysis_environment.json",
       "bytes": 339
     },
@@ -163,10 +175,6 @@
     {
       "path": "experiment/cases/selection_plan.md",
       "bytes": 923
-    },
-    {
-      "path": "experiment/CAUSE_Experiment_English_Release_20260912.tar.gz",
-      "bytes": 15967410
     },
     {
       "path": "experiment/data/demonstrations56.jsonl",
@@ -245,16 +253,20 @@
       "bytes": 107127
     },
     {
+      "path": "experiment/fresh_source/GENERATE_FRESH246_REPRODUCTION.md",
+      "bytes": 6129
+    },
+    {
+      "path": "experiment/fresh_source/README.md",
+      "bytes": 3683
+    },
+    {
       "path": "experiment/fresh_source/all_attempt_models.jsonl",
       "bytes": 425553
     },
     {
       "path": "experiment/fresh_source/generate_fresh246_executed.py",
       "bytes": 9106
-    },
-    {
-      "path": "experiment/fresh_source/GENERATE_FRESH246_REPRODUCTION.md",
-      "bytes": 6129
     },
     {
       "path": "experiment/fresh_source/generation_protocol.json",
@@ -281,10 +293,6 @@
       "bytes": 39786
     },
     {
-      "path": "experiment/fresh_source/README.md",
-      "bytes": 3683
-    },
-    {
       "path": "experiment/fresh_source/sampling_attempts.jsonl",
       "bytes": 158730
     },
@@ -305,6 +313,14 @@
       "bytes": 221
     },
     {
+      "path": "experiment/main_CPT_sensitivity.json",
+      "bytes": 112390
+    },
+    {
+      "path": "experiment/main_CPT_sensitivity.md",
+      "bytes": 2728
+    },
+    {
       "path": "experiment/main_analysis/paired_analysis.json",
       "bytes": 9840
     },
@@ -317,12 +333,8 @@
       "bytes": 117015
     },
     {
-      "path": "experiment/main_CPT_sensitivity.json",
-      "bytes": 112390
-    },
-    {
-      "path": "experiment/main_CPT_sensitivity.md",
-      "bytes": 2728
+      "path": "experiment/phase56/PHASE56_ASSET_AUDIT.md",
+      "bytes": 8663
     },
     {
       "path": "experiment/phase56/export_remote_phase56.py",
@@ -339,10 +351,6 @@
     {
       "path": "experiment/phase56/phase56_accepted52_demo_pool.jsonl",
       "bytes": 749308
-    },
-    {
-      "path": "experiment/phase56/PHASE56_ASSET_AUDIT.md",
-      "bytes": 8663
     },
     {
       "path": "experiment/phase56/phase56_closure_all56.jsonl",
@@ -401,8 +409,12 @@
       "bytes": 3240
     },
     {
-      "path": "experiment/README.md",
-      "bytes": 5087
+      "path": "experiment/reference_method_code/README.md",
+      "bytes": 4722
+    },
+    {
+      "path": "experiment/reference_method_code/SOURCE_INDEX.json",
+      "bytes": 5850
     },
     {
       "path": "experiment/reference_method_code/configs/experiments/qwen_pns_phase56_20260826_v2.yaml",
@@ -413,20 +425,12 @@
       "bytes": 3033
     },
     {
-      "path": "experiment/reference_method_code/README.md",
-      "bytes": 4722
-    },
-    {
       "path": "experiment/reference_method_code/scripts/recover_qwen_pns_existing_candidates.py",
       "bytes": 8774
     },
     {
       "path": "experiment/reference_method_code/scripts/run_qwen_pns_adaptive.py",
       "bytes": 42941
-    },
-    {
-      "path": "experiment/reference_method_code/SOURCE_INDEX.json",
-      "bytes": 5850
     },
     {
       "path": "experiment/reference_method_code/src/experiments/cladder_pns_mvp/judge.py",
@@ -521,12 +525,12 @@
       "bytes": 6216
     },
     {
-      "path": "experiment/scripts/cpt_statistics/analyze_cpt_sensitivity.py",
-      "bytes": 21327
-    },
-    {
       "path": "experiment/scripts/cpt_statistics/CPT_SENSITIVITY_PRESPEC.md",
       "bytes": 6455
+    },
+    {
+      "path": "experiment/scripts/cpt_statistics/analyze_cpt_sensitivity.py",
+      "bytes": 21327
     },
     {
       "path": "experiment/scripts/cpt_statistics/joint_holm.py",
@@ -549,16 +553,16 @@
       "bytes": 10814
     },
     {
+      "path": "experiment/scripts/self_review/README.md",
+      "bytes": 5365
+    },
+    {
       "path": "experiment/scripts/self_review/parse_self_review.py",
       "bytes": 7736
     },
     {
       "path": "experiment/scripts/self_review/prepare_self_review.py",
       "bytes": 12147
-    },
-    {
-      "path": "experiment/scripts/self_review/README.md",
-      "bytes": 5365
     },
     {
       "path": "experiment/scripts/self_review/review_schema.json",
@@ -603,6 +607,10 @@
     {
       "path": "experiment/source_data/development_question_ids.json",
       "bytes": 5837
+    },
+    {
+      "path": "figures/README.md",
+      "bytes": 1296
     },
     {
       "path": "figures/build_design.py",
@@ -721,20 +729,20 @@
       "bytes": 5100
     },
     {
-      "path": "figures/figure5_2_inputs/main_analysis.json",
-      "bytes": 9297
-    },
-    {
       "path": "figures/figure5_2_inputs/main_CPT_sensitivity.json",
       "bytes": 112390
+    },
+    {
+      "path": "figures/figure5_2_inputs/main_analysis.json",
+      "bytes": 9297
     },
     {
       "path": "figures/figure5_2_inputs/main_interval_map.json",
       "bytes": 725
     },
     {
-      "path": "figures/README.md",
-      "bytes": 1296
+      "path": "paper/README.md",
+      "bytes": 741
     },
     {
       "path": "paper/chapters/appendix_a.tex",
@@ -833,16 +841,8 @@
       "bytes": 1907
     },
     {
-      "path": "paper/README.md",
-      "bytes": 741
-    },
-    {
       "path": "paper/references.bib",
       "bytes": 12848
-    },
-    {
-      "path": "README.md",
-      "bytes": 6887
     },
     {
       "path": "requirements-analysis.txt",
@@ -851,6 +851,10 @@
     {
       "path": "requirements-figures.txt",
       "bytes": 50
+    },
+    {
+      "path": "supplement/CAUSE_Electronic_Supplement_20260910.md",
+      "bytes": 66537
     },
     {
       "path": "supplement/case_raw/q4910_FULL_COT.json",
@@ -939,10 +943,6 @@
     {
       "path": "supplement/case_selection_plan.md",
       "bytes": 923
-    },
-    {
-      "path": "supplement/CAUSE_Electronic_Supplement_20260910.md",
-      "bytes": 66537
     },
     {
       "path": "supplement/compression_example/case_and_execution_evidence.md",
@@ -1049,6 +1049,142 @@
       "bytes": 16901
     },
     {
+      "path": "supplement/system_exploration/README.md",
+      "bytes": 6301
+    },
+    {
+      "path": "supplement/system_exploration/deepseek_agent/agent_tools_100_report.english.md",
+      "bytes": 4172
+    },
+    {
+      "path": "supplement/system_exploration/deepseek_agent/agent_tools_500_report.md",
+      "bytes": 2599
+    },
+    {
+      "path": "supplement/system_exploration/recalculate_system_results.py",
+      "bytes": 6544
+    },
+    {
+      "path": "supplement/system_exploration/recalculated_system_results.json",
+      "bytes": 4552
+    },
+    {
+      "path": "supplement/system_exploration/shared_first_pass/clean_holdout_natural/candidate_run_manifest.json",
+      "bytes": 490
+    },
+    {
+      "path": "supplement/system_exploration/shared_first_pass/clean_holdout_natural/equal_execution_contract_audit.json",
+      "bytes": 437
+    },
+    {
+      "path": "supplement/system_exploration/shared_first_pass/clean_holdout_natural/legacy_accounting.csv",
+      "bytes": 49186
+    },
+    {
+      "path": "supplement/system_exploration/shared_first_pass/clean_holdout_natural/legacy_run_manifest.release.json",
+      "bytes": 23227
+    },
+    {
+      "path": "supplement/system_exploration/shared_first_pass/clean_holdout_natural/shard_accounting.csv",
+      "bytes": 1707
+    },
+    {
+      "path": "supplement/system_exploration/shared_first_pass/clean_holdout_natural/shared_first_pass_manifest.release.json",
+      "bytes": 23222
+    },
+    {
+      "path": "supplement/system_exploration/shared_first_pass/component_paired_comparisons.csv",
+      "bytes": 1139
+    },
+    {
+      "path": "supplement/system_exploration/shared_first_pass/dataset_freeze_manifest.release.json",
+      "bytes": 138343
+    },
+    {
+      "path": "supplement/system_exploration/shared_first_pass/family_metrics.csv",
+      "bytes": 3868
+    },
+    {
+      "path": "supplement/system_exploration/shared_first_pass/paired_sample_matrix.csv",
+      "bytes": 179898
+    },
+    {
+      "path": "supplement/system_exploration/shared_first_pass/primary_paired_comparisons.csv",
+      "bytes": 1439
+    },
+    {
+      "path": "supplement/system_exploration/shared_first_pass/protocol.english.md",
+      "bytes": 6056
+    },
+    {
+      "path": "supplement/system_exploration/shared_first_pass/protocol_manifest.release.json",
+      "bytes": 10702
+    },
+    {
+      "path": "supplement/system_exploration/shared_first_pass/report.english.md",
+      "bytes": 2948
+    },
+    {
+      "path": "supplement/system_exploration/shared_first_pass/resource_metrics.json",
+      "bytes": 1934
+    },
+    {
+      "path": "supplement/system_exploration/shared_first_pass/structural_stress_holdout/candidate_run_manifest.json",
+      "bytes": 489
+    },
+    {
+      "path": "supplement/system_exploration/shared_first_pass/structural_stress_holdout/equal_execution_contract_audit.json",
+      "bytes": 437
+    },
+    {
+      "path": "supplement/system_exploration/shared_first_pass/structural_stress_holdout/legacy_accounting.csv",
+      "bytes": 9194
+    },
+    {
+      "path": "supplement/system_exploration/shared_first_pass/structural_stress_holdout/legacy_run_manifest.release.json",
+      "bytes": 6031
+    },
+    {
+      "path": "supplement/system_exploration/shared_first_pass/structural_stress_holdout/shard_accounting.csv",
+      "bytes": 382
+    },
+    {
+      "path": "supplement/system_exploration/shared_first_pass/structural_stress_holdout/shared_first_pass_manifest.release.json",
+      "bytes": 6026
+    },
+    {
+      "path": "supplement/system_exploration/source_register.json",
+      "bytes": 15463
+    },
+    {
+      "path": "supplement/system_exploration/source_snapshots/README.md",
+      "bytes": 1933
+    },
+    {
+      "path": "supplement/system_exploration/source_snapshots/august_agent_history.md",
+      "bytes": 6485
+    },
+    {
+      "path": "supplement/system_exploration/source_snapshots/july_legacy_history.md",
+      "bytes": 2625
+    },
+    {
+      "path": "supplement/system_exploration/source_snapshots/paired_matrix_order.py",
+      "bytes": 1921
+    },
+    {
+      "path": "supplement/system_exploration/source_snapshots/paired_statistics.py",
+      "bytes": 3749
+    },
+    {
+      "path": "supplement/system_exploration/source_snapshots/resource_aggregation.py",
+      "bytes": 1957
+    },
+    {
+      "path": "supplement/system_exploration/source_snapshots/shard_index.py",
+      "bytes": 1538
+    },
+    {
       "path": "supplement/theory/causalmath_theory_packet.json",
       "bytes": 14349
     },
@@ -1072,5 +1208,6 @@
     "this manifest itself"
   ],
   "historical_note": "The full older exhaustive-PNS56 database is not included; its scoring outputs and retained accounting are supplied. Current Phase56 full56 closure and source export are included.",
-  "language_note": "Non-English prose and selected recorded prompt/reasoning spans have been translated. Numerical observations refer to the original runs. See docs/ENGLISH_RELEASE.md."
+  "language_note": "Non-English prose and selected recorded prompt/reasoning spans have been translated. Numerical observations refer to the original runs. See docs/ENGLISH_RELEASE.md.",
+  "system_exploration_update": "Added preserved system reports, paired data, accounting fields, source excerpts and offline reanalysis. The supplement source register identifies release transformations."
 }

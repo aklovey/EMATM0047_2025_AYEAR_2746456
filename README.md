@@ -1,8 +1,8 @@
 # Auditable reasoning trajectory compression for few-shot causal reasoning
 
-This repository accompanies Wyatt Wang's MSc dissertation for EMATM0047 at the University of Bristol. The study asks whether auditable compression of reasoning demonstrations can improve the accuracy–input trade-off in few-shot causal reasoning on CLADDER. It provides editable LaTeX sources, code, frozen evaluation data, response records and supporting analyses.
+This repository accompanies Wyatt Wang's MSc dissertation for EMATM0047 at the University of Bristol. The study asks whether auditable compression of reasoning demonstrations can improve the accuracy and input/output token trade-off in few-shot causal reasoning on CLADDER. It provides editable LaTeX sources, code, frozen evaluation data, response records and supporting analyses.
 
-[LaTeX sources](paper/) · [Evidence index](docs/EVIDENCE.md) · [Recalculate results](docs/REPRODUCE.md)
+[LaTeX sources](paper/) · [Evidence index](docs/EVIDENCE.md) · [Recalculate results](docs/REPRODUCE.md) · [System exploration](supplement/system_exploration/)
 
 ## Study and results
 
@@ -23,7 +23,7 @@ The main cohort has prior experimental exposure and numerical reuse, which the 2
 
 ## Find the materials
 
-The [E1–E9 evidence index](docs/EVIDENCE.md) maps the dissertation's material references to actual files, including the historical verifier replay and platform bill.
+The [evidence index](docs/EVIDENCE.md) maps the dissertation's experiments to actual files, including the historical verifier replay and platform bill. The new [system-exploration source register](supplement/system_exploration/source_register.json) links the historical agent and shared-first-pass tables to preserved reports, accounting records and implementation excerpts.
 
 | Location | Contents |
 |---|---|
@@ -37,12 +37,17 @@ The [E1–E9 evidence index](docs/EVIDENCE.md) maps the dissertation's material 
 | [`experiment/reference_method_code/`](experiment/reference_method_code/) | Historical construction-method reference snapshot. |
 | [`evidence/`](evidence/) | Overlap checks, semantic calculations, historical comparisons, compression measurements and billing. |
 | [`supplement/`](supplement/) | Further case material, historical records and theoretical notes, including [verifier replay](supplement/historical/verifier_replay/). |
+| [`supplement/system_exploration/`](supplement/system_exploration/) | Historical DeepSeek agent reports, the original GPT-5.5 paired matrix, per-question/per-shard resource fields, released execution manifests and offline reanalysis. |
 
 The current-run archive contains 1,200 main and 984 fresh generation requests, plus 40 development and 56 self-review requests. Historical Phase56 construction and judge calls are recorded separately. Cases and review outputs are also available under [`experiment/cases/`](experiment/cases/), [`experiment/audit/`](experiment/audit/) and [`experiment/self_review/`](experiment/self_review/).
+
+The system supplement adds a broader historical comparison on the same 974 questions. The selected shared-first-pass C0 workflow scores 934 correct against legacy's 935, with 100 versus 3,571 model calls and 1,424,946 versus 11,140,677 total tokens. The [supplement guide](supplement/system_exploration/README.md) separates input/output usage and explains the 49-shard accounting. These are complete-system results with different tool interfaces, not an additional PNS-compression experiment. The separate 180-question stress diagnostic is retained.
 
 ## Recalculate and reuse
 
 [The reproduction guide](docs/REPRODUCE.md) provides offline commands for scoring saved responses, CPT-cluster inference and the six-comparison correction. **Saved-output reanalysis was executed on 11 September 2026** using Python 3.11.9, NumPy 2.4.6 and SciPy 1.17.1. It requires no model service.
+
+The historical system paired statistics and accounting were also [recalculated from the released records](supplement/system_exploration/recalculated_system_results.json) on 14 September. The offline script matches the original clean and stress comparison counts, intervals and resource totals without model calls.
 
 The guide also records the Qwen/vLLM settings and separate seed roles. All 2,184 main and fresh request records use `20260910 + question_id` as their generation seed, matched across conditions within each target. Recreating generation requires the model-serving environment; its entry points and archived path mappings are documented separately from offline analysis.
 

@@ -1,0 +1,229 @@
+{
+  "alias_registry": {
+    "fields_used": [
+      "story_id",
+      "graph_id",
+      "model_id",
+      "variable_mapping"
+    ],
+    "groundtruth_fields_used": false,
+    "path": "[local runtime location omitted]",
+    "sha256": "f288ed9046a1ef5e39c0dbf6b971b8a3a485887130b7831dc5da4fe2af5d64b5"
+  },
+  "artifact": "shared_first_pass_protocol_manifest",
+  "base_url": "[local runtime location omitted]",
+  "black_box_boundary": {
+    "hidden_reasoning_captured": false,
+    "hidden_reasoning_observable": false,
+    "raw_unstructured_model_content_persisted": false
+  },
+  "concurrency_policy": {
+    "concurrency": 8,
+    "dynamic_concurrency": false,
+    "max_concurrency": 8,
+    "mode": "fixed",
+    "same_for_formal_arms": true
+  },
+  "created_at": "2026-07-18T00:12:43.090219+00:00",
+  "development_packs_not_confirmatory": true,
+  "experiment_id": "gpt55_c_shared_first_pass_rowwise_verifier_v1",
+  "formal_c_execution": {
+    "pack_first_pass_hashes": {
+      "clean_holdout_natural": "d4568b353def7c22648a75fee75bc765ec3e15d29e84d3b265d5c79a0ec351ce",
+      "structural_stress_holdout": "f7558077199444f06556b1af1f4cb57df72e5c6be9c4bef5bd8b4c32bbbc5fcd"
+    },
+    "status": "executed",
+    "summary_sha256": "c68f210724f05e3fb25a2ac272a4e3014b142e7ff9248fea79578fe970dcd16f"
+  },
+  "formal_freeze": {
+    "candidate_selection_path": "[local runtime location omitted]",
+    "candidate_selection_sha256": "f936c57b9ea099aa6d4de4280900fd699ad0b80638afa24c47518058c9c93835",
+    "created_at": "2026-07-18T00:33:28.829888+00:00",
+    "implementation_files": {
+      "scripts\\experiments\\power_paired_mcnemar.py": "9dbaeaf26390c3454ef7f765da2c53e62b32722b8c3d516e1e4b615579bb707f",
+      "scripts\\run_gpt55_shared_first_pass_experiment.py": "cb31f11bf4a71c18d02de09c5be62519d0959441b5f5dd7094a0749549cdcff7",
+      "src\\experiment_runner_lock.py": "ddf176f384886bbd372752f1b742af266e168621b85b1cbac6b6d91bbbc229a2",
+      "src\\formal_holdout_experiment.py": "ffe69c9fc15ff635c9eb093cee0482358e306637eab6eaa85e898a4ce102afbc",
+      "src\\holdout_builder.py": "ab6f848725e1d892fdcec59316c6a5058e000d3169e0a7a218e23b47f7edd107",
+      "src\\query_alias_normalizer.py": "51b81f19037461f7f79dabd7dfa1a7f35d5954ffb90e009c7787d9b1411a4017",
+      "src\\rowwise_verifier.py": "8616eca4b98ed0e14b996dce5593eabdf93fcc6ca32e0948693a92d0fb3ad7a6",
+      "src\\shared_first_pass_experiment.py": "1f0778f939affb9b40a4acefa133cc4535c34d3dde841e985fb1e56e85318396"
+    },
+    "pack_hashes": {
+      "clean_holdout_natural": "cfd2cb41d0bf83ae06da67e84b90039003bff4210679d14b386cde5c7a7bc4ca",
+      "structural_stress_holdout": "39a9e54fb521360a40282c185e58648cc0500d90174976534b6d05b119ca3f01"
+    },
+    "policy_sha256": "04fa1ffc8833c3a72d2ca4e0da9e9d6f1da7bf1b4b8291dcd2e34b43b51cfe60",
+    "post_freeze_orchestration_fixes": [
+      {
+        "c_first_pass_hash_checks": {
+          "clean_holdout_natural": {
+            "actual_sha256": "d4568b353def7c22648a75fee75bc765ec3e15d29e84d3b265d5c79a0ec351ce",
+            "expected_sha256": "d4568b353def7c22648a75fee75bc765ec3e15d29e84d3b265d5c79a0ec351ce"
+          },
+          "structural_stress_holdout": {
+            "actual_sha256": "f7558077199444f06556b1af1f4cb57df72e5c6be9c4bef5bd8b4c32bbbc5fcd",
+            "expected_sha256": "f7558077199444f06556b1af1f4cb57df72e5c6be9c4bef5bd8b4c32bbbc5fcd"
+          }
+        },
+        "change": "add missing os import and audited refresh phase",
+        "changed_file": "scripts/run_gpt55_shared_first_pass_experiment.py",
+        "created_at": "2026-07-18T00:59:24.920426+00:00",
+        "formal_c_rerun_required": false,
+        "legacy_model_calls_before_fix": 0,
+        "model_behavior_changed": false
+      },
+      {
+        "c_first_pass_hash_checks": {
+          "clean_holdout_natural": {
+            "actual_sha256": "d4568b353def7c22648a75fee75bc765ec3e15d29e84d3b265d5c79a0ec351ce",
+            "expected_sha256": "d4568b353def7c22648a75fee75bc765ec3e15d29e84d3b265d5c79a0ec351ce"
+          },
+          "structural_stress_holdout": {
+            "actual_sha256": "f7558077199444f06556b1af1f4cb57df72e5c6be9c4bef5bd8b4c32bbbc5fcd",
+            "expected_sha256": "f7558077199444f06556b1af1f4cb57df72e5c6be9c4bef5bd8b4c32bbbc5fcd"
+          }
+        },
+        "change": "add missing os import and audited refresh phase",
+        "changed_file": "scripts/run_gpt55_shared_first_pass_experiment.py",
+        "created_at": "2026-07-18T02:50:33.841342+00:00",
+        "formal_c_rerun_required": false,
+        "legacy_model_calls_before_fix": null,
+        "legacy_raw_record_checks": {
+          "clean_holdout_natural": {
+            "expected_rows": 974,
+            "path": "[local runtime location omitted]",
+            "row_count_match": true,
+            "rows": 974,
+            "sha256": "fab621a8843c96b2f53dfdd7da591ee67d0dd70196c198158f2eacc9acb6fb04"
+          },
+          "structural_stress_holdout": {
+            "expected_rows": 180,
+            "path": "[local runtime location omitted]",
+            "row_count_match": true,
+            "rows": 180,
+            "sha256": "d7ca85cd7e6a5f7140b93078a44762272b4e1c3d99a0bdcd0656720cf68a279b"
+          }
+        },
+        "model_behavior_changed": false,
+        "model_calls_caused_by_fix": 0
+      },
+      {
+        "c_first_pass_hash_checks": {
+          "clean_holdout_natural": {
+            "actual_sha256": "d4568b353def7c22648a75fee75bc765ec3e15d29e84d3b265d5c79a0ec351ce",
+            "expected_sha256": "d4568b353def7c22648a75fee75bc765ec3e15d29e84d3b265d5c79a0ec351ce"
+          },
+          "structural_stress_holdout": {
+            "actual_sha256": "f7558077199444f06556b1af1f4cb57df72e5c6be9c4bef5bd8b4c32bbbc5fcd",
+            "expected_sha256": "f7558077199444f06556b1af1f4cb57df72e5c6be9c4bef5bd8b4c32bbbc5fcd"
+          }
+        },
+        "change": "add missing os import and audited refresh phase",
+        "changed_file": "scripts/run_gpt55_shared_first_pass_experiment.py",
+        "created_at": "2026-07-18T02:53:00.800792+00:00",
+        "formal_c_rerun_required": false,
+        "legacy_model_calls_before_fix": null,
+        "legacy_raw_record_checks": {
+          "clean_holdout_natural": {
+            "expected_rows": 974,
+            "path": "[local runtime location omitted]",
+            "row_count_match": true,
+            "rows": 974,
+            "sha256": "fab621a8843c96b2f53dfdd7da591ee67d0dd70196c198158f2eacc9acb6fb04"
+          },
+          "structural_stress_holdout": {
+            "expected_rows": 180,
+            "path": "[local runtime location omitted]",
+            "row_count_match": true,
+            "rows": 180,
+            "sha256": "d7ca85cd7e6a5f7140b93078a44762272b4e1c3d99a0bdcd0656720cf68a279b"
+          }
+        },
+        "model_behavior_changed": false,
+        "model_calls_caused_by_fix": 0
+      }
+    ],
+    "revision_prompt_sha256": "472f5ac16e29ee878965bf5765469fe44eecd49d9d620dad542c451e84b7e746",
+    "runtime_contract": {
+      "concurrency_policy": {
+        "concurrency": 8,
+        "dynamic_concurrency": false,
+        "max_concurrency": 8,
+        "mode": "fixed",
+        "same_for_all_formal_arms": true
+      },
+      "model": "gpt-5.5",
+      "provider_base_url": "[local runtime location omitted]",
+      "reasoning_effort": "high",
+      "schema_repair_attempts": 1,
+      "timeout_seconds": 240.0,
+      "transport_retries": 0
+    },
+    "selected_candidate": "C0_shared_first_pass",
+    "working_tree_patch_sha256": "b55b8514ed136d96bf335cd7c75476f0dd8e3bd5a61400ad2a81f3929f45521e"
+  },
+  "formal_gate": {
+    "created_at": "2026-07-18T02:55:45.634064+00:00",
+    "passed": true,
+    "report_sha256": "da655614abd6946990bc74fac23d2a61c034fa59b18ab43ad7248ad9783c8fd0"
+  },
+  "formal_holdout_not_yet_frozen": false,
+  "formal_legacy_execution": {
+    "status": "executed",
+    "summary_sha256": "37fec5ff46db7ef89fab0fcc6568c89b05c3b8f22ff701f3e0aabea563983f4f"
+  },
+  "formal_report": {
+    "comparison_report_sha256": "089de87885ae35eb82bc6f04dab8c637b24a69528a02410d2fa45be0a4e60ab3",
+    "created_at": "2026-07-18T02:56:10.170508+00:00",
+    "final_component_decision": "keep_C_as_default_merge_alias_normalized_observability_only_disable_answer_intervention",
+    "markdown_report_sha256": "e6dbad53a1bca01e3eff7f572196ea86bf47ee1c1478be6c914cf18e4c074dcc"
+  },
+  "git_commit": "1b9ee57d0981bd42c00a3bb64ae3d57ece6cd7a8",
+  "git_status_short": "[local runtime location omitted]",
+  "gold_not_available_to_execution": true,
+  "legacy_root": "[local runtime location omitted]",
+  "model": "gpt-5.5",
+  "output_root": "[local runtime location omitted]",
+  "policy": {
+    "path": "[local runtime location omitted]",
+    "sha256": "04fa1ffc8833c3a72d2ca4e0da9e9d6f1da7bf1b4b8291dcd2e34b43b51cfe60"
+  },
+  "protocol_frozen_before_new_model_calls": true,
+  "provider": "cliproxyapi_codex_oauth",
+  "public_tools": [
+    "causal_graph_query",
+    "causal_query_solver"
+  ],
+  "reasoning_effort": "high",
+  "revised_root": "[local runtime location omitted]",
+  "revision_prompt": {
+    "path": "[local runtime location omitted]",
+    "sha256": "472f5ac16e29ee878965bf5765469fe44eecd49d9d620dad542c451e84b7e746"
+  },
+  "runner_version": "gpt55_shared_first_pass_runner_v1",
+  "working_tree_clean": false,
+  "working_tree_patch_sha256": "3870ac687b5546f188a4938bd5bd7086c9fe4f529052924d284a83d493aafbde",
+  "_release": {
+    "kind": "English release copy with local runtime locations removed",
+    "redacted_fields": [
+      "$.alias_registry.path",
+      "$.base_url",
+      "$.formal_freeze.candidate_selection_path",
+      "$.formal_freeze.post_freeze_orchestration_fixes[1].legacy_raw_record_checks.clean_holdout_natural.path",
+      "$.formal_freeze.post_freeze_orchestration_fixes[1].legacy_raw_record_checks.structural_stress_holdout.path",
+      "$.formal_freeze.post_freeze_orchestration_fixes[2].legacy_raw_record_checks.clean_holdout_natural.path",
+      "$.formal_freeze.post_freeze_orchestration_fixes[2].legacy_raw_record_checks.structural_stress_holdout.path",
+      "$.formal_freeze.runtime_contract.provider_base_url",
+      "$.git_status_short",
+      "$.legacy_root",
+      "$.output_root",
+      "$.policy.path",
+      "$.revised_root",
+      "$.revision_prompt.path"
+    ],
+    "numerical_results_unchanged": true,
+    "original_file_retained_in_local_archive": true,
+    "hash_note": "Source hashes retained in this object refer to the original artifacts, not this release copy."
+  }
+}
