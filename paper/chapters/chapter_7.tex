@@ -1,8 +1,14 @@
-\chapter{Conclusion}\label{ch:7}
+% WORKBENCH-ANCHOR p43-b000
+\chapter{Conclusion}\label{ch:8}
 
-Auditable compression reduced input use in both evaluations and improved the accuracy--input trade-off on fresh numerical instances from existing CLADDER graphs and stories. The Phase56 construction stage addressed RQ1 by accepting shorter traces for 52 of 56 parent questions. The bank retained the original parent traces for the other four questions, and the reconstruction records show how each accepted trace was formed.
+% WORKBENCH-ANCHOR p43-b002
+Auditable compression reduced input use in both evaluations and improved the accuracy--input trade-off on fresh numerical instances from existing CLADDER graphs and stories. The Phase56 construction stage accepted shorter traces for 52 of 56 parent questions. The bank retained the original parent traces for the other four questions, and the reconstruction records show how each accepted trace was formed.
 
-The two paired four-condition evaluations addressed RQ2 under a fixed demonstration bank and two-shot routing through query-type metadata. The complete PNS construction-and-fallback policy achieved higher strict accuracy than FULL and the length-matched heuristic on the fresh cohort. On the 300 previously evaluated targets, the corresponding accuracy differences remain unresolved. Source checks, reconstruction tests, semantic review and cost accounting addressed RQ3. The review identified semantic errors in some traces with correct final answers, and the cost analysis distinguished online token savings from construction effort.
+% WORKBENCH-ANCHOR p43-b003
+The two paired four-condition evaluations addressed RQ1 under a fixed demonstration bank and two-shot routing through query-type metadata. The complete PNS construction-and-fallback policy achieved higher strict accuracy than FULL and the length-matched heuristic on the fresh cohort. On the 300 previously evaluated targets, the corresponding accuracy differences remain unresolved. RQ2 was partially addressed through construction records, source checks, semantic review and cost accounting. The review identified semantic errors in some traces with correct final answers, and the cost analysis distinguished online token savings from construction effort without establishing monetary break-even.
+
+% EDIT-ANCHOR CONC-SYSTEM-01
+RQ3 was examined separately through the historical GPT-5.5 system comparison. On the same 974 questions, the selected no-revision workflow used fewer recorded model calls and fewer input and output tokens than its legacy comparator. It met the original report's non-inferiority criterion on the clean holdout. These findings describe the evaluated system configuration. PNS transfer to multi-turn tool interaction remains untested.
 
 This study provides a reusable demonstration bank and a way to inspect how its compressed traces were produced. The next step is a budget-matched comparison with repeated sampling, supported by an independent semantic reference, to separate the contribution of intervention search from candidate generation and selection.
 

@@ -27,7 +27,7 @@ The [evidence index](docs/EVIDENCE.md) maps the dissertation's experiments to ac
 
 | Location | Contents |
 |---|---|
-| [`paper/`](paper/) | Editable LaTeX, bibliography and figures used for compilation. The thesis PDF is not included. |
+| [`paper/`](paper/) | Current eight-chapter LaTeX sources, bibliography and compilation assets, updated 14 September 2026. Long author/editor lists display the first three names followed by et al. The thesis PDF is not included. |
 | [`figures/`](figures/) | Full plotting code and input data, native Draw.io diagrams, and SVG/PDF/PNG exports. |
 | [`experiment/data/`](experiment/data/) | Evaluation demonstration bank, public target inputs, scoring labels and CPT groups, with non-English spans translated for this release. |
 | [`experiment/scripts/`](experiment/scripts/) | Request preparation, scoring, paired statistics and heuristic extraction. |

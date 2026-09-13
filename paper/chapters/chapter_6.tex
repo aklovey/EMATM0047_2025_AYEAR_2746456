@@ -1,8 +1,10 @@
-\chapter{Discussion and Limitations}\label{ch:6}
+% WORKBENCH-ANCHOR p41-b000
+\chapter{Discussion and Limitations}\label{ch:7}
 
-\section{Efficiency gains and scope}\label{sec:6.1}
+\section{Efficiency gains and scope}\label{sec:7.1}
 
-Both evaluations show lower input use under the compression policy. In the fresh cohort, accuracy also improved over the heuristic at nearly the same input length, which indicates that shorter prompts alone do not explain the difference between those two construction policies. The 300-target comparison establishes the input saving but leaves its accuracy effects unresolved \hyperref[sec:A.2]{[E3, E6]}.
+% WORKBENCH-ANCHOR p41-b003
+Both few-shot evaluations show lower input use under the compression policy. In the fresh cohort, accuracy also improved over the heuristic at nearly the same input length, which indicates that shorter prompts alone do not explain the difference between those two construction policies. The 300-target comparison establishes the input saving but leaves its accuracy effects unresolved.
 
 Output-format counts clarify the fresh accuracy result. FULL produced a format-compliant final output on all 246 targets, while PNS did so on 245 and answered 16 more questions correctly than FULL. The heuristic had three format failures, compared with one for PNS. Fewer format failures therefore cannot explain the gain over FULL or the full improvement over the heuristic. The comparison evaluates the complete construction-and-fallback policy, in which reasoning content, candidate search and selection changed together.
 
@@ -10,16 +12,33 @@ The two cohorts address different evaluation settings. The 300-target cohort was
 
 The fresh evaluation uses the probability-query part of the bank. Its eligible demonstration pool contains the 18 accepted traces of those query types and the applicable parent fallbacks. The 34 accepted deterministic-counterfactual traces contribute to the 52-trace construction result but are outside this evaluation pool.
 
-\section{Semantic validity, recovery and selection}\label{sec:6.2}
+\section{Semantic validity, recovery and selection}\label{sec:7.2}
 
-Accepted trace q4284 retained the general claim that a causal arrow implies a positive effect, although a causal edge does not specify the sign of an effect \hyperref[sec:A.2]{[E5]}. This example shows how an incorrect causal statement can survive selection when the final label is correct.
+% WORKBENCH-ANCHOR p41-b008
+Accepted trace q4284 retained the general claim that a causal arrow implies a positive effect. A causal edge does not specify the sign of an effect. This example shows how an incorrect causal statement can survive selection when the final label is correct.
 
-The rejected q29833-s029-delete-r4 continuation illustrates a different failure \hyperref[sec:A.2]{[E3]}. Its binary SCM satisfies S = K, M = \ensuremath{\neg}S and Z = S \ensuremath{\land} M. The question asks whether Z = 0 after do(K = 0), which gives S = 0, M = 1 and Z = 0. The 2,073-token candidate answered yes but retained M = 0 and later treated the outcome rule as disjunctive. The original parent already contained the fixed-M premise. The shorter continuation inherited an error rather than showing that DELETE caused it. Label, length and derivation validity therefore require separate records.
+% WORKBENCH-ANCHOR p41-b009
+The rejected q29833-s029-delete-r4 continuation illustrates a different failure. Its binary SCM satisfies S = K, M = \ensuremath{\neg}S and Z = S \ensuremath{\land} M. The question asks whether Z = 0 after do(K = 0). Under this intervention, S = 0, M = 1 and Z = 0. The 2,073-token candidate answered yes but retained M = 0. It later treated the outcome rule as disjunctive. The original parent already contained the fixed-M premise. The shorter continuation inherited an error rather than showing that DELETE caused it. Label, length and derivation validity require separate records.
 
-A continuation can reconstruct deleted facts or find an alternative solution. A successful DELETE probe therefore shows recovery from an edited context; it does not establish that the deleted step was dispensable in the original derivation. Construction selects parent chains with correct final answers and retains candidates that meet the answer, length and judging criteria. Performance on the construction questions is therefore part of selection, not independent evidence of transfer. The downstream evaluations test whether the selected demonstrations remain useful on other questions.
+% WORKBENCH-ANCHOR p41-b010
+A continuation can reconstruct deleted facts or find an alternative solution. A successful DELETE probe therefore shows recovery from an edited context. It does not establish that the deleted step was dispensable in the original derivation. Construction selects parent chains with correct final answers. Candidates are retained if they meet the answer, length and judging criteria. Performance on the construction questions is part of selection, not independent evidence of transfer. The downstream evaluations test whether the selected demonstrations remain useful on other questions.
 
-\section{Construction cost and open questions}\label{sec:6.3}
+% WORKBENCH-ANCHOR p42-b001
+\section{Construction cost}\label{sec:7.3}
 
-Reusing the compressed demonstration bank reduced aggregate input use, while total spending also includes bank construction and judging. Completion tokens fell by 0.072\% against FULL in the 300-target cohort and by 11.05\% in the fresh cohort, so completion savings were not proportional to input savings. Phase56 construction recorded 41,392,323 Qwen tokens, alongside additional judging costs and missing usage \hyperref[sec:A.2]{[E3]}. The CNY 28.89 bill covered the complete current two-GPU power-on cycle, including preparation and evaluation, but excluded historical construction, judge charges and unmetered assistance \hyperref[sec:A.2]{[E9]}. Arm-specific charges and an incremental monetary break-even point cannot be calculated from these accounts. Detailed historical and recovery ledgers remain in the electronic appendix.
+% WORKBENCH-ANCHOR p42-b002
+Reusing the compressed demonstration bank reduced aggregate input use, while total spending also includes bank construction and judging. Completion tokens fell by 0.072\% against FULL in the 300-target cohort and by 11.05\% in the fresh cohort, so completion savings were not proportional to input savings. Phase56 construction recorded 41,392,323 Qwen tokens, alongside additional judging costs and missing usage. The CNY 28.89 bill covered the complete current two-GPU power-on cycle, including preparation and evaluation, but excluded historical construction, judge charges and unmetered assistance. Arm-specific charges and an incremental monetary break-even point cannot be calculated from these accounts. Detailed historical and recovery accounting records are available in the repository.
 
+% EDIT-ANCHOR DISC-SYSTEM-SECTION
+\section{System-level efficiency and attribution}\label{sec:7.4}
+
+The shared-first-pass comparison concerns how often the system invokes the model and how it reuses recorded outputs. Chapter~\ref{ch:5} instead concerns the reasoning text supplied by a fixed demonstration bank. The historical resource advantage cannot identify an effect of dialogue length alone because tool interfaces and call organisation also changed. Evaluating PNS-compressed interaction histories in place of accumulated tool observations remains future work.
+
+A separate DeepSeek visible-scaffold study on 12 August illustrates the role of completion budgets. Among 900 eligible paired questions, the public-problem condition answered 749 correctly and the scaffold condition answered 810 correctly. The scaffold condition also supplied the dataset's ordered step0--step4 values, excluding step5 and the end field. With a 12,000-token completion limit and up to three retries after the initial attempt, 59 of the net 61 additional correct answers corresponded to cases where the public-problem condition exhausted the limit and the scaffold condition completed. Among the 836 pairs completed in both conditions, the reported difference was +0.24 percentage points.
+
+This pattern makes completion central to interpreting the scaffold result, but the added source evidence prevents attributing the overall gain to formatting alone. The retries were not an accumulating tool dialogue, and the scaffold was not a compressed few-shot demonstration. The current fresh-cohort comparison differs because FULL and PNS had no length truncations, and FULL produced a schema-valid final answer on every target. The two studies therefore do not establish the same source of accuracy improvement.
+
+\section{Open questions}\label{sec:7.5}
+
+% WORKBENCH-ANCHOR p42-b003
 The immediate comparison to add is budget-matched repeated sampling. KEEP-only or ordinary resampling should match the PNS candidate budget, answer checks, judge access and selection rule. The length-matched heuristic control measures performance against inexpensive shortening but does not separate intervention search from repeated generation and selection. A blinded independent semantic reference covering accepted, rejected and boundary candidates would complement that comparison by assessing validation quality. A further experiment could use the saved input budget for additional demonstrations and compare accuracy at a fixed total prompt length.

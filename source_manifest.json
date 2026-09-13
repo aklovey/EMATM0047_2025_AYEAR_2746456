@@ -14,7 +14,7 @@
     },
     {
       "path": "README.md",
-      "bytes": 8262
+      "bytes": 8373
     },
     {
       "path": "docs/ENGLISH_RELEASE.md",
@@ -742,55 +742,63 @@
     },
     {
       "path": "paper/README.md",
-      "bytes": 741
+      "bytes": 2055
+    },
+    {
+      "path": "paper/causeplain.bst",
+      "bytes": 22023
     },
     {
       "path": "paper/chapters/appendix_a.tex",
-      "bytes": 2754
+      "bytes": 662
     },
     {
       "path": "paper/chapters/chapter_1.tex",
-      "bytes": 4333
+      "bytes": 5931
     },
     {
       "path": "paper/chapters/chapter_2.tex",
-      "bytes": 13881
+      "bytes": 13931
     },
     {
       "path": "paper/chapters/chapter_3.tex",
-      "bytes": 14731
+      "bytes": 15446
     },
     {
       "path": "paper/chapters/chapter_4.tex",
-      "bytes": 14769
+      "bytes": 15103
     },
     {
       "path": "paper/chapters/chapter_5.tex",
-      "bytes": 11294
+      "bytes": 11186
     },
     {
       "path": "paper/chapters/chapter_6.tex",
-      "bytes": 5320
+      "bytes": 7212
     },
     {
       "path": "paper/chapters/chapter_7.tex",
-      "bytes": 1452
+      "bytes": 2034
     },
     {
       "path": "paper/chapters/front_abstract.tex",
-      "bytes": 2541
+      "bytes": 3065
     },
     {
       "path": "paper/chapters/front_ethics.tex",
-      "bytes": 1456
+      "bytes": 1537
     },
     {
       "path": "paper/chapters/front_notation.tex",
-      "bytes": 791
+      "bytes": 925
     },
     {
       "path": "paper/chapters/front_support.tex",
       "bytes": 81
+    },
+    {
+      "path": "paper/chapters/system_exploration.tex",
+      "bytes": 10450
     },
     {
       "path": "paper/citation_mapping.json",
@@ -838,11 +846,11 @@
     },
     {
       "path": "paper/main.tex",
-      "bytes": 1907
+      "bytes": 2159
     },
     {
       "path": "paper/references.bib",
-      "bytes": 12848
+      "bytes": 13501
     },
     {
       "path": "requirements-analysis.txt",
@@ -1209,5 +1217,6 @@
   ],
   "historical_note": "The full older exhaustive-PNS56 database is not included; its scoring outputs and retained accounting are supplied. Current Phase56 full56 closure and source export are included.",
   "language_note": "Non-English prose and selected recorded prompt/reasoning spans have been translated. Numerical observations refer to the original runs. See docs/ENGLISH_RELEASE.md.",
-  "system_exploration_update": "Added preserved system reports, paired data, accounting fields, source excerpts and offline reanalysis. The supplement source register identifies release transformations."
+  "system_exploration_update": "Added preserved system reports, paired data, accounting fields, source excerpts and offline reanalysis. The supplement source register identifies release transformations.",
+  "paper_source_update": "Synchronized the active 14 September eight-chapter manuscript source, custom first-three-names bibliography style and current inputs. No complete thesis PDF or compile products are distributed."
 }

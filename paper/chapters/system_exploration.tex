@@ -1,0 +1,105 @@
+% Generated from Pro integration 07 plus accounting corrections 08.
+% No internal review-packet bibliography entries are introduced.
+\chapter{System-Level Exploration}
+\label{chap:system-exploration}\label{ch:6}
+
+\section{Historical scope and evidence}\label{sec:6.1}
+
+% EDIT-ANCHOR SYS6-SCOPE-01
+The preceding chapters examine demonstration construction and reuse in a controlled single-response setting. This chapter considers two earlier system studies involving accumulated tool interaction and shared first-pass records. The DeepSeek tool-agent runs were conducted on 21--22 June 2026, and the GPT-5.5 shared-first-pass study was conducted on 18 July. Both preceded the current Phase56 construction and September evaluations. The chapter order moves from the narrower demonstration comparison to broader system behaviour.
+
+The source register and preserved reports are available in the \href{https://github.com/aklovey/EMATM0047_2025_AYEAR_2746456}{project repository}.
+
+% EDIT-ANCHOR SYS6-SCOPE-02
+The reused objects differ across these studies. The current Qwen evaluation supplies demonstrations from other questions. The DeepSeek agent carries visible actions and tool observations forward within one question. The GPT-5.5 study reuses saved first-pass outputs and observations across post-processing conditions. Historical results retain their original denominators, scoring contracts and resource definitions. They are neither pooled with the two Qwen cohorts nor added to their six-comparison Holm correction.
+
+\section{Accumulated-history tool interaction}\label{sec:6.2}
+
+% EDIT-ANCHOR SYS6-AGENT-01
+The June reports describe 100-question and 500-question tool-agent runs using DeepSeek V4 Pro with thinking enabled and maximum reasoning effort. The 500-question run contained 50 questions in each of ten query types and allowed at most eight model turns. The displayed configuration for the 100-question run did not state a turn cap. Both reports record omission of the \texttt{max\_tokens} request parameter, which does not imply an unlimited completion budget or context window. Available tools supplied causal graphs, probability facts and calculations, with optional graph motifs, directed paths and d-separation queries.
+
+% EDIT-ANCHOR SYS6-AGENT-02
+Within each question, the agent maintained an evolving message history. An assistant tool action and the resulting observation were appended before the next model call, together with supported rejection or repair feedback. A preserved runner snapshot from 24 August confirms this history-carrying control flow, although its byte identity with the June runtime was not established. The graph adapter used CLADDER \texttt{graph\_id} metadata to retrieve a graph template. These are therefore graph-metadata-assisted agent results, not an evaluation of graph discovery from natural language.
+
+% EDIT-ANCHOR SYS6-TAB-AGENT
+\begin{table}[htbp]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.12}
+\caption[Historical DeepSeek tool-agent results]{Results reported for the two historical DeepSeek tool-agent runs. Denominators refer to accepted records in the original reports. They do not reconstruct all preceding attempts or exclusions. The runs are reported separately and are not assumed to be disjoint samples.}
+\label{tab:system-agent-runs}
+\begin{tabular}{p{0.47\linewidth}p{0.22\linewidth}p{0.22\linewidth}}
+\hline
+Reported measure & Agent-tools 100 & Agent-tools 500 \\
+\hline
+Accepted run records / unique questions & 100 / 100 & 500 / 500 \\
+Strict answer correct & 90/100 & 444/500 \\
+Final schema valid & 100/100 & 500/500 \\
+Original strict trace metric & 13/100 & 61/500 \\
+Original strict operation-alignment metric & 3/100 & 7/500 \\
+Mean model turns & 4.31 & 4.368 \\
+Mean tool calls & 3.17 & 3.176 \\
+Mean total tokens & Not stated & 16,956.952 \\
+Maximum model turns & Not stated & 8 \\
+\hline
+\end{tabular}
+\end{table}
+
+% EDIT-ANCHOR SYS6-AGENT-03
+The answer scores were substantially higher than the original trace and operation-alignment scores. The latter measured operational compliance of the structured \texttt{DecisionTrace} and its alignment with tool use. They were not independently adjudicated semantic labels and cannot be read as the proportion of natural-language reasoning that was correct. The reports note that final operation plans could remain generic despite the collection of tool evidence. These runs document actual multi-turn execution and its recorded outcomes; they do not supply a newly recomputed paired single-turn baseline or the legacy comparator for the GPT-5.5 study below.
+
+\section{Shared first-pass reuse and legacy interaction}\label{sec:6.3}
+
+% EDIT-ANCHOR SYS6-FIRSTPASS-01
+The July study used GPT-5.5 with high reasoning effort and a fixed concurrency of eight. Its candidate workflow exposed two public tools, \texttt{causal\_graph\_query} and \texttt{causal\_query\_solver}, and did not receive reference answers during execution. It retained public structured declarations, final answers, tool observations and verifier records rather than requesting or storing hidden chain of thought. All post-processing conditions read the same immutable first-pass record, avoiding independently resampled initial answers when comparing those conditions.
+
+% EDIT-ANCHOR SYS6-FIRSTPASS-02
+The \texttt{C0} condition preserved the initial answer, while \texttt{N} retained normalised verifier observations without changing it. \texttt{G} applied an eligible deterministic exact-tool guard without a model call. \texttt{R} allowed at most one same-model revision for an actionable question without rerunning tools, and \texttt{GR} applied \texttt{G} before considering a revision. The legacy comparator used a per-question multi-turn tool-agent workflow under the study's equalised execution settings. Its configured limit was six model turns. All 974 clean-holdout questions involved multiple turns, with 520 using three, 332 using four, 50 using five and 72 using six. The preserved July runner initialises a conversation once per question and passes accumulated assistant actions and tool observations into subsequent model calls. The candidate and legacy exposed two and nine public tool interfaces, respectively.
+
+% EDIT-ANCHOR SYS6-FIRSTPASS-03
+Development evaluated 556 rows. \texttt{G}, \texttt{R} and \texttt{GR} were rejected, with three regressions recorded for \texttt{R}/\texttt{GR}. The selected formal candidate was \texttt{C0} with alias-normalised observability retained and answer intervention disabled. Its answers were byte-identical to the initial answers, and its incremental revision calls and revision tokens were both zero. The formal comparison evaluates reuse under the selected workflow with answer revision disabled.
+
+% EDIT-ANCHOR SYS6-FIRSTPASS-03A
+The shared-first-pass manifest records 49 unique shards, 100 model calls and two model retries. Resource aggregation sums the shard audit records once. The 100-call total is therefore a system-level count, not a count of questions or a per-question turn measure. Legacy model calls are computed by summing each question's model-turn count and adding any schema-repair call. Its 974 records contain 3,570 model turns and one schema repair, accounting for the 3,571 calls.
+
+% EDIT-ANCHOR SYS6-TAB-FIRSTPASS
+\begin{table}[htbp]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.12}
+\caption[Shared first-pass system comparison]{Accuracy and resource use on the same 974 unique questions in the historical GPT-5.5 clean holdout. The execution audit confirms identical ordered question IDs and the same input pack. One empty legacy answer remains in the denominator. Model-call counts are system totals, not question counts. Input and output tokens are reported separately.}
+\label{tab:system-shared-first-pass}
+\begin{tabular}{p{0.47\linewidth}p{0.22\linewidth}p{0.22\linewidth}}
+\hline
+Clean-holdout measure & Legacy multi-turn system & Selected shared \texttt{C0} \\
+\hline
+Unique evaluated questions & 974 & 974 \\
+Correct answers & 935 & 934 \\
+Answer accuracy (\%) & 95.9959 & 95.8932 \\
+Input / prompt tokens & 9,461,308 & 1,012,666 \\
+Output / completion tokens & 1,679,369 & 412,280 \\
+Total tokens & 11,140,677 & 1,424,946 \\
+Recorded model calls & 3,571 & 100 \\
+Shared first-pass shards & Not applicable & 49 \\
+Public tool interfaces & 9 & 2 \\
+Incremental candidate revision calls & Not applicable & 0 \\
+\hline
+\end{tabular}
+\end{table}
+
+% EDIT-ANCHOR SYS6-ACCOUNTING-IDENTITIES
+Total tokens equal prompt tokens plus completion tokens. The legacy system's separately recorded 870,418 reasoning tokens are not added again. Its 2,582 tool calls are also not additional model calls.
+
+% EDIT-ANCHOR SYS6-FIRSTPASS-04
+\texttt{C0} had 19 gains and 20 losses against legacy. The recorded accuracy difference was -0.10267 percentage points, with a paired-bootstrap 95\% interval of [-1.33470, 1.12936] percentage points. The original report recorded that its prespecified -1.5-percentage-point non-inferiority requirement and resource requirements were met. This non-inferiority finding applies to the historical protocol and is separate from the current PNS comparisons.
+
+% EDIT-ANCHOR SYS6-FIRSTPASS-05A
+Across the 974 paired questions, the candidate used 1,012,666 input tokens against 9,461,308 for legacy, a reduction of 89.30\%. Output use was 412,280 against 1,679,369 tokens, a reduction of 75.45\%. Recorded model calls fell by 97.20\%, and total tokens by 87.21\%. Each reduction is calculated from the corresponding system totals.
+
+% EDIT-ANCHOR SYS6-FIRSTPASS-05B
+These savings concern the complete system configurations. The clarified accounting does not isolate the contributions of batching, record reuse or the changed tool interface. The selected candidate retained its initial answers without formal revision and did not compress interaction histories into PNS few-shot demonstrations. Monetary savings remain unverified.
+
+% EDIT-ANCHOR SYS6-FIRSTPASS-06
+A separate 180-item structural stress diagnostic returned 158 correct answers for the candidate and 163 for legacy. Its recorded accuracy difference was -2.7778 percentage points, with exact McNemar p = 0.1796875. This non-significant result does not establish equivalence. The stress diagnostic remains separate from the clean holdout and limits any claim that the observed trade-off held uniformly across evaluation settings.
