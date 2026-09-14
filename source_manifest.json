@@ -1,7 +1,7 @@
 {
   "prepared": "2026-09-14",
   "repository": "https://github.com/aklovey/EMATM0047_2025_AYEAR_2746456",
-  "scope": "LaTeX sources and supporting code, evaluation data, response records, analyses and figures.",
+  "scope": "Supporting code, evaluation data, response records, analyses and figures.",
   "path_base": "repository root",
   "files": [
     {
@@ -14,7 +14,7 @@
     },
     {
       "path": "README.md",
-      "bytes": 7560
+      "bytes": 7332
     },
     {
       "path": "docs/RECORDS.md",
@@ -22,11 +22,11 @@
     },
     {
       "path": "docs/EVIDENCE.md",
-      "bytes": 6085
+      "bytes": 5979
     },
     {
       "path": "docs/REPRODUCE.md",
-      "bytes": 8546
+      "bytes": 8414
     },
     {
       "path": "docs/english_reproduction_check.json",
@@ -741,118 +741,6 @@
       "bytes": 725
     },
     {
-      "path": "paper/README.md",
-      "bytes": 825
-    },
-    {
-      "path": "paper/causeplain.bst",
-      "bytes": 22023
-    },
-    {
-      "path": "paper/chapters/appendix_a.tex",
-      "bytes": 647
-    },
-    {
-      "path": "paper/chapters/chapter_1.tex",
-      "bytes": 5931
-    },
-    {
-      "path": "paper/chapters/chapter_2.tex",
-      "bytes": 13931
-    },
-    {
-      "path": "paper/chapters/chapter_3.tex",
-      "bytes": 15446
-    },
-    {
-      "path": "paper/chapters/chapter_4.tex",
-      "bytes": 15103
-    },
-    {
-      "path": "paper/chapters/chapter_5.tex",
-      "bytes": 11186
-    },
-    {
-      "path": "paper/chapters/chapter_6.tex",
-      "bytes": 7212
-    },
-    {
-      "path": "paper/chapters/chapter_7.tex",
-      "bytes": 2034
-    },
-    {
-      "path": "paper/chapters/front_abstract.tex",
-      "bytes": 3065
-    },
-    {
-      "path": "paper/chapters/front_ethics.tex",
-      "bytes": 1537
-    },
-    {
-      "path": "paper/chapters/front_notation.tex",
-      "bytes": 925
-    },
-    {
-      "path": "paper/chapters/front_support.tex",
-      "bytes": 81
-    },
-    {
-      "path": "paper/chapters/system_exploration.tex",
-      "bytes": 10450
-    },
-    {
-      "path": "paper/citation_mapping.json",
-      "bytes": 450
-    },
-    {
-      "path": "paper/dissertation.cls",
-      "bytes": 6917
-    },
-    {
-      "path": "paper/figures/figure1_auditable_compression.drawio",
-      "bytes": 18876
-    },
-    {
-      "path": "paper/figures/figure1_auditable_compression.pdf",
-      "bytes": 58570
-    },
-    {
-      "path": "paper/figures/figure1_auditable_compression.png",
-      "bytes": 328700
-    },
-    {
-      "path": "paper/figures/figure1_auditable_compression.svg",
-      "bytes": 17622
-    },
-    {
-      "path": "paper/figures/figure4_1_evaluation_design.pdf",
-      "bytes": 53711
-    },
-    {
-      "path": "paper/figures/figure5_1_phase56_compression.pdf",
-      "bytes": 44868
-    },
-    {
-      "path": "paper/figures/figure5_2_evaluation_efficiency.pdf",
-      "bytes": 60500
-    },
-    {
-      "path": "paper/logo_uob_color.eps",
-      "bytes": 21121
-    },
-    {
-      "path": "paper/logo_uob_color.pdf",
-      "bytes": 10730
-    },
-    {
-      "path": "paper/main.tex",
-      "bytes": 2164
-    },
-    {
-      "path": "paper/references.bib",
-      "bytes": 13501
-    },
-    {
       "path": "requirements-analysis.txt",
       "bytes": 29
     },
@@ -862,7 +750,7 @@
     },
     {
       "path": "supplement/CAUSE_Electronic_Supplement_20260910.md",
-      "bytes": 66272
+      "bytes": 66236
     },
     {
       "path": "supplement/case_raw/q4910_FULL_COT.json",
@@ -1217,6 +1105,5 @@
   ],
   "historical_note": "The full older exhaustive-PNS56 database is not included; its scoring outputs and retained accounting are supplied. Current Phase56 full56 closure and source export are included.",
   "system_exploration_update": "Added preserved system reports, paired data, accounting fields, source excerpts and offline reanalysis. The supplement source register identifies release transformations.",
-  "paper_source_update": "Current author Yong Wang, selected dissertation title without a subtitle, and Github Repo appendix heading.",
   "record_notes": "docs/RECORDS.md"
 }

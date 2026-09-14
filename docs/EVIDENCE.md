@@ -1,6 +1,6 @@
 # Dissertation evidence guide
 
-This page maps the dissertation's experiments and supporting analyses to material in this repository. The numbered publication references are listed separately in [the bibliography](../paper/references.bib).
+This page maps the dissertation's experiments and supporting analyses to material in this repository.
 
 ## Main study
 

@@ -1,8 +1,8 @@
 # Demonstration Compression Inspired by Necessity and Sufficiency for Few-Shot Causal Reasoning
 
-This repository accompanies Yong Wang's MSc dissertation for EMATM0047 at the University of Bristol. The study asks whether auditable compression of reasoning demonstrations can improve the accuracy and input/output token trade-off in few-shot causal reasoning on CLADDER. It provides editable LaTeX sources, code, frozen evaluation data, response records and supporting analyses.
+This repository accompanies Yong Wang's MSc dissertation for EMATM0047 at the University of Bristol. The study asks whether auditable compression of reasoning demonstrations can improve the accuracy and input/output token trade-off in few-shot causal reasoning on CLADDER. It provides code, evaluation data, response records and supporting analyses.
 
-[LaTeX sources](paper/) · [Evidence index](docs/EVIDENCE.md) · [Recalculate results](docs/REPRODUCE.md) · [System exploration](supplement/system_exploration/)
+[Evidence index](docs/EVIDENCE.md) · [Recalculate results](docs/REPRODUCE.md) · [System exploration](supplement/system_exploration/)
 
 ## Study and results
 
@@ -27,7 +27,6 @@ The [evidence index](docs/EVIDENCE.md) maps the dissertation's experiments to ac
 
 | Location | Contents |
 |---|---|
-| [`paper/`](paper/) | Eight-chapter LaTeX sources, bibliography and compilation assets. |
 | [`figures/`](figures/) | Full plotting code and input data, native Draw.io diagrams, and SVG/PDF/PNG exports. |
 | [`experiment/data/`](experiment/data/) | Evaluation demonstration bank, target inputs, scoring labels and CPT groups. |
 | [`experiment/scripts/`](experiment/scripts/) | Request preparation, scoring, paired statistics and heuristic extraction. |
@@ -53,4 +52,4 @@ The guide also records the Qwen/vLLM settings and separate seed roles. All 2,184
 
 ## Sources
 
-CLADDER supplies the benchmark, graph families, stories and generator. The captured generator revision and setup are in the [generation record](experiment/fresh_source/GENERATE_FRESH246_REPRODUCTION.md). CausalMath supplies methodological context; this project does not reproduce its experiments. Publication references are in [`paper/references.bib`](paper/references.bib). Upstream code and data retain their included attribution and licence information; this repository assigns no new blanket licence to third-party material.
+CLADDER supplies the benchmark, graph families, stories and generator. The captured generator revision and setup are in the [generation record](experiment/fresh_source/GENERATE_FRESH246_REPRODUCTION.md). CausalMath supplies methodological context; this project does not reproduce its experiments. Upstream code and data retain their included attribution and licence information; this repository assigns no new blanket licence to third-party material.

@@ -357,4 +357,4 @@ The fresh-cohort result remains conditional on its generator, filters, templates
 
 ## Further materials
 
-[Dissertation source](../paper/) · [Evidence guide](../docs/EVIDENCE.md) · [Reproduction guide](../docs/REPRODUCE.md).
+[Evidence guide](../docs/EVIDENCE.md) · [Reproduction guide](../docs/REPRODUCE.md).
