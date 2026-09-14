@@ -1,6 +1,6 @@
-# Auditable reasoning trajectory compression for few-shot causal reasoning
+# Demonstration Compression Inspired by Necessity and Sufficiency for Few-Shot Causal Reasoning
 
-This repository accompanies Wyatt Wang's MSc dissertation for EMATM0047 at the University of Bristol. The study asks whether auditable compression of reasoning demonstrations can improve the accuracy and input/output token trade-off in few-shot causal reasoning on CLADDER. It provides editable LaTeX sources, code, frozen evaluation data, response records and supporting analyses.
+This repository accompanies Yong Wang's MSc dissertation for EMATM0047 at the University of Bristol. The study asks whether auditable compression of reasoning demonstrations can improve the accuracy and input/output token trade-off in few-shot causal reasoning on CLADDER. It provides editable LaTeX sources, code, frozen evaluation data, response records and supporting analyses.
 
 [LaTeX sources](paper/) · [Evidence index](docs/EVIDENCE.md) · [Recalculate results](docs/REPRODUCE.md) · [System exploration](supplement/system_exploration/)
 
@@ -14,7 +14,7 @@ The three few-shot conditions use the same two same-type demonstration identitie
 
 | Cohort | PNS_COT | FULL_COT | HEURISTIC_SHORT | ZERO | PNS input saving against FULL |
 |---|---:|---:|---:|---:|---:|
-| Main, 300 released targets | 279/300 | 277/300 | 272/300 | 254/300 | 20.19% |
+| Main, 300 previously evaluated targets | 279/300 | 277/300 | 272/300 | 254/300 | 20.19% |
 | Fresh, 246 numerical instances | 224/246 | 208/246 | 208/246 | 187/246 | 18.62% |
 
 Fresh accuracy improves by 6.50 percentage points against both FULL and HEURISTIC, with six-comparison Holm-adjusted p-values of 0.00998 and 0.02100. The main cohort's corresponding CPT-cluster confidence intervals include zero. The two cohorts are analysed separately. Detailed results are in [fresh paired analysis](experiment/fresh_analysis/paired_analysis.md), [main CPT sensitivity](experiment/main_CPT_sensitivity.md) and [joint comparisons](experiment/joint_comparisons.json).
@@ -23,16 +23,16 @@ The main cohort has prior experimental exposure and numerical reuse, which the 2
 
 ## Find the materials
 
-The [evidence index](docs/EVIDENCE.md) maps the dissertation's experiments to actual files, including the historical verifier replay and platform bill. The new [system-exploration source register](supplement/system_exploration/source_register.json) links the historical agent and shared-first-pass tables to preserved reports, accounting records and implementation excerpts.
+The [evidence index](docs/EVIDENCE.md) maps the dissertation's experiments to actual files, including the historical verifier replay and platform bill. The [system-exploration source register](supplement/system_exploration/source_register.json) links the historical agent and shared-first-pass tables to preserved reports, accounting records and implementation excerpts.
 
 | Location | Contents |
 |---|---|
-| [`paper/`](paper/) | Current eight-chapter LaTeX sources, bibliography and compilation assets, updated 14 September 2026. Long author/editor lists display the first three names followed by et al. The thesis PDF is not included. |
+| [`paper/`](paper/) | Eight-chapter LaTeX sources, bibliography and compilation assets. |
 | [`figures/`](figures/) | Full plotting code and input data, native Draw.io diagrams, and SVG/PDF/PNG exports. |
-| [`experiment/data/`](experiment/data/) | Evaluation demonstration bank, public target inputs, scoring labels and CPT groups, with non-English spans translated for this release. |
+| [`experiment/data/`](experiment/data/) | Evaluation demonstration bank, target inputs, scoring labels and CPT groups. |
 | [`experiment/scripts/`](experiment/scripts/) | Request preparation, scoring, paired statistics and heuristic extraction. |
 | [`experiment/phase56/`](experiment/phase56/) | All 56 parent inputs and closure records, source export, selected lineage, failures and construction summaries. |
-| [`experiment/CAUSE_Experiment_English_Release_20260912.tar.gz`](experiment/CAUSE_Experiment_English_Release_20260912.tar.gz) | English release of current-run requests, response records, usage and SQLite snapshots. |
+| [Experiment records archive](experiment/CAUSE_Experiment_English_Release_20260912.tar.gz) | Requests, response records, usage and SQLite snapshots. |
 | [`experiment/fresh_source/`](experiment/fresh_source/) | Executed generator driver, official source, proposal and exclusion records, frozen outputs and independent calculations. |
 | [`experiment/reference_method_code/`](experiment/reference_method_code/) | Historical construction-method reference snapshot. |
 | [`evidence/`](evidence/) | Overlap checks, semantic calculations, historical comparisons, compression measurements and billing. |
@@ -50,10 +50,6 @@ The system supplement adds a broader historical comparison on the same 974 quest
 The historical system paired statistics and accounting were also [recalculated from the released records](supplement/system_exploration/recalculated_system_results.json) on 14 September. The offline script matches the original clean and stress comparison counts, intervals and resource totals without model calls.
 
 The guide also records the Qwen/vLLM settings and separate seed roles. All 2,184 main and fresh request records use `20260910 + question_id` as their generation seed, matched across conditions within each target. Recreating generation requires the model-serving environment; its entry points and archived path mappings are documented separately from offline analysis.
-
-## English release
-
-All repository documentation and filenames are in English. Non-English passages in some recorded prompt and reasoning fields have been translated for this edition. Recorded answers, scoring labels, seeds, token usage and numerical results remain those of the original experiments. Translated text is not a byte-exact raw record, and original text hashes and character offsets still describe the originals, which are retained in the private local archive. See [the release note](docs/ENGLISH_RELEASE.md). The compiled thesis PDF is not distributed here.
 
 ## Sources
 

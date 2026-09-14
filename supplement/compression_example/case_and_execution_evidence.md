@@ -1,6 +1,6 @@
 # q1428 and the executed candidate-selection rules
 
-This evidence note supports the rubric additions without changing any reported experiment result. All quoted text comes from the archived q1428 records. The accompanying `case_example.json` contains the complete public problem, parent reasoning, segment offsets, exact continuation prompt, generated suffix, selected reasoning and judge records. `q1428_final_demo_verbatim.txt` renders the unchanged downstream example template at illustrative position 1. It does not assert that a particular target used that position.
+This note documents the recorded q1428 compression example. All quoted text comes from the archived q1428 records. The accompanying `case_example.json` contains the complete public problem, parent reasoning, segment offsets, exact continuation prompt, generated suffix, selected reasoning and judge records. `q1428_final_demo_verbatim.txt` renders the unchanged downstream example template at illustrative position 1. It does not assert that a particular target used that position.
 
 ## Worked example suitable for the manuscript
 

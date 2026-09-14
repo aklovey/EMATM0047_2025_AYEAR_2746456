@@ -1,7 +1,7 @@
 {
   "prepared": "2026-09-14",
   "repository": "https://github.com/aklovey/EMATM0047_2025_AYEAR_2746456",
-  "scope": "English-language distribution of LaTeX sources and supporting code, data, response records, analyses and figures; the thesis PDF is excluded.",
+  "scope": "LaTeX sources and supporting code, evaluation data, response records, analyses and figures.",
   "path_base": "repository root",
   "files": [
     {
@@ -10,23 +10,23 @@
     },
     {
       "path": "CITATION.bib",
-      "bytes": 295
+      "bytes": 315
     },
     {
       "path": "README.md",
-      "bytes": 8373
+      "bytes": 7560
     },
     {
-      "path": "docs/ENGLISH_RELEASE.md",
-      "bytes": 1419
+      "path": "docs/RECORDS.md",
+      "bytes": 818
     },
     {
       "path": "docs/EVIDENCE.md",
-      "bytes": 6295
+      "bytes": 6085
     },
     {
       "path": "docs/REPRODUCE.md",
-      "bytes": 8610
+      "bytes": 8546
     },
     {
       "path": "docs/english_reproduction_check.json",
@@ -62,7 +62,7 @@
     },
     {
       "path": "evidence/historical_evidence_audit.md",
-      "bytes": 12785
+      "bytes": 12626
     },
     {
       "path": "evidence/historical_evidence_report.py",
@@ -98,7 +98,7 @@
     },
     {
       "path": "evidence/phase56_closure_and_parameters.md",
-      "bytes": 8758
+      "bytes": 8688
     },
     {
       "path": "evidence/phase56_compression_distribution.json",
@@ -126,7 +126,7 @@
     },
     {
       "path": "evidence_ledger.md",
-      "bytes": 467
+      "bytes": 416
     },
     {
       "path": "experiment/CAUSE_Experiment_English_Release_20260912.tar.gz",
@@ -134,7 +134,7 @@
     },
     {
       "path": "experiment/README.md",
-      "bytes": 5087
+      "bytes": 4968
     },
     {
       "path": "experiment/analysis_environment.json",
@@ -254,7 +254,7 @@
     },
     {
       "path": "experiment/fresh_source/GENERATE_FRESH246_REPRODUCTION.md",
-      "bytes": 6129
+      "bytes": 5816
     },
     {
       "path": "experiment/fresh_source/README.md",
@@ -334,7 +334,7 @@
     },
     {
       "path": "experiment/phase56/PHASE56_ASSET_AUDIT.md",
-      "bytes": 8663
+      "bytes": 8593
     },
     {
       "path": "experiment/phase56/export_remote_phase56.py",
@@ -398,19 +398,19 @@
     },
     {
       "path": "experiment/protocol/FINAL_COMPARISON_SPEC.md",
-      "bytes": 12939
+      "bytes": 12795
     },
     {
       "path": "experiment/protocol/followup_design.md",
-      "bytes": 12939
+      "bytes": 12795
     },
     {
       "path": "experiment/protocol/fresh_evaluation_decision.md",
-      "bytes": 3240
+      "bytes": 3150
     },
     {
       "path": "experiment/reference_method_code/README.md",
-      "bytes": 4722
+      "bytes": 2385
     },
     {
       "path": "experiment/reference_method_code/SOURCE_INDEX.json",
@@ -742,7 +742,7 @@
     },
     {
       "path": "paper/README.md",
-      "bytes": 2055
+      "bytes": 825
     },
     {
       "path": "paper/causeplain.bst",
@@ -750,7 +750,7 @@
     },
     {
       "path": "paper/chapters/appendix_a.tex",
-      "bytes": 662
+      "bytes": 647
     },
     {
       "path": "paper/chapters/chapter_1.tex",
@@ -846,7 +846,7 @@
     },
     {
       "path": "paper/main.tex",
-      "bytes": 2159
+      "bytes": 2164
     },
     {
       "path": "paper/references.bib",
@@ -862,7 +862,7 @@
     },
     {
       "path": "supplement/CAUSE_Electronic_Supplement_20260910.md",
-      "bytes": 66537
+      "bytes": 66272
     },
     {
       "path": "supplement/case_raw/q4910_FULL_COT.json",
@@ -954,7 +954,7 @@
     },
     {
       "path": "supplement/compression_example/case_and_execution_evidence.md",
-      "bytes": 14399
+      "bytes": 14361
     },
     {
       "path": "supplement/compression_example/case_example.json",
@@ -970,11 +970,11 @@
     },
     {
       "path": "supplement/historical/CAUSE_Thesis_Structure_and_Experiment_Gaps_2026-09-04.md",
-      "bytes": 31504
+      "bytes": 31316
     },
     {
       "path": "supplement/historical/CAUSE_Thesis_Structure_and_Experiment_Gaps_COMPLETED_20260910.md",
-      "bytes": 25482
+      "bytes": 25132
     },
     {
       "path": "supplement/historical/evidence_ledger_20260910.md",
@@ -1038,7 +1038,7 @@
     },
     {
       "path": "supplement/paired_case_records.md",
-      "bytes": 9153
+      "bytes": 9041
     },
     {
       "path": "supplement/phase56_length_distribution.json",
@@ -1058,11 +1058,11 @@
     },
     {
       "path": "supplement/system_exploration/README.md",
-      "bytes": 6301
+      "bytes": 6094
     },
     {
       "path": "supplement/system_exploration/deepseek_agent/agent_tools_100_report.english.md",
-      "bytes": 4172
+      "bytes": 3894
     },
     {
       "path": "supplement/system_exploration/deepseek_agent/agent_tools_500_report.md",
@@ -1122,7 +1122,7 @@
     },
     {
       "path": "supplement/system_exploration/shared_first_pass/protocol.english.md",
-      "bytes": 6056
+      "bytes": 5847
     },
     {
       "path": "supplement/system_exploration/shared_first_pass/protocol_manifest.release.json",
@@ -1130,7 +1130,7 @@
     },
     {
       "path": "supplement/system_exploration/shared_first_pass/report.english.md",
-      "bytes": 2948
+      "bytes": 2788
     },
     {
       "path": "supplement/system_exploration/shared_first_pass/resource_metrics.json",
@@ -1198,7 +1198,7 @@
     },
     {
       "path": "supplement/theory/causalmath_theory_packet.md",
-      "bytes": 14927
+      "bytes": 14802
     },
     {
       "path": "supplement/theory/official_neurips.bib",
@@ -1216,7 +1216,7 @@
     "this manifest itself"
   ],
   "historical_note": "The full older exhaustive-PNS56 database is not included; its scoring outputs and retained accounting are supplied. Current Phase56 full56 closure and source export are included.",
-  "language_note": "Non-English prose and selected recorded prompt/reasoning spans have been translated. Numerical observations refer to the original runs. See docs/ENGLISH_RELEASE.md.",
   "system_exploration_update": "Added preserved system reports, paired data, accounting fields, source excerpts and offline reanalysis. The supplement source register identifies release transformations.",
-  "paper_source_update": "Synchronized the active 14 September eight-chapter manuscript source, custom first-three-names bibliography style and current inputs. No complete thesis PDF or compile products are distributed."
+  "paper_source_update": "Current author Yong Wang, selected dissertation title without a subtitle, and Github Repo appendix heading.",
+  "record_notes": "docs/RECORDS.md"
 }

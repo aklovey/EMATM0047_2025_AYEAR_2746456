@@ -1,6 +1,6 @@
 # Recalculate the saved results
 
-This repository edition translates non-English prompt/reasoning spans. Offline scoring uses the preserved final-response and numeric fields; original byte hashes, offsets and token counts describe the original run. See [ENGLISH_RELEASE.md](ENGLISH_RELEASE.md).
+Offline scoring uses saved final responses and numerical fields. See [Data records](RECORDS.md) for the treatment of generated reasoning and the scope of original hashes, offsets and token counts.
 
 
 [Repository overview](../README.md) · [Evidence index](EVIDENCE.md)

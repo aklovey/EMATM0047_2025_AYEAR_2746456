@@ -1,6 +1,6 @@
-# Shared-first-pass report, English account
+# Shared-first-pass report
 
-This account translates and consolidates the English/Chinese duplicate passages in the preserved `GPT-5.5 Shared First-Pass Rowwise Verifier Report.md`. The underlying [paired comparisons](primary_paired_comparisons.csv) and [resource metrics](resource_metrics.json) are distributed unchanged. The original-language report remains in the local archive.
+Summary of the preserved `GPT-5.5 Shared First-Pass Rowwise Verifier Report.md`. The underlying [paired comparisons](primary_paired_comparisons.csv) and [resource metrics](resource_metrics.json) are unchanged.
 
 ## Recorded decision
 

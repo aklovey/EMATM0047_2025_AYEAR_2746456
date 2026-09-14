@@ -5,7 +5,6 @@
 - Phase: instance-separated follow-up evaluation after fixing the method. This is the preparation stage, with no new model results.
 - Main question: Can auditable reasoning-trajectory compression improve the efficiency of few-shot causal reasoning?
 - Claim: Estimate changes in accuracy and input/output costs. No non-inferiority claim is specified, and non-significance will not be described as equivalence.
-- The user has authorised the experiments. This version simplifies execution and does not retain the historical item-by-item approval process.
 
 ## 1. Samples and comparisons
 

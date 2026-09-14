@@ -4,7 +4,7 @@ This supplement supports the dissertation's system-exploration chapter. It provi
 
 | Study | Reused object | Main evidence |
 |---|---|---|
-| DeepSeek tool agents, 21-22 June 2026 | Visible conversation history and tool observations within one question | [100-question report, English release](deepseek_agent/agent_tools_100_report.english.md), [500-question report, unchanged](deepseek_agent/agent_tools_500_report.md), [later history-control excerpt](source_snapshots/august_agent_history.md) |
+| DeepSeek tool agents, 21-22 June 2026 | Visible conversation history and tool observations within one question | [100-question report](deepseek_agent/agent_tools_100_report.english.md), [500-question report](deepseek_agent/agent_tools_500_report.md), [later history-control excerpt](source_snapshots/august_agent_history.md) |
 | GPT-5.5 shared first pass, 18 July 2026 | One saved initial output/observation record across post-processing conditions | [Original paired matrix](shared_first_pass/paired_sample_matrix.csv), [original resource summary](shared_first_pass/resource_metrics.json), [protocol account](shared_first_pass/protocol.english.md), [result account](shared_first_pass/report.english.md) |
 
 The June reports are retained in a later August checkout. That checkout confirms accumulated-history control flow but does not establish byte identity with the June runtime. The July snapshots are also preserved source evidence, not a new claim of exact historical runtime identity. The [source register](source_register.json) identifies each file's source and whether it is unchanged, redacted, translated or an excerpt.
@@ -42,12 +42,12 @@ This runs without a model service. It checks the paired matrix, unchanged C0 ans
 
 Legacy's 3,570 model turns plus one schema repair yield 3,571 model calls. Its 2,582 tool calls are recorded separately. Prompt plus completion tokens equal total tokens; the 870,418 separately reported reasoning tokens are not added a second time. The shard manifest records 49 unique shards and two retries; the 100 calls already come from its recorded model-call aggregation. The script does not reinterpret the retry count as an extra charge outside that total.
 
-## Release contents and scope
+## Record types
 
-- `paired_sample_matrix.csv`, `primary_paired_comparisons.csv`, `resource_metrics.json` and supporting comparison CSVs are unmodified English files from the preserved run.
+- `paired_sample_matrix.csv`, `primary_paired_comparisons.csv`, `resource_metrics.json` and supporting comparison CSVs are unmodified files from the preserved run.
 - `*.release.json` preserves experimental fields and lists each removed local path or service endpoint. Its original hash fields describe original artifacts, not the redacted release file.
 - `legacy_accounting.csv` is a selected-field export from accepted per-question raw records. `shard_accounting.csv` selects accounting fields from each original graph audit. Values are not translated or recomputed except the explicitly named legacy `model_calls` column.
-- The English protocol and report accounts identify their original source. The original non-English versions remain in the local archive. English accounts are not raw runtime artifacts.
-- No full model conversations, private runtime paths, credentials, thesis PDF or detector report are included in this supplement. The excerpts are sufficient to inspect the reported accounting/history logic but are not a complete runnable historical agent environment.
+- Protocol and report summaries identify their source; the [source register](source_register.json) records translation, redaction and excerpting.
+- The source excerpts support inspection of accounting and conversation-history logic. They do not include the complete historical runtime environment.
 
 Current Qwen cohorts, historical DeepSeek runs and the GPT-5.5 comparison retain separate models, input access, sample sets and scoring contracts. This directory adds their evidence without merging their results or changing their original experimental roles.

@@ -1,6 +1,6 @@
-# Shared-first-pass protocol, English account
+# Shared-first-pass protocol
 
-This is an English account of the preserved `experiment_protocol.md`, not a byte-identical copy of the registered document. It covers the design, selection rules and endpoints used to interpret the dissertation's system results. The original non-English protocol is retained locally. The [released protocol manifest](protocol_manifest.release.json) and [dataset-freeze manifest](dataset_freeze_manifest.release.json) preserve the recorded configuration and freeze metadata, with local runtime locations removed.
+Summary of the preserved `experiment_protocol.md`, covering the design, selection rules and endpoints. The [protocol manifest](protocol_manifest.release.json) and [dataset-freeze manifest](dataset_freeze_manifest.release.json) retain the recorded configuration and freeze metadata, with local runtime locations removed.
 
 ## Registration and execution conditions
 

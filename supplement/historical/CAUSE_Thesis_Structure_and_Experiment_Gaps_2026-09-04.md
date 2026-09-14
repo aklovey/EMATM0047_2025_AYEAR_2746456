@@ -194,7 +194,6 @@ Multiple query types within one dataset do not establish cross-dataset validatio
 
 LoRA/SFT, RL/OPD, multi-epoch compression, world-model extensions, graph augmentation, full SkillOpt, simultaneous expansion to all 13 types, broader judge-provider comparisons, full-scale PNS and low-level KV-cache reconstruction can be deferred. Existing LoRA smoke material has not produced a reportable training checkpoint or test effect. If internalisation is not promised, there is no need to begin a new training programme.
 
-Under a tight deadline, a frozen method, complete independent controls, semantic auditing and cost interpretation will usually support the dissertation better than ten unfinished systems.
 
 ## 9. Recommended main figures and tables
 

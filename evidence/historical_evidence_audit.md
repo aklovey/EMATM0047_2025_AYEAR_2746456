@@ -1,6 +1,6 @@
 # Audit of original historical experiment evidence, 2026-09-10
 
-This report recalculates results from per-question outputs, frozen request ledgers and original CLADDER data read during the audit. Historical originals were unchanged, and the audit made no model calls. SSH access to the source host, Wyatter-Laptop, was confirmed at the time. Actual file evidence superseded the earlier note that no ICL results were available.
+This report recalculates results from per-question outputs, frozen request ledgers and original CLADDER data read during the audit. Historical originals were unchanged, and the audit made no model calls.
 
 ## 1. Historical results available for the dissertation
 

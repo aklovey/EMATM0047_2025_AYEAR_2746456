@@ -1,6 +1,6 @@
 # Experiment and review materials
 
-All Qwen generation requests in this experiment have finished, comprising 40 development requests, 1,200 follow-up requests on released data, 984 requests on new numerical instances and 56 same-model self-reviews, for a total of **2,280**. A further 2,280 tokenizer requests involved no generation. These counts exclude historical PNS/Judge calls and Codex-assisted analysis that was not separately metered. D41 was powered off but the instance was not released. The complete power-cycle bill was ¥28.89.
+All Qwen generation requests in this experiment have finished, comprising 40 development requests, 1,200 follow-up requests on released data, 984 requests on new numerical instances and 56 same-model self-reviews, for a total of **2,280**. A further 2,280 tokenizer requests involved no generation. These counts exclude historical PNS/Judge calls and Codex-assisted analysis that was not separately metered. The complete power-cycle bill was ¥28.89.
 
 ## Result entry points
 
@@ -11,9 +11,9 @@ All Qwen generation requests in this experiment have finished, comprising 40 dev
 - `self_review/` contains 29 parseable self-reported passes and 27 truncated responses with unknown outcomes. Neither self-reports nor quotation matching constitute independent semantic ground truth.
 - `dev_analysis/` contains the four-condition development check on 10 questions. Its results were not used to adjust the method.
 
-## Raw records
+## Saved records
 
-`CAUSE_Experiment_English_Release_20260912.tar.gz` contains 16,542,678 bytes and 2,357 tar members. It includes 40/1,200/984/56 complete raw responses, actual requests, states, token usage, runtime parameters and consistent SQLite snapshots. Extraction creates the `dev10`, `main300`, `fresh246` and `self_review56` directories. `local_archive_verification.json` records archive readability and response counts. No new model requests were used to reconstruct the original results.
+`CAUSE_Experiment_English_Release_20260912.tar.gz` contains 40/1,200/984/56 saved responses, requests, states, token usage, runtime parameters and consistent SQLite snapshots. Extraction creates the `dev10`, `main300`, `fresh246` and `self_review56` directories. `local_archive_verification.json` records archive readability and response counts. No new model requests were used to reconstruct the original results.
 
 `data/` contains public problem statements, scoring-only labels, the fixed 56 demonstrations and their deployment policy. Target gold labels, complete SCMs and source reasoning were excluded from model prompts. `fresh_source/` preserves all 257 proposals, 11 exclusions, new SCM parameters, the executed generation driver, independent calculators and official source code. Official RandomBuilder Uniform proposals underwent consistency filtering, so the resulting distribution is not the original balanced benchmark distribution. The two cohorts are not combined into 546 samples from one distribution.
 

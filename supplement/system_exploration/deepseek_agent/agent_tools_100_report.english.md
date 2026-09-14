@@ -1,5 +1,3 @@
-> English release of the preserved June 22 report. Six non-English headings/passages were translated; all numbers and already-English report content were retained. The original-language file remains in the local archive. This release copy is not a byte-identical raw record.
-
 # DeepSeek V4 Agent Tools + PNS Results
 
 ## Graph adapter scope

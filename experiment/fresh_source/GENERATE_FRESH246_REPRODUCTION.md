@@ -1,6 +1,6 @@
 # Executed Fresh246 generation and filtering procedure
 
-`generate_fresh246_executed.py` is the complete driver actually used to generate and filter 246 questions. It was copied byte-for-byte from this directory's existing `remote_generate246.py` (9,106 bytes), rather than reconstructed from the 8-question probe. The program was already stored locally and was sent through SSH stdin to the host Python interpreter for execution. Archiving this copy involved only byte-equality and syntax checks. Generation was not rerun, and freeze246 data were unchanged.
+`generate_fresh246_executed.py` is the executed driver for generating and filtering 246 questions, preserved from `remote_generate246.py`. The eight-question feasibility probe is separate.
 
 ## Original execution command
 

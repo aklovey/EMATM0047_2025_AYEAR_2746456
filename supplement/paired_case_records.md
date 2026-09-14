@@ -67,4 +67,4 @@ The public question says “my decision” without clearly naming the treatment 
 
 ## Supporting records
 
-The portable [case record](case_review.json) preserves all 17 exact short quotations, all 20 original response hashes and contents, unchanged scores, and case-specific limitations. Its relative paths resolve to bundled raw responses. [Verification results](verification.json) record quote, hash, arithmetic, content-enumeration, and link checks. These records support inspection of what the saved responses say; they do not convert five selected examples into population error rates or a causal explanation of compression effects.
+The portable [case record](case_review.json) preserves all 17 exact short quotations, all 20 original response hashes and contents, unchanged scores, and case-specific limitations. Its relative paths resolve to bundled raw responses. These records support inspection of what the saved responses say; they do not convert five selected examples into population error rates or a causal explanation of compression effects.

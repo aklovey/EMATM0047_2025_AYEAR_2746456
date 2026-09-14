@@ -1,6 +1,6 @@
 # Fresh SCM evaluation decision
 
-Decision date: 2026-09-10, before reading any accuracy result from the running 300-target follow-up. That run's interim monitoring covers technical completion only. User has authorized additional Qwen calls and delegated remaining decisions while asleep.
+Decision date: 2026-09-10, before reading any accuracy result from the running 300-target follow-up. That run's interim monitoring covers technical completion only.
 
 ## Purpose and scope
 

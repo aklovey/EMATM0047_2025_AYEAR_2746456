@@ -1,6 +1,6 @@
 # Electronic Supplement to Auditable Reasoning Trajectory Compression
 
-This supplement preserves extended protocols, historical experiments, diagnostic audits and resource accounts supporting the focused dissertation. It is an archival companion: the original section and table labels are retained within quoted source material, and current chapter references should be read in the dissertation. The complete Pro-reviewed source snapshot and raw experimental/evidence archives accompany these records.
+This supplement preserves extended protocols, historical experiments, diagnostic audits and resource accounts supporting the focused dissertation. It is an archival companion: the original section and table labels are retained within quoted source material, and current chapter references should be read in the dissertation. Current files are indexed in the [evidence guide](../docs/EVIDENCE.md).
 
 ## S1 Historical protocols and exploratory experiments
 
@@ -270,7 +270,7 @@ Relative to ZERO, PNS_COT gained 41 correct answers and lost four, a difference 
 
 PNS_COT used 1,545,034 input tokens compared with 1,898,530 for FULL_COT, a reduction of 18.62%. Completion-token use fell from 446,995 to 397,597, a reduction of 11.05%. HEURISTIC_SHORT used only 72 more input tokens than PNS_COT across the cohort, providing a close prompt-length match for the accuracy comparison. The 246 targets used 492 demonstration identity slots. In PNS_COT, 385 slots used accepted compressed traces and 107 used unchanged parent fallbacks: q19407 occupied 58 fallback slots and q24494 occupied 49. FULL_COT used full reasoning in all 492 slots. PNS_COT improved both strict accuracy and input use relative to FULL_COT under the conditioned generation distribution in Section 4.1.1. The new numerical instances reused existing graph families and story templates; the evaluation did not test new graphs or stories and does not represent the released benchmark distribution.
 
-![Input use and paired accuracy differences](../figures/figure2_evaluation_efficiency.png)
+![Input use and paired accuracy differences](../figures/figure5_2_evaluation_efficiency.png)
 Figure 5.1: Input use and paired accuracy differences in the two separate cohorts. Bars show measured mean input tokens per target. Points compare PNS with FULL and HEURISTIC; intervals are pointwise 95% bootstrap intervals, using 271 full-CPT clusters for the 300-target cohort and 246 unique numerical-instance groups for the fresh cohort. The intervals are not simultaneous confidence intervals; six-comparison Holm adjustment applies to the reported p-values. No pooled cohort effect or between-cohort interaction test is shown.
 
 ## S3 Extended audits, self-review and case studies
@@ -355,6 +355,6 @@ The experiments cover restricted CLADDER query types under the recorded model-se
 
 The fresh-cohort result remains conditional on its generator, filters, templates and fixed demonstration pool; cross-model transfer and unrestricted graph generalisation were not tested.
 
-## Source archive and further electronic appendices
+## Further materials
 
-[Complete Pro-reviewed manuscript snapshot](source_snapshot/CAUSE_MSc_Thesis_Pro_Revised_20260910.md). The existing case, evidence and reproducibility appendices remain in this directory. The main archive retains all original experiments and evidence; no request or raw response was deleted by the editorial restructuring.
+[Dissertation source](../paper/) · [Evidence guide](../docs/EVIDENCE.md) · [Reproduction guide](../docs/REPRODUCE.md).

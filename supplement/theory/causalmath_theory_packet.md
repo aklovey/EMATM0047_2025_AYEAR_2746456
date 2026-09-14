@@ -1,8 +1,8 @@
 # CausalMath theory and the Phase56 adaptation
 
-This package supplies five optional formula blocks and an executed-method pseudocode. Four theory blocks belong in §2.5 and the observed continuation contrast belongs in §3.4. Existing references 1–13 and both evaluation cohorts remain unchanged.
+Definitions of necessity and sufficiency, with the implemented Phase56 continuation score and candidate-selection procedure.
 
-## Suggested §2.5 prose
+## Theoretical background
 
 CausalMath [14] connects reasoning-step interventions to the probability of necessity and sufficiency. For a question q and known correct answer y, let S be the original chain and let S′t replace step st with an altered step while regenerating its continuation. Its PS and PN definitions condition on different factual outcomes, which separates the chance that a chain corrects a failure from the chance that altering a step breaks a successful answer. The joint PNS event requires success under the original chain and failure under the altered chain for the same underlying case.
 

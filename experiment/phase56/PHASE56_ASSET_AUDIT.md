@@ -1,6 +1,6 @@
 # Phase56 asset closure and execution checks (2026-09-10)
 
-Existing Phase56 was closed as **52/56 accepted and 4/56 without an accepted trace**. This completion-with-failures revision reflects the current deadline. The original database retains 52 completed / 4 pending items; the new report preserves that history. Additional Phase56 model calls total 0, and the original max-7 recovery plan was not executed.
+Existing Phase56 was closed as **52/56 accepted and 4/56 without an accepted trace**. The original database retains 52 completed / 4 pending items; the new report preserves that history. Additional Phase56 model calls total 0, and the original max-7 recovery plan was not executed.
 
 ## Directly usable local assets
 

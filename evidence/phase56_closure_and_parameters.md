@@ -1,6 +1,6 @@
 # Phase56 closure and runtime checks, 2026-09-10
 
-The existing Phase56 run was closed with **52/56 accepted traces and 4/56 parents without an accepted trace**. This completion-with-failures revision reflects the current deadline. The original databases retain 52 completed and four pending records, and the new report does not change that history. There were zero new Phase56 model calls, and the original max-7 recovery plan was not executed.
+The existing Phase56 run was closed with **52/56 accepted traces and 4/56 parents without an accepted trace**. The original databases retain 52 completed and four pending records, and the new report does not change that history. There were zero new Phase56 model calls, and the original max-7 recovery plan was not executed.
 
 ## Available local material
 
